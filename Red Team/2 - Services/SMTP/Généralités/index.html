@@ -7753,31 +7753,31 @@
 <hr />
 <h3 id="enumeration">Enumeration</h3>
 <p>Connection telnet:</p>
-<pre><code class="language-bash">nc -vn $ip 25
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nc<span class="w"> </span>-vn<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span><span class="m">25</span>
+</span></code></pre></div>
 <p>Connection openssl (si utilisation de starttls):</p>
-<pre><code class="language-bash">openssl s_client -starttls smtp -crlf -connect $domain:587
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>openssl<span class="w"> </span>s_client<span class="w"> </span>-starttls<span class="w"> </span>smtp<span class="w"> </span>-crlf<span class="w"> </span>-connect<span class="w"> </span><span class="nv">$domain</span>:587
+</span></code></pre></div>
 <p>Savoir si le serveur peut être utilisé comme open relay:</p>
-<pre><code class="language-bash">sudo nmap $ip -p25 --script smtp-open-relay -v
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-p25<span class="w"> </span>--script<span class="w"> </span>smtp-open-relay<span class="w"> </span>-v
+</span></code></pre></div>
 <p>Connaître les différentes commandes pourvant être utilisées:</p>
-<pre><code class="language-bash">nmap -p25 --script smtp-commands $ip
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nmap<span class="w"> </span>-p25<span class="w"> </span>--script<span class="w"> </span>smtp-commands<span class="w"> </span><span class="nv">$ip</span>
+</span></code></pre></div>
 <hr />
 <h3 id="brute-force">Brute force</h3>
 <p>Brute force des users:</p>
-<pre><code class="language-bash">nmap --script smtp-enum-users $ip
-</code></pre>
-<pre><code class="language-bash">smtp-user-enum -M &lt;MODE&gt; -u &lt;USER&gt; -t $ip
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nmap<span class="w"> </span>--script<span class="w"> </span>smtp-enum-users<span class="w"> </span><span class="nv">$ip</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>smtp-user-enum<span class="w"> </span>-M<span class="w"> </span>&lt;MODE&gt;<span class="w"> </span>-u<span class="w"> </span>&lt;USER&gt;<span class="w"> </span>-t<span class="w"> </span><span class="nv">$ip</span>
+</span></code></pre></div>
 <p>Brute force password:</p>
-<pre><code class="language-bash">hydra -l monUser -P /usr/share/seclists/Passwords/xato-net-10-million-passwords-1000000.txt $ip smtp
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>hydra<span class="w"> </span>-l<span class="w"> </span>monUser<span class="w"> </span>-P<span class="w"> </span>/usr/share/seclists/Passwords/xato-net-10-million-passwords-1000000.txt<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>smtp
+</span></code></pre></div>
 <hr />
 <h3 id="metasploit">Metasploit</h3>
-<pre><code>auxiliary/scanner/smtp/smtp_enum
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>auxiliary/scanner/smtp/smtp_enum
+</span></code></pre></div>
 
 
 
@@ -7824,7 +7824,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

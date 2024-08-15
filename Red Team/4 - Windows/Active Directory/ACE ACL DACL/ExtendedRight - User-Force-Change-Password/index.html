@@ -7684,13 +7684,13 @@
 
 <h3 id="depuis-linux">Depuis Linux</h3>
 <p>Pour changer le mot de passe d'un utilisateur depuis un environnement Linux, utilisez <code>rpcclient</code> comme suit :</p>
-<pre><code class="language-bash">rpcclient -U $monUser$ 10.10.10.192
-setuserinfo2 $userCible$ 23 'password'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rpcclient<span class="w"> </span>-U<span class="w"> </span><span class="nv">$monUser</span>$<span class="w"> </span><span class="m">10</span>.10.10.192
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>setuserinfo2<span class="w"> </span><span class="nv">$userCible</span>$<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="s1">&#39;password&#39;</span>
+</span></code></pre></div>
 <h3 id="depuis-windows">Depuis Windows</h3>
 <p>Depuis Windows, vous pouvez utiliser PowerShell et le module <code>ActiveDirectory</code> :</p>
-<pre><code class="language-powershell">Set-DomainUserPassword -Identity $userCible -AccountPassword (ConvertTo-SecureString '123456' -AsPlainText -Force) -Verbose
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Set-DomainUserPassword</span> <span class="n">-Identity</span> <span class="nv">$userCible</span> <span class="n">-AccountPassword</span> <span class="p">(</span><span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;123456&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">)</span> <span class="n">-Verbose</span>
+</span></code></pre></div>
 <blockquote>
 <p><strong>/!\ Attention: penser à mettre un mot de passe qui soit en accord avec la politique de mot de passe du domaine, sinon celui-ci ne sera pas modifié (et suivant le contexte, aucun message d'erreur) /!\</strong></p>
 </blockquote>
@@ -7740,7 +7740,7 @@ setuserinfo2 $userCible$ 23 'password'
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

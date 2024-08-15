@@ -7775,43 +7775,43 @@
 <li>Une application web accepte des entrées utilisateur et les utilise directement dans une requête SQL, par exemple une page de connexion qui vérifie les identifiants des utilisateurs.</li>
 </ul>
 <p><strong>Exemple de code vulnérable :</strong></p>
-<pre><code class="language-php">&lt;?php
-$username = $_POST['username'];
-$password = $_POST['password'];
-$query = &quot;SELECT * FROM users WHERE username = '$username' AND password = '$password'&quot;;
-$result = mysqli_query($conn, $query);
-?&gt;
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$username</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">];</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">$password</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">];</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM users WHERE username = &#39;</span><span class="si">$username</span><span class="s2">&#39; AND password = &#39;</span><span class="si">$password</span><span class="s2">&#39;&quot;</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$result</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$conn</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">?&gt;</span>
+</span></code></pre></div>
 <p><strong>Exploitation :</strong></p>
 <ul>
 <li>Un attaquant peut manipuler les entrées pour altérer la requête SQL, par exemple en entrant <code>' OR '1'='1</code> comme nom d'utilisateur ou mot de passe.</li>
 </ul>
-<pre><code class="language-sql">SELECT * FROM users WHERE username = '' OR '1'='1' AND password = '' OR '1'='1'
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="s1">&#39;1&#39;</span>
+</span></code></pre></div>
 <h3 id="prevention-des-attaques-sql-injection">Prévention des Attaques SQL Injection</h3>
 <p><strong>Utilisation de Requêtes Préparées :</strong></p>
 <ul>
 <li>Utiliser des requêtes préparées avec des paramètres liés pour empêcher l'injection SQL.</li>
 </ul>
-<pre><code class="language-php">$stmt = $conn-&gt;prepare(&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;);
-$stmt-&gt;bind_param(&quot;ss&quot;, $username, $password);
-sstmt-&gt;execute();
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">$stmt = $conn-&gt;prepare(&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;);</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">$stmt-&gt;bind_param(&quot;ss&quot;, $username, $password);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">sstmt-&gt;execute();</span>
+</span></code></pre></div>
 <p><strong>Échappement des Entrées Utilisateur :</strong></p>
 <ul>
 <li>Échapper correctement toutes les entrées utilisateur avant de les inclure dans des requêtes SQL.</li>
 </ul>
-<pre><code class="language-php">$username = mysqli_real_escape_string($conn, $_POST['username']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
-$query = &quot;SELECT * FROM users WHERE username = '$username' AND password = '$password'&quot;;
-$result = mysqli_query($conn, $query);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">$username = mysqli_real_escape_string($conn, $_POST[&#39;username&#39;]);</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">$password = mysqli_real_escape_string($conn, $_POST[&#39;password&#39;]);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">$query = &quot;SELECT * FROM users WHERE username = &#39;$username&#39; AND password = &#39;$password&#39;&quot;;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">$result = mysqli_query($conn, $query);</span>
+</span></code></pre></div>
 <p><strong>Utilisation d'ORMs :</strong></p>
 <ul>
 <li>Utiliser des Object-Relational Mappers (ORMs) qui abstraient les requêtes SQL et fournissent des mécanismes de protection contre les injections SQL.</li>
 </ul>
-<pre><code class="language-php">$user = User::where('username', $username)-&gt;where('password', $password)-&gt;first();
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">$user = User::where(&#39;username&#39;, $username)-&gt;where(&#39;password&#39;, $password)-&gt;first();</span>
+</span></code></pre></div>
 <h3 id="detection-des-failles-sql-injection">Détection des Failles SQL Injection</h3>
 <p><strong>Revue de Code :</strong></p>
 <ul>
@@ -7827,21 +7827,21 @@ $result = mysqli_query($conn, $query);
 </ul>
 <h3 id="exemples-de-prevention">Exemples de Prévention</h3>
 <p><strong>Requêtes Préparées :</strong></p>
-<pre><code class="language-php">$stmt = $conn-&gt;prepare(&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;);
-$stmt-&gt;bind_param(&quot;ss&quot;, $username, $password);
-$stmt-&gt;execute();
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">$stmt = $conn-&gt;prepare(&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">$stmt-&gt;bind_param(&quot;ss&quot;, $username, $password);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">$stmt-&gt;execute();</span>
+</span></code></pre></div>
 <p><strong>Utilisation de PDO :</strong></p>
-<pre><code class="language-php">$stmt = $pdo-&gt;prepare(&quot;SELECT * FROM users WHERE username = :username AND password = :password&quot;);
-$stmt-&gt;execute(['username' =&gt; $username, 'password' =&gt; $password]);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">$stmt = $pdo-&gt;prepare(&quot;SELECT * FROM users WHERE username = :username AND password = :password&quot;);</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">$stmt-&gt;execute([&#39;username&#39; =&gt; $username, &#39;password&#39; =&gt; $password]);</span>
+</span></code></pre></div>
 <p><strong>Validation et Sanitation des Entrées :</strong></p>
-<pre><code class="language-php">$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-$stmt = $conn-&gt;prepare(&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;);
-$stmt-&gt;bind_param(&quot;ss&quot;, $username, $password);
-$stmt-&gt;execute();
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">$username = filter_input(INPUT_POST, &#39;username&#39;, FILTER_SANITIZE_STRING);</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">$password = filter_input(INPUT_POST, &#39;password&#39;, FILTER_SANITIZE_STRING);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">$stmt = $conn-&gt;prepare(&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">$stmt-&gt;bind_param(&quot;ss&quot;, $username, $password);</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">$stmt-&gt;execute();</span>
+</span></code></pre></div>
 <hr />
 <table>
 <thead>
@@ -7927,7 +7927,7 @@ $stmt-&gt;execute();
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

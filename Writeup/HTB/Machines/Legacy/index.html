@@ -7675,90 +7675,89 @@
 </table>
 <hr />
 <h3 id="nmap">Nmap</h3>
-<pre><code class="language-bash">PORT    STATE SERVICE     REASON  VERSION
-135/tcp open  msrpc       syn-ack Microsoft Windows RPC
-139/tcp open  netbios-ssn syn-ack Microsoft Windows netbios-ssn
-445/tcp open  �m`U       syn-ack Windows XP microsoft-ds
-Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
-
-Host script results:
-| p2p-conficker: 
-|   Checking for Conficker.C or higher...
-|   Check 1 (port 40600/tcp): CLEAN (Couldn't connect)
-|   Check 2 (port 53966/tcp): CLEAN (Couldn't connect)
-|   Check 3 (port 50902/udp): CLEAN (Failed to receive data)
-|   Check 4 (port 47445/udp): CLEAN (Failed to receive data)
-|_  0/4 checks are positive: Host is CLEAN or ports are blocked
-| nbstat: NetBIOS name: LEGACY, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:50:56:b9:7d:d3 (VMware)
-| Names:
-|   LEGACY&lt;00&gt;           Flags: &lt;unique&gt;&lt;active&gt;
-|   HTB&lt;00&gt;              Flags: &lt;group&gt;&lt;active&gt;
-|   LEGACY&lt;20&gt;           Flags: &lt;unique&gt;&lt;active&gt;
-|   HTB&lt;1e&gt;              Flags: &lt;group&gt;&lt;active&gt;
-|   HTB&lt;1d&gt;              Flags: &lt;unique&gt;&lt;active&gt;
-|   \x01\x02__MSBROWSE__\x02&lt;01&gt;  Flags: &lt;group&gt;&lt;active&gt;
-| Statistics:
-|   00:50:56:b9:7d:d3:00:00:00:00:00:00:00:00:00:00:00
-|   00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
-|_  00:00:00:00:00:00:00:00:00:00:00:00:00:00
-| smb-security-mode: 
-|   account_used: &lt;blank&gt;
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-|_smb2-time: Protocol negotiation failed (SMB2)
-|_smb2-security-mode: Couldn't establish a SMBv2 connection.
-| smb-os-discovery: 
-|   OS: Windows XP (Windows 2000 LAN Manager)
-|   OS CPE: cpe:/o:microsoft:windows_xp::-
-|   Computer name: legacy
-|   NetBIOS computer name: LEGACY\x00
-|   Workgroup: HTB\x00
-|_  System time: 2023-09-08T22:42:35+03:00
-|_clock-skew: mean: 5d00h27m39s, deviation: 2h07m17s, median: 4d22h57m38s
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PORT<span class="w">    </span>STATE<span class="w"> </span>SERVICE<span class="w">     </span>REASON<span class="w">  </span>VERSION
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">135</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">       </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="m">139</span>/tcp<span class="w"> </span>open<span class="w">  </span>netbios-ssn<span class="w"> </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="m">445</span>/tcp<span class="w"> </span>open<span class="w">  </span>�m<span class="sb">`</span>U<span class="w">       </span>syn-ack<span class="w"> </span>Windows<span class="w"> </span>XP<span class="w"> </span>microsoft-ds
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Service<span class="w"> </span>Info:<span class="w"> </span>OSs:<span class="w"> </span>Windows,<span class="w"> </span>Windows<span class="w"> </span>XP<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows,<span class="w"> </span>cpe:/o:microsoft:windows_xp
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Host<span class="w"> </span>script<span class="w"> </span>results:
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">|</span><span class="w"> </span>p2p-conficker:<span class="w"> </span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">|</span><span class="w">   </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>Conficker.C<span class="w"> </span>or<span class="w"> </span>higher...
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">|</span><span class="w">   </span>Check<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>port<span class="w"> </span><span class="m">40600</span>/tcp<span class="o">)</span>:<span class="w"> </span>CLEAN<span class="w"> </span><span class="o">(</span>Couldn<span class="s1">&#39;t connect)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">|   Check 2 (port 53966/tcp): CLEAN (Couldn&#39;</span>t<span class="w"> </span>connect<span class="o">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">|</span><span class="w">   </span>Check<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">(</span>port<span class="w"> </span><span class="m">50902</span>/udp<span class="o">)</span>:<span class="w"> </span>CLEAN<span class="w"> </span><span class="o">(</span>Failed<span class="w"> </span>to<span class="w"> </span>receive<span class="w"> </span>data<span class="o">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">|</span><span class="w">   </span>Check<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>port<span class="w"> </span><span class="m">47445</span>/udp<span class="o">)</span>:<span class="w"> </span>CLEAN<span class="w"> </span><span class="o">(</span>Failed<span class="w"> </span>to<span class="w"> </span>receive<span class="w"> </span>data<span class="o">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">|</span>_<span class="w">  </span><span class="m">0</span>/4<span class="w"> </span>checks<span class="w"> </span>are<span class="w"> </span>positive:<span class="w"> </span>Host<span class="w"> </span>is<span class="w"> </span>CLEAN<span class="w"> </span>or<span class="w"> </span>ports<span class="w"> </span>are<span class="w"> </span>blocked
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">|</span><span class="w"> </span>nbstat:<span class="w"> </span>NetBIOS<span class="w"> </span>name:<span class="w"> </span>LEGACY,<span class="w"> </span>NetBIOS<span class="w"> </span>user:<span class="w"> </span>&lt;unknown&gt;,<span class="w"> </span>NetBIOS<span class="w"> </span>MAC:<span class="w"> </span><span class="m">00</span>:50:56:b9:7d:d3<span class="w"> </span><span class="o">(</span>VMware<span class="o">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">|</span><span class="w"> </span>Names:
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">|</span><span class="w">   </span>LEGACY&lt;<span class="m">00</span>&gt;<span class="w">           </span>Flags:<span class="w"> </span>&lt;unique&gt;&lt;active&gt;
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">|</span><span class="w">   </span>HTB&lt;<span class="m">00</span>&gt;<span class="w">              </span>Flags:<span class="w"> </span>&lt;group&gt;&lt;active&gt;
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">|</span><span class="w">   </span>LEGACY&lt;<span class="m">20</span>&gt;<span class="w">           </span>Flags:<span class="w"> </span>&lt;unique&gt;&lt;active&gt;
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">|</span><span class="w">   </span>HTB&lt;1e&gt;<span class="w">              </span>Flags:<span class="w"> </span>&lt;group&gt;&lt;active&gt;
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">|</span><span class="w">   </span>HTB&lt;1d&gt;<span class="w">              </span>Flags:<span class="w"> </span>&lt;unique&gt;&lt;active&gt;
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">|</span><span class="w">   </span><span class="se">\x</span><span class="m">01</span><span class="se">\x</span>02__MSBROWSE__<span class="se">\x</span><span class="m">02</span>&lt;<span class="m">01</span>&gt;<span class="w">  </span>Flags:<span class="w"> </span>&lt;group&gt;&lt;active&gt;
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">|</span><span class="w"> </span>Statistics:
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">|</span><span class="w">   </span><span class="m">00</span>:50:56:b9:7d:d3:00:00:00:00:00:00:00:00:00:00:00
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">|</span><span class="w">   </span><span class="m">00</span>:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="p">|</span>_<span class="w">  </span><span class="m">00</span>:00:00:00:00:00:00:00:00:00:00:00:00:00
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">|</span><span class="w"> </span>smb-security-mode:<span class="w"> </span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="p">|</span><span class="w">   </span>account_used:<span class="w"> </span>&lt;blank&gt;
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p">|</span><span class="w">   </span>authentication_level:<span class="w"> </span>user
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">|</span><span class="w">   </span>challenge_response:<span class="w"> </span>supported
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">|</span>_<span class="w">  </span>message_signing:<span class="w"> </span>disabled<span class="w"> </span><span class="o">(</span>dangerous,<span class="w"> </span>but<span class="w"> </span>default<span class="o">)</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">|</span>_smb2-time:<span class="w"> </span>Protocol<span class="w"> </span>negotiation<span class="w"> </span>failed<span class="w"> </span><span class="o">(</span>SMB2<span class="o">)</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">|</span>_smb2-security-mode:<span class="w"> </span>Couldn<span class="err">&#39;</span>t<span class="w"> </span>establish<span class="w"> </span>a<span class="w"> </span>SMBv2<span class="w"> </span>connection.
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">|</span><span class="w"> </span>smb-os-discovery:<span class="w"> </span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="p">|</span><span class="w">   </span>OS:<span class="w"> </span>Windows<span class="w"> </span>XP<span class="w"> </span><span class="o">(</span>Windows<span class="w"> </span><span class="m">2000</span><span class="w"> </span>LAN<span class="w"> </span>Manager<span class="o">)</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p">|</span><span class="w">   </span>OS<span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows_xp::-
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="p">|</span><span class="w">   </span>Computer<span class="w"> </span>name:<span class="w"> </span>legacy
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">|</span><span class="w">   </span>NetBIOS<span class="w"> </span>computer<span class="w"> </span>name:<span class="w"> </span>LEGACY<span class="se">\x</span><span class="m">00</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">|</span><span class="w">   </span>Workgroup:<span class="w"> </span>HTB<span class="se">\x</span><span class="m">00</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p">|</span>_<span class="w">  </span>System<span class="w"> </span>time:<span class="w"> </span><span class="m">2023</span>-09-08T22:42:35+03:00
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="p">|</span>_clock-skew:<span class="w"> </span>mean:<span class="w"> </span>5d00h27m39s,<span class="w"> </span>deviation:<span class="w"> </span>2h07m17s,<span class="w"> </span>median:<span class="w"> </span>4d22h57m38s
+</span></code></pre></div>
 <p>Du windows XP, du service SMB... Est-ce qu'on va vraiment aller chercher très loin ? Je ne pense pas :). Confirmons la présence de la CVE rapidement, pour le beau geste:</p>
-<pre><code>nmap -A --script=&quot;*vuln*&quot; -vv 10.10.10.4
-
-PORT    STATE SERVICE      REASON  VERSION
-135/tcp open  msrpc        syn-ack Microsoft Windows RPC
-139/tcp open  netbios-ssn  syn-ack Microsoft Windows netbios-ssn
-445/tcp open  microsoft-ds syn-ack Microsoft Windows XP microsoft-ds
-Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
-
-Host script results:
-| smb-vuln-ms17-010: 
-|   VULNERABLE:
-|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
-|     State: VULNERABLE
-|     IDs:  CVE:CVE-2017-0143
-|     Risk factor: HIGH
-|       A critical remote code execution vulnerability exists in Microsoft SMBv1
-|        servers (ms17-010).
-|           
-|     Disclosure date: 2017-03-14
-|     References:
-|       https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
-|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
-|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
-|_samba-vuln-cve-2012-1182: NT_STATUS_ACCESS_DENIED
-|_smb-vuln-ms10-061: ERROR: Script execution failed (use -d to debug)
-|_smb-vuln-ms10-054: false
-| smb-vuln-ms08-067: 
-|   VULNERABLE:
-|   Microsoft Windows system vulnerable to remote code execution (MS08-067)
-|     State: VULNERABLE
-|     IDs:  CVE:CVE-2008-4250
-|           The Server service in Microsoft Windows 2000 SP4, XP SP2 and SP3, Server 2003 SP1 and SP2,
-|           Vista Gold and SP1, Server 2008, and 7 Pre-Beta allows remote attackers to execute arbitrary
-|           code via a crafted RPC request that triggers the overflow during path canonicalization.
-|           
-|     Disclosure date: 2008-10-23
-|     References:
-|       https://technet.microsoft.com/en-us/library/security/ms08-067.aspx
-|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4250
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nmap -A --script=&quot;*vuln*&quot; -vv 10.10.10.4
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>PORT    STATE SERVICE      REASON  VERSION
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>135/tcp open  msrpc        syn-ack Microsoft Windows RPC
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>139/tcp open  netbios-ssn  syn-ack Microsoft Windows netbios-ssn
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>445/tcp open  microsoft-ds syn-ack Microsoft Windows XP microsoft-ds
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Host script results:
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>| smb-vuln-ms17-010: 
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>|   VULNERABLE:
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>|     State: VULNERABLE
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>|     IDs:  CVE:CVE-2017-0143
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>|     Risk factor: HIGH
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>|       A critical remote code execution vulnerability exists in Microsoft SMBv1
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>|        servers (ms17-010).
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>|           
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>|     Disclosure date: 2017-03-14
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>|     References:
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>|       https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>|_samba-vuln-cve-2012-1182: NT_STATUS_ACCESS_DENIED
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>|_smb-vuln-ms10-061: ERROR: Script execution failed (use -d to debug)
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>|_smb-vuln-ms10-054: false
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>| smb-vuln-ms08-067: 
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>|   VULNERABLE:
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>|   Microsoft Windows system vulnerable to remote code execution (MS08-067)
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>|     State: VULNERABLE
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>|     IDs:  CVE:CVE-2008-4250
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>|           The Server service in Microsoft Windows 2000 SP4, XP SP2 and SP3, Server 2003 SP1 and SP2,
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>|           Vista Gold and SP1, Server 2008, and 7 Pre-Beta allows remote attackers to execute arbitrary
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>|           code via a crafted RPC request that triggers the overflow during path canonicalization.
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>|           
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>|     Disclosure date: 2008-10-23
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>|     References:
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>|       https://technet.microsoft.com/en-us/library/security/ms08-067.aspx
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4250
+</span></code></pre></div>
 <p>Tiens donc... Il ne reste plus qu'à lancer metasploit (on ne va pas se prendre la tête), avec le module qui va bien: ms08_067_netapi, pour la CVE CVE-2008-4250.</p>
 <p>On entre les options adéquates (qui se limitent au RHOST/LHOST...), run, hop on est root.</p>
 
@@ -7807,7 +7806,7 @@ Host script results:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

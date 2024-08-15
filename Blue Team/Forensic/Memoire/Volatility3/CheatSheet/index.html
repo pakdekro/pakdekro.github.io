@@ -7762,63 +7762,63 @@
   <h1>CheatSheet</h1>
 
 <p>Identifier le format de l'image mémoire :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.info
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.info
+</span></code></pre></div>
 <p>Lister les plugins disponibles :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] --plugins=[chemin_plugins] windows.info
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>--plugins<span class="o">=[</span>chemin_plugins<span class="o">]</span><span class="w"> </span>windows.info
+</span></code></pre></div>
 <h3 id="analyse-des-processus">Analyse des Processus</h3>
 <p>Lister les processus en cours d'exécution :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.pslist
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.pslist
+</span></code></pre></div>
 <p>Voir les processus avec leur arborescence :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.pstree
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.pstree
+</span></code></pre></div>
 <p>Vérifier les processus cachés ou non répertoriés :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.psxview
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.psxview
+</span></code></pre></div>
 <h3 id="analyse-de-la-memoire">Analyse de la Mémoire</h3>
 <p>Extraire le contenu de la mémoire d'un processus :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.memdump --pid [pid_processus] --dump-dir=[dossier_destination]
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.memdump<span class="w"> </span>--pid<span class="w"> </span><span class="o">[</span>pid_processus<span class="o">]</span><span class="w"> </span>--dump-dir<span class="o">=[</span>dossier_destination<span class="o">]</span>
+</span></code></pre></div>
 <p>Analyser la mémoire virtuelle d'un processus :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.vadinfo --pid [pid_processus]
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.vadinfo<span class="w"> </span>--pid<span class="w"> </span><span class="o">[</span>pid_processus<span class="o">]</span>
+</span></code></pre></div>
 <h3 id="analyse-de-fichiers-et-dll">Analyse de Fichiers et DLL</h3>
 <p>Lister les DLL chargées pour chaque processus :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.dlllist
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.dlllist
+</span></code></pre></div>
 <p>Extraire les fichiers exécutables/DLL mappés en mémoire :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.moddump --pid [pid_processus] --dump-dir=[dossier_destination]
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.moddump<span class="w"> </span>--pid<span class="w"> </span><span class="o">[</span>pid_processus<span class="o">]</span><span class="w"> </span>--dump-dir<span class="o">=[</span>dossier_destination<span class="o">]</span>
+</span></code></pre></div>
 <h3 id="analyse-de-reseau">Analyse de Réseau</h3>
 <p>Voir les connexions réseau actives et en écoute :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.netscan
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.netscan
+</span></code></pre></div>
 <p>Lister les sockets et connexions :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.netstat
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.netstat
+</span></code></pre></div>
 <h3 id="analyse-du-registre">Analyse du Registre</h3>
 <p>Extraire les hives du registre :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.registry.hivelist
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.registry.hivelist
+</span></code></pre></div>
 <p>Analyser les clés de registre spécifiques :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.registry.printkey --key=&quot;Chemin_de_la_clé&quot;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.registry.printkey<span class="w"> </span>--key<span class="o">=</span><span class="s2">&quot;Chemin_de_la_clé&quot;</span>
+</span></code></pre></div>
 <h3 id="analyse-avancee">Analyse Avancée</h3>
 <p>Détecter des rootkits ou des anomalies dans le noyau :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.malfind
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.malfind
+</span></code></pre></div>
 <p>Analyser les crash dumps :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.crashinfo
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.crashinfo
+</span></code></pre></div>
 <h3 id="utilitaires-et-divers">Utilitaires et Divers</h3>
 <p>Extraire les mots de passe et les hashes :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.hashdump
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.hashdump
+</span></code></pre></div>
 <p>Rechercher des chaînes ou des motifs dans la mémoire :</p>
-<pre><code class="language-bash">vol.py -f [fichier_image_mémoire] windows.strings -s [chaîne_à_rechercher]
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>vol.py<span class="w"> </span>-f<span class="w"> </span><span class="o">[</span>fichier_image_mémoire<span class="o">]</span><span class="w"> </span>windows.strings<span class="w"> </span>-s<span class="w"> </span><span class="o">[</span>chaîne_à_rechercher<span class="o">]</span>
+</span></code></pre></div>
 
 
 
@@ -7865,7 +7865,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

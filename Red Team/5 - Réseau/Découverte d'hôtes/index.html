@@ -7601,15 +7601,15 @@
 
   <h1>Découverte d'hôtes</h1>
 
-<p>Ping Sweep Linux:</p>
-<pre><code class="language-bash">for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep &quot;bytes from&quot; &amp;) ;done
-</code></pre>
-<p>Ping Sweep Windows:</p>
-<pre><code class="language-powershell">for /L %i in (1,1,255) do @ping -n 1 -w 200 192.168.1.%i &gt; nul &amp;&amp; echo 192.168.1.%i is up.
-</code></pre>
-<p>Nmap:</p>
-<pre><code class="language-bash">nmap -sn 192.168.1.0/24
-</code></pre>
+<p>Ping Sweep Linux:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..254<span class="o">}</span><span class="w"> </span><span class="p">;</span><span class="k">do</span><span class="w"> </span><span class="o">(</span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">192</span>.168.1.<span class="nv">$i</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;bytes from&quot;</span><span class="w"> </span><span class="p">&amp;</span><span class="o">)</span><span class="w"> </span><span class="p">;</span><span class="k">done</span>
+</span></code></pre></div></p>
+<p>Ping Sweep Windows:
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span> <span class="p">/</span><span class="n">L</span> <span class="k">%</span><span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="n">1</span><span class="p">,</span><span class="n">1</span><span class="p">,</span><span class="n">255</span><span class="p">)</span> <span class="k">do</span> <span class="nv">@ping</span> <span class="n">-n</span> <span class="n">1</span> <span class="n">-w</span> <span class="n">200</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="k">%</span><span class="n">i</span> <span class="p">&gt;</span> <span class="n">nul</span> <span class="p">&amp;&amp;</span> <span class="nb">echo </span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="k">%</span><span class="n">i</span> <span class="n">is</span> <span class="n">up</span><span class="p">.</span>
+</span></code></pre></div></p>
+<p>Nmap:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nmap<span class="w"> </span>-sn<span class="w"> </span><span class="m">192</span>.168.1.0/24
+</span></code></pre></div></p>
 
 
 
@@ -7656,7 +7656,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

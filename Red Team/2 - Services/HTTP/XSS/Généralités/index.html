@@ -7743,48 +7743,48 @@
 <ul>
 <li>Se produit lorsque les données fournies par l'utilisateur sont immédiatement renvoyées par l'application web sans traitement ou validation adéquats.</li>
 </ul>
-<pre><code class="language-html">&lt;form method=&quot;GET&quot; action=&quot;/search&quot;&gt;
-    &lt;input type=&quot;text&quot; name=&quot;query&quot;&gt;
-    &lt;input type=&quot;submit&quot; value=&quot;Search&quot;&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;GET&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/search&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;query&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Search&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p>Si l'entrée utilisateur <code>query</code> n'est pas échappée, un attaquant peut injecter du code malveillant dans l'URL, par exemple : <code>/search?query=&lt;script&gt;alert('XSS')&lt;/script&gt;</code>.</p>
 <p><strong>XSS Stocké :</strong></p>
 <ul>
 <li>Se produit lorsque les données fournies par l'utilisateur sont stockées sur le serveur (par exemple, dans une base de données) et renvoyées ultérieurement sans validation ou échappement adéquats.</li>
 </ul>
-<pre><code class="language-html">&lt;form method=&quot;POST&quot; action=&quot;/submit_comment&quot;&gt;
-    &lt;textarea name=&quot;comment&quot;&gt;&lt;/textarea&gt;
-    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/submit_comment&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;comment&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p>Si l'entrée utilisateur <code>comment</code> n'est pas échappée avant d'être affichée, un attaquant peut stocker du code malveillant qui s'exécutera lorsque d'autres utilisateurs consulteront la page contenant le commentaire.</p>
 <p><strong>XSS Basé sur le DOM :</strong>
  - Se produit lorsque le script côté client modifie le DOM de manière dynamique en utilisant des données non validées provenant de l'utilisateur.</p>
-<pre><code class="language-javascript">var user = location.hash.substring(1);
-document.getElementById(&quot;welcome&quot;).innerHTML = &quot;Welcome &quot; + user + &quot;!&quot;;
-</code></pre>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;welcome&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Welcome &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Si <code>location.hash</code> contient des scripts malveillants, par exemple <code>#&lt;script&gt;alert('XSS')&lt;/script&gt;</code>, le script sera exécuté.</p>
 <h3 id="prevention-des-attaques-xss">Prévention des Attaques XSS</h3>
 <p><strong>Échappement des Entrées Utilisateur :</strong></p>
 <ul>
 <li>Échapper toutes les données d'entrée utilisateur avant de les inclure dans le HTML, le JavaScript, le CSS, etc.</li>
 </ul>
-<pre><code class="language-html">&lt;div id=&quot;welcome&quot;&gt;Welcome &lt;?php echo htmlspecialchars($user); ?&gt;!&lt;/div&gt;
-</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;welcome&quot;</span><span class="p">&gt;</span>Welcome <span class="cp">&lt;?php echo htmlspecialchars($user); ?&gt;</span>!<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p><strong>Utilisation d'En-têtes de Sécurité :</strong></p>
 <ul>
 <li>Utiliser des en-têtes HTTP pour aider à protéger contre les attaques XSS.</li>
 </ul>
-<pre><code class="language-http">Content-Security-Policy: default-src 'self'
-X-XSS-Protection: 1; mode=block
-</code></pre>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">Content-Security-Policy: default-src &#39;self&#39;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="err">X-XSS-Protection: 1; mode=block</span>
+</span></code></pre></div>
 <p><strong>Validation et Sanitation des Entrées :</strong></p>
 <ul>
 <li>Valider et assainir toutes les entrées utilisateur avant de les traiter ou de les stocker.</li>
 </ul>
-<pre><code class="language-php">$comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">$comment = filter_input(INPUT_POST, &#39;comment&#39;, FILTER_SANITIZE_STRING);</span>
+</span></code></pre></div>
 <h3 id="detection-des-failles-xss">Détection des Failles XSS</h3>
 <p><strong>Revue de Code :</strong></p>
 <ul>
@@ -7800,17 +7800,17 @@ X-XSS-Protection: 1; mode=block
 </ul>
 <h3 id="exemples-de-prevention">Exemples de Prévention</h3>
 <p><strong>Échappement avec PHP :</strong></p>
-<pre><code class="language-php">&lt;?php
-$user = htmlspecialchars($_GET['user']);
-echo &quot;Welcome &quot; . $user;
-?&gt;
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$user</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]);</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">echo</span> <span class="s2">&quot;Welcome &quot;</span> <span class="o">.</span> <span class="nv">$user</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cp">?&gt;</span>
+</span></code></pre></div>
 <p><strong>Utilisation de Content Security Policy (CSP) :</strong></p>
-<pre><code class="language-http">Content-Security-Policy: default-src 'self'; script-src 'self'
-</code></pre>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="err">Content-Security-Policy: default-src &#39;self&#39;; script-src &#39;self&#39;</span>
+</span></code></pre></div>
 <p><strong>Validation stricte des Entrées :</strong></p>
-<pre><code class="language-php">$comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="x">$comment = filter_input(INPUT_POST, &#39;comment&#39;, FILTER_SANITIZE_STRING);</span>
+</span></code></pre></div>
 <hr />
 <table>
 <thead>
@@ -7896,7 +7896,7 @@ echo &quot;Welcome &quot; . $user;
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

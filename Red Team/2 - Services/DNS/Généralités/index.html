@@ -7762,20 +7762,20 @@
 <hr />
 <h3 id="enumeration">Enumération</h3>
 <p>Savoir quels autres serveurs DNS sont présents:</p>
-<pre><code class="language-bash">dig ns $domain @$ip
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dig<span class="w"> </span>ns<span class="w"> </span><span class="nv">$domain</span><span class="w"> </span>@<span class="nv">$ip</span>
+</span></code></pre></div>
 <p>Zone Transfer (Permet à un serveur DNS de transférer sa zone à un autre serveur DNS en cas de problème. En cas de mauvaise configuration il est possible pour nous aussi de faire une demande de transfert et de récupérer les information.):</p>
-<pre><code class="language-bash">dig axfr $domain @$ip
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dig<span class="w"> </span>axfr<span class="w"> </span><span class="nv">$domain</span><span class="w"> </span>@<span class="nv">$ip</span>
+</span></code></pre></div>
 <hr />
 <h3 id="brute-force">Brute force</h3>
 <p>Brute-force des subdomains:</p>
-<pre><code class="language-bash">dnsenum --dnsserver $ip --enum -p 0 -s 0 -o subdomains.txt -f /usr/share/SecLists/Discovery/DNS/subdomains-top1million-110000.txt $domain
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dnsenum<span class="w"> </span>--dnsserver<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>--enum<span class="w"> </span>-p<span class="w"> </span><span class="m">0</span><span class="w"> </span>-s<span class="w"> </span><span class="m">0</span><span class="w"> </span>-o<span class="w"> </span>subdomains.txt<span class="w"> </span>-f<span class="w"> </span>/usr/share/SecLists/Discovery/DNS/subdomains-top1million-110000.txt<span class="w"> </span><span class="nv">$domain</span>
+</span></code></pre></div>
 <hr />
 <h3 id="metasploit">Metasploit</h3>
-<pre><code class="language-bash">auxiliary/gather/enum_dns
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>auxiliary/gather/enum_dns
+</span></code></pre></div>
 <hr />
 <h2 id="p-configuration-potentiellement-dangereuse">P# Configuration potentiellement dangereuse</h2>
 <table>
@@ -7850,7 +7850,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

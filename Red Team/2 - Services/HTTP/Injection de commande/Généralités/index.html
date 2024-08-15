@@ -7744,40 +7744,40 @@
 <li>Une application web prend une entrée utilisateur et l'utilise directement dans une commande système sans validation ou échappement adéquat.</li>
 </ul>
 <p><strong>*Exemple de code vulnérable :</strong></p>
-<pre><code class="language-php">&lt;?php $domain = $_GET['domain']; 
-echo shell_exec(&quot;nslookup &quot; . $domain); 
-?&gt;
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span> <span class="nv">$domain</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;domain&#39;</span><span class="p">];</span> 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">echo</span> <span class="nb">shell_exec</span><span class="p">(</span><span class="s2">&quot;nslookup &quot;</span> <span class="o">.</span> <span class="nv">$domain</span><span class="p">);</span> 
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">?&gt;</span>
+</span></code></pre></div>
 <p><strong>Exploitation :</strong></p>
 <ul>
 <li>Un attaquant peut injecter des commandes supplémentaires via l'entrée utilisateur, par exemple <code>domain=example.com; cat /etc/passwd</code>.</li>
 </ul>
-<pre><code class="language-http">GET /nslookup.php?domain=example.com;cat+/etc/passwd HTTP/1.1 
-Host: example.com
-</code></pre>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="err">GET /nslookup.php?domain=example.com;cat+/etc/passwd HTTP/1.1 </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="err">Host: example.com</span>
+</span></code></pre></div>
 <h3 id="prevention-des-attaques-dinjection-de-commandes">Prévention des Attaques d'Injection de Commandes</h3>
 <p><strong>Validation des Entrées :</strong></p>
 <ul>
 <li>Valider et assainir toutes les entrées utilisateur pour ne permettre que des caractères et des formats attendus.</li>
 </ul>
-<pre><code class="language-php">$domain = filter_var($_GET['domain'], FILTER_VALIDATE_DOMAIN); 
-if ($domain === false) { 
-die(&quot;Nom de domaine non valide.&quot;); 
-}
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">$domain = filter_var($_GET[&#39;domain&#39;], FILTER_VALIDATE_DOMAIN); </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">if ($domain === false) { </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">die(&quot;Nom de domaine non valide.&quot;); </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">}</span>
+</span></code></pre></div>
 <p><strong>Utilisation de Fonctions Système Sécurisées :</strong></p>
 <ul>
 <li>Utiliser des API ou des fonctions de bibliothèques qui n'interagissent pas directement avec le shell système.</li>
 </ul>
-<pre><code class="language-php">$output = dns_get_record($domain, DNS_A);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">$output = dns_get_record($domain, DNS_A);</span>
+</span></code></pre></div>
 <p><strong>Echappement des Entrées :</strong></p>
 <ul>
 <li>Échapper les caractères spéciaux dans les entrées utilisateur avant de les utiliser dans des commandes système.</li>
 </ul>
-<pre><code class="language-php">$domain = escapeshellarg($_GET['domain']); 
-echo shell_exec(&quot;nslookup &quot; . $domain);
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">$domain = escapeshellarg($_GET[&#39;domain&#39;]); </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">echo shell_exec(&quot;nslookup &quot; . $domain);</span>
+</span></code></pre></div>
 <p><strong>Principle of Least Privilege :</strong></p>
 <ul>
 <li>Exécuter les commandes avec des privilèges minimaux nécessaires pour réduire l'impact des injections potentielles.</li>
@@ -7791,30 +7791,30 @@ echo shell_exec(&quot;nslookup &quot; . $domain);
 <p>Utiliser des outils d'analyse statique et dynamique pour détecter les injections de commandes, tels que Burp Suite, OWASP ZAP, ou des scanners spécifiques à l'injection de commandes.</p>
 <h3 id="exemples-de-prevention">Exemples de Prévention</h3>
 <p><strong>Validation stricte des Entrées :</strong></p>
-<pre><code class="language-php">if (preg_match('/^[a-zA-Z0-9.-]+$/', $_GET['domain'])) { 
-$domain = $_GET['domain']; 
-} else { 
-die(&quot;Nom de domaine non valide.&quot;); 
-}
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">if (preg_match(&#39;/^[a-zA-Z0-9.-]+$/&#39;, $_GET[&#39;domain&#39;])) { </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">$domain = $_GET[&#39;domain&#39;]; </span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">} else { </span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">die(&quot;Nom de domaine non valide.&quot;); </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="x">}</span>
+</span></code></pre></div>
 <p><strong>Utilisation de Bibliothèques Sécurisées :</strong></p>
-<pre><code class="language-php">use Symfony\Component\Process\Process; 
-use Symfony\Component\Process\Exception\ProcessFailedException; 
-
-$process = new Process(['nslookup', $domain]); 
-$process-&gt;run(); 
-
-if (!$process-&gt;isSuccessful()) { 
-throw new ProcessFailedException($process); 
-} 
-
-echo $process-&gt;getOutput();
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">use Symfony\Component\Process\Process; </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">use Symfony\Component\Process\Exception\ProcessFailedException; </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">$process = new Process([&#39;nslookup&#39;, $domain]); </span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">$process-&gt;run(); </span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="x">if (!$process-&gt;isSuccessful()) { </span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="x">throw new ProcessFailedException($process); </span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="x">} </span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="x">echo $process-&gt;getOutput();</span>
+</span></code></pre></div>
 <p><strong>Echappement Approprié :</strong></p>
-<pre><code class="language-php">$domain = escapeshellarg($_GET['domain']); 
-$output = shell_exec(&quot;nslookup &quot; . $domain); 
-echo htmlspecialchars($output, ENT_QUOTES, 'UTF-8');
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">$domain = escapeshellarg($_GET[&#39;domain&#39;]); </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">$output = shell_exec(&quot;nslookup &quot; . $domain); </span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">echo htmlspecialchars($output, ENT_QUOTES, &#39;UTF-8&#39;);</span>
+</span></code></pre></div>
 <hr />
 <table>
 <thead>
@@ -7900,7 +7900,7 @@ echo htmlspecialchars($output, ENT_QUOTES, 'UTF-8');
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

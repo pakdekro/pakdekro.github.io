@@ -7776,29 +7776,29 @@
 <p>Si un attaquant obtient ce droit, il peut potentiellement compromettre la sécurité du système en modifiant des objets pour lesquels il n'avait pas initialement d'accès.</p>
 <h3 id="activation-du-droit-setakeownershipprivilege">Activation du droit "SeTakeOwnershipPrivilege"</h3>
 <p>Si le droit est désactivé, il peut être activé en utilisant une fonction PowerShell personnalisée comme dans l'exemple ci-dessous :</p>
-<pre><code class="language-powershell">Import-Module .\Enable-Privilege.ps1  # Charge le module qui permet d'activer des privilèges 
-Enable-Privilege 'SeTakeOwnershipPrivilege'  # Active le privilège SeTakeOwnership`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Import-Module</span> <span class="p">.\</span><span class="nb">Enable-Privilege</span><span class="p">.</span><span class="n">ps1</span>  <span class="c"># Charge le module qui permet d&#39;activer des privilèges </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Enable-Privilege</span> <span class="s1">&#39;SeTakeOwnershipPrivilege&#39;</span>  <span class="c"># Active le privilège SeTakeOwnership`</span>
+</span></code></pre></div>
 <p><strong>Note</strong>: <code>Enable-Privilege.ps1</code> : lien vers le .ps1 à rajouter</p>
 <h3 id="sapproprier-un-fichier-ou-dossier">S'approprier un fichier ou dossier</h3>
 <p>Pour prendre la propriété d'un fichier ou d'un dossier :</p>
-<pre><code class="language-powershell">takeown /f 'C:\Department Shares\Private\IT\cred.txt'  # Prend la propriété du fichier`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">takeown</span> <span class="p">/</span><span class="n">f</span> <span class="s1">&#39;C:\Department Shares\Private\IT\cred.txt&#39;</span>  <span class="c"># Prend la propriété du fichier`</span>
+</span></code></pre></div>
 <h3 id="modifier-les-acls-access-control-lists">Modifier les ACLs (Access Control Lists)</h3>
 <p>Une fois que vous êtes propriétaire de l'objet, vous pouvez également modifier ses ACLs :</p>
-<pre><code class="language-powershell">$user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name  # Obtient le nom de l'utilisateur actuel 
-icacls 'C:\Department Shares\Private\IT\cred.txt' /grant &quot;$user:F&quot;  # Attribue des droits d'accès complets au fichier`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$user</span> <span class="p">=</span> <span class="no">[System.Security.Principal.WindowsIdentity]</span><span class="p">::</span><span class="n">GetCurrent</span><span class="p">().</span><span class="n">Name</span>  <span class="c"># Obtient le nom de l&#39;utilisateur actuel </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">icacls</span> <span class="s1">&#39;C:\Department Shares\Private\IT\cred.txt&#39;</span> <span class="p">/</span><span class="n">grant</span> <span class="s2">&quot;$user:F&quot;</span>  <span class="c"># Attribue des droits d&#39;accès complets au fichier`</span>
+</span></code></pre></div>
 <h3 id="sapproprier-et-modifier-les-acls-dune-cle-de-registre">S'approprier et modifier les ACLs d'une clé de registre</h3>
-<pre><code class="language-powershell"># Prendre la propriété de la clé de registre 
-takeown /f 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\example'  
-# Attribuer les droits d'accès complets 
-regini /grant=administrators=f 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\example'`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Prendre la propriété de la clé de registre </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">takeown</span> <span class="p">/</span><span class="n">f</span> <span class="s1">&#39;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\example&#39;</span>  
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c"># Attribuer les droits d&#39;accès complets </span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">regini</span> <span class="p">/</span><span class="n">grant</span><span class="p">=</span><span class="n">administrators</span><span class="p">=</span><span class="n">f</span> <span class="s1">&#39;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\example&#39;</span><span class="p">`</span>
+</span></code></pre></div>
 <h3 id="sapproprier-un-service">S'approprier un service</h3>
-<pre><code class="language-powershell"># Utiliser sc.exe pour reconfigurer le service 
-sc.exe sdset [Nom_du_service] D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;PU)`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Utiliser sc.exe pour reconfigurer le service </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">sc</span><span class="p">.</span><span class="n">exe</span> <span class="n">sdset</span> <span class="no">[Nom_du_service]</span> <span class="n">D</span><span class="p">:(</span><span class="n">A</span><span class="p">;;</span><span class="n">CCLCSWRPWPDTLOCRRC</span><span class="p">;;;</span><span class="n">SY</span><span class="p">)(</span><span class="n">A</span><span class="p">;;</span><span class="n">CCDCLCSWRPWPDTLOCRSDRCWDWO</span><span class="p">;;;</span><span class="n">BA</span><span class="p">)(</span><span class="n">A</span><span class="p">;;</span><span class="n">CCLCSWLOCRRC</span><span class="p">;;;</span><span class="n">AU</span><span class="p">)(</span><span class="n">A</span><span class="p">;;</span><span class="n">CCLCSWRPWPDTLOCRRC</span><span class="p">;;;</span><span class="n">PU</span><span class="p">)`</span>
+</span></code></pre></div>
 
 
 
@@ -7845,7 +7845,7 @@ sc.exe sdset [Nom_du_service] D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLO
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

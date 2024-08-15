@@ -7699,54 +7699,54 @@
   <h1>MSSQL</h1>
 
 <p>Connexion (depuis un poste windows):</p>
-<pre><code class="language-powershell">sqlcmd -S $serveur$ -U $user -P $password
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">sqlcmd</span> <span class="n">-S</span> <span class="nv">$serveur</span><span class="p">$</span> <span class="n">-U</span> <span class="nv">$user</span> <span class="n">-P</span> <span class="nv">$password</span>
+</span></code></pre></div>
 <h3 id="requetes-de-base">Requêtes de base</h3>
 <p>Lister les bases de données:</p>
-<pre><code class="language-sql">SELECT name FROM master.sys.databases;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">master</span><span class="p">.</span><span class="n">sys</span><span class="p">.</span><span class="n">databases</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Sélectionner une base de données:</p>
-<pre><code class="language-sql">USE &lt;nom_base_de_données&gt;;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">USE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">nom_base_de_données</span><span class="o">&gt;</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Lister les tables:</p>
-<pre><code class="language-sql">SELECT * FROM information_schema.tables;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Lister les serveurs liés:</p>
-<pre><code class="language-sql">EXEC sp_linkedservers
-SELECT * FROM sys.servers;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">EXEC</span><span class="w"> </span><span class="n">sp_linkedservers</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">servers</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Lister les utilisateurs: </p>
-<pre><code class="language-sql">select sp.name as login, sp.type_desc as login_type, sl.password_hash, sp.create_date, sp.modify_date, case when sp.is_disabled = 1 then 'Disabled' else 'Enabled' end as status from sys.server_principals sp left join sys.sql_logins sl on sp.principal_id = sl.principal_id where sp.type not in ('G', 'R') order by sp.name;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">select</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">login</span><span class="p">,</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">type_desc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">login_type</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">.</span><span class="n">password_hash</span><span class="p">,</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">create_date</span><span class="p">,</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">modify_date</span><span class="p">,</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">is_disabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;Disabled&#39;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Enabled&#39;</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">server_principals</span><span class="w"> </span><span class="n">sp</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">sql_logins</span><span class="w"> </span><span class="n">sl</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">principal_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sl</span><span class="p">.</span><span class="n">principal_id</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="k">type</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;R&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">sp</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="activer-xp_cmdshell">Activer xp_cmdshell</h3>
-<pre><code class="language-sql">sp_configure 'show advanced options', '1'
-RECONFIGURE
-sp_configure 'xp_cmdshell', '1'
-RECONFIGURE
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">sp_configure</span><span class="w"> </span><span class="s1">&#39;show advanced options&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">RECONFIGURE</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">sp_configure</span><span class="w"> </span><span class="s1">&#39;xp_cmdshell&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">RECONFIGURE</span>
+</span></code></pre></div>
 <p>Exécuter une commande:</p>
-<pre><code class="language-sql">EXEC master..xp_cmdshell 'whoami'
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">..</span><span class="n">xp_cmdshell</span><span class="w"> </span><span class="s1">&#39;whoami&#39;</span>
+</span></code></pre></div>
 <h3 id="lire-ecrire-un-fichier">Lire / Ecrire un fichier</h3>
 <p>Voir si nous avons la permission de lire un fichier:</p>
-<pre><code class="language-sql">SELECT * FROM fn_my_permissions(NULL, 'SERVER') WHERE permission_name='ADMINISTER BULK OPERATIONS' OR permission_name='ADMINISTER DATABASE BULK OPERATIONS';
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">fn_my_permissions</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SERVER&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">permission_name</span><span class="o">=</span><span class="s1">&#39;ADMINISTER BULK OPERATIONS&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">permission_name</span><span class="o">=</span><span class="s1">&#39;ADMINISTER DATABASE BULK OPERATIONS&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Lire un fichier:</p>
-<pre><code class="language-sql">SELECT * FROM OPENROWSET(BULK N'C:/Windows/System32/drivers/etc/hosts', SINGLE_CLOB) AS Contents
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">OPENROWSET</span><span class="p">(</span><span class="n">BULK</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;C:/Windows/System32/drivers/etc/hosts&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">SINGLE_CLOB</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Contents</span>
+</span></code></pre></div>
 <p>Ecrire un fichier (demande normalement le droit administrateur):</p>
-<pre><code class="language-sql">sp_configure 'show advanced options', 1
-RECONFIGURE
-sp_configure 'Ole Automation Procedures', 1
-RECONFIGURE
-DECLARE @OLE INT
-DECLARE @FileID INT
-EXECUTE sp_OACreate 'Scripting.FileSystemObject', @OLE OUT
-EXECUTE sp_OAMethod @OLE, 'OpenTextFile', @FileID OUT, 'c:\fichier.txt', 8, 1
-EXECUTE sp_OAMethod @FileID, 'WriteLine', Null, 'Coucou :)'
-EXECUTE sp_OADestroy @FileID
-EXECUTE sp_OADestroy @OLE
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">sp_configure</span><span class="w"> </span><span class="s1">&#39;show advanced options&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">RECONFIGURE</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">sp_configure</span><span class="w"> </span><span class="s1">&#39;Ole Automation Procedures&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">RECONFIGURE</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">OLE</span><span class="w"> </span><span class="nb">INT</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">FileID</span><span class="w"> </span><span class="nb">INT</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">EXECUTE</span><span class="w"> </span><span class="n">sp_OACreate</span><span class="w"> </span><span class="s1">&#39;Scripting.FileSystemObject&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">OLE</span><span class="w"> </span><span class="k">OUT</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">EXECUTE</span><span class="w"> </span><span class="n">sp_OAMethod</span><span class="w"> </span><span class="o">@</span><span class="n">OLE</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;OpenTextFile&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">FileID</span><span class="w"> </span><span class="k">OUT</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;c:\fichier.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="k">EXECUTE</span><span class="w"> </span><span class="n">sp_OAMethod</span><span class="w"> </span><span class="o">@</span><span class="n">FileID</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;WriteLine&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">Null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Coucou :)&#39;</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="k">EXECUTE</span><span class="w"> </span><span class="n">sp_OADestroy</span><span class="w"> </span><span class="o">@</span><span class="n">FileID</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="k">EXECUTE</span><span class="w"> </span><span class="n">sp_OADestroy</span><span class="w"> </span><span class="o">@</span><span class="n">OLE</span>
+</span></code></pre></div>
 
 
 
@@ -7793,7 +7793,7 @@ EXECUTE sp_OADestroy @OLE
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

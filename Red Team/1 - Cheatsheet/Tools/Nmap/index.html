@@ -7752,75 +7752,75 @@
 
   <h1>Nmap</h1>
 
-<p>Base:</p>
-<pre><code class="language-cmd">nmap [adresse_ip_ou_plage]
-</code></pre>
-<p>Scan rapide:</p>
-<pre><code class="language-cmd">nmap -T4 -F [adresse_ip_ou_plage]
-</code></pre>
-<p>Détecter les systèmes d'exploitation et les services:</p>
-<pre><code class="language-cmd">nmap -A [adresse_ip_ou_plage]
-</code></pre>
+<p>Base:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nmap [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Scan rapide:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nmap -T4 -F [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Détecter les systèmes d'exploitation et les services:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nmap -A [adresse_ip_ou_plage]
+</span></code></pre></div></p>
 <h4 id="balayage-de-ports-specifiques">Balayage de Ports Spécifiques</h4>
-<p>Scan d'un seul port:</p>
-<pre><code class="language-cmd">nmap -p [port] [adresse_ip]
-</code></pre>
-<p>Scan de plusieurs ports spécifiques:</p>
-<pre><code class="language-cmd">nmap -p [port1],[port2],... [adresse_ip]
-</code></pre>
-<p>Scan d'une plage de ports:</p>
-<pre><code class="language-cmd">nmap -p [port_debut]-[port_fin] [adresse_ip]
-</code></pre>
+<p>Scan d'un seul port:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nmap -p [port] [adresse_ip]
+</span></code></pre></div></p>
+<p>Scan de plusieurs ports spécifiques:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nmap -p [port1],[port2],... [adresse_ip]
+</span></code></pre></div></p>
+<p>Scan d'une plage de ports:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nmap -p [port_debut]-[port_fin] [adresse_ip]
+</span></code></pre></div></p>
 <h4 id="balayages-avances">Balayages Avancés</h4>
-<p>Scan SYN (Half-open):</p>
-<pre><code class="language-cmd">nmap -sS [adresse_ip_ou_plage]
-</code></pre>
-<p>Scan UDP:</p>
-<pre><code class="language-cmd">nmap -sU [adresse_ip_ou_plage]
-</code></pre>
-<p>Scan de tous les ports (TCP):</p>
-<pre><code class="language-cmd">nmap -p- [adresse_ip]
-</code></pre>
-<p>Scan sans résolution DNS:</p>
-<pre><code class="language-cmd">nmap -n [adresse_ip_ou_plage]
-</code></pre>
-<p>Scan agressif:</p>
-<pre><code class="language-cmd">nmap -A -T4 [adresse_ip_ou_plage]
-</code></pre>
+<p>Scan SYN (Half-open):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>nmap -sS [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Scan UDP:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nmap -sU [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Scan de tous les ports (TCP):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nmap -p- [adresse_ip]
+</span></code></pre></div></p>
+<p>Scan sans résolution DNS:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nmap -n [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Scan agressif:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>nmap -A -T4 [adresse_ip_ou_plage]
+</span></code></pre></div></p>
 <h4 id="decouverte-dhotes">Découverte d'hôtes</h4>
-<p>Ping Scan (ne scanne pas les ports):</p>
-<pre><code class="language-cmd">nmap -sn [adresse_ip_ou_plage]
-</code></pre>
-<p>Découverte de Hôtes sur un réseau:</p>
-<pre><code class="language-cmd">nmap -sP [plage_reseau]
-</code></pre>
+<p>Ping Scan (ne scanne pas les ports):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>nmap -sn [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Découverte de Hôtes sur un réseau:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>nmap -sP [plage_reseau]
+</span></code></pre></div></p>
 <h4 id="techniques-de-contournement-de-firewall">Techniques de Contournement de Firewall</h4>
-<p>Fragmentation des paquets:</p>
-<pre><code class="language-cmd">nmap -f [adresse_ip_ou_plage]
-</code></pre>
-<p>Scan avec un port source spécifique:</p>
-<pre><code class="language-cmd">nmap --source-port [port] [adresse_ip_ou_plage]
-</code></pre>
-<p>Scan avec décalage de détection de version:</p>
-<pre><code class="language-cmd">nmap -sV --version-intensity 0 [adresse_ip_ou_plage]
-</code></pre>
+<p>Fragmentation des paquets:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nmap -f [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Scan avec un port source spécifique:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nmap --source-port [port] [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Scan avec décalage de détection de version:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>nmap -sV --version-intensity 0 [adresse_ip_ou_plage]
+</span></code></pre></div></p>
 <h4 id="scripts-nmap-et-detection-de-vulnerabilites">Scripts Nmap et Détection de Vulnérabilités</h4>
-<p>Utilisation des scripts Nmap:</p>
-<pre><code class="language-cmd">nmap --script=[nom_script] [adresse_ip_ou_plage]
-</code></pre>
-<p>Détection de vulnérabilités:</p>
-<pre><code class="language-cmd">nmap --script=vuln [adresse_ip_ou_plage]
-</code></pre>
+<p>Utilisation des scripts Nmap:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>nmap --script=[nom_script] [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Détection de vulnérabilités:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>nmap --script=vuln [adresse_ip_ou_plage]
+</span></code></pre></div></p>
 <h4 id="options-diverses">Options Diverses</h4>
-<p>Spécifier le délai entre les paquets:</p>
-<pre><code class="language-cmd">nmap --max-rate [packets_per_second] [adresse_ip_ou_plage]
-</code></pre>
-<p>Définir un délai d'expiration:</p>
-<pre><code class="language-cmd">nmap --host-timeout [temps] [adresse_ip_ou_plage]
-</code></pre>
-<p>Sauvegarder la sortie dans un fichier:</p>
-<pre><code class="language-cmd">nmap -oN [nom_fichier] [adresse_ip_ou_plage]
-</code></pre>
+<p>Spécifier le délai entre les paquets:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>nmap --max-rate [packets_per_second] [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Définir un délai d'expiration:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>nmap --host-timeout [temps] [adresse_ip_ou_plage]
+</span></code></pre></div></p>
+<p>Sauvegarder la sortie dans un fichier:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>nmap -oN [nom_fichier] [adresse_ip_ou_plage]
+</span></code></pre></div></p>
 
 
 
@@ -7870,7 +7870,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

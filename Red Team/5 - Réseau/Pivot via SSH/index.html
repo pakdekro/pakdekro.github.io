@@ -7604,14 +7604,14 @@
 <p>Si la machine cible a accès à un réseau interne, il est possible de faire du port forwarding dynamique: tout le traffic passera par notre unique port local, et sera dispatché sur les différents ports une fois la machine cible atteinte.</p>
 <p>Attention: cette technique ne permet de faire passer que des paquets TCP ! Aussi, les différentes machines du réseau interne n'ont pas forcément de routes permettant de communiquer en direct avec notre pc attaquant, ce qui va par exemple empêcher la mise en place de reverse shell.</p>
 <p>Dynamic port forwarding:</p>
-<pre><code class="language-shell-session">ssh -D 9050 ubuntu@10.129.202.64
-</code></pre>
+<div class="language-shell-session highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">ssh -D 9050 ubuntu@10.129.202.64</span>
+</span></code></pre></div>
 <p>Puis rajouter, dans le fichier /etc/proxychains.conf:</p>
-<pre><code class="language-shell-session">socks4  127.0.0.1 9050
-</code></pre>
+<div class="language-shell-session highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">socks4  127.0.0.1 9050</span>
+</span></code></pre></div>
 <p>les différentes commandes doivent s'éxécuter via proxychains, exemple:</p>
-<pre><code class="language-shell-session">proxychains nmap -v -sn 172.16.5.1-200
-</code></pre>
+<div class="language-shell-session highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">proxychains nmap -v -sn 172.16.5.1-200</span>
+</span></code></pre></div>
 
 
 
@@ -7658,7 +7658,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

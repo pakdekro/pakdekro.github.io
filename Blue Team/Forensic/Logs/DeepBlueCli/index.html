@@ -7707,41 +7707,41 @@
 
 <h4 id="analyse-de-journaux-devenements">Analyse de Journaux d'Événements</h4>
 <p>Analyser un journal d'événements spécifique</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 .\chemin\vers\le\fichier\journal.evtx`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="p">.\</span><span class="n">chemin</span><span class="p">\</span><span class="n">vers</span><span class="p">\</span><span class="n">le</span><span class="p">\</span><span class="n">fichier</span><span class="p">\</span><span class="n">journal</span><span class="p">.</span><span class="n">evtx</span><span class="p">`</span>
+</span></code></pre></div>
 <p>Analyser un journal d'événements depuis un serveur distant</p>
-<pre><code class="language-powershell">Get-WinEvent -LogName Security -ComputerName ServeurDistant | .\DeepBlue.ps1
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-WinEvent</span> <span class="n">-LogName</span> <span class="n">Security</span> <span class="n">-ComputerName</span> <span class="n">ServeurDistant</span> <span class="p">|</span> <span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
 <p>Analyser des journaux d'événements en temps réel</p>
-<pre><code class="language-powershell">Get-WinEvent -LogName Security -MaxEvents 100 | .\DeepBlue.ps1
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Get-WinEvent</span> <span class="n">-LogName</span> <span class="n">Security</span> <span class="n">-MaxEvents</span> <span class="n">100</span> <span class="p">|</span> <span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
 <p>Analyser les derniers événements d'un journal</p>
-<pre><code class="language-powershell">Get-WinEvent -LogName Security -MaxEvents 100 | .\DeepBlue.ps1
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Get-WinEvent</span> <span class="n">-LogName</span> <span class="n">Security</span> <span class="n">-MaxEvents</span> <span class="n">100</span> <span class="p">|</span> <span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
 <h4 id="analyse-specifique">Analyse Spécifique</h4>
 <p>Analyser pour des commandes PowerShell suspectes</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 -log PowerShell
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-log</span> <span class="n">PowerShell</span>
+</span></code></pre></div>
 <p>Analyser pour des activités suspectes dans les journaux de sécurité</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 -log Security
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-log</span> <span class="n">Security</span>
+</span></code></pre></div>
 <p>Analyser pour des processus suspects dans les journaux de système</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 -log System
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-log</span> <span class="n">System</span>
+</span></code></pre></div>
 <p>Analyser pour des activités suspectes dans les journaux d'application</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 -log Application
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-log</span> <span class="n">Application</span>
+</span></code></pre></div>
 <h4 id="filtrage-et-recherche">Filtrage et Recherche</h4>
 <p>Analyser en filtrant par ID d'événement</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 -log Security | Where-Object { $_.Id -eq 4625 }`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-log</span> <span class="n">Security</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Id</span> <span class="o">-eq</span> <span class="n">4625</span> <span class="p">}`</span>
+</span></code></pre></div>
 <p>Recherche de termes spécifiques dans les résultats</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 -log Security | Select-String -Pattern &quot;terme_recherché&quot;
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-log</span> <span class="n">Security</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-Pattern</span> <span class="s2">&quot;terme_recherché&quot;</span>
+</span></code></pre></div>
 <h4 id="exportation-des-resultats">Exportation des Résultats</h4>
 <p>Exporter les résultats dans un fichier</p>
-<pre><code class="language-powershell">.\DeepBlue.ps1 -log Security | Out-File -FilePath .\resultats_analyse.txt
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">.\</span><span class="n">DeepBlue</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-log</span> <span class="n">Security</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="p">.\</span><span class="n">resultats_analyse</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div>
 
 
 
@@ -7788,7 +7788,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

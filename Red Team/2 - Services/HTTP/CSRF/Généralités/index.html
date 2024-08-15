@@ -7728,23 +7728,23 @@
 <li>Lorsque l'utilisateur clique sur le lien ou visite la page contenant l'image malveillante, une requête est envoyée au site web sur lequel il est authentifié.</li>
 </ul>
 <p><strong>Exemple de code malveillant :</strong></p>
-<pre><code class="language-html">&lt;!-- Exemple d'image HTML --&gt;
-&lt;img src=&quot;https://example.com/transfer?amount=1000&amp;to=attacker_account&quot; style=&quot;display:none&quot;&gt;
-</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">&lt;!-- Exemple d&#39;image HTML --&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://example.com/transfer?amount=1000&amp;to=attacker_account&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display:none&quot;</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p>Ce code envoie une requête GET à <code>https://example.com/transfer</code> avec les paramètres spécifiés, exécutant ainsi une action de transfert d'argent sans le consentement de l'utilisateur.</p>
 <h3 id="prevention-des-attaques-csrf">Prévention des Attaques CSRF</h3>
 <p><strong>Utilisation de Tokens CSRF :</strong></p>
 <ul>
 <li>Implémenter des tokens CSRF dans les formulaires et les requêtes sensibles. Ces tokens doivent être uniques pour chaque session utilisateur et vérifiés par le serveur avant d'exécuter des actions sensibles.</li>
 </ul>
-<pre><code class="language-html">&lt;form action=&quot;/transfer&quot; method=&quot;post&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;unique_csrf_token&quot;&gt; Montant: &lt;input type=&quot;text&quot; name=&quot;amount&quot;&gt; Compte: &lt;input type=&quot;text&quot; name=&quot;to_account&quot;&gt; &lt;input type=&quot;submit&quot; value=&quot;Transférer&quot;&gt; &lt;/form&gt;
-</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/transfer&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;csrf_token&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;unique_csrf_token&quot;</span><span class="p">&gt;</span> Montant: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;amount&quot;</span><span class="p">&gt;</span> Compte: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;to_account&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Transférer&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p><strong>Vérification des En-têtes de Référents :</strong></p>
 <ul>
 <li>Vérifier l'en-tête HTTP Referer pour s'assurer que la requête provient d'une page légitime de votre domaine.</li>
 </ul>
-<pre><code class="language-php">if (isset($_SERVER['HTTP_REFERER']) &amp;&amp; parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) === 'example.com') { // Requête légitime } else { // Requête potentiellement malveillante }
-</code></pre>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">if (isset($_SERVER[&#39;HTTP_REFERER&#39;]) &amp;&amp; parse_url($_SERVER[&#39;HTTP_REFERER&#39;], PHP_URL_HOST) === &#39;example.com&#39;) { // Requête légitime } else { // Requête potentiellement malveillante }</span>
+</span></code></pre></div>
 <p><strong>Utilisation de Méthodes HTTP Appropriées :</strong>
  - Restreindre les actions sensibles aux méthodes POST, PUT, DELETE, etc., plutôt que GET. Les requêtes GET ne doivent pas modifier l'état du serveur.</p>
 <p><strong>Détection et Annulation des Sessions Doubles :</strong></p>
@@ -7849,7 +7849,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

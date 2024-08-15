@@ -7735,67 +7735,67 @@
   <h1>Net</h1>
 
 <h4 id="gestion-des-utilisateurs-et-des-groupes">Gestion des utilisateurs et des groupes</h4>
-<p>Ajouter un utilisateur:</p>
-<pre><code class="language-cmd">net user [nom_utilisateur] [mot_de_passe] /add`
-</code></pre>
-<p>Supprimer un utilisateur:</p>
-<pre><code class="language-cmd">net user [nom_utilisateur] /delete`
-</code></pre>
-<p>Lister tous les utilisateurs:</p>
-<pre><code class="language-cmd">net user
-</code></pre>
-<p>Changer le mot de passe d'un utilisateur:</p>
-<pre><code class="language-cmd">net user [nom_utilisateur] *
-</code></pre>
-<p>Ajouter un utilisateur à un groupe:</p>
-<pre><code class="language-cmd">net localgroup [nom_groupe] [nom_utilisateur] /add
-</code></pre>
-<p>Lister les membres d'un groupe:</p>
-<pre><code class="language-cmd">net localgroup [nom_groupe]
-</code></pre>
+<p>Ajouter un utilisateur:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>net user [nom_utilisateur] [mot_de_passe] /add`
+</span></code></pre></div></p>
+<p>Supprimer un utilisateur:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>net user [nom_utilisateur] /delete`
+</span></code></pre></div></p>
+<p>Lister tous les utilisateurs:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>net user
+</span></code></pre></div></p>
+<p>Changer le mot de passe d'un utilisateur:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>net user [nom_utilisateur] *
+</span></code></pre></div></p>
+<p>Ajouter un utilisateur à un groupe:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>net localgroup [nom_groupe] [nom_utilisateur] /add
+</span></code></pre></div></p>
+<p>Lister les membres d'un groupe:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>net localgroup [nom_groupe]
+</span></code></pre></div></p>
 <h4 id="gestion-des-partages-de-fichiers-et-dossiers">Gestion des partages de fichiers et dossiers</h4>
-<p>Lister les ressources partagées:</p>
-<pre><code class="language-cmd">net share
-</code></pre>
-<p>Créer un partage:</p>
-<pre><code class="language-cmd">net share [nom_partage]=[chemin_dossier]
-</code></pre>
-<p>Supprimer un partage:</p>
-<pre><code class="language-cmd">net share [nom_partage] /delete
-</code></pre>
+<p>Lister les ressources partagées:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>net share
+</span></code></pre></div></p>
+<p>Créer un partage:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>net share [nom_partage]=[chemin_dossier]
+</span></code></pre></div></p>
+<p>Supprimer un partage:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>net share [nom_partage] /delete
+</span></code></pre></div></p>
 <h4 id="gestion-des-services">Gestion des services</h4>
-<p>Lister tous les services:</p>
-<pre><code class="language-cmd">net start
-</code></pre>
-<p>Démarrer un service:</p>
-<pre><code class="language-cmd">net start [nom_service]
-</code></pre>
-<p>Arrêter un service:</p>
-<pre><code class="language-cmd">net stop [nom_service]
-</code></pre>
+<p>Lister tous les services:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>net start
+</span></code></pre></div></p>
+<p>Démarrer un service:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>net start [nom_service]
+</span></code></pre></div></p>
+<p>Arrêter un service:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>net stop [nom_service]
+</span></code></pre></div></p>
 <h4 id="gestion-du-reseau">Gestion du réseau</h4>
-<p>Voir la configuration réseau:</p>
-<pre><code class="language-cmd">net config [serveur|workstation]
-</code></pre>
-<p>Voir les statistiques réseau:</p>
-<pre><code class="language-cmd">net statistics [serveur|workstation]
-</code></pre>
+<p>Voir la configuration réseau:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>net config [serveur|workstation]
+</span></code></pre></div></p>
+<p>Voir les statistiques réseau:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>net statistics [serveur|workstation]
+</span></code></pre></div></p>
 <h4 id="autres-commandes-utiles">Autres commandes utiles</h4>
-<p>Voir les sessions actives:</p>
-<pre><code class="language-cmd">net session
-</code></pre>
-<p>Voir les connexions actuelles:</p>
-<pre><code class="language-cmd">net use
-</code></pre>
-<p>Connecter un lecteur réseau:</p>
-<pre><code class="language-cmd">net use [lettre_lecteur:] \\[nom_serveur]\[partage] [mot_de_passe] /user:[nom_utilisateur]
-</code></pre>
-<p>Déconnecter un lecteur réseau:</p>
-<pre><code class="language-cmd">net use [lettre_lecteur:] /delete
-</code></pre>
-<p>Envoyer un message à un utilisateur ou une machine:</p>
-<pre><code class="language-cmd">net send [nom_machine] [message]
-</code></pre>
+<p>Voir les sessions actives:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>net session
+</span></code></pre></div></p>
+<p>Voir les connexions actuelles:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>net use
+</span></code></pre></div></p>
+<p>Connecter un lecteur réseau:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>net use [lettre_lecteur:] \\[nom_serveur]\[partage] [mot_de_passe] /user:[nom_utilisateur]
+</span></code></pre></div></p>
+<p>Déconnecter un lecteur réseau:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>net use [lettre_lecteur:] /delete
+</span></code></pre></div></p>
+<p>Envoyer un message à un utilisateur ou une machine:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>net send [nom_machine] [message]
+</span></code></pre></div></p>
 
 
 
@@ -7842,7 +7842,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

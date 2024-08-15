@@ -7779,75 +7779,75 @@
 
 <h3 id="requetes-de-base">Requêtes de Base</h3>
 <p>Recherche Simple :</p>
-<pre><code class="language-spl">index=[nom_index] &quot;terme spécifique&quot;`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>index=[nom_index] &quot;terme spécifique&quot;`
+</span></code></pre></div>
 <p>Recherche dans une Plage de Temps :</p>
-<pre><code class="language-spl">index=[nom_index] earliest=-1h latest=now &quot;terme spécifique&quot;`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>index=[nom_index] earliest=-1h latest=now &quot;terme spécifique&quot;`
+</span></code></pre></div>
 <p><em><code>-1h</code> pour la dernière heure, <code>now</code> pour le moment actuel.</em></p>
 <p>Utiliser les Jokers :</p>
-<pre><code class="language-spl">index=[nom_index] source=&quot;*chemin/fichier*log&quot;`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>index=[nom_index] source=&quot;*chemin/fichier*log&quot;`
+</span></code></pre></div>
 <h3 id="filtrage-et-selection">Filtrage et Sélection</h3>
 <p>Filtrer par Champ :</p>
-<pre><code class="language-spl">index=[nom_index] [champ]=[valeur]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>index=[nom_index] [champ]=[valeur]`
+</span></code></pre></div>
 <p>Utiliser <code>AND</code>, <code>OR</code>, <code>NOT</code> :</p>
-<pre><code class="language-spl">index=[nom_index] (erreur OR échec) AND utilisateurs=&quot;John Doe&quot; NOT source=&quot;/var/log/syslog&quot;`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>index=[nom_index] (erreur OR échec) AND utilisateurs=&quot;John Doe&quot; NOT source=&quot;/var/log/syslog&quot;`
+</span></code></pre></div>
 <h3 id="commandes-statistiques-et-agregation">Commandes Statistiques et Agrégation</h3>
 <p>Compter les Occurrences :</p>
-<pre><code class="language-spl">index=[nom_index] | stats count`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>index=[nom_index] | stats count`
+</span></code></pre></div>
 <p>Compter par Catégorie :</p>
-<pre><code class="language-spl">index=[nom_index] | stats count by [champ]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>index=[nom_index] | stats count by [champ]`
+</span></code></pre></div>
 <p>Trouver des Valeurs Uniques :</p>
-<pre><code class="language-spl">index=[nom_index] | dedup [champ]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>index=[nom_index] | dedup [champ]`
+</span></code></pre></div>
 <p>Calculs Statistiques (Moyenne, Max, Min, etc.) :</p>
-<pre><code class="language-spl">index=[nom_index] | stats avg([champ]), max([champ]), min([champ])`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>index=[nom_index] | stats avg([champ]), max([champ]), min([champ])`
+</span></code></pre></div>
 <h3 id="tri-et-limitation">Tri et Limitation</h3>
 <p>Trier les Résultats :</p>
-<pre><code class="language-spl">index=[nom_index] | sort - [champ]`
-</code></pre>
-<p><em><code>-</code> pour trier en ordre décroissant.</em></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>index=[nom_index] | sort - [champ]`
+</span></code></pre></div>
+<em><code>-</code> pour trier en ordre décroissant.</em></p>
 <p>Limiter les Résultats :</p>
-<pre><code class="language-spl">index=[nom_index] | head 10`
-</code></pre>
-<p><em>Affiche les 10 premiers résultats.</em></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>index=[nom_index] | head 10`
+</span></code></pre></div>
+<em>Affiche les 10 premiers résultats.</em></p>
 <h3 id="groupement-et-subdivisions">Groupement et Subdivisions</h3>
 <p>Grouper par Champ :</p>
-<pre><code class="language-spl">index=[nom_index] | stats count by [champ]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>index=[nom_index] | stats count by [champ]`
+</span></code></pre></div>
 <p>Utiliser <code>timechart</code> pour des Tendances Temporelles :</p>
-<pre><code class="language-spl">index=[nom_index] | timechart count by [champ]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>index=[nom_index] | timechart count by [champ]`
+</span></code></pre></div>
 <h3 id="recherche-avancee">Recherche Avancée</h3>
 <p>Recherche avec Sous-requêtes :</p>
-<pre><code class="language-spl">index=[nom_index] [ search index=[autre_index] [champ]=[valeur] ]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>index=[nom_index] [ search index=[autre_index] [champ]=[valeur] ]`
+</span></code></pre></div>
 <p>Jointures entre Sources de Données :</p>
-<pre><code class="language-spl">index=[nom_index1] | join type=outer [champ] [ search index=[nom_index2] ]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>index=[nom_index1] | join type=outer [champ] [ search index=[nom_index2] ]`
+</span></code></pre></div>
 <h3 id="extraction-et-transformation">Extraction et Transformation</h3>
 <p>Extraire des Champs Automatiquement :</p>
-<pre><code class="language-spl">index=[nom_index] | extract`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>index=[nom_index] | extract`
+</span></code></pre></div>
 <p>Renommer des Champs :</p>
-<pre><code class="language-spl">index=[nom_index] | rename [ancien_nom] as [nouveau_nom]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>index=[nom_index] | rename [ancien_nom] as [nouveau_nom]`
+</span></code></pre></div>
 <p>Utiliser <code>eval</code> pour des Calculs ou Transformations :</p>
-<pre><code class="language-spl">index=[nom_index] | eval [nouveau_champ]=[expression]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>index=[nom_index] | eval [nouveau_champ]=[expression]`
+</span></code></pre></div>
 <h3 id="visualisation-et-exportation">Visualisation et Exportation</h3>
 <p>Générer un Tableau :</p>
-<pre><code class="language-spl">index=[nom_index] | table [champ1] [champ2] [champ3]`
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>index=[nom_index] | table [champ1] [champ2] [champ3]`
+</span></code></pre></div>
 <p>Exporter des Résultats :</p>
-<pre><code class="language-spl">index=[nom_index] | outputcsv [nom_fichier.csv]
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>index=[nom_index] | outputcsv [nom_fichier.csv]
+</span></code></pre></div>
 
 
 
@@ -7894,7 +7894,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

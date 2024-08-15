@@ -7698,46 +7698,46 @@
 
 <h3 id="situational-awareness">Situational awareness</h3>
 <p>Lister les processus actifs:</p>
-<pre><code class="language-bash">ps aux
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ps<span class="w"> </span>aux
+</span></code></pre></div>
 <p>Lister les utilisateurs présents:</p>
-<pre><code class="language-bash">ls /home
-cat /etc/passwd
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls<span class="w"> </span>/home
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cat<span class="w"> </span>/etc/passwd
+</span></code></pre></div>
 <p>Lister les fichiers crontab:</p>
-<pre><code class="language-bash">ls -laR /etc/cron*
-crontab -l
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls<span class="w"> </span>-laR<span class="w"> </span>/etc/cron*
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>crontab<span class="w"> </span>-l
+</span></code></pre></div>
 <p>Informations sur la distribution et le kernel:</p>
-<pre><code class="language-bash">uname -a
-cat /etc/lsb-release
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uname<span class="w"> </span>-a
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cat<span class="w"> </span>/etc/lsb-release
+</span></code></pre></div>
 <p>Vérifier les connexions réseau:</p>
-<pre><code class="language-bash">netstat -tunlp
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>netstat<span class="w"> </span>-tunlp
+</span></code></pre></div>
 <h3 id="quickwin">Quickwin</h3>
 <p>Lister les privilèges sudo:</p>
-<pre><code class="language-bash">sudo -l
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>-l
+</span></code></pre></div>
 <p>Lister les fichiers avec un Setuid:</p>
-<pre><code class="language-bash">find / -user root -perm -4000 -exec ls -ldb {} \; 2&gt;/dev/null
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>find<span class="w"> </span>/<span class="w"> </span>-user<span class="w"> </span>root<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-exec<span class="w"> </span>ls<span class="w"> </span>-ldb<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span></code></pre></div>
 <p>Lister les fichiers avec un Setgid:</p>
-<pre><code class="language-bash">find / -user root -perm -6000 -exec ls -ldb {} \; 2&gt;/dev/null
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>find<span class="w"> </span>/<span class="w"> </span>-user<span class="w"> </span>root<span class="w"> </span>-perm<span class="w"> </span>-6000<span class="w"> </span>-exec<span class="w"> </span>ls<span class="w"> </span>-ldb<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span></code></pre></div>
 <p>Lister les capabilities:</p>
-<pre><code class="language-bash">getcap -r / 2&gt;/dev/null
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>getcap<span class="w"> </span>-r<span class="w"> </span>/<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span></code></pre></div>
 <h3 id="recherches">Recherches</h3>
 <p>Chercher des fichiers contenant "config":</p>
-<pre><code class="language-bash">find / ! -path &quot;*/proc/*&quot; -iname &quot;*config*&quot; -type f 2&gt;/dev/null`
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>find<span class="w"> </span>/<span class="w"> </span>!<span class="w"> </span>-path<span class="w"> </span><span class="s2">&quot;*/proc/*&quot;</span><span class="w"> </span>-iname<span class="w"> </span><span class="s2">&quot;*config*&quot;</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="sb">`</span>
+</span></code></pre></div>
 <p>Rechercher des fichiers modifiés récemment:</p>
-<pre><code class="language-bash">find / -mtime -5`
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>find<span class="w"> </span>/<span class="w"> </span>-mtime<span class="w"> </span>-5<span class="sb">`</span>
+</span></code></pre></div>
 <p>Rechercher des mots de passe en Clair:</p>
-<pre><code class="language-bash">grep -Ri pass /etc 2&gt;/dev/null
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>grep<span class="w"> </span>-Ri<span class="w"> </span>pass<span class="w"> </span>/etc<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span></code></pre></div>
 
 
 
@@ -7784,7 +7784,7 @@ cat /etc/lsb-release
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

