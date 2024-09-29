@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#utilisation-de-wevutilexe-pour-chercher-la-chaine-de-caractere-user-dans-les-logs" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -6566,6 +6571,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Event log reader
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6575,6 +6591,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-de-wevutilexe-pour-chercher-la-chaine-de-caractere-user-dans-les-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation de wevutil.exe pour chercher la chaîne de caractère "/user" dans les logs:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7848,6 +7890,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-de-wevutilexe-pour-chercher-la-chaine-de-caractere-user-dans-les-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation de wevutil.exe pour chercher la chaîne de caractère "/user" dans les logs:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7864,7 +7923,7 @@
   <h1>Event log reader</h1>
 
 <p>Le groupe Event Log Reader ne permet pas de privesc en soi. Il permet par contre de lire les différents logs, et notamment ceux en lien avec la création d'un process. Éventuellement, la commande permettant la création de ce process pourrait contenir un mot de passe en clair.</p>
-<p>Utilisation de wevutil.exe pour chercher la chaîne de caractère "/user" dans les logs:</p>
+<h4 id="utilisation-de-wevutilexe-pour-chercher-la-chaine-de-caractere-user-dans-les-logs">Utilisation de wevutil.exe pour chercher la chaîne de caractère "/user" dans les logs:</h4>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">wevtutil</span> <span class="n">qe</span> <span class="n">Security</span> <span class="p">/</span><span class="n">rd</span><span class="p">:</span><span class="n">true</span> <span class="p">/</span><span class="n">f</span><span class="p">:</span><span class="n">text</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="s2">&quot;/user&quot;</span>
 </span></code></pre></div>
 

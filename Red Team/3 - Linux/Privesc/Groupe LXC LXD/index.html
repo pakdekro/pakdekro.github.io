@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#telecharger-une-image-de-conteneur-alpine-linux" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -5453,6 +5458,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Groupe LXC LXD
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5462,6 +5478,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#telecharger-une-image-de-conteneur-alpine-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Télécharger une image de conteneur Alpine Linux :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialiser-lxd-au-besoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialiser LXD au besoin:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importer-limage-alpine-comme-une-image-lxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importer l'image Alpine comme une image LXC :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lancer-un-conteneur-alpine-avec-des-privileges-eleves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lancer un conteneur Alpine avec des privilèges élevés :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monter-le-disque-de-lhote-dans-le-conteneur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monter le disque de l'hôte dans le conteneur :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceder-au-shell-dans-le-conteneur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accéder au shell dans le conteneur :
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7848,6 +7935,68 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#telecharger-une-image-de-conteneur-alpine-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Télécharger une image de conteneur Alpine Linux :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialiser-lxd-au-besoin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialiser LXD au besoin:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importer-limage-alpine-comme-une-image-lxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importer l'image Alpine comme une image LXC :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lancer-un-conteneur-alpine-avec-des-privileges-eleves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lancer un conteneur Alpine avec des privilèges élevés :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monter-le-disque-de-lhote-dans-le-conteneur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monter le disque de l'hôte dans le conteneur :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceder-au-shell-dans-le-conteneur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accéder au shell dans le conteneur :
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7864,22 +8013,22 @@
   <h1>Groupe LXC LXD</h1>
 
 <p>Si notre utilisateur est membre du groupe lxd / lxc, il est possible de créer un conteneur. Cela nous donne la possibilité d'être root sur ce conteneur, de monter la racine de l'host à l'intérieur du conteneur et donc de le lire avec les droits root.</p>
-<p>Télécharger une image de conteneur Alpine Linux :</p>
+<h4 id="telecharger-une-image-de-conteneur-alpine-linux">Télécharger une image de conteneur Alpine Linux :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/x86_64/alpine-minirootfs-3.17.1-x86_64.tar.gz
 </span></code></pre></div>
-<p>Initialiser LXD au besoin:</p>
+<h4 id="initialiser-lxd-au-besoin">Initialiser LXD au besoin:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lxd<span class="w"> </span>init
 </span></code></pre></div>
-<p>Importer l'image Alpine comme une image LXC :</p>
+<h4 id="importer-limage-alpine-comme-une-image-lxc">Importer l'image Alpine comme une image LXC :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lxc<span class="w"> </span>image<span class="w"> </span>import<span class="w"> </span>alpine-minirootfs-3.17.1-x86_64.tar.gz<span class="w"> </span>--alias<span class="w"> </span>alpine
 </span></code></pre></div>
-<p>Lancer un conteneur Alpine avec des privilèges élevés :</p>
+<h4 id="lancer-un-conteneur-alpine-avec-des-privileges-eleves">Lancer un conteneur Alpine avec des privilèges élevés :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lxc<span class="w"> </span>init<span class="w"> </span>alpine<span class="w"> </span>r00t<span class="w"> </span>-c<span class="w"> </span>security.privileged<span class="o">=</span><span class="nb">true</span><span class="sb">`</span>
 </span></code></pre></div>
-<p>Monter le disque de l'hôte dans le conteneur :</p>
+<h4 id="monter-le-disque-de-lhote-dans-le-conteneur">Monter le disque de l'hôte dans le conteneur :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>lxc<span class="w"> </span>config<span class="w"> </span>device<span class="w"> </span>add<span class="w"> </span>r00t<span class="w"> </span>mydev<span class="w"> </span>disk<span class="w"> </span><span class="nv">source</span><span class="o">=</span>/<span class="w"> </span><span class="nv">path</span><span class="o">=</span>/mnt/root<span class="w"> </span><span class="nv">recursive</span><span class="o">=</span><span class="nb">true</span><span class="sb">`</span>
 </span></code></pre></div>
-<p>Accéder au shell dans le conteneur :</p>
+<h4 id="acceder-au-shell-dans-le-conteneur">Accéder au shell dans le conteneur :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>lxc<span class="w"> </span>start<span class="w"> </span>r00t
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>lxc<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>r00t<span class="w"> </span>/bin/sh
 </span></code></pre></div>

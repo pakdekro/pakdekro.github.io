@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lister-les-named-pipe" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -6587,6 +6592,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Named Pipe
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6596,6 +6612,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lister-les-named-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lister les Named Pipe:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voir-les-permissions-dun-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voir les permissions d'un pipe:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7848,6 +7899,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lister-les-named-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lister les Named Pipe:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voir-les-permissions-dun-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voir les permissions d'un pipe:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7863,12 +7940,12 @@
 
   <h1>Named Pipe</h1>
 
-<p>Lister les Named Pipe:</p>
+<h4 id="lister-les-named-pipe">Lister les Named Pipe:</h4>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">pipelist</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">accepteula</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">ou</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">gci </span><span class="p">\\.\</span><span class="n">pipe</span><span class="p">\</span>
 </span></code></pre></div>
-<p>Voir les permissions d'un pipe:</p>
+<h4 id="voir-les-permissions-dun-pipe">Voir les permissions d'un pipe:</h4>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">accesschk</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">accepteula</span> <span class="p">\\.\</span><span class="n">Pipe</span><span class="p">\</span><span class="n">lsass</span> <span class="n">-v</span>
 </span></code></pre></div>
 

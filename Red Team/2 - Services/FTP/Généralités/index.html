@@ -3582,6 +3582,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nmap:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-via-netcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      connection via netcat :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-avec-openssl-si-le-serveur-utilise-ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection avec openssl (si le serveur utilise SSL/TLS):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3590,6 +3623,30 @@
       Bruteforce
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Bruteforce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bruteforce-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bruteforce user :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bruteforce-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bruteforce password :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7936,6 +7993,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nmap:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-via-netcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      connection via netcat :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-avec-openssl-si-le-serveur-utilise-ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection avec openssl (si le serveur utilise SSL/TLS):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7944,6 +8034,30 @@
       Bruteforce
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Bruteforce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bruteforce-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bruteforce user :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bruteforce-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bruteforce password :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7990,22 +8104,22 @@
 
 <p>File Transfer Protocol, port 21, TCP Transfert de fichier, non sécurisé contrairement à ses différentes variantes (sFTP, etc), les données sont transmises en clair.</p>
 <hr />
-<h2 id="enumeration">Enumeration</h2>
-<p>Nmap:</p>
+<h3 id="enumeration">Enumeration</h3>
+<h4 id="nmap">Nmap:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nmap<span class="w"> </span>-A<span class="w"> </span>--script<span class="w"> </span>ftp*<span class="w"> </span>-p<span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="nv">$ip</span>
 </span></code></pre></div>
-<p>connection via netcat :</p>
+<h4 id="connection-via-netcat">connection via netcat :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nc<span class="w"> </span>-nv<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span><span class="m">21</span>
 </span></code></pre></div>
-<p>Connection avec openssl (si le serveur utilise SSL/TLS):</p>
+<h4 id="connection-avec-openssl-si-le-serveur-utilise-ssltls">Connection avec openssl (si le serveur utilise SSL/TLS):</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span><span class="nv">$ip</span>:21<span class="w"> </span>-starttls<span class="w"> </span>ftp
 </span></code></pre></div>
 <hr />
-<h2 id="bruteforce">Bruteforce</h2>
-<p>Bruteforce user :</p>
+<h3 id="bruteforce">Bruteforce</h3>
+<h4 id="bruteforce-user">Bruteforce user :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>hydra<span class="w"> </span>-L<span class="w"> </span>/usr/list/user.txt<span class="w"> </span>-p<span class="w"> </span>password1234<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>ftp
 </span></code></pre></div>
-<p>Bruteforce password :</p>
+<h4 id="bruteforce-password">Bruteforce password :</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>hydra<span class="w"> </span>-l<span class="w"> </span>user<span class="w"> </span>-P<span class="w"> </span>/usr/share/seclists/Passwords/xato-net-10-million-passwords-1000000.txt<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>ftp
 </span></code></pre></div>
 <hr />

@@ -5967,6 +5967,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Depuis Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utilisation-de-kerbrute-pour-faire-du-password-spraying-sur-une-liste-dutilisateur-et-un-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation de kerbrute pour faire du password spraying sur une liste d'utilisateur et un password:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-spraying-via-netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      password spraying via netexec:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-spraying-avec-netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash spraying avec netexec:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7912,6 +7945,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Depuis Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utilisation-de-kerbrute-pour-faire-du-password-spraying-sur-une-liste-dutilisateur-et-un-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilisation de kerbrute pour faire du password spraying sur une liste d'utilisateur et un password:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-spraying-via-netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      password spraying via netexec:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-spraying-avec-netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash spraying avec netexec:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7941,13 +8007,13 @@
   <h1>Password et hash spraying</h1>
 
 <h3 id="depuis-linux">Depuis Linux</h3>
-<p>Utilisation de kerbrute pour faire du password spraying sur une liste d'utilisateur et un password:</p>
+<h4 id="utilisation-de-kerbrute-pour-faire-du-password-spraying-sur-une-liste-dutilisateur-et-un-password">Utilisation de kerbrute pour faire du password spraying sur une liste d'utilisateur et un password:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kerbrute<span class="w"> </span>passwordspray<span class="w"> </span>-d<span class="w"> </span><span class="nv">$domain</span><span class="w"> </span>--dc<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>users.txt<span class="w">  </span><span class="nv">$password</span>
 </span></code></pre></div>
-<p>password spraying via netexec:</p>
+<h4 id="password-spraying-via-netexec">password spraying via netexec:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-p<span class="w"> </span><span class="nv">$password</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>+
 </span></code></pre></div>
-<p>Hash spraying avec netexec:</p>
+<h4 id="hash-spraying-avec-netexec">Hash spraying avec netexec:</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>netexec<span class="w"> </span>smb<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-u<span class="w"> </span>users.txt<span class="w"> </span>-H<span class="w"> </span>hash.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>+
 </span></code></pre></div>
 <hr />
